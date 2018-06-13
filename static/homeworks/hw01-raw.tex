@@ -1,0 +1,637 @@
+\documentclass[preview]{standalone}
+\usepackage{header}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Delivera$
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the $
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadverdently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\newcommand{\choc}{\ensuremath{40}}
+\newcommand{\chocp}{\ensuremath{39}}
+\newcommand{\store}{\ensuremath{15}}
+\Question{``Sample Complexity'' of coupon collecting}
+
+One of the books of Roald Dahl has the following
+problem. Willy Wonka has a chocolate factory where the produced
+chocolates have $\choc$ different types of cards hidden under the
+chocolate wrappers. To encourage people to consume these chocolates,
+a game is announced: Whoever finds all the $\choc$ types of cards will
+be allowed to enter Willy Wonka's factory and participate in a questionable
+experiment. 
+
+Charlie is a consumer of Willy's chocolates and he visits a particular
+local store every day to buy his chocolates.
+The store contains equal number of chocolates of each card type at any given time.
+Every time a chocolate with a particular card hidden beneath the wrapper is bought, 
+another chocolate containing an identical card is put in its place immediately.
+Whenever Charlie buys a chocolate, he does that by picking up a chocolate uniformly at random from the store.
+
+\begin{Parts}
+
+\Part {\bf What is the expected number of days it takes Charlie to qualify for Willy Wonka's game if he buys one random chocolate every 
+day from the local store?} Please explain your computations precisely.
+
+
+
+\Part \emph{For all the following parts, the game has been changed.} 
+Suppose there are $d$ types of different cards.
+Instead of having to collect all $d$ card types, at the end of the game Willy 
+Wonka will draw a card uniformly at random and if someone has that card in their collection,
+they win a prize. Charlie still visits the local store everyday and buys a chocolate at random from it.
+If Charlie wants his probability of winning to
+be at least $1-\delta$, {\bf how many \emph{distinct} card types should he have in his
+collection before Willy Wonka draws the card?}
+
+
+
+\Part Suppose that Charlie visited the particular local store for $n$ days and bought
+$1$ chocolate at random each day before Willy's draw of the random card.
+{\bf What is the probability that Charlie wins a prize from Willy's draw?}
+
+
+
+\Part 
+Now assume $n = \alpha d$ (i.e. Charlie always buys exactly $\alpha$
+times the number of total types of cards before Wonka's draw of the random
+card).  {\bf What does Charlie's probability of winning converge to as
+  $d$ gets large?  }
+
+
+
+\Part Now, consider the following function estimation problem, which 
+at first sight might seem unrelated. 
+We want to learn a completely unstructured function $f$ on
+a finite domain $\mathcal{D}$ of size $d$. We collect a 
+training data of size $n$ from random samples,
+i.e., we have the dataset $\{(U_i, f(U_i)), i=1, \ldots, n \}$ where
+each $U_i$ is drawn uniformly at random from $\mathcal{D}$.
+{\bf How big of a training set do we need to collect to ensure that 
+with probability at least $1-\delta$, we will successfully
+estimate the function at a point which is drawn uniformly at random from the domain $\mathcal{D}$?
+Repeat the computations for the case when $d$ gets large.
+}
+
+
+
+\end{Parts}
+
+\Question{The accuracy of learning decision boundaries}
+
+
+This problem exercises your basic probability (e.g.~from 70) in the
+context of understanding why lots of training data helps to improve the
+accuracy of learning things.
+
+For each $\theta \in (1/3,2/3)$, define $f_{\theta}: [0,1] \to \{0, 1\}$, such that
+\begin{align}
+f_\theta(x) =
+\begin{cases}
+1 \text{ if } x > \theta \notag\\
+0 \text{ otherwise.} \label{eq:func}
+\end{cases}
+\end{align}
+The function is plotted in Figure \ref{fig:func}.
+\begin{figure}[h!]
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{src/problems/theory/f_fig.png}
+    \caption{Plot of function $f_\theta(x)$ against $x$.} \label{fig:func}
+    \end{center}
+\end{figure}
+
+We draw samples $X_1, X_2, \ldots, X_n$ uniformly at random and i.i.d. from the interval $[0,1]$.
+Our goal is to learn an estimate for $\theta$ from $n$ random samples $(X_1, f_{\theta}(X_1)), (X_2, f_{\theta}(X_2)), \ldots, (X_n, f_{\theta}(X_n))$.
+
+
+Let $T_{min} = \max(\{\frac{1}{3}\} \cup \{ X_i | f_\theta(X_i) = 0\})$. We know that the
+true $\theta$ must be larger than $T_{min}$. 
+
+Let $T_{max} = \min(\{\frac{2}{3}\} \cup \{ X_i | f_\theta(X_i) = 1\})$. We know that the
+true $\theta$ must be smaller than $T_{max}$. 
+
+The gap between $T_{min}$ and $T_{max}$ represents the uncertainty we
+will have about the true $\theta$ given the training data that we have
+received. 
+
+\begin{Parts}
+
+\Part \textbf{What is the probability that $T_{max} - \theta > \epsilon$ as a
+function of $\epsilon$? And what is the probability that $\theta - T_{min} > \epsilon$ as a
+function of $\epsilon$?}
+
+
+
+\Part Suppose that you would like the estimator $\hat{\theta} = (T_{max} + T_{min}) / 2$ for $\theta$ that is $\epsilon$-close (defined as $|\hat{\theta} - \theta| < \epsilon$, where $\hat{\theta}$ is the estimation and $\theta$ is the true value) with probability at least
+$1-\delta$. Both $\epsilon$ and $\delta$ are some small positive numbers. \textbf{Please bound or estimate how big of an $n$ do you need? } You do not need to find the optimal lowest sample complexity $n$, an approximation using results of question (a) is fine. 
+
+
+
+\Part Let us say that instead of getting random samples $(X_i, f(X_i))$,
+we were allowed to choose where to sample the function, but you had to
+choose all the places you were going to sample in advance. \textbf{Propose a
+method to estimate $\theta$. How many samples suffice to achieve an
+estimate that is $\epsilon$-close as above?} ({\bf Hint:} You need not use a randomized
+strategy.)  
+
+
+
+\Part Suppose that you could pick where to sample the function
+adaptively --- choosing where to sample the function in response to
+what the answers were previously. \textbf{Propose a method to estimate
+$\theta$. How many samples suffice to achieve an estimate that is
+$\epsilon$-close as above?}
+
+
+
+\Part In the three sampling approaches above: random, deterministic, and adaptive, \textbf{compare the scaling of $n$ with $\epsilon$ (and $\delta$ as well for the random case). }
+
+
+
+
+
+\Part \textbf{Why do you think we asked this series of questions? What are the implications of those results in a machine learning application?}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{Parts}
+\Question{Eigenvalue and Eigenvector review}
+
+A square matrix $\mat{A} \in \mathbb{R}^{d \times d}$ has a (right) eigenvalue $\lambda \in \mathbb{C}$
+and (right) eigenvector $\vec{x} \in \mathbb{C}^{d} \setminus 0$ if $\mat{A}\vec{x} = \lambda \vec{x}$.
+Left eigenvalues and eigenvectors are defined analogously --- $\vec{x}^T \mat{A} = \lambda \vec{x}^T$.
+Since the definition is scale invariant
+(if $\vec{x}$ is an eigenvector, then $t\vec{x}$ is an eigenvector for any $t \neq 0$),
+we adopt the convention that each eigenvector has norm $1$.
+
+\begin{Parts}
+
+  \Part \textbf{Compute the right and left eigenvalues and
+    eigenvectors} of the following matrices. You may use a computer
+  for questions v) and vi).
+
+i) $\mat{A} =
+\begin{bmatrix}
+2 & -4 \\
+-1 & -1
+\end{bmatrix}
+$
+
+
+
+ii) $\mat{B} =
+\begin{bmatrix}
+3 & 1 \\
+1 & 3
+\end{bmatrix}
+$
+
+
+
+
+iii) $\mat{A}^2$
+
+
+
+
+iv) $\mat{B}^2$
+
+
+
+
+v) $\mat{AB}$
+
+
+
+
+
+vi) $\mat{BA}$
+
+
+
+
+\Part \textbf{Compute the singular value decompositions} of the matrices
+above. In addition, please compute the SVD of:
+$\mat{C} =
+\begin{bmatrix}
+3 & 1 \\
+1 & 3 \\
+2 & -4 \\
+-1 & -1
+\end{bmatrix}
+$. For $\mat{B}$ and $\mat{B}^2$ compute by hand. For the rest of the matrices you may
+use a computer.
+
+
+
+
+\Part \textbf{Show} from the definition of a right eigenvalue that the quantity
+$\lambda$ is an eigenvalue with associated eigenvector $\vec{x}$ iff
+for all $1 \leq i \leq d$, we have $$(\lambda - A_{ii}) x_i = \sum_{j
+  \neq i} A_{ij} x_j.$$
+
+
+
+
+\Part Now for an arbitrary eigenvalue $\lambda$ of $\mat{A}$ and its
+associated eigenvector $\vec{x}$, choose index $i$ such that $|x_i|
+\geq |x_j|$ for all $j \neq i$. For such an index $i$, \textbf{show} that
+$$|\lambda - A_{ii}| \leq \sum_{j \neq i} |A_{ij}|.$$
+
+You have just proved Gershgorin's circle theorem, which states that
+all the eigenvalues of a $d \times d$ matrix lie within the union of
+$d$ disks in the complex plane, where disk $i$ has center $A_{ii}$,
+and radius $\sum_{j \neq i} |A_{ij}|$.
+
+
+
+
+\end{Parts}
+
+
+
+\Question{Fun with least squares}
+
+
+In ordinary least squares we learn to predict a \emph{target} scalar
+$y \in \real$ given a \emph{feature} vector
+$\vec{x} \in \mathbb{R}^\vecdim$. Each element of $\vec{x}$ is called
+a feature, which could correspond to a
+scientific \emph{measurement}.
+For example, the $i$-th element of
+$\vec{x}$, denoted by $\el{x}{i}$, could correspond to the velocity of
+a car at time $i$. $y$ could represent the final location (say just in
+one direction) of the car.
+
+For the purpose of predicting $y$ from $\vec{x}$ we are given $n$
+samples $(\vec{x}_i, y_i)$ with $i = 1,\dots, n$ (where feature
+vectors and target scalars are observed in pairs), which we also call
+the training set. In this problem we want to predict the unobserved
+target $y$ corresponding to a new $\vec{x}$ (not in the training set)
+by some linear prediction $\hat{y} = \vec{x}^\top\widehat{\vecf{w}}$ where
+the \emph{weight} $\widehat{\vecf{w}} \in \real^\vecdim$ minimizes the
+least-squares training cost
+\begin{equation*}
+  \sum_{i=1}^n (\vec{x}_i^\top\vec{w} - y_i )^2 = \|\mat{X} \vec{w} - \vec{y} \|_2^2
+\end{equation*}
+where in the matrix $\mat{X} \in \real^{n\times d}$, the transposed
+sample feature vectors $\vec{x}_i^\top$ constitute the $d$-dimensional row
+vectors, and the $n$-dimensional vectors of training measurements
+$\vec{x}^j = (\el{x_1}{j}, \dots, \el{x_n}{j})^\top$ for
+$j = 1,\dots, \vecdim$ correspond to the column vectors (see
+Figure~\ref{fig:Amat}).  and $\vec{y} = (y_1, \dots, y_n)^\top$.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.7\textwidth]{src/problems/linear_regression/nestedleastsquaresFig.pdf}
+  \caption{Dimensions, column and row vector notation for matrix $\mat{X}$}
+  \label{fig:Amat}
+\end{figure}
+
+
+Let us actually build on the example mentioned above and view the
+measurements $\el{x_i}{j}$ of each sample $\vec{x}_i$ as a sequence of
+measurements, e.g. velocities of car $i$, over time
+$j = 1,\dots, \vecdim$.
+
+\begin{Parts}
+
+  \Part Is this problem in a supervised or unsupervised learning setting?
+      {\bf Please explain.} 
+
+  
+\Part Suppose that we want to learn (from our training set) to predict
+the final location $y$ from only the first $\nummeas$ measurements.
+Denoting the prediction of $y$ from the first $\nummeas$ measurements
+by $\hat{y}^t$, we thus want to use $\el{x}{j}, j=1, \ldots, t$ to
+predict $y$.  If we now learn how to obtain $\hat{y}^t$ for each
+$t= 1,\dots,\vecdim$, we end up with a sequence of estimators
+$\hat{y}^1,\dots, \hat{y}^\vecdim$ for each car.
+
+  {\bf  Provide
+    a method to obtain $\hat{y}^\nummeas$ for each $\nummeas$. }
+  Note that we will obtain a different model for each $\nummeas$.
+  
+
+
+
+\Part Someone suggests that maybe the measurements themselves are
+partially predictable from the previous measurements, which suggests
+employing a two stage strategy to solve the original prediction
+problem: First we predict the $\nummeas$-th measurement
+$\el{x}{\nummeas}$ based on the previous measurements
+$\el{x}{1},\dots, \el{x}{\nummeas-1}$. Then we look at the differences
+(sometimes deemed the ``innovation'') between the actual $t$-th
+measurement we obtained and our prediction for it, i.e.
+$(\Delta \vec{ x})_{\nummeas} := (\vec{x})_{\nummeas} -
+(\widehat{\vecf{x}})_{\nummeas}$ for $\nummeas > 1$ and assume
+$(\Delta \vec{x})_1 = (\vec{x})_1$. Finally, we use
+$(\Delta\vec{x})_1,\dots, (\Delta \vec{x})_{\nummeas}$ to obtain a
+prediction $\tilde{y}^t$.
+
+In order to learn the maps which allow us to (1) take
+$\el{x}{1},\dots, \el{x}{\nummeas-1}$ to obtain
+$(\Delta\vec{x})_1,\dots, (\Delta \vec{x})_{\nummeas}$ and (2) take
+$(\Delta\vec{x})_1,\dots, (\Delta \vec{x})_{\nummeas}$ to predict
+$\tilde{y}^t$, we again use our training set.  Specifically for each
+$t$, in stage (1), we fit the vectors of training measurements
+$\vec{x}^1, \dots, \vec{x}^{t-1}$ linearly to $\vec{x}^t$ using least
+squares for each $t$. In stage (2), we use the innovation vectors
+$(\Delta\vec{x}^1, \dots, \Delta\vec{x}^t)$ to predict $\vec{y}^t$
+again using least squares.  Let's define the matrix
+$\tilX^t := (\Delta\vec{x}^1, \dots, \Delta\vec{x}^t)$ and
+$\tilX = \tilX^d$.
+
+
+{\bf Show how} we can learn the best linear predictions
+$\widehat{\vecf{x}}^\nummeas$ from
+$\vec{x}^1,\dots, \vec{x}^{\nummeas-1}$. Then {\bf provide an
+  expression} for $\tilde{\vec{y}}^t$ depending on the innovations
+$\Delta\vec{x}^1,\dots, \Delta\vec{x}^{\nummeas}$.
+  
+  When presented with a new feature vector $\vec{x}$, are the sequence
+  of final predictions of the one-stage training $\hat{y}^t$ in (b)
+  and two-stage training $\tilde{y}^t$ in (c) the same?  {\bf Explain
+    your reasoning.}
+  
+
+
+
+
+
+\Part  {\bf Which
+  well-known procedure do
+the steps to obtain $\tilX$ from $\mat{X}$ remind you of}?
+({\bf HINT: } Think about how the column vectors in
+$\tilX$ are geometrically related.)
+
+{\bf Is there an efficient way to update the weight vector
+  $\widehat{\vecf{w}}^{t}$ from $\widehat{\vecf{w}}^{t-1}$ when
+  computing the sequence of predictions $\tilde{y}^t$?} Here,
+$\widehat{\vecf{w}}^{t}$ are the weights for the second stage in (c).
+
+
+
+
+
+
+
+\Part Now let's consider the more
+general setting where we now want to predict a target vector $\vec{y} \in \real^k$
+from a feature vector $\vec{x} \in \real^d$, thus having a training set
+consisting of observations $(\vec{x}_i, \vec{y}_i)$ for $i=1,\dots,n$.
+
+Instead of learning a weight vector $\vec{w} \in \real^\vecdim$, we
+now want a linear estimate $\widehat{\vecf{y}} = \hat{\mat{W}} \vec{x}$
+with a weight matrix $\hat{\mat{W}} \in \real^{k\times d}$
+instead. From our samples, we obtain wide matrices $\mat{Y} \in \real^{k\times n}$ with
+columns $\vec{y}_1,\dots,\vec{y}_n$ and $\mat{X} \in \real^{d\times n}$ with columns
+$\vec{x}_1, \dots,\vec{x}_n$ (note that this is the transpose of
+$\mat{X}$ in Figure~\ref{fig:Amat}!). In order to learn
+$\hat{\mat{W}}$ we now want to minimize
+$\|\mat{Y} - \mat{W}\mat{X}\|_F^2$ where $\|\cdot\|_F$ denotes the
+Frobenius norm of matrices, i.e.
+$\|\mat{L}\|_F^2 = \trace(\mat{L}^\top\mat{L})$.
+
+{\bf Show how to find
+$\hat{\mat{W}} = \arg \min_{\mat{W} \in \real^{k\times d}} \|\mat{Y} - \mat{W}\mat{X}\|_F^2$
+using vector calculus as reviewed in Discussion 0 and 1.}
+
+
+
+
+\Part In the setting of problem (e), {\bf argue why} the computation of the best
+linear prediction $\widehat{\vecf{y}}$ of a target vector $\vec{y}$ using a feature
+vector $\vec{x}$ can be solved by separately finding the best linear
+prediction for each measurement $\el{y}{j}$ of the target vector $\vec{y}$.
+
+
+
+\end{Parts}
+
+
+\Question{System Identification by ordinary least squares regression}
+
+Making autonomous vehicles involves machine learning for different purposes. One of which is
+learning how cars actually behave based on their data.
+
+\textbf{Make sure to submit the code you write in this problem to ``HW1 Code" on Gradescope.}
+
+\begin{Parts}
+
+\Part Consider the time sequence of scalars $x_t \in \mathbb{R}$ and $u_t \in \mathbb{R}$ in which
+$x_{t+1} \approx A  x_{t} + B u_{t}$.  In control theory, $x_t$ usually represents the state, and
+$u_t$ usually represents the control input.  \textbf{Find the numbers $A$ and $B$ so that
+$\sum_t(x_{t+1} - A  x_{t} - B u_{t})^2$ is minimized.} The values of $x_t$ and $u_t$ are stored in
+\texttt{a.mat}.
+
+
+
+
+\Part Consider the time sequences of vectors
+$\vec x_t \in \mathbb{R}^3$ and $\vec u_t \in \mathbb{R}^3$ in which
+$\vec x_{t+1} \approx \mat A \vec x_{t} + \mat B \vec
+u_{t}$. \textbf{Find the matrix $\mat A \in \mathbb{R}^{3\times 3}$
+  and $\mat B \in \mathbb{R}^{3\times 3}$ so that the sum of the squared
+  $\ell^2$-norms of the error,
+  $\sum_t\lVert\vec x_{t+1} - \mat A \vec x_{t} - \mat B \vec
+  u_{t}\lVert_2^2$, is minimized}.  The values of $\mat x_t$ and
+$\mat u_t$ are stored in \texttt{b.mat}.
+
+
+
+
+\Part Consider a \textit{car following model} that models how cars line up on a straight 1D highway
+at a given time.  The acceleration of a car can be approximated by a linear function of the
+positions and velocities of its own and the car in front of it.  Mathematically, we can formulate
+this as $$ \ddot{x}_i \approx a x_{i} + b \dot{x}_{i} + c x_{i-1} + d \dot{x}_{i-1} + e,$$ where
+$x_i$, $\dot x_i$, and $\ddot x_i$ are the position, velocity, and acceleration of the $i$th
+car in the line.
+
+\textbf{Find $a$, $b$, $c$, $d$, and $e$ that minimize
+\[
+\sum_i \left\lVert -\ddot{x}_i + a x_{i} + b \dot{x}_{i} + c x_{i-1} + d \dot{x}_{i-1} + e\right\lVert_2^2
+\]
+using data file \texttt{train.mat}}, which contains the status of 40\,000 cars at a given point
+from the I-80 highway in California. The data were sampled from the Next Generation Simulation
+(NGSIM) dataset so that the $i$ may not be continuous.  For your convenience, we give you the
+profiles of each sampled car and the car that is in front of it.
+
+
+
+
+\Part \textbf{Try to justify why your result in (c) is physically reasonable.}  Hint:  You can
+reorganize your equation to be
+\[
+\ddot{x}_i = h (x_{i-1}- x_{i}) + f (\dot{x}_{i-1} - \dot{x}_{i}) - g (\dot{x}_{i}-L)+ w_i,
+\]
+and try to explain the physical meaning for each term, with $L$ being the speed limit.
+
+
+
+
+\end{Parts}
+
+
+\newcommand{\R}{\mathbb{R}}
+
+\section{A Simple Classification Approach}
+
+\textbf{Make sure to submit the code you write in this problem to ``HW1 Code'' on Gradescope.}
+
+Classification is an important problem in applied machine
+learning and is used in many different applications like image classification,
+object detection, speech recognition, machine translation and others.
+
+In \emph{classification}, we assign each datapoint a class from a finite set
+(for example the image of a digit could be assigned the value $0, 1, \dots, 9$ of that digit).
+This is different from \emph{regression}, where each datapoint is assigned a value from a
+continuous domain like $\R$ (for example features of a house like location,
+number of bedrooms, age of the house, etc. could be assigned the price of the house).
+
+In this problem we consider the simplified setting of classification where we want to
+classify data points from $\R^d$ into \emph{two} classes. For a linear classifier,
+the space $\R^d$ is split into two parts by a hyperplane: All points on
+one side of the hyperplane are classified as one class and all points on
+the other side of the hyperplane are classified as the other class.
+
+The goal of this problem is to
+show that even a regression technique like linear regression can be used to solve a
+classification problem. This can be
+achieved by regressing the data points in the training set against $-1$ or $1$
+depending on their class and then using the level set of 0 of the regression
+function as the classification hyperplane (i.e. we use 0 as a threshold
+on the output to decide between the classes).
+
+Later in lecture we will learn why linear regression is not the optimal
+approach for classification and we will study better approaches like logistic
+regression, SVMs and neural networks.
+
+\begin{Parts}
+
+\Part The dataset used in this exercise is a subset of the MNIST dataset.
+The MNIST dataset assigns
+each image of a handwritten digit their value from 0 to 9 as a class.
+For this problem we only keep digits that are assigned a 0 or 1, so we
+simplify the problem to a two-class classification problem.
+
+\textbf{Download and visualize the dataset (example code included). Include three
+images that are labeled as 0 and three images that are labeled as 1
+in your submission.}
+
+
+
+\Part We now want to use linear regression for the problem, treating class
+labels as real values $y = -1$ for class ``zero'' and $y = 1$ for class ``one''. In the dataset we
+provide, the images have already been flattened into one dimensional vectors
+(by concatenating all pixel values of the two dimensional image into a vector)
+and stacked as rows into a feature matrix $\mat X$. We want to set up the regression
+problem $\min_{\vec w}\norm{\mat X\vec w - \vec y}_2^2$ where the entry $y_i$ is the value of the
+class ($-1$ or $1$) corresponding to the image in row $\vec{x}_i^\top$ of the feature matrix.
+\textbf{Solve this regression problem for the training set and report the value of
+$\norm{\mat X\vec w - \vec y}_2^2$ as well as the weights $\vec w$.} For this problem you
+may only use pure Python and numpy (no machine learning libraries!).
+
+
+
+\item Given a new flattened image $\vec x$, one natural rule to classify it is
+the following one: It is a zero if $\vec x^\top \vec w \leq 0$ and a one if
+$\vec x^\top \vec w > 0$. \textbf{Report what percentage of the digits in the training set
+are correctly classified by this rule. Report what percentage of the digits in the test
+set are correctly classified by this rule.}
+
+
+
+\Part \textbf{Why is the performance typically evaluated on a separate test set
+(instead of the training set) and why is the performance on the training and
+test set similar in our case?} We will cover these questions in more detail
+later in the class.
+
+
+\Part Somebody suggests to use 0 (for class 0) and 1 (for class 1) as the
+entries for the target vector $\vec b$. Try out how well this is doing
+(make sure to adapt the classification rule, i.e. the threshold set for the outputs).
+\textbf{Report what percentage of digits
+are correctly classified using this approach on the training set and test set.}
+How are the performances of the two approaches if you add a bias column
+to the feature matrix $\mat X$? A bias column is a column of all ones, i.e. the new
+feature matrix $\mat{X'}$ is
+$$\mat{X'} = \begin{bmatrix}\vec{x}_0^\top & 1\\\vec{x}_1^\top & 1\\ \vdots & \vdots \\ \vec{x}_n^\top & 1 \end{bmatrix}$$
+\textbf{Report what percentage of digits
+are correctly classified using regression targets $0/1$ and $-1/1$ with bias on the training set and test set.}
+\textbf{Try to explain the results!}
+
+
+
+
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

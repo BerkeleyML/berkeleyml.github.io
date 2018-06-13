@@ -1,0 +1,487 @@
+\documentclass[preview]{standalone}
+\usepackage{header}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Delivera$
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the $
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadverdently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\Question{Geometry of Ridge Regression}
+	You recently learned ridge regression and how it differs from ordinary least squares. In this question we will explore how ridge regression is related to solving a constrained least squares problem in terms of their parameters and solutions.
+
+
+\begin{Parts}
+
+
+
+	\Part Given a matrix $\mat{X} \in \real^{n \times d}$ and a vector $\vec{y} \in \real^n$, define the optimization problem
+	\begin{align}
+		\text{minimize } \| \vec{y} - \mat{X} \vec{w} \|_2^2. \label{eq:constrained} \\
+		\text{subject to } \|\vec{w} \|_2^2 \leq \beta^2. \notag
+	\end{align}
+
+	We can utilize Lagrange multipliers to incorporate the constraint into the objective function by adding a term which acts to ``penalize" the thing we are constraining. {\bf Rewrite the constrained optimization problem into an unconstrained optimization problem.}
+
+	
+
+	\Part Recall that ridge regression is given by the unconstrained optimization problem
+	\begin{align}
+		\min_{w} \| \vec{y} - \mat{X} \vec{w} \|_2^2 + \nu \|\vec{w}\|_2^2. \label{eq:ridge}
+	\end{align}
+
+	One way to interpret ``ridge regression'' is as the Lagrangian form of a constrained problem. {\bf Qualitatively, how would increasing $\beta$ in our previous problem be reflected in the desired penalty $\nu$ of ridge regression (i.e. if our threshold $\beta$ increases, what should we do to $\lambda$)?}
+
+	
+	
+	
+
+	\Part One reason why we might want to have small weights $\vec{w}$ has to do with the sensitivity of the predictor to its input. Let $\vec{x}$ be a $d$-dimensional list of features corresponding to a new test point. Our predictor is $\vec{w}^\top \vec{x}$. {\bf What is an upper bound on how much our prediction could change if we added noise $\vec{\epsilon} \in \mathbb{R}^d$ to a test point's features $\vec{x}$? }
+
+	
+
+	\Part {\bf Derive that the solution to ridge regression \eqref{eq:ridge} is given by $\vec{\hat{w}_{r}} = (\mat{X}^\top \mat{X} + \lambda \mat{I})^{-1} \mat{X}^\top \vec{y}$. What happens when $\lambda \to \infty$?} It is for this reason that sometimes regularization is referred to as ``shrinkage.''
+
+	
+	\Part Note that in computing $\vec{\hat{w}_r}$, we are trying to invert the matrix $\mat{X}^\top \mat{X} + \lambda \mat{I}$ instead of the matrix $\mat{X}^\top \mat{X}$. {\bf If $\mat{X}^\top \mat{X}$ has eigenvalues $\sigma_1^2, \ldots, \sigma_d^2$, what are the eigenvalues of $\mat{X}^\top \mat{X} + \lambda \mat{I}$? Comment on why adding the regularizer term $\lambda \mat{I}$ can improve the inversion operation numerically.}
+
+	
+
+	\Part Let the number of parameters $d = 3$ and the number of datapoints $n = 5$, and let the eigenvalues of $\mat{X}^\top \mat{X}$ be given by $1000$, $1$ and $0.001$. We must now choose between two regularization parameters $\lambda_1 = 100$ and $\lambda_2 = 0.5$. {\bf Which do you think is a better choice for this problem and why?}
+
+	
+	
+	\Part Another advantage of ridge regression can be seen for under-determined systems. Say we have the data drawn from a $d = 5$ parameter model, but only have $n = 4$ training samples of it, i.e. $\mat{X} \in \real^{4 \times 5}$. Now this is clearly an underdetermined system, since $n < d$. {\bf Show that ridge regression with $\lambda > 0$ results in a unique solution, whereas ordinary least squares has an infinite number of solutions.}
+
+	Hint: To make this point, it may be helpful to consider $\vec w = \vec w_0 + \vec w^*$ where $\vec w_0$ is in the null space of $\mat X$ and $\vec w^*$ is a solution.
+
+	
+
+	\Part For the previous part, {\bf what will the answer be if you take the limit $\lambda \rightarrow 0$ for ridge regression? }
+
+	
+
+	\Part Tikhonov regularization is a general term for ridge regression, where the implicit constraint set takes the form of an ellipsoid instead of a ball. In other words, we solve the optimization problem
+	\begin{align*}
+		\vec{w} = \arg\min_{\vec{w}} \frac{1}{2} \| \vec{y} - \mat{X} \vec{w} \|_2^2 + \lambda \| \Gamma \vec{w}\|_2^2
+	\end{align*}
+	for some full rank matrix $\Gamma \in \real^{d \times d}$. {\bf Derive a closed form solution to this problem.}
+
+	
+
+\end{Parts}
+
+\Question{Polynomials and invertibility}
+
+This problem will walk through the properties of a feature matrix based on univariate polynomials and multivariate polynomials.
+
+First, we consider fitting a function $y = f(x)$ where both $x$ and $y$ are scalars, using univariate polynomials.
+Given $n$ training data points $\left\{(x_i, y_i), i=1, \ldots, n\right\}$, our task reduces to performing linear regression with a feature matrix $\mat{F}$
+where
+\begin{align*}
+	\mat{F} = [\vec{p}_D(x_1), \ldots , \vec{p}_D(x_n)]^T \quad \text{and} \quad \vec{p}_D(x)=[x^{0},x^{1},\ldots, x^D]^T.
+\end{align*}
+Note that $\mat{F} \in \mathbb{R}^{n \times (D+1)}$ and $\vec{y} = [y_1, \ldots, y_n]^T \in \mathbb{R}^n$.
+
+Parts (a)--(e) study the rank of the feature matrix $\mat{F}$ as a function of the points $x_i$'s. These parts are elementary and therefore bonus problems.
+
+In parts (f)--(h), we consider the case when the sampling points are vectors $\vec{x}_i$ and we use multivariate polynomials $\vec{p}_D(\vec{x}_i)$ as the rows of the feature matrix. These parts are mandatory.
+
+
+\begin{Parts}
+
+\Part \textbf{(BONUS)} For $n = 2$ and $D=1$, {\bf show that the matrix $\mat{F}$ has full rank iff $x_1 \neq x_2$.} \emph{Note that iff stands for if and only if.}
+
+
+\Part \textbf{(BONUS)}
+From parts (b) through (e), we work through different steps to establish that the columns of $\mat{F}$ are linearly independent if the sampling data points are distinct and $n \geq D+1$.
+Note that it suffices to consider the case $n=D+1$.
+In other words, we have $D+1$ sample points and have constructed a square feature matrix $\mat{F}$.
+Now as a first step, construct a matrix $\mat{F}'$ from the matrix $\mat{F}$ via this operation: subtract the first row of $\mat{F}$ from its rows $2$ through $n$.
+{\bf Is it true that $\det(\mat{F}) = \det(\mat{F}')$?}
+
+Hint: Think about representing the row subtraction operation using a matrix multiplication, and then take determinants.
+
+
+
+\Part \textbf{(BONUS)} Perform the following sequence of operations to $\mat{F}'$, and obtain the matrix $\mat{F}''$.
+
+i) Subtract $x_1 * \mathsf{column}_{n-1}$ from $\mathsf{column}_{n}$.
+
+ii) Subtract $x_1 * \mathsf{column}_{n-2}$ from $\mathsf{column}_{n-1}$.
+
+$\vdots$
+
+n-1) Subtract $x_1 * \mathsf{column}_{1}$ from $\mathsf{column}_{2}$.
+
+{\bf Write out the matrix $\mat{F}''$ and argue why $\det(\mat{F}') = \det(\mat{F}'')$.}
+
+
+
+\Part \textbf{(BONUS)} For any square matrix $\mat{A} \in \mathbb{R}^{d \times d}$ and a matrix
+$$
+\mat{B} =
+\begin{bmatrix}
+1 & {\vec 0}^\top \\
+{\vec 0} & \mat{A}
+\end{bmatrix},
+ $$
+{\bf argue that the $d+1$ eigenvalues of $B$ are given by $\{1, \lambda_1(\mat{A} ), \lambda_2(\mat{A} ), \ldots, \lambda_d(\mat{A} )\}$.
+Can we conclude $\det(\mat{B}) = \det(\mat{A})$?} Here, ${\vec 0}$ represents a column vector of zeros in $\mathbb{R}^d$.
+
+
+
+\Part \textbf{(BONUS)} {\bf Use the above parts and an induction argument to prove that $\det(\mat{F}) = \prod_{1 \leq i < j \leq n} (x_j - x_i)$.}
+Consequently, {\bf argue} that the matrix $\mat{F}$ is full rank unless two input data points are equal.
+
+Hint: First show that
+\begin{align*}
+\det(\mat{F}) = \left( \prod_{i = 2}^n (x_i - x_1) \right) \det( [\vec{p}_{D-1}(x_2),\vec{p}_{D-1}(x_3),\ldots,\vec{p}_{D-1}(x_n)]^T),
+\end{align*}
+where $D = n-1$.
+
+Hint: You can use the fact that multiplying a row of a matrix by a constant scales the determinant by this constant. (A fact that is clear from the oriented volume interpretation of determinants.)
+
+
+
+\Part We now consider multivariate polynomials. We have
+$\vec{x}_i = (x_{i,1}, x_{i,2}, \ldots , x_{i,\ell})^T \in \mathbb{R}^\ell$ and we consider the multivariate polynomial $\vec{p}_D(\vec{x})$ of degree $D$.
+Here is an illustration of the new features for $\ell=2$ and $D=3$:
+$$
+\vec{x}_i = (x_{i,1}, x_{i,2})^\top \ \ \ \ \text{and} \ \ \ \
+\vec{p}_D(\vec{x}_i) = (1,\ x_{i, 1},\ x_{i, 2},\ x_{i, 1}^2,\ x_{i, 2}^2,\ x_{i, 1}x_{i,2},\ x_{i, 1}x_{i,2}^2,\ x_{i, 1}^2x_{i, 2},\ x_{i, 1}^3,\ x_{i, 2}^3)^\top.$$
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}
+For a more general $\ell$ and $D$, {\bf show that the size of $\vec{p}_D(\vec{x})$ is $\binom{D + \ell}{\ell}$}.
+You may use a stars and bars argument (link is \href{https://inst.eecs.berkeley.edu/~cs70/fa15/slides/lec-18.6up.pdf}{\color{brown}{here}} if you did not take CS70).
+
+
+
+\Part With $n$ sample points $\{\vec{x}_i\}_{i=1}^n$, stack up the multivariate polynomial features $\vec{p}_D(\vec{x}_i)$ as rows to obtain the feature matrix $\mat{F}_{\ell} \in \mathbb{R}^{n \times \binom{D + \ell}{\ell}}$.
+Let $x_{i,1} = x_{i,2} = \cdots  = x_{i,\ell} = \alpha_i$ where $\alpha_i$'s are distinct scalars for $i \in \{1, 2, 3 \ldots, n\}$.
+{\bf Show that with these sample points, the feature matrix $\mat{F}_{\ell}$ always has linearly dependent columns for any value of $n > 1$.}
+Compare this fact with your conclusion from part (e).
+
+
+
+\Part Now {\bf design a set of sampling points $\vec{x}_i$ such that the corresponding multivariate polynomial feature matrix $\mat{F}_{\ell}$ is full column rank.} You are free to choose the number of points at your convenience.
+Although we are only asking you to show that there exists a way to sample to achieve full rank with enough samples taken, it turns out to be true that the $\mat{F}_{\ell}$ matrix will be full rank as long as $n=\binom{D + \ell}{\ell}$ ``generic'' points are chosen.
+
+Hint: Leverage earlier parts of this problem if you can.
+
+
+
+
+
+
+\end{Parts}
+
+\Question{Polynomials and approximation}
+
+For a $p$-times differentiable function $f: \mathbb{R} \to \mathbb{R}$, the Taylor series expansion of order $m \leq p - 1$ about the point $x_0$ is given by
+\begin{align}
+f(x) = \sum_{i = 0}^m \frac{1}{i!} f^{(i)}(x_0) (x - x_0)^i + \frac{1}{(m + 1)!} f^{(m+1)}(a(x)) (x - x_0)^{m + 1}.
+\end{align}
+Here, $f^{(m)}$ denotes the $m$th derivative of the function $f$, and $a(x)$ is some value between $x_0$ and $x$. By definition, $f^{(0)} = f$. 
+
+The last term $r_m(x) :=  \frac{1}{(m + 1)!} f^{(m+1)}(a(x)) (x - x_0)^{m + 1}$ of this expansion is tyically referred to as the remainder term when approximating $f(x)$ by an $m$-th degree polynomial. 
+
+We denote by $\phi_m$ the $m$-th degree Taylor polynomial (also called the Taylor \emph{approximation}), which
+consists of the Taylor series expansion of order $m$ without the remainder term and thus reads
+\begin{equation*}
+f(x) \approx \phi_m(x) =  \sum_{i = 0}^m \frac{1}{i!} f^{(i)}(x_0) (x - x_0)^i
+\end{equation*}
+where the sign $\approx$ indicates approximation of the left hand side by the right hand side.
+
+For functions $f$ whose derivatives are bounded in the neighborhood $I$ around $x_0$ of
+interest, if we have $|f^{(m)}(x)| \leq T$ for
+$x\in I$, we know that for $x\in I$
+that the \emph{approximation error} of the $m$-th order Taylor
+approximation $|f(x) - \phi_m(x)| = |r_m(x)|$ is upper bounded
+$|f(x) - \phi_m(x)|\leq \frac{T|x-x_0|^{m+1}}{(m + 1)!}$.
+
+\begin{Parts}
+
+\Part {\bf Compute the $1$st, $2$nd, $3$rd, and $4$th order Taylor approximation of the following functions around the point $x_0 = 0$.}
+
+i) $e^x$
+
+ii) $\sin x$
+
+
+
+\Part For $f(x) = e^x$, {\bf plot the Taylor approximation from order 1 through 4 at $x_0 = 0$ for $x$ in the domain $I:= [-4,3]$.} If you are unfamiliar with plotting in Python, please refer to the starter code for this question which could save you time.
+
+We denote the maximum approximation error on the domain $I$ by $\|f - \phi_m\|_{\infty} := \sup_{x\in I} |f(x) - \phi_m(x)|$, where $\| \cdot\|_{\infty}$ is also called the sup-norm with respect to $I$. {\bf Compute $\|f - \phi_m\|_{\infty}$ for $m=2$.
+  Compute the limit of $\|f - \phi_m\|_{\infty}$ as $m\rightarrow \infty$.}
+
+Hint: Use Stirling's approximation for integers $n$ which is: $n! \sim \sqrt{2 \pi n}\left( \frac{n}{e} \right)^n$.
+
+{\bf Now plot the Taylor approximation of $f$ up to order $4$ on the interval $[-20, 8]$. How does the approximation error behave outside the bounded interval $I$?}
+
+
+
+  
+\Part Let's say we would like an accurate polynomial approximation of
+the functions in part (a) for all $x \in I$. Given the results of the
+previous parts, we can in fact find a Taylor polynomial
+of degree $D$ such that $|f(x) - \phi_D(x)| \leq \epsilon$ for all
+$x \in I$. {\bf  What is an upper bound of $\|f - \phi_m\|_{\infty}$ for arbitrary non-zero integers $m$?
+  Using this upper bound, show that if $D$ is
+  larger than $O(\log(1/\epsilon))$, we can guarantee that
+  $\|f - \phi_D\|_{\infty} \leq \epsilon$ for both choices of $f(x)$ in
+  part (a).} Note that constant factors are not relevant here, and
+assume sufficiently small positive $\epsilon \ll 1$.
+  
+
+
+
+
+\Part 
+{\bf Conclude that a univariate polynomial of high enough degree can approximate any function $f$ on a closed interval $I$, that is continuously differentiable infinitely many times and has bounded derivatives $|f^{(m)}(x)|\leq T$ for all $m\geq 1$ and $x\in I$.} Mathematically speaking, we need to show that for any $\epsilon > 0$, there exists a degree $D \geq 1$ such that $\|f-\phi_D\|_{\infty} < \epsilon$, where the sup-norm is taken with respect to the interval $I$.
+
+This universal approximation property illustrates the power of polynomial features, even when we don't know the underlying function $f$ that is generating our data! Later, we will see that neural networks are also universal function approximators.)
+
+
+
+
+
+\Part Now let's extend this idea of approximating functions with polynomials to multivariable functions.  The Taylor series expansion for a function $f(x,y)$ about the point $(x_0,y_0)$ is given by
+
+\begin{align}
+\begin{split}
+f(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)+ \\
+\frac{1}{2!}[f_{xx}(x_0,y_0)(x-x_0)^2+f_{xy}(x_0,y_0)(x-x_0)(y-y_0)+ \\
+f_{yx}(x_0,y_0)(x-x_0)(y-y_0)+f_{yy}(x_0,y_0)(y-y_0)^2]+\ldots
+\end{split}
+\end{align}
+
+where $f_x=\frac{\partial f}{\partial x}$, $f_y=\frac{\partial f}{\partial y}$, $f_{xx}=\frac{\partial^2f}{\partial x^2}$, $f_{yy}=\frac{\partial^2f}{\partial y^2}$, and $f_{xy}=\frac{\partial^2f}{\partial x \partial y}$
+
+As you can see, the Taylor series for multivariate functions quickly becomes unwieldy after the second order.  Let's try to make the series a little bit more manageable.  {\bf Using matrix notation, write the expansion for a function of two variables in a more compact form up to the second order terms where $f(\vec{v})=f(x,y)$ with $\vec{v}=[x,y]^\top$ and $\vec{v}_0=[x_0,y_0]^\top$.  Clearly define any additional vectors and matrices that you use.}
+
+Consider the multivariate function $f(\vec{v})=e^{x}y^2$ where $\vec{v}=[x,y]^\top$.
+{\bf Please write down the second order multivariate Taylor approximation for $f$ at $\vec{v}_0$.}
+
+
+
+
+
+
+\Part In this part we want to show how the univariate approximation
+discussed in the previous parts can be used as a stepping stone to understand polynomial
+approximation in multiple dimensions.
+
+
+Let us consider the approximation of the function
+$f(\vec{v}) = e^x y^2$ around $\vec{v}_0 = \vec{0}$ along a
+direction $\vec{v} - \vec{v}_0 = \vec{v}$. All vectors along this
+direction are on the path
+$\vec{v}(t) := \vec{0}+ t(\vec{v}-\vec{0})$ for $t\in \real$. {\bf
+  Write the second order Taylor expansion of $g(t) = f(\vec{v}(t))$
+  around the point $t_0=0$.} Note that $g$ is a function mapping a
+scalar to a scalar.
+
+By considering all such paths $\vec{v}(t)$ over different directions
+$\vec{v}$, we can reduce the multidimensional setting to the  
+univariate setting. The example hopefully helped you to get an idea why
+the approximation behavior of Taylor polynomials holds similarly
+in higher dimensions.
+
+
+
+
+
+
+
+
+
+
+
+\end{Parts}
+
+\Question {Jaina and her giant peaches}
+
+\textbf{Make sure to submit the code you write in this problem to ``HW2 Code'' on Gradescope.}
+
+In another alternative universe, Jaina is a mage testing how long she can fly a collection of giant
+peaches. She has $n$ training peaches -- with masses given by $x_1, x_2, \ldots x_n$ -- and flies
+these peaches once to collect training data. The experimental flight time of peach $i$ is given
+by $y_i$. She believes that the flight time is well approximated by a polynomial function of the
+mass
+\[
+y_i \approx w_0 + w_1x_i + w_2x_i^2 \dots + w_Dx_i^D
+\]
+where her goal is to fit a polynomial of degree $D$ to this data. Include all text responses and
+plots in your write-up.
+
+\begin{Parts}
+
+\Part {\bf Show how Jaina's problem can be formulated as a linear regression problem.}
+
+
+
+\Part You are given data of the masses $\{x_i\}_{i=1}^n$ and flying times $\{y_i\}_{i=1}^n$ in the
+``x\_train" and ``y\_train" keys of the file \texttt{1D\_poly.mat} with the masses centered and
+normalized to lie in the range $[-1, 1]$. {\bf Write a script to do a least-squares fit (taking
+care to include a constant term) of a polynomial function of degree $D$ to the data.} Letting $f_D$
+denote the fitted polynomial, {\bf plot the average training error $R(D) = \frac{1}{n} \sum_{i=1}^n
+(y_i - f_D(x_i))^2$ against $D$ in the range $D \in \{1, 2, 3, \ldots, n-1\}$.}  You may not use
+any library other than \texttt{numpy} and \texttt{numpy.linalg} for computation.
+
+
+
+\Part  {\bf How does the average training error behave as a function of $D$, and why? What happens
+if you try to fit a polynomial of degree $n$ with a standard matrix inversion method?}
+
+
+
+\Part Jaina has taken Mystical Learning 189, and so decides that she needs to run another
+experiment before deciding that her prediction is true. She runs another fresh experiment of flight
+times using the same peaches, to obtain the data with key ``y\_fresh" in \textsc{1D\_poly.mat}.
+Denoting the fresh flight time of peach $i$ by $\tilde{y}_i$, {\bf plot the average error
+$\tilde{R}(D) = \frac{1}{n} \sum_{i=1}^n (\tilde{y}_i - f_D(x_i))^2$ for the same values of $D$ as
+in part (b) using the polynomial approximations $f_D$ also from the previous part. How does this
+plot differ from the plot in (b) and why?}
+
+
+
+\Part {\bf How do you propose using the two plots from parts (b) and (d) to ``select" the right
+polynomial model for Jaina?}
+
+
+
+\Part Jaina has a new hypothesis -- the flying time is actually a function of the mass, smoothness,
+size, and sweetness of the peach, and some multivariate polynomial function of all of these
+parameters. A $D$-multivariate polynomial function looks like
+\[
+f_D(\vec x) = \sum_{j}  \alpha_j\prod_i x_i^{p_{ji}},
+\]
+where $\forall j:\sum_i p_{ji} \le D$.  Here $\alpha_j$ is the scale constant for $j$th term and
+$p_{ji}$ is the exponent of $x_i$ in $j$th term. The data in
+\texttt{polynomial\_regression\_samples.mat} ($100000 \times 5$) with columns corresponding to the
+$5$ attributes of the peach. {\bf Use $4$-fold cross-validation to decide which of $D \in \{0, 1,
+2, 3, 4, 5, 6\}$ is the best fit for the data provided}. For this part, compute the polynomial
+coefficients via ridge regression with penalty $\lambda = 0.1$, instead of ordinary least squares.
+You are not allowed to use any library other than \texttt{numpy} and \texttt{numpy.linalg}.
+
+
+
+\Part Now {\bf redo the previous part, but use 4-fold cross-validation on all combinations of $D
+\in \{1, 2,3,4,5,6\} $ and $\lambda \in \{0.05, 0.1, 0.15, 0.2\}$} - this is referred to as a grid
+search. {\bf Find the best $D$ and $\lambda$ that best explains the data using ridge regression.
+Print the average training/validation error per sample for all $D$ and $\lambda$.}
+
+
+\end{Parts}
+
+\newcommand{\R}{\mathbb{R}}
+
+\section{Nonlinear Classification Boundaries}
+
+\textbf{Make sure to submit the code you write in this problem to ``HW2 Code'' on Gradescope.}
+
+In this problem we will learn how to use polynomial features to learn
+nonlinear classification boundaries.
+
+In Problem 7 on HW1, we found that linear regression can be quite effective
+for classification. We applied it in the setting where the training data points
+were \emph{approximately linearly separable}. This means there exists a hyperplane such that most
+of the training data points in the first class are on one side of the hyperplane
+and most training data points in the second class are on the other side of the
+hyperplane.
+
+However, often times in practice classification datasets are not linearly
+separable. In this case we can create features that are linearly separable by augmenting
+the original data with polynomial features as seen in Problem 5. This embeds the data points into a
+higher dimensional space where they are more likely to be linearly separable.
+
+In this problem we consider a simple dataset of points $(x_i, y_i) \in \R^2$, each
+associated with a label $b_i$ which is $-1$ or $+1$. The dataset was generated by sampling
+data points with label $-1$ from a disk of radius $1.0$ and data points with label
+$+1$ from a ring with inner radius $0.8$ and outer radius $2.0$.
+
+\begin{Parts}
+\Part \textbf{(BONUS)} \textbf{Run the starter code to load and visualize the dataset and submit a scatterplot of the points with your homework.
+Why can't these points be classified with a linear classification boundary?}
+
+
+
+\Part  \textbf{(BONUS)} Classify the points with the technique from Problem 7 on HW1 (``A Simple classification approach'').
+Use the feature matrix $\mat X$ whose first column consists of the $x$-coordinates of the training points and whose second column
+consists of the $y$-coordinates of the training points. The target vector $\vec b$ consists of the class label $-1$ or $+1$.
+Perform the linear regression $\vec w_1 = \arg\min_{\vec w} \norm{\mat X\vec w - \vec b}_2^2$.
+\textbf{Report the classification accuracy on the test set.}
+
+
+
+\Part  \textbf{(BONUS)} Now augment the data matrix $\mat X$ with polynomial features $1, x^2, xy, y^2$ and classify the points again, i.e. create a new
+feature matrix
+$$\Phi = \begin{pmatrix}x_1 & y_1 & x_1^2 & x_1 y_1 & y_1^2 & 1\\
+x_2 & x_2 & x_2^2 & x_2 y_2 & y_2^2 & 1\\ \vdots & \vdots & \vdots & \vdots & \vdots \\ x_n & y_n & x_n^2 & x_n y_n & y_n^2 & 1\end{pmatrix}$$
+and perform the linear regression $\vec w_2 = \arg\min_{\vec w} \norm{\Phi\vec w - \vec b}_2^2$.
+\textbf{Report the classification accuracy on the test set.}
+
+
+\Part  \textbf{(BONUS)} \textbf{Report the weight vector that was found in the feature space with the polynomial features.
+ Show that up to small error the classification rule has the form $\alpha x^2 + \alpha y^2 \leq \beta$.
+ What is the interpretation of $\beta/\alpha$ here? Why did the classification in the augmented space work?}
+
+
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

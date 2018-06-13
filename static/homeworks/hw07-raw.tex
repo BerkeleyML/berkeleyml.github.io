@@ -1,0 +1,490 @@
+\documentclass[preview]{standalone}
+\usepackage{header_problems}
+\usepackage{header_template}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Deliverables:
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the correct sections. Do not simply reference your appendix.
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadvertently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\Question{Step Size in Gradient Descent}
+
+By this point in the class, we know that gradient descent is a powerful tool for
+moving towards local minima of general functions. We also know that local minima
+of convex functions are global minima. In this problem, we will look at the
+convex function $f(x) = ||x-b||_2$. Note that we are using ``just'' the regular
+Euclidean $\ell_2$ norm, \emph{not} the norm squared! This problem illustrates
+the importance of understanding how gradient descent works and choosing step
+sizes strategically. In fact, there is a lot of active research in variations on
+gradient descent.
+Throughout the question we will look at different kinds of step-sizes.
+Constant step size vs. decreasing step size. We will also look at the the rate at
+which the different step sizes decrease and draw some conclusions about the
+rate of convergence.
+Notice that we want to make sure the we get to some local minimum and we
+want to do it as quickly as possible.
+
+You have been provided with a tool in \texttt{step\_size.py} which will help you
+visualize the problems below.
+
+\begin{Parts}
+
+\Part Let $\vec{x}, \vec{b} \in \mathbb{R}^d$.
+{\bf Prove that $f(\vec{x}) = \|\vec{x}-\vec{b}\|_2$ is a convex function of $\vec{x}$.}
+
+
+
+
+\Part We are minimizing $f(\vec{x}) = \|\vec{x}-\vec{b}\|_2$,
+where $\vec{x} \in \mathbb{R}^2$ and $\vec{b} = [4.5, 6] \in \mathbb{R}^2$,
+with gradient descent. We use a constant step size of $t_i = 1$. That is,
+$$\vec{x}_{i+1} = \vec{x}_i - t_i \nabla f(\vec{x}_i) = \vec{x}_i - \nabla f(\vec{x}_i).$$
+We start at $\vec{x}_0 = [0, 0].$
+\textbf{Will gradient descent find the optimal solution?
+If so, how many steps will it take to get within $0.01$ of the optimal solution? If not, why not?}
+Prove your answer. (Hint: use the tool to compute the first ten steps.)
+\textbf{What about general $\vec{b} \neq \vec{0}$?}
+
+
+
+
+\Part We are minimizing $f(\vec{x}) = \|\vec{x}-\vec{b}\|_2$,
+where $\vec{x} \in \mathbb{R}^2$ and $\vec{b} = [4.5, 6] \in \mathbb{R}^2$,
+now with a decreasing step size of $t_i = (\frac{5}{6})^i$ at step $i$. That is,
+$$\vec{x}_{i+1} = \vec{x}_i - t_i \nabla f(\vec{x}_i) =
+\vec{x}_i - (\frac{5}{6})^i \nabla f(\vec{x}_i).$$
+We start at $\vec{x}_0 = [0, 0].$
+\textbf{Will gradient descent find the optimal solution?
+If so, how many steps will it take to get within $0.01$ of the optimal solution?
+If not, why not?} Prove your answer. (Hint: examine $\|\vec{x}_i\|_2$.)
+\textbf{What about general $\vec{b} \neq \vec{0}$?}
+
+
+
+
+\Part We are minimizing $f(\vec{x}) = \|\vec{x}-\vec{b}\|_2$,
+where $\vec{x} \in \mathbb{R}^2$ and $\vec{b} = [4.5, 6] \in \mathbb{R}^2$,
+now with a decreasing step size of $t_i = \frac{1}{i+1}$ at step $i$. That is,
+$$\vec{x}_{i+1} = \vec{x}_i - t_i \nabla f(\vec{x}_i)
+= \vec{x}_i - \frac{1}{i+1} \nabla f(\vec{x}_i).$$
+We start at $\vec{x}_0 = [0, 0].$
+\textbf{Will gradient descent find the optimal solution?
+If so, how many steps will it take to get within $0.01$ of the optimal solution?
+If not, why not?}
+Prove your answer. (Hint: examine $\|\vec{x}_i\|_2$,
+and use $\sum_{i=1}^n \frac 1 i$ is of the order $\log n$.)
+\textbf{What about general $\vec{b} \neq \vec{0}$?}
+
+
+
+
+\Part Now, say we are minimizing $f(x) = \|Ax-b\|_2$. Use the code provided to test several values of $A$ with the step sizes suggested above. Make plots to visualize what is happening. We suggest trying $A = [[10, 0], [0, 1]]$ and $A = [[15, 8], [6, 5]]$. \textbf{Will any of the step sizes above work for all choices of $A$ and $b$?} You do not need to prove your answer, but you should briefly explain your reasoning.
+
+
+
+\end{Parts}
+
+\Question{Convergence Rate of Gradient Descent}
+
+\newcommand{\CC}{\beta}  
+In the previous problem, you examined $||\mat{A}\vec{x}-\vec{b}||_2$ (without the square).
+You showed that even though it is convex, getting gradient descent to converge
+requires some care.
+In this problem, you will examine $\frac{1}{2}||\mat{A}\vec{x}-\vec{b}||_2^2$
+(with the square). You will show that now gradient descent converges quickly.
+
+For a matrix $\mat{A} \in \mathbb{R}^{n \times d}$ and a vector $\vec{b} \in \mathbb{R}^n$,
+consider the quadratic function $f(\vec{x}) = \frac{1}{2} \| \mat{A}\vec{x}-\vec{b} \|_2^2$
+such that $\mat{A}^\top\mat{A}$ is positive definite.
+
+Throughout this question the \emph{Cauchy-Schwarz inequality} might be useful:
+Given two vectors $\vec{u}, \vec{v}$:
+$$|\vec{u}^\top \vec{v}| \leq \|\vec{u}\|_2 \|\vec{v}\|_2,$$
+with equality only when $\vec{v}$ is a scaled version of $\vec{u}$.
+
+
+\begin{Parts}
+
+\Part First, consider the case $\vec{b} = \vec{0}$, and think of each $\vec{x} \in \mathbb{R}^d$
+as a ``state". Performing gradient descent moves us sequentially through the states,
+which is called a ``state evolution".
+{\bf Write out the state
+evolution for $n$ iterations of gradient descent using step-size
+$\gamma > 0$. i.e. express $\vec{x}_n$ as a function of $\vec{x}_0$.}
+Use $\vec{x}_0$ to denote the initial condition of where you
+start gradient descent from.
+
+
+
+\Part A state evolution is said to be stable if it does not blow up arbitrarily
+over time. Specifically,
+if state $n$ is $$\vec{x}_n = \mat{B}^n\vec{x}_0$$ then we need \emph{all} the eigenvalues
+of $\mat{B}$ to be less than or equal to $1$ in absolute value, otherwise $\mat{B}^n$
+might blow up $\vec{x}_0$ for large enough $n$.
+
+{\bf When is the state evolution of the iterations you calculated
+above stable when viewed as a dynamical system?}
+
+
+
+\Part We want to bound the progress of gradient descent in
+the general case, when $\vec{b}$ is arbitrary. To do this, we first show a
+slightly more general bound,
+which relates how much the spacing between two points changes if they
+\textit{both} take a gradient step. If this spacing shrinks, this is called a contraction.
+Define $\varphi(\vec{x}) = \vec{x} - \gamma \nabla f(\vec{x})$,
+for some constant step size $\gamma > 0$.
+\textbf{Show that for any} $\vec{x},\vec{x}' \in \mathbb{R}^d$,
+\begin{align*}
+\| \varphi(\vec{x}) - \varphi(\vec{x}') \|_2 \leq \CC \| \vec{x} - \vec{x}'\|_2
+\end{align*}
+where $\beta = \max \left\{ | 1 - \gamma \lambda_{\max}(\mat{A}^\top\mat{A}) |,
+| 1 -\gamma \lambda_{\min}(\mat{A}^\top\mat{A}) | \right\}$.
+Note that $\lambda_{\min}(\mat{A}^\top\mat{A})$
+denotes the smallest eigenvalue of the matrix $\mat{A}^\top\mat{A}$; similarly,
+$\lambda_{\max}(\mat{A}^\top\mat{A})$ denotes the largest eigenvalue of the matrix
+$\mat{A}^\top\mat{A}$.
+
+
+
+
+
+
+\Part \label{pt:x-bound} Now we give a bound for progress after $k$ steps of gradient descent. Define
+$$\vec{x}^* = \arg \min_{\vec{x} \in \mathbb{R}^d} f(\vec{x}).$$
+\textbf{Show that }
+\begin{align*}
+\| \vec{x}_{k+1} - \vec{x}^* \|_2 = \| \varphi(\vec{x}_k) - \varphi(\vec{x}^*) \|_2
+\end{align*}
+\textbf{ and conclude that}
+\begin{align*}
+\| \vec{x}_{k+1} - \vec{x}^* \|_2 \leq \CC^{k+1} \|\vec{x}_0 - \vec{x}^*\|_2.
+\end{align*}
+
+
+
+\Part  However, what we actually care about is progress in the
+objective value $f(\vec{x})$. That is, we want to show how quickly $f(\vec{x})$
+is converging to $f(\vec{x}^*)$. We can do this by relating $f(\vec{x})-f(\vec{x}^*)$ to
+$\|\vec{x}-\vec{x}^*\|_2$; or even better,
+relating $f(\vec{x})-f(\vec{x}^*)$ to $\|\vec{x}_0-\vec{x}^*\|_2$,
+for some starting point $\vec{x}_0$. First, \textbf{show that}
+\begin{align*}
+f(\vec{x}) - f(\vec{x}^*) = \frac{1}{2}\|\mat{A} (\vec{x}-\vec{x}^*)\|_2^2.
+\end{align*}
+
+
+
+\Part {\bf Show that
+\begin{align*}
+f(\vec{x}_k) - f(\vec{x}^*) \leq \frac{\alpha}{2} \|\vec{x}_k-\vec{x}^*\|_2^2,
+\end{align*}
+for $\alpha = \lambda_{\max}(\mat{A}^\top\mat{A})$, and conclude that
+\begin{align*}
+f(\vec{x}_k) - f(\vec{x}^*) \leq \frac{\alpha}{2} \CC^{2k} \|\vec{x}_0-\vec{x}^*\|_2^2.
+\end{align*}
+}
+
+
+
+\Part Finally, the convergence rate is a function of $\CC$, so it's desirable
+for $\CC$ to be as small as possible. Recall that $\CC$ is a function of $\gamma$,
+so we want to pick $\gamma$ such that $\CC$ is as small as possible, as a function of
+$\lambda_{\min}(\mat{A}^\top\mat{A}), \lambda_{\max}(\mat{A}^\top\mat{A})$.
+\textbf{Write the resulting convergence rate as a function of
+$\kappa = \frac{\lambda_{\max}(\mat{A}^\top\mat{A})}{\lambda_{\min}(\mat{A}^\top\mat{A})}$,
+That is, show that}
+\begin{align*}
+	f(\vec{x}_k) - f(\vec{x}^*) &= \frac{\alpha}{2} \left(\frac{\kappa - 1}{\kappa + 1}\right)^{2k} \|\vec{x}_0-\vec{x}^*\|_2^2
+\end{align*}
+
+
+
+
+\end{Parts}
+
+\Question{Sensors, Objects, and Localization}
+In this problem, we will be using gradient descent to solve the
+problem of figuring out where objects are, given noisy distance
+measurements. (This is roughly how GPS works and students who have
+taken EE16A have seen a variation on this problem in lecture and
+lab.)
+
+First, the setup. Let us say there are $m$ sensors and $n$ objects
+located in a two dimensional plane. The $m$ sensors are located at the points
+$(a_1,b_1),\ldots,(a_m,b_m)$. The $n$ objects are located at the
+points $(x_1,y_1),\ldots,(x_n,y_n)$. We have measurements for the
+distances between the sensors and the objects: $D_{ij}$ is the
+measured distance from sensor $i$ to object $j$. The distance
+measurement has noise in it. Specifically, we model $$D_{ij} = ||(a_i,
+b_i)-(x_j,y_j)||+Z_{ij},$$ where $Z_{ij} \sim N(0, 1)$. The noise is
+independent across different measuments.
+
+Code has been provided for data generation to aid your explorations.
+
+For this problem, all Python libraries are permitted.
+
+\begin{Parts}
+\Part Consider the case where $m=7$ and $n=1$. That is, there are $7$
+sensors and $1$ object. Suppose that we know the exact location of the
+$7$ sensors but not the $1$ object. We have $7$ measurements of the
+distances from each sensor to the object $D_{i1}=d_i$ for
+$i=1,\dots,7$. Because the underlying measurement noise is modeled as
+iid Gaussian, the interesting part of the log likelihood function is
+\begin{equation}
+L(x_1,y_1) = -\sum_{i=1}^7(\sqrt{(a_i-x_1)^2+(b_i-y_1)^2}-d_i)^2,
+\end{equation}
+ignoring the constant term. \textbf{Manually compute the symbolic gradient of the log likelihood function, with respect to $x_1$ and $y_1$.}
+
+
+\Part The provided code generates
+  \begin{itemize}
+    \item $m=7$ sensor locations $(a_i, b_i)$ sampled from $N(\vec 0, \sigma_s^2 \mat I)$
+    \item $n=1$ object locations $(x_1, y_1)$ sampled from $N(\vec \mu, \sigma_o^2 \mat I)$
+    \item $mn=7$ distance measurements $D_{i1} = ||(a_i,b_i)-(x_1,y_1)|| + N(0, 1)$.
+  \end{itemize}
+  for $\vec \mu=[0, 0]^T$, $\sigma_s= 100$ and
+  $\sigma_o=100$. \textbf{Solve for the maximum likelihood estimator
+    of $(x_1,y_1)$ by gradient descent on the negative log-likelihood. Report the estimated
+    $(x_1,y_1)$ for the given sensor locations.} Try two approaches
+  for initializing gradient descent: starting at $\vec{0}$ and
+  starting at a random point. Which of the following step sizes is a reasonable one, $1, 0.01, 0.001$ or $0.0001$?
+
+
+
+
+
+
+
+\Part (Local Mimima of Gradient Descent) In this part, we vary the
+location of the single object among different positions: $$(x_1, y_1) \in \{(0,0),(100,100),(200,200),\dots,(900,900)\}.$$ For each choice of $(x_1,y_1)$, \textbf{generate the following data set $10$ times}:
+  \begin{itemize}
+    \item Generate $m=7$ sensor locations $(a_i, b_i)$ from $N(\vec 0,
+      \sigma_s^2 \mat I)$ (Use the same $\sigma_s$ from the previous part.)
+    \item Generate $mn=7$ distance measurements $D_{i1} = ||(a_i,b_i)-(x_1,y_1)|| + N(0, 1)$.
+  \end{itemize}
+ \textbf{For each data set, run the gradient descent methods $100$ times to find a prediction for $(x_1, y_1)$}. We are pretending we do not know $(x_1, y_1)$ and are trying to predict it. For each gradient descent, take $1000$ iterations with step-size $0.1$ and a random initialization of $(x,y)$ from $N(\vec 0, \sigma^2 \mat I),$ where $\sigma=x_1+1$.
+\begin{itemize}
+  \item \textbf{Draw the contour plot of the log likelihood function of a particular data set for $(x_1,y_1)=(0,0)$ and $(x_1,y_1)=(200,200)$.}
+  \item For each of the ten data sets and each of the ten
+          choices of $(x_1, y_1)$, calculate the number of
+            distinct points that gradient descent converges
+            to. Then, for each of the ten choices of $(x_1,y_1)$,
+          calculate the average of the number of distinct points over
+          the ten data sets. \textbf{Plot the average number of local
+            minima against $x_1$.} For this problem, two local minima are considered identical if their distance is within $0.01$.
+
+  Hint: \texttt{np.unique} and \texttt{np.round} will help.
+  \item For each of the ten data sets and each of the ten
+          choices of $(x_1, y_1)$, calculate the proportion of
+          gradient descents which converge to what you believe to be a
+          global minimum (that is, the minimum point in the set of
+          local minima that you have found). Then, for each of the ten choices of $(x_1, y_1)$, calculate the average of the proportion over the ten data sets. \textbf{Plot the average proportion against $x_1$.}
+  \item For the object location of (500, 500) and one trail out of 10 of the data generation, plot the sensor locations, the ground truth object location and the MLE object locations found by 100 times of gradient descent. Do you find any patterns?
+\end{itemize}
+Please be aware that the code might take a while to run.
+
+
+
+\Part Repeat the previous part, except explore what happens as you
+reduce the variance of the measurement noise. {\bf Comment with the same plots justifying your comments.}
+
+For the sake of saving time, you can experiment with only one smaller noise, such as $\calN(0, 0.01^2)$. You might need to change the learning rate to make the gradient descent converge.
+
+
+
+\Part Repeat the part (c) again, except explore what happens as you
+increase the number of sensors. For the sake of saving time, you can experiment with only one number of sensors, such as 20. {\bf Comment with appropriate plots
+  justifying your comments.}
+
+
+
+\Part Now, we are going to turn things around. Instead of assuming
+that we know where the sensors are, suppose that the sensor locations
+are unknown. But we get some training data for $100$ object
+locations that are known. We want to use gradient descent to estimate
+the sensor locations, and then use these estimated sensor locations on
+new test data for objects.
+
+Consider the case where $m=7$ sensors and the training data consists
+of $n=100$ object positions. We have $7$ noisy measurements of the
+distances from each sensor to the object
+$D_{i1}=d_{ij}$ for $i=1,\dots,7;j=1,2,\dots,100$.
+
+Use the provided code to generate
+  \begin{itemize}
+    \item $m=7$ sensor locations $(a_i, b_i)$ sampled from $N(\vec 0, \sigma^2 \mat I)$
+    \item $n=100$ object locations $(x_j, y_j)$ sampled from $N(\vec \mu,
+      \sigma^2 \mat I)$  in 3 datasets: (1) Training data with $\vec \mu =
+      \vec{0}$, (2) Interpolating Test data with $\vec \mu = \vec{0}$, and
+      (3) Extrapolating Test data with $\vec \mu = [300,300]^T$.
+
+    \item $mn=700$ distance measurements $D_{ij} =
+      ||(a_i,b_i)-(x_j,y_j)|| + N(0, 1)$ for each of the data sets.
+	\item Use the same $\sigma$ as before, i.e. $\sigma=100$.
+  \end{itemize}
+Use the first dataset as the training data and the second two as two
+kinds of test data: points drawn similarly to the training data, and
+points drawn in different way.
+
+Use gradient descent to calculate the MLE for the sensor locations $(\hat{a_i},\hat{b_i})$
+given the training object locations $(x_j,x_j)$ and all the pairwise
+training distance measurements $(D_{ij}=d_{ij})$. (Use gradient
+descent with multiple random starts, picking the best estimates as
+your estimate.)
+
+Use these estimated sensor locations as though they were true sensor
+locations to compute object locations for both sets of test data. (Use
+gradient descent with multiple random starts, picking the best
+estimate as your estimated position.) {\bf Report the mean-squared
+  error in object positions on both test data sets. Also report the MSE on the second test set if we know the testing mean is (300, 300) (such that we can have a better initial guess in the gradient descent). }
+
+
+
+\end{Parts}
+
+\Question{Backpropagation Algorithm for Neural Networks}
+
+In this problem, we will be implementing the backprop algorithm to train a neural network to approximate the function
+\begin{align*}
+f(x) = \sin(x).
+\end{align*}
+
+To establish notation for this problem, the output of layer $i$ given the input $\vec a_i$ in the neural network is given by
+\begin{align*}
+\vec a_{i+1} = l_i(\vec a_i) = \sigma(\vec z_i) = \sigma(\mat W_i\vec a_i+\vec b_i).
+\end{align*}
+
+In this equation, $\mat W_i$ is a $n_{i+1}\times m_i$ matrix that maps the input $\vec a_i$ of dimension $m_i$ to a vector of dimension $n_{i+1}$, where $n_{i+1}$ is the size of layer $i+1$ and we have that $m_i=n_{i-1}$.  The vector $\vec{b}_i$ is the bias vector added after the matrix multiplication, and $\sigma$ is the nonlinear function applied element-wise to the result of the matrix multiplication and addition.  $\vec z_i = \mat W_i\vec a_i +\vec{b}_i$ is a shorthand for the intermediate result within layer $i$ before applying the nonlinear activation function $\sigma$. Each layer is computed sequentially where the output of one layer is used as the input to the next.  To compute the derivatives with respect to the weights $\mat W_i$ and the biases $\vec{b}_i$ of each layer, we use the chain rule starting with the output of the network and work our way backwards through the layers, which is where the backprop algorithm gets its name.
+
+You are given starter code with incomplete function implementations.  For this problem, you will fill in the missing code so that we can train a neural network to learn the function $f(x) = \sin(x)$.  The code currently trains a network with two hidden layers with 100 nodes per layer.  Later in this problem, you will be exploring how the number of layers and the number of nodes per layer affects the approximation.
+
+\begin{Parts}
+\Part
+{\bf Start by drawing a small example network with three computational layers, where the last layer has a single scalar output.} The first layer should have a single external input corresponding to the input $x$. The computational layers should have widths of $5$, $3$, and $1$ respectively. The final ``output'' layer's ``nonlinearity'' should be a linear unit that just returns its input. The earlier ``hidden'' layers should have ReLU units. Label all the $n_i$ and $m_i$ as well as all the $\vec a_i$ and $\mat W_i$ and $\vec b_i$ weights. You can consider the bias terms to be weights connected to a dummy unit whose output is always $1$ for the purpose of labeling. You can also draw and label the loss function that will be important during training --- use a squared-error loss.
+
+Here, the important thing is for you to understand your own clear ways to illustrate neural nets. You can follow conventions seen online or in lecture or discussion, or you can modify those conventions to pick something that makes the most sense to you. The important thing is to have your illustration be unambiguous so you can use it to help understand the forward flow of information during evaluation and the backward flow during gradient computations. Since you're going to be implementing all this during this problem, it is good to be clear.
+
+
+
+\Part
+Let's start by implementing the cost function of the network.  This function is used to assign an error for each prediction made by the network during training.  The implementation will be using the mean squared error cost function, which is given by
+\begin{align*}
+\text{MSE}(\hat{\vec{y}})=\frac{1}{2}\sum_{i=1}^n( y_i - \hat{y}_i)^2
+\end{align*}
+where $y_i$ is the observation that we want the neural network to output and $\hat{y}_i$ is the prediction from the network.
+
+\textbf{Write the derivative of the mean squared error cost function with respect to the predicted outputs $\hat{\vec{y}}$.  In \texttt{backprop.py} implement the functions \texttt{QuadraticCost.fx} and \texttt{QuadraticCost.dx}}
+
+
+
+\Part Now, let's take the derivatives of the nonlinear activation functions used in the network.  \textbf{Implement the following nonlinear functions in the code and their derivatives:}
+\begin{align*}
+\sigma_{\text{linear}}(z)=z
+\end{align*}
+
+\begin{align*}
+\sigma_{\text{ReLU}}(z)=\begin{cases}0 & z<0 \\ z & \text{otherwise}\end{cases}
+\end{align*}
+
+\begin{align*}
+\sigma_{\text{tanh}}(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}}
+\end{align*}
+
+For the $\tanh$ function, feel free to use the $\tanh$ function in \texttt{numpy}.  We have provided the sigmoid function as an example activation function.
+
+
+
+
+
+\Part We have implemented the forward propagation part of the network for you (see \texttt{Model.evaluate} in the code). We now need to compute the derivative of the cost function with respect to the weights $\mat W$ and the biases $\vec{b}$ of each layer in the network.  We will be using all of the code we previously implemented to help us compute these gradients.  \textbf{Assume that $\frac{\partial\text{MSE}}{\partial\vec{a}_{i+1}}$ is given, where $\vec{a}_{i+1}$ is the input to layer $i+1$.  Write the expression for $\frac{\partial\text{MSE}}{\partial \vec{a}_i}$ in terms of $\frac{\partial\text{MSE}}{\partial\vec{a}_{i+1}}$.  Then implement these derivative calcualtions in the function \texttt{Model.compute\_gradient}.}  Recall, $\vec{a}_{i+1}$ is given by
+$$\vec a_{i+1} = l_i(\vec a_i) = \sigma(\vec z_i) = \sigma(\mat W_i\vec a_i+\vec{b}_i)$$
+
+
+
+\Part To help you debug, we have implemented a numerical gradient calculator. \textbf{Use the starter code to compare and verify your gradient implementation with the numerical gradient calculator. Include the output numbers comparing the differences between the two gradient calculations in your writeup.}
+
+
+
+\Part Finally, we use these gradients to update the model parameters using gradient descent.  \textbf{Implement the function \texttt{GDOptimizer.update} to update the parameters in each layer of the network.}  You will need to use the derivatives $\frac{\partial\text{MSE}}{\partial \vec{z}_i}$ and the outputs of each layer $\vec{a}_i$ to compute the derivates $\frac{\partial\text{MSE}}{\partial \mat W_i}$ and $\frac{\partial\text{MSE}}{\partial \vec{b}_i}$.  Use the learning rate $\eta$, given by \texttt{self.eta} in the function, to scale the gradients when using them to update the model parameters. Normalize the learning rate by the number of inputs to the network.
+
+
+
+\Part \textbf{Show your results by reporting the mean squared error of the network when using the $ReLU$ nonlinearity, the $\tanh$ nonlinearity, and the linear activation function.  Additionally, make a plot of the approximated $\sin$ function in the range $[-\pi,\pi]$.}  Use the model parameters, the learning rate, and the training iterations provided in the code to train the models.  When you have all of the above parts implemented, you will just need to copy the output of the script when you run \texttt{backprop.py}.
+
+
+
+\Part Let's now explore how the number of layers and the number of hidden nodes per layer affects the approximation.  \textbf{Train a models using the tanh and the ReLU activation functions with $5$, $10$, $25$, and $50$ hidden nodes per layer (width) and $1$, $2$, and $3$ hidden layers (depth)}.  Use the same training iterations and learning rate from the starter code.  \textbf{Report the resulting error on the training set after training for each combination of parameters.}
+
+
+
+\Part {\bf Run a shortcut-training approach that doesn't bother to update any of the weights that are inputs to the hidden layers and just leaves them at the starting random values. All it does is treat the outputs of the hidden layers as random features, and does OLS+Ridge to set the final weights. Compare the resulting approximation by both plots and mean-squared-error values for the 24 cases above (2 nonlinearities times 4 widths times 3 depths). Comment on what you see.}
+
+
+
+\Part \textbf{Bonus:} Modify the code to implement stochastic gradient descent where the batch size is given as a parameter to the function \texttt{Model.train}. \textbf{Choose several different batch sizes and report the final error on the training set given the batch sizes.}
+
+
+
+\Part \textbf{Bonus:} Experiment with using different learning rates.  Try both different constant learning rates and rates that change with the iteration number such as one that is proportional to 1/iteration.  Feel free to change the number of training iterations.  \textbf{Report your results with the number of training iterations and the final error on the training set.}
+
+
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

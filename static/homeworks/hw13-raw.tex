@@ -1,0 +1,643 @@
+\documentclass[preview]{standalone}
+\usepackage{header_problems}
+\usepackage{header_template}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Deliverables:
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the correct sections. Do not simply reference your appendix.
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadvertently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\newcommand{\vf}{v_f}
+\newcommand{\vF}{v_F}
+\newcommand{\Loss}{\mathcal{L}}
+\newcommand{\loss}{\ell}
+\newcommand{\Indi}[1]{\mathbb{I}(#1)}
+\newcommand{\effFspace}{\mathcal{F}(\xn)}
+\newcommand{\effF}{\Func(\xn)}
+\newcommand{\hatfada}[1]{\func^{#1}_{Ada}}
+\newcommand{\hatfgrad}[1]{\func^{#1}}
+\newcommand{\effhatfada}[1]{\vec{\hatfada{#1}}}
+\newcommand{\effhatfgrad}[1]{\vec{\hatfgrad{#1}}}
+\renewcommand{\F}{\mathcal{F}}
+\newcommand{\err}[1]{\epsilon_{#1}}
+\newcommand{\E}{\text{e}}
+\newcommand{\weight}[2]{w_{#1}^{#2}}
+\newcommand{\Xcol}[1]{\vec{\phi}_{#1}(\mat{X})}
+\newcommand{\weakspace}{\mathcal{W}}
+\newcommand{\effweakspace}{\weakspace(\xn)}
+\newcommand{\res}[1]{\vec{r}^{#1}}
+\newcommand{\ind}[1]{i_{#1}}
+\newcommand{\Fspace}{\mathcal{F}}
+\newcommand{\Lossw}{\mathcal{L}_{\vec{w}}}
+\newcommand{\Vspace}{\mathcal{V}}
+\newcommand{\hatF}{\Func_{\text{final}}}
+\renewcommand{\Y}{\mathcal{Y}}
+\newcommand{\fvec}{\vec{{\func}}}
+\newcommand{\Fvec}{\vec{\Func}}
+\newcommand{\xn}{\{\vec{x}\}_{i=1}^n}
+\newcommand{\tilvecv}{\widetilde{\vec{v}}}
+\newcommand{\tilVspace}{\widetilde{\Vspace}}
+\newcommand{\Func}{f}
+\newcommand{\func}{\widetilde{f}}
+
+\Question{Gradient boosting and early stopping}
+
+In this problem we show how the greedy algorithms Matching Pursuit (a
+simplified version of the Orthogonal Matching Pursuit that you might
+have seen in EE16A) and AdaBoost which you have seen in class, can both be
+interpreted as taking steps greedily in a direction which is closest to the negative gradient in a restricted space.
+We start by connecting gradient descent on the square loss with Matching Pursuit.
+
+\paragraph{Gradient descent on square loss}
+So far in lecture, we have considered the squared error loss
+$L(\vec{w}) := \frac{1}{2}\|\vec{y} -\mat{X}\vec{w}\|_2^2$ as a
+function of the variable $\vec w$. When running gradient descent we
+took the derivative of $L$ with respect to $\vec{w}$ and obtained iterations
+\begin{equation}
+  \label{eq:gradupdate}
+    \vec{w}^{t+1} = \vec{w}^t - \alpha_t \mat{X}^\top (\mat{X}\vec{w} - \vec{y})
+\end{equation}
+
+We can substitute $\vec v = \mat X \vec w \in \mathbb{R}^n$ and
+equivalently consider the loss function as a map $\Loss : \Vspace \mapsto \R$ mapping
+from the Euclidean space
+$\Vspace = \R^n$ to real values:
+\begin{align*}
+  \Loss(\vec{v}) &= \frac{1}{2} \Vert \vec y - \vec v \Vert^2.
+\end{align*}
+In order to minimize this new loss $\Loss$ with respect to $\vec v$, 
+we could imagine simply running gradient descent on this loss as follows:
+\begin{align}
+\label{eq:gd_on_v}
+  \vec v^{t+1} = \vec v^t - \alpha_t \nabla_{\vec v} \Loss(\vec v) |_{\vec v = \vec v^t},
+\end{align}
+for some suitably chosen step size $\alpha_t > 0$.
+
+\begin{Parts}
+
+\Part             {\bf Compute the gradient $\nabla_{\vec v} \Loss(\vec v)$. Write down the gradient descent update for $\vec{v}^{t+1}$.}
+    
+    {\bf What is the gradient $\nabla_{\vec v} \Loss(\vec v)$
+      evaluated at $\vec v = \mat X \vec w$ which we denote as
+      $\nabla_{\vec v} \Loss(\vec v)\big\vert_{\vec v =
+        \mat{X}\vec{w}}$?  For $\vec v^t = \mat X \vec w^t$, compute
+      the expression for $\vec v^{t+1}$ using
+      update~\eqref{eq:gd_on_v}.}
+
+  Now we compare this update with the one obtained by running the
+  gradient descent update of $\vec{w}$ on the loss $L$. In particular,
+  using equation~\eqref{eq:gradupdate}, {\bf write down the expression
+    for $\mat X \vec w^{t+1}$.
+            How do you interpret the difference between the updates $\mat{X} \vec{w}^{t+1}$  and $\vec{v}^{t+1}$?} Think in terms of underlying subspaces in $\R^d$ in which the updates lie.
+
+
+                            
+
+
+
+\Part As we see in the previous part, the updates
+  $\mat{X}\vec{w}^{t+1}$ and $\vec{v}^{t+1}$ derived by taking
+gradients of $L$ and $\Loss$ respectively, are not equivalent.  In
+general, we may not be able to run the gradient
+updates~\eqref{eq:gd_on_v} exactly, as there might be constraints on
+the update we want to make. Sometimes, these constraints are
+consequences of the problem formulation (in the previous part for
+example, we wanted a linear fit for $y$ depending on
+$\vec{x}$). Sometimes, there are further constraints that come from
+computational considerations, as in the follow-up parts dealing with
+AdaBoost). In this problem, we will see that if instead
+of~\eqref{eq:gd_on_v} we take a direction closest to the gradient in
+some restricted space, both procedures actually match.
+
+  In the specific example of linear regression, we want
+  to find a vector $\tilvecv^t$ which can be expressed as a linear
+  function of our data matrix $\mat{X}$. For this purpose we restrict our
+  search space to the column space of $\mat{X}$ (a subspace of $\R^n$)
+  in which all vectors $\tilvecv$ can be expressed by $\tilvecv
+  =\mat{X}\vec{w}$ for some vector $\vec{w}$ which has norm smaller than one (we'll see later why this is necessary), i.e. the set
+  \begin{equation*}
+  \widetilde{\Vspace} = \{\tilvecv = \mat{X}\vec{w}: \|\vec{w}\|_2 \leq 1, \vec{w} \in \R^d \} \subset \Vspace.
+\end{equation*}
+
+  Notice that the gradient of $\Loss$
+with respect to $\vec v^{t}$ need not be in this smaller subspace,
+i.e. $\nabla_{\vec{v}} \Loss(\vec{v}^t) \not \in \widetilde{\Vspace}$.
+In that case, we consider a greedy strategy: We first
+find the direction in $\widetilde{\Vspace}$ which best aligns with 
+the negative gradient. That is at each iteration, we find
+\begin{align}
+  \label{eq:gradpara}
+    \vec{\widetilde{v}}^t = \argmax_{\tilvecv \in \widetilde{\Vspace}} \langle - \nabla \Loss(\vec{v}^t), \tilvecv  \rangle.
+\end{align}
+and then compute $\vec v^{t+1}$ using the update equation 
+\begin{align}
+\label{eq:1storderupdate}
+  \vec v^{t+1} = \vec v^t + \alpha_t \widetilde{\vec v}^t,
+\end{align}
+for an appropriate choice of step size $\alpha_t$, where $\widetilde{\vec {v}}^t$ now belongs to the subset $\tilVspace$.
+We now show how this new procedure yields updates in the same direction
+as performing the gradient step with respect to $\vec w$ explicitly.
+
+Again assume that the current iterate is given by $\vec v^t = \mat X
+\vec w^t$ for some vector $\vec w^t$.  Now, using
+equation~\eqref{eq:gradpara} and the expression for $\nabla_{\vec v}
+\Loss(\vec{v})\big \vert_{\vec{v} = \mat{X}\vec{w}^t}$ derived
+previously, {\bf show that $\tilvecv^t$ in~\eqref{eq:gradpara} is
+  exactly aligned with the vector $-\mat{X} \mat X^\top (\mat X \vec
+  w^t - \vec y)$ (i.e. they are the same up to some constant scalar).
+  Now write the update equation~\eqref{eq:1storderupdate} in terms of
+  $\mat X, \vec w^t, \vec y $ and $\alpha_t$.}
+          Thus, we have seen that gradient descent on the losses
+  $L$ and $\Loss$ are essentially the same (and in fact the same if
+  adjusting the stepsize $\alpha_t$ accordingly) by choosing the set
+  $\widetilde{\Vspace}$ accordingly.\\
+
+Hint: For any function $h$ mapping to a scalar you may use that
+\begin{equation*}
+  \argmax_{\vec{v} = \mat{X}\vec{w}: \|\vec{w}\|_2 \leq 1}h(\vec{v}) = \mat{X}\argmax_{\|\vec{w}\|_2\leq 1} h(\mat{X}\vec{w}).
+\end{equation*}
+
+
+
+
+\Part \emph{Towards Matching Pursuit in the gradient descent framework} In this
+  problem we are going to interpret the direction-selection part of
+  Matching Pursuit as a general gradient-type  method as described in
+  (b) for an appropriate choice of the set $\widetilde{\Vspace}$.
+
+As you have learned in lecture and discussion, Orthogonal Matching
+Pursuit is a greedy method to pick relevant coordinates that can 
+explain the data best. It searches for a direction (among the columns)
+such that the residual error can be explained best and updates the
+entire fit in the augmented space. Matching Pursuit (MP) is a simpler variant
+where the entire fit is not updated at every step, just the fit along
+the new coordinate that was chosen.
+
+Let $\mat{X} \in \R^{n\times d}$ be the training feature matrix, $\vec{y}$ the
+observed training target variables from which we want to infer (potentially
+sparse) weights $\vec{w} \in \R^d$.  At every iteration $t$, MP picks
+the column of $\mat{X}$ with maximal absolute inner product with the
+current residual $\res{t} = \vec{y} - \mat{X}\vec{w}^t$, i.e.
+\begin{equation}
+  \label{eq:bestind}
+  \ind{t}
+  = \argmax_{i=1,\dots,d}|\langle \res{t}, \Xcol{i}\rangle|.
+\end{equation}
+where $\mat{X} \in \R^{n\times d}$ is the data matrix with columns $\Xcol{i}$ and rows $\vec{x}_1,\dots, \vec{x}_n$, i.e. $\mat{X} = (\vec{x}_1, \dots, \vec{x}_n)^\top = (\Xcol{1},\dots, \Xcol{d})$.
+Note that $\vec x_i$ denotes the $i$-th data point
+and $\Xcol{i}$ denotes the vector of the $i$-th features of all the
+data points (i.e. the $i$-th column of the data matrix $\mat{X}$).
+
+The updates of MP at each iteration $t$ then read
+\begin{equation}
+\label{eq:mp_update}
+  \mat{X}\vec{w}^{t+1} = \mat{X}\vec{w}^t 
+  + \frac{\langle \res{t}, \Xcol{\ind{t}}\rangle}{\|\Xcol{\ind{t}}\|^2} \Xcol{\ind{t}}.
+\end{equation}
+
+Now your task in this part is to establish the correspondence between
+the MP selection rule \eqref{eq:bestind} and the general approach in
+(restricted) gradient descent given by \eqref{eq:gradpara}. 
+
+In particular, set $\vec v^t = \mat X \vec w^t$ and {\bf find the
+set $\widetilde{\Vspace}$ such that the selection represented by
+\eqref{eq:bestind} can be understood as just being \eqref{eq:gradpara}
+in action with $\tilvecv^t = \sign(\langle \res{t}, \Xcol{\ind{t}}\rangle) \Xcol{\ind{t}}$.}
+
+Hint: don't forget how to deal with the absolute value.
+
+
+
+
+\Part In traditional gradient descent, the rule for choosing the
+step-size $\alpha_t$ is left open. One way of doing this is adaptively
+by \emph{linesearch} --- picking the step-size $\alpha$ that reduces the loss
+the most. Formally, choosing stepsize $\alpha_t$ via linesearch with respect to the search direction $\tilvecv^t$ at each iteration for a loss $\Loss$ means finding the best $\alpha$ such that  $\alpha_t = \arg \min_{\alpha \geq 0} \Loss(\Fvec^t(\xn) + \alpha \tilvecv^t)$.
+{\bf Argue that the update~\eqref{eq:1storderupdate} with
+  $\tilvecv^t$ computed using equation~\eqref{eq:gradpara} and
+  linesearch for $\alpha_t$ is the same as doing the MP update~\eqref{eq:mp_update}. }
+
+      
+
+
+
+
+
+  
+  
+\Part (BONUS) \emph{MP as gradient boosting}
+The two previous greedy principles of matching-pursuit (column selection and
+linesearch) can be extended to more general settings of non-linear and
+non-parametric function classes $\Fspace$ and general loss functions
+$\Loss$ (which need not be squared loss). Consider the general
+learning problem where again we are given a bunch of pairwise training
+samples in the form of $(\vec{x}_i,y_i)$ for $i=1,\dots,n$, with
+$\vec{x}_i \in \R^d$ and $y_i\in \Y \subset \R$ and we want to learn a
+function $\Func: \R^d \to \Y$ from a function space $\Fspace$ (with
+possibly non-linear and non-parametric basis elements, such as trees)
+which we can then use to predict $y_{test}$ by $\Func(\vec{x}_{test})$
+for a test sample $\vec{x}_{test}$.
+
+  For this purpose we minimize the following (average) loss $\Loss:
+  \R^n \to \R$
+  \begin{equation*}
+    \Loss(\Fvec(\xn)) =\Loss(\Func(\vec{x}_1), \dots, \Func(\vec{x}_n)) = \frac{1}{n}\sum_{i=1}^n \loss(y_i, \Func(\vec{x}_i)).
+  \end{equation*}
+  for some point-wise loss function $\loss : \Y \times \Y \mapsto \mathbb{R}$
+  for one sample. Notice that the loss maps a vector to a scalar, as in
+  the linear settings.
+  Here, we use $\Fvec(\xn) := (\Func(\vec{x}_1), \dots, \Func(\vec{x}_n))$
+  to denote the vector of function values of $f \in \Fspace$ at the points $\vec{x}_1,\dots,\vec{x}_n$.
+  
+
+  As in gradient descent~\eqref{eq:1storderupdate}, we want to
+  minimize the loss using an iterative algorithm with updates of the
+  form
+\begin{equation*}
+  \Func^{t+1} = \Func^t + \alpha_t \hatfgrad{t}.
+\end{equation*}
+
+ Note that our notation follows the
+convention that $\Func^t \in \Fspace$ is the current iterate and $\func^t \in \weakspace$ is the direction that we are adding at each step. The main question is how to choose $\hatfgrad{t}$.
+Let's assume that it is for example computationally much simpler to
+search over a smaller set of functions $\weakspace \subset \Fspace$ at
+each timestep. 
+
+Similar to the parametric update in~\eqref{eq:gradpara},
+we then choose the function $\func \in \weakspace$ for which the function value vector $\fvec(\xn)$ has the maximal inner product with the negative gradient, i.e.
+\begin{equation}
+  \label{eq:fgrad}
+  \hatfgrad{t} =  \arg \max_{\func \in \weakspace} \langle - \nabla \Loss(\Fvec^t(\xn)), \fvec(\xn) \rangle 
+\end{equation}
+where the gradient $\nabla \Loss(\Fvec^t(\xn)), \fvec(\xn) = \nabla_{\vec{v}} \Loss(\vec{v})\big\vert_{\vec{v} = \Fvec^t(\xn)}$ which you have already computed above for the square loss.
+
+Now we want to see how Matching Pursuit can be viewed as an instance
+of this framework, also called \emph{gradient boosting} or
+\emph{functional gradient descent}.  Specifically, {\bf show that the particular
+  choices of
+\begin{equation*}
+  \Fspace = \{\Func(\vec{x}) = \vec{w}^\top \vec{x} : \vec{w} \in \R^d\} \text{ and }\:
+  \weakspace = \{\func(\vec{x}) = \pm \vec{e}_i^\top \vec{x} : i = 1, \dots, d\},
+\end{equation*}
+where $\vec{e}_i$ is the $i$-th standard basis element with a $1$ in
+the $i$-th position and zeros elsewhere, yield Matching Pursuit as a form of gradient boosting.} Notice that $\Fspace$ is the function space of all linear functions and $\weakspace$ is the set of functions on vectors $\vec{x} \in \R^d$ which pick out signed coordinates of $\vec{x}$. \\
+
+
+Hint: For matching pursuit, what are $\effhatfgrad{t}(\xn)$ and $\Fvec^t(\xn)$? 
+
+
+
+\Part (BONUS) \emph{AdaBoost as gradient boosting} Now let's have a
+  look at non-linear and non-parametric functions such as decision
+  trees for classification. In this problem we will establish that
+  AdaBoost is also an instance of gradient boosting on a
+  particular loss function (which is not the zero-one loss!).
+
+Notice how each decision tree can be viewed as a function $\func: \R^d
+\to \{-1,+1\}$. Since in each iteration we fit a tree to the weighted
+samples, our function set $\weakspace$ now corresponds to the set
+of decision trees with a fixed set of parameters.
+
+Remember the AdaBoost algorithm from lecture and the last homework.
+At each iteration $t$, it upweights each sample $i$ by a different
+$\weight{i}{t}$ in every iteration and finds a new
+tree which solves the reweighted classification problem
+\begin{equation*}
+\hatfada{t} =  \arg \min_{\func \in \weakspace} \sum_{i=1}^n \weight{i}{t} \Indi{y_i\neq \func(\vec{x}_i)}
+ \text{ where } \: \weight{i}{t} = \frac{\exp(-y_i \Func^t(\vec{x}_i))}{\sum_{i=1}^n \exp(-y_i \Func^t(\vec{x}_i))}
+\end{equation*}
+where $\Func^t$ is a linear combination of functions in $\weakspace$
+found by previous iterations and $\Indi{A} = 1$ if $A$ is true and $0$
+otherwise (the indicator function). Notice that the samples which the
+current classifier $\Func^t$ gets wrong are assigned a larger weight.
+
+The update for the overall classifier reads
+\begin{equation}
+\label{eq:AdaUpdate}
+\Func^{t+1} = \Func^t + \alpha_t \hatfada{t} 
+\end{equation}
+The classification rule is then obtained by taking the sign of the final
+iterate at time $\tau$, i.e. $\hatF(\vec{x}) = \sign(\Func^{\tau}(\vec{x}))$
+which lies in a bigger space $\Fspace \supset \weakspace$.
+
+
+
+
+{\bf Show that $\effhatfada{t}(\xn) = \effhatfgrad{t}(\xn)$ in the gradient boosting framework~\eqref{eq:fgrad} for the loss $\ell(y,\Func(\vec{x})) = \E^{-y\Func(\vec{x})}$}. This implies that finding the best fit for the reweighted samples is equivalent to fitting the gradient. For the gradient in~\eqref{eq:fgrad}, notice that we again view $\Loss$ as a function of a vector $\vec{v}$ and the gradient $\nabla \Loss(\Fvec^t(\xn)) = \nabla_{\vec{v}} \Loss(\vec{v})\big\vert_{\vec{v} = \Fvec^t(\xn)}$.
+
+    Hint: Now note that for $y \in \{-1,+1\}$ and $\func: \R^d \to \{-1,+1\}$, we have
+  \begin{equation}
+    \label{eq:same}
+    y_i \func(\vec{x}_i) = 2 (1-\Indi{y_i \neq \func(\vec{x}_i)}) - 1.
+  \end{equation}
+
+
+  Hint: Recall that the maximizer does not change if you scale by or add to the function a constant factor which is independent of the object you are searching over, i.e.
+  \begin{equation*}
+    \argmax_{\func \in \weakspace} C H(\fvec(\xn)) + G(\Fvec(\xn)) = \argmax_{\func\in\weakspace} H(\fvec(\xn))
+  \end{equation*}
+  for some functions $H, G$ that depend on the function value vectors $\Fvec, \fvec$, and a scalar $C \in\R$. $\Fvec$ does not depend on $\func$.
+
+  
+    
+
+
+\Part (BONUS) \emph{AdaBoost weight as linesearch stepsize} In this problem we show that the weights used in the AdaBoost algorithm at each time step $t$ correspond to the ``best'' stepsize in the direction $\hatfada{t}$ using linesearch.
+
+  Let's define the error of the classifier $\hatfada{t}$ as $\err{t} = \sum_{i=1}^n \weight{i}{t} \Indi{y\neq \hatfada{t}(\vec{x}_i)}$. In practice, AdaBoost uses the stepsize  $\alpha_t = \frac{1}{2} \ln \frac{1-\err{t}}{\err{t}}$.
+
+  {\bf Show that the AdaBoost stepsize at any time $t$ corresponds to the stepsize chosen via linesearch for the direction $\tilvecv = \effhatfada{t}(\xn)$.}
+
+    
+
+\Part Now we will explore how gradient boosting does in practice for both examples we have theoretically studied in the previous sections: Matching Pursuit and AdaBoost. In particular, we will see how the number of updates, equivalent to the number of trees that we are fitting, effects the test and training error.
+
+ We have written some code (see the file: \texttt{adaboost.py}) that trains several classifiers on the Spam dataset you worked with last week. {\bf Run the code for this part of the question.} It generates a training error plot that uses several different decision trees (depths 1, 2, and 4) as well as several AdaBoost-trained classifiers, each built off of one of these decision tree classifiers. {\bf 
+Do you see a trend in the performance of different trees by themselves?
+Do you observe a trend in the training error as you use deeper trees for AdaBoost?
+Why might this happen?}
+
+
+
+\Part Now we examine the test error, and compare against a baseline classifier (a decision tree of depth 9). {\bf Run the code for this part. Is there a difference in the training and test error? Which decision tree depth works best for AdaBoost? Explain your observations.}
+
+
+
+
+\Part
+In the last part, you noticed that the test error decreases as a function of boosting iterations in the beginning but eventually it starts to increase when the number of decision trees in Adaboost is pretty large. 
+In practice, this phenomenon motivates us to stop training early and limit the number of classifiers used in a boosting setting. 
+Here ``stopping early'' means that training error has not reduced to
+zero but we have stopped training! Refer to the plot from the
+  previous part and answer: {\bf Do you think limiting the number of base classifiers used for AdaBoost would help? Which base classifier can we run more boosting iterations on before the test error starts increasing? Justify your answer intuitively.}
+
+
+
+\Part
+
+In this part, we connect this phenomenon to matching pursuit. The
+provided code generates a synthetic dataset: 
+$$\y_{\text{train}}, \y_{\text{test}} \in \R^n$$
+$$\mat X_{\text{train}}, \mat X_{\text{test}} \in \R^{n\times d}$$
+$$\w \in \R^d,$$
+
+ with (for both test and train data) $$ \y = \mat{X}\w + \vec{z}. $$
+ Here, $\w$ is a sparse vector (it has only a few non-zero entries) and $\vec z$ denotes noise. Given the observations $\vec y_{\text{train}}$ and the feature matrix $\mat X_{\text{train}}$, we are tasked with finding a sparse solution $\hat{\vec w}$ for which we use the matching pursuit algorithm. 
+
+Let $\hat{\vec w}^t_{\text{MP}}$ denote the estimate of $\vec w$ recovered by MP after $t$-iterations.
+The code also plots the training error $\Vert \vec y_{\text{train}} - \mat X_{\text{train}}  \hat{\vec w}^t_{\text{MP}}\Vert^2$ and the test error $\Vert\vec y_{\text{test}} - \mat X_{\text{test}} \hat{\vec w}^t_{\text{MP}} \Vert^2$ as a function of iterations $t$ (as $t$ increases matching pursuit builds an estimate using a greater number of features).
+{\bf Run the code for this part. Explain the shape of the training error plot.  Does the plot for test error look similar to the one from part (i)? Comment on the similarities. } You may use conclusions obtained in previous parts to justify your comments.
+
+
+  
+\end{Parts}
+
+\Question{CNNs on Fruits and Veggies}
+In this problem, we will use the dataset of fruits and vegetables that
+was collected in HW5. The goal is to accurately classify the
+produce in the image. In prior homework, we explored how to select features and then use linear classification to learn a function. We will now explore using Convolutional Neural Networks to optimize feature selection jointly with learning a classification policy.
+
+Denote the input state $x \in \mathbb{R}^{90 \times 90 \times 3}$,
+which is a down sampled RGB image with the fruit
+centered in it. Each data point will have a corresponding class label,
+which corresponds to their matching produce. Given 25 classes, we can
+denote the label as $y \in \lbrace 0,...,24 \rbrace$.
+
+The goal of this problem is twofold. First you will learn how to implement a Convolutional Neural Network (CNN) using TensorFlow. Then we will explore some of the mysteries about why neural networks work as well as what they do in the context of a bias variance trade-off.
+
+Note all python packages needed for the project, will be imported already. {\bf DO NOT import new Python libraries.} Also, this project will be computationally expensive on your computer's CPU. Please use the free EC2 credit if you do not have a strong computer. The instructions for EC2 are on Piazza thread \href{https://piazza.com/class/jc8np1307m34ha?cid=391}{@391}. The dataset for this project can be download \href{https://drive.google.com/file/d/1IEW0zW_37YQQ1Za5kyteu08y06EzIQgD/view}{\textcolor{red}{here(link)}}. We recommend using Tensorflow version 1.6.0 with Python3 interface.
+
+
+\begin{Parts}
+\Part To begin the problem, we need to implement a CNN in TensorFlow. In order to reduce the burden of implementation, we are going to use a TensorFlow wrapper known as $slim$.   In the starter code is a file named $cnn.py$, the network architecture and the loss function are currently blank. Using the slim library, you will have to write a convolutional neural network that has the following architecture:
+
+\begin{enumerate}
+\item Layer 1: A convolutional layer with 5 filters of size $15$ by $15$
+\item Non-Linear Response: Rectified Linear Units
+\item A max pooling operation with filter size of $3$ by $3$
+\item Layer 2: A Fully Connected Layer with output size $512$.
+\item Non-Linear Response: Rectified Linear Units
+\item Layer 3: A Fully Connected Layer with output size $25$ (i.e. the class labels)
+\item Loss Layer: Softmax Cross Entropy Loss
+\end{enumerate}
+
+
+In the file $example\_cnn.py$, we show how to implement a network in TensorFlow Slim. Please use this as a reference. Once the network is implemented {\bf run the script $test\_cnn\_part\_a.py$ on the dataset and report the resulting confusion matrix}.  The goal is to ensure that your network compiles, but we should not expect the results to be good because it is randomly initialized.
+
+
+
+
+
+
+
+\Part The next step to train the network is to complete the pipeline which loads the datasets and offers it as mini-batches into the network. {\bf Fill in the missing code in $data\_manager.py$ and report your code.}
+
+
+
+\Part We will now complete the iterative optimization loop. Fill in the missing code in $trainer.py$ to iteratively apply SGD for a fix number of iterations. In our system, we will be using an extra momentum term to help speed up the SGD optimization.  {\bf Run the file $train\_cnn.py$ and report the resulting chart.}
+
+
+
+
+\Part We have seen that the convolutional neural network can achieve a good performance on this dataset. However, we are not sure about whether a fully connected neural network could do the same job. We would like to replace the layers (a)-(c) in the original network by a fully connected layer and a ReLU layer. We want to have approximately the same number of parameters between layer (a) in the original network and the new fully connected layer. \textbf{How many hidden units will the new fully connected layer has? You can round up fractional numbers to the nearest integer. Do you observe any wierd design about this new network?}
+
+Hint: For a convolution layer with input size $W\times H \times C$ and $N$ convolution filters with each of them having a size of $X \times Y$, it has $C \times X \times Y \times N$ parameters.
+
+
+
+\Part \textbf{Implement the fully connected network in part (d) and redo part (c). How's the performance of the fully connected network? }
+
+
+
+
+
+\Part To better understand, how the network was able to achieve the best performance on our fruits and veggies dataset. It is important to understand that it is learning features to reduce the dimensionality of the data. We can see what features were learned by examining the response maps after our convolutional layer.
+
+The response map is the output image after the convolutional has been applied. This image can be interpreted as what features are interesting for classification. {\bf Fill in the missing code in $viz\_features.py$ and report the images specified}.
+
+
+
+
+\Part Given that our network has achieved high generalization with such low training error, it suggests that a high variance estimator is appropriate for the task. To better understand why the network is able to work, we can compare it to another high variance estimator such as K-nearest neighbors. {\bf Fill in the missing code in $nn\_classifier.py$ and report the performance as the numbers of neighbors is swept across when $train\_nn.py$ is run.}
+
+
+
+
+
+
+
+\end{Parts}
+
+\Question{Running Time of $k$-Nearest Neighbour Search Methods}
+
+The method of $k$-nearest neighbours is a fundamental building block of machine learning algorithms. A classic example is the $k$-nearest
+neighbour classifier, which is a non-parametric classifier that finds the $k$ closest examples in the training set to the test example and outputs the most common label among the $k$ nearby examples as its prediction. Generating predictions using this classifier requires an algorithm to find the $k$ closest examples in a possibly large and high-dimensional dataset, which is known as the $k$-nearest neighbour search problem. More precisely, given a set of $n$ points, $\mathcal{D}=\{\vec{x}_{1}\ldots,\vec{x}_{n}\}\subseteq\mathbb{R}^{d}$ and a query point $\vec{z}\in\mathbb{R}^{d}$, the problem requires finding $k$ points in $\mathcal{D}$ that are the closest to $\vec{z}$ in Euclidean distance.
+
+\begin{Parts}
+\Part First, we consider the na\"{i}ve exhaustive search algorithm, which exhaustively computes the distance between $\vec{z}$ and all points in $\mathcal{D}$ and returns the $k$ points with the shortest distance. {\bf What is the (average case) time complexity for computing distances between the query and all points, finding the $k$ shortest distances using quickselect? What is the (average case) time complexity of running the overall algorithm for a single query? Simplify the resulting expression and explain the reasoning behind the simplification. }
+
+
+
+\Part Decades of research have focused on devising a way of preprocessing the data so that the $k$-nearest neighbours for each query can be found efficiently. ``Efficient'' means the time complexity of finding the $k$-nearest neighbours, is lower than that of the na\"{i}ve exhaustive search algorithm. Since complexity of exhaustive search scales linearly in $n$, the complexity of a more efficient algorithm must grow more slowly than linearly as $n$ increases; in other words, its complexity must be sublinear in $n$.
+
+Many efficient algorithms for $k$-nearest neighbour search rely on a divide-and-conquer strategy known as space partitioning. The idea is to divide the vector space into cells and maintain a data structure that keeps track of the points that lie in each. Then, to find the $k$-nearest neighbours of a query, these algorithms look up the cell that contains the query and obtain the subset of points in $\mathcal{D}$ that lie in the cell and adjacent cells. They then perform exhaustive search over this subset, i.e the distances from each point in the subset and the query are computed and the $k$ points in the subset that are the closest to the query are returned.
+
+For simplicity, we'll consider the special case of $k = 1$ in the following questions, but note that the various algorithms we'll consider can be easily extended to the setting with arbitrary $k$. We first consider a simple partitioning scheme, where we place a Cartesian grid (a rectangular grid consisting of hypercubes) over the vector space.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{src/problems/k_nn_running_time/partitioning}
+    \caption{Illustration of the space partitioning scheme we consider. The data points are shown as blue circles and the query is shown as the red square. The cell boundaries are shown as gold lines.}
+\end{figure}
+
+
+{\bf How many cells need to be searched in total if the data points are one-dimensional? Two-dimensional? $d$-dimensional? If each cell contains one data point, what is the time complexity for finding the 1-nearest neighbour in terms of $d$, assuming accessing any cell takes constant time?}
+
+
+
+\Part In low dimensions, $3^{d}$ is much less than $n$, and so this method provides a significant speedup over na\"{i}ve exhaustive search. However, in moderately high dimensions, because time complexity is exponential in dimensionality, $3^{d}$ can easily exceed $n$; in this case, the number of points retrieved from neighbouring cells is simply $n$, and so this method would not provide any speedup over exhaustive search. So, if we account for the total number of points in the dataset, the query time complexity is $O(d\;\min(3^{d},n))$. This exponential dependence on $d$ arises in many settings, and is often known as \emph{the curse of dimensionality}.
+
+How do we overcome the curse of dimensionality? Since it arises from the need to search adjacent cells, what if we don't have cells at all?
+
+Consider a new approach that simply projects all data points along a uniformly randomly chosen direction and keeps all projections of data points in a sorted list. To find the 1-nearest neighbour, the algorithm projects the query along the same direction used to project the data points and uses binary search to find the data point whose projection is closest to that of the query. Then it marches along the list to obtain $\tilde{k}$ points whose projections are the closest to the projection of the query. Finally, it performs exhaustive search over these points and returns the point that is the closest to the query. This is a simplified version of an algorithm known as Dynamic Continuous Indexing (DCI).
+
+Because this algorithm is randomized (since it uses a randomly chosen direction), there is a non-zero probability that it returns the incorrect results. We are therefore interested in how many points we need to exhaustively search over to ensure the algorithm succeeds with high probability. Equivalently, we'd like to upper bound the failure probability in terms of the number of points to search over.
+
+The probability we consider first is the probability that a data point that is originally far away appears closer to the query under projection than a data point that is originally close. We can assume without loss of generality that the query is at the origin. Hence this probability is the same as the probability of a long vector appearing shorter than a short vector under projection. Let $\vec{v}^{l}\in\mathbb{R}^{d}$ and $\vec{v}^{s}\in\mathbb{R}^{d}$ denote the long and short vectors respectively and $\vec{u}\in S^{d-1}\subset\mathbb{R}^{d}$ denote a vector drawn uniformly randomly on the unit sphere.
+
+Assuming that $\vec{v}^{l}$ and $\vec{v}^{s}$ are not collinear, consider the plane spanned by $\vec{v}^{l}$ and $\vec{v}^{s}$, which we will denote as $P$. (If $\vec{v}^{l}$ and $\vec{v}^{s}$ are collinear, we define $P$ to be the subspace spanned by $\vec{v}^{l}$ and an arbitrary vector that's linearly independent of $\vec{v}^{l}$.) For any vector $\vec{w}$, we use $\vec{w}^{\parallel}$ and $\vec{w}^{\perp}$ to denote the components of $\vec{w}$ in $P$ and $P^{\perp}$ such that $\vec{w}=\vec{w}^{\parallel}+\vec{w}^{\perp}$.
+
+For $\vec{w}\in\{\vec{v}^{s}\vphantom{v^{l}},\vec{v}^{l}\}$, because $\vec{w}^{\perp}=0$, $\langle\vec{w},\vec{u}\rangle=\langle\vec{w},\vec{u}^{\parallel}\rangle$. So, $\mathrm{Pr}\left(\left|\langle\vec{v}^{l},\vec{u}\rangle\right|\leq\left|\langle\vec{v}^{s}\vphantom{v^{l}},\vec{u}\rangle\right|\right)=\mathrm{Pr}\left(\left|\langle\vec{v}^{l},\vec{u}^{\parallel}\rangle\right|\leq\left|\langle\vec{v}^{s}\vphantom{v^{l}},\vec{u}^{\parallel}\rangle\right|\right)$. {\bf If we use $\theta$ denote the angle of $\vec{u}^{\parallel}$ relative to $\vec{v}^{l}$, show that this quantity is at most $\mathrm{Pr}\left(\left|\cos\theta\right| \leq \left\Vert \vec{v}^{s}\vphantom{v^{l}}\right\Vert _{2} / \left\Vert \vec{v}^{l}\right\Vert _{2}\right)$.}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{src/problems/k_nn_running_time/dist_proj}
+    \caption{Examples of ``good'' and ``bad'' projection directions. The plot shows the plane $P$ spanned by $\vec{v}^{l}$ and $\vec{v}^{s}$. The vectors $\vec{v}^{l}$ and $\vec{v}^{s}$ are shown as black arrows. The blue lines denote possible projection directions $\vec{u}^{\parallel}$. The isolated blue line represents a ``good'' projection direction, since the projection of $\vec{v}^{l}$ is longer than the projection of $\vec{v}^{s}$ (both shown in green), thereby preserving the relative order between $\vec{v}^{l}$ and $\vec{v}^{s}$ in terms of their lengths after projection. Any projection direction within the shaded region is a ``bad'' projection direction, since the projection of $\vec{v}^{l}$ would not be longer than the projection of $\vec{v}^{s}$, thereby inverting the relative order between $\vec{v}^{l}$ and $\vec{v}^{s}$ after projection. Two examples of such projection directions are shown, which lie on the boundaries of the shaded region. Along each of these directions, the projection $\vec{v}^{l}$ and the projection of $\vec{v}^{s}$ are of equal length (both of which are shown in red). The area of the shaded region represents the order-inversion probability.}
+\end{figure}
+
+
+
+\Part {\bf Derive the range of $\theta$ such that $\left|\cos\theta\right| \leq \left\Vert \vec{v}^{s}\vphantom{v^{l}}\right\Vert _{2} / \left\Vert \vec{v}^{l}\right\Vert _{2}$ and show that \\
+$\mathrm{Pr}\left(\left|\cos\theta\right| \leq \left\Vert \vec{v}^{s}\vphantom{v^{l}}\right\Vert _{2} / \left\Vert \vec{v}^{l}\right\Vert _{2}\right) = 1-\frac{2}{\pi}\cos^{-1}\left(\left\Vert \vec{v}^{s}\vphantom{v^{l}}\right\Vert _{2}/\left\Vert \vec{v}^{l}\right\Vert _{2}\right)$. }
+
+Hint: Due to rotational invariance of a uniform distribution on the sphere, the angle between $\vec{u}^{\parallel}$ and any vector in $P$ is uniformly distributed.
+
+
+
+\Part The part above shows that the relative ordering of two data points is more likely to flip if their distances to the query are not very different. So, intuitively, the nearest neighbour search problem is harder if all data points are almost equidistant from the query. More concretely, we can consider a dataset consisting of many points on a sphere and a single point placed at a location we will choose later. For a query placed at the centre of the sphere, the 1-nearest neighbour search problem is easy if the single data point is placed near the centre, since it is much closer to the query than the other data points. On the other hand, if it is placed near the surface of the ball but still inside the ball, the problem is much harder since the single data point is only slightly closer to the query than the other data points and so is a much closer call. Therefore, the intrinsic hardness of the problem is characterized by the distribution of distances to the query.
+
+The algorithm would fail to return the correct set of $1$-nearest neighbour if more than $\tilde{k}-1$ points appear closer to the query than the 1-nearest neighbour under projection. The following lemma is useful:
+
+\fbox{
+\parbox{0.95\textwidth}{
+For any set of events $\left\{ E_{i}\right\} _{i=1}^{N}$, the probability that at least $k'$ of them occur is at most $\frac{1}{k'}\sum_{i=1}^{N}\mathrm{Pr}\left(E_{i}\right)$.
+}
+}
+
+This is a generalization of the union bound; the lemma reduces to the union bound when $k'=1$. (See this paper~\footnote{Ke Li and Jitendra Malik. Fast $k$-Nearest Neighbour Search via Prioritized DCI. In \emph{Proceedings of the 34th International Conference on Machine Learning}, pages 2081--2090, 2017.} for the proof -- let us know if you can come up with a simpler proof :)). {\bf Using the lemma, derive an upper bound on the probability that the algorithm fails, which is known as the \emph{failure probability}. Use $\vec{x}^{(i)}$ to denote the $i$th closest point to the query $\vec{z}$. Then use the fact that $1-\frac{2}{\pi}\cos^{-1}(t)\leq t$ for all $t\in[0,1]$ to simplify the expression.}
+
+Hint: \begin{align*}
+\mathrm{Pr}\left(\mbox{algorithm fails}\right) = \mathrm{Pr}\left(\mbox{at least }\tilde{k}\mbox{ points are closer to }\vec{z}\mbox{ than }\vec{x}^{(1)}\mbox{ under projection }\vec{u}\right)
+\end{align*}
+
+
+
+\Part Notice that the failure probability does not depend on dimensionality at all. It only depends on the distribution of distances from every point to the query, which if we recall, measures the intrinsic hardness of the problem.
+
+What's a typical distribution of distances? Natural data usually lies on a manifold, which is a generalization of Euclidean subspace that can be ``curved" (more concretely, there is a neighbourhood around every point on the manifold that resembles a low-dimensional Euclidean space). For simplicity, we'll consider the case when the data is uniformly distributed on a $d'$-dimensional subspace, where $d'$ is much less than the ambient dimensionality $d$. Often, $d'$ is known as the intrinsic dimensionality. Then the number of points inside a ball of radius $r$ is roughly $cr^{d'}$ for some constant $c$. So, the number of points inside a ball of constant radius grows exponentially in $d'$.
+
+Assume for all $r$ such that $cr^{d'}$ is an integer, the number of points inside a ball centred at $\vec{z}$ of radius $r$ is exactly $cr^{d'}$. This is equivalent to saying $\left\Vert \vec{x}^{(cr^{d'})}-\vec{z}\right\Vert_{2}=r$ for any such $r$. (If we recall from the previous part, $\vec{x}^{(i)}$ denotes the $i$th closest point to $\vec{z}$. ) {\bf Show the quantity \\
+$\sum_{i=2}^{n}\left\Vert \vec{x}^{(1)}-\vec{z}\right\Vert _{2}/\left\Vert \vec{x}^{(i)}-\vec{z}\right\Vert _{2}$ in this case is $\sum_{i=2}^{n}\left(1/i\right)^{1/d'}$.}
+
+Hint: to derive an expression for $\left\Vert \vec{x}^{(i)}-\vec{z}\right\Vert _{2}$ in terms of $i$, substitute $i$ for $cr^{d'}$ in the equality $\left\Vert \vec{x}^{(cr^{d'})}-\vec{z}\right\Vert_{2}=r$.
+
+
+
+\Part (BONUS) {\bf Show the quantity $\sum_{i=2}^{n}\left(1/i\right)^{1/d'}$ is less than $\left(n^{1-1/d'}-1\right)/\left(1-1/d'\right)$.}
+
+Hint: use the fact that $\sum_{i=a}^{b}\phi(i)=\int_{a}^{b+1}\phi(\left\lfloor t\right\rfloor)dt$ for any function $\phi$ and $t-1<\left\lfloor t\right\rfloor $ for any $t$, where $\left\lfloor \cdot \right\rfloor$ denotes the floor operator.
+
+
+
+\Part (BONUS) {\bf Show the failure probability is at most $O\left(n^{1-1/d'}/\tilde{k}\right)$ for $d' \geq 2$.}
+
+
+
+\Part If we choose the number of points to search over, $\tilde{k}$, to be $\Omega\left(n^{1-1/d'}\right)$, we can ensure that the failure probability is strictly less than $1$. Choosing this value for $\tilde{k}$ would mean that the query time complexity is $O(d(n^{1-1/d'}))$.
+
+Consider the following variant of the algorithm, which essentially repeats the algorithm $L$ times. More concretely, the algorithm projects the data points along $L$ independently chosen random directions and maintain $L$ sorted lists of projections, each corresponding to one projection direction. Given a query, we find the $\tilde{k}$ closest points to the query along each of the $L$ directions and exhaustively search over the union of these points.
+
+If we use $\alpha$ denote the failure probability of the original algorithm, the failure probability of this algorithm is at most $\alpha^{L}$, because the projection direction are independently chosen. The query time complexity is $O(Ld(n^{1-1/d'}))$. Therefore, we can get an exponential decrease in the failure probability at a cost of a linear increase in the query time complexity.
+
+We can choose a large enough $L$ to make the failure probability arbitrarily small and therefore make the algorithm succeed with arbitrarily high probability. By convention, $L$ is viewed as a constant (rather than a function of the failure probability), and so the time complexity for this algorithm is $O(dn^{1-1/d'})$. In general, this is how the time complexity of a randomized algorithm is derived: the parameters of the algorithm are chosen so that the algorithm can succeed with arbitrarily high probability, and time complexity is computed for that choice of parameters.
+
+Observe that the time complexity has a linear dependence on $d$, which is better than the exponential dependence on $d$ of the space partitioning-based approach. In addition, it has a sublinear dependence on $d'$, which is surprising, since the number of points inside a ball of constant radius is exponential in $d'$.
+
+The following plots show the query time complexities of na\"{i}ve exhaustive search, space partitioning and DCI as functions of $n$ and $d$. Curves of the same colour correspond to the same algorithm. {\bf Which algorithm does each colour correspond to?}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{src/problems/k_nn_running_time/dependence_on_n}
+\includegraphics[width=0.4\textwidth]{src/problems/k_nn_running_time/dependence_on_d}
+\end{center}
+
+
+
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

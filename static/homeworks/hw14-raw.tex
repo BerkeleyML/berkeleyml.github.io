@@ -1,0 +1,654 @@
+\documentclass[preview]{standalone}
+\usepackage{header_problems}
+\usepackage{header_template}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Deliverables:
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the correct sections. Do not simply reference your appendix.
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadvertently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\Question{K-SVD}
+As you have seen in earlier homework problems, sparse representations
+are powerful. When we know the right dictionary of features within
+which our input is likely to have a sparse representations (possibly
+with some additional small non-sparse noise), we can use techniques
+like the LASSO or OMP (or even just rounding/thresholding) to recover
+the coefficients. As we have seen, this has a fundamentally better
+bias/variance trade-off. 
+
+But what if we don't know the dictionary? How can the dictionary
+itself be found from the training data?  This is known as \textit{dictionary learning}. In this problem, we will introduce the K-SVD
+algorithm (Aharon, M., Elad, M. and Bruckstein, A., 2006. ``$k$-SVD: An algorithm for designing overcomplete dictionaries for sparse representation.'' IEEE Transactions on signal processing, 54(11), pp.4311-4322.) for unsupervised dictionary learning. (The naive perspective
+on directly supervised dictionary learning would reveal the dictionary
+to us, so that is not very interesting. However, it should be clear
+that the dictionary learning algorithm here can be adapted to deal
+with the case where we already know some dictionary elements to start
+with and want to learn more. It should also be clear that there are
+EM-based approaches to do dictionary learning in a more fully Bayesian
+perspective, as well as that various deep neural-network architectures are
+in effect trying to do dictionary learning at early layers to find the
+features that combine to best represent the signals being presented.) The K-SVD setting is where we would like
+to find a dictionary that enables good sparse fits to our data in the standard
+least-squares sense.  
+
+Mathematically, given an input matrix $\mat X\in\mathbb R^{n\times d}$,
+where $n$ is the number of data points and $d$ is the dimension of
+each data point, we want to solve the following optimization problem:
+\begin{equation}
+\label{eq:obj}
+\begin{aligned}
+& \underset{\mat D\in\mathbb R^{K\times d}, \mat  Z\in\mathbb R^{n\times K}}{\text{minimize}}
+& & \|\mat X-\mat Z \mat D\|_{\text{F}}^2\\
+& \text{subject to}
+& & \|\vec z_i^\top \|_0\leq s \text{ for all $i$}.
+\end{aligned}
+\end{equation}
+We explain the notation a bit more here:
+\begin{itemize}
+	\item The matrix $\mat D \in \mathbb R^{K\times d}$ is called a \textit{dictionary}
+or a \emph{codebook}. Each row $\vec D_k$ represents a dictionary vector/element/codeword/atom.
+	\item Each data sample $\vec x_i$ is presumed to be a combination of the dictionary vectors and
+	the coefficients are given by  $\vec z_i^T$, the $i$th row of $\mat Z$. See equation~\eqref{eq:x_i}.
+	\item We denote by $\|\vec v\|_0$ the ``zeroth-norm'' of vector $\vec v$, which is defined to be the number of nonzero entries in the vector $\vec v$.
+\end{itemize}
+To summarize, we have $\mat X \in \mathbb{R}^{n \times d}$. 
+$\mat Z \in \mathbb{R}^{n \times K}$, and $\mat D \in \mathbb{R}^{K \times d}$
+and that
+\begin{equation*}
+	\mat X = \begin{bmatrix}
+		\vec x_1^\top \\
+		\vec x_2^\top \\
+		\vdots \\
+		\vec x_n^\top
+	\end{bmatrix}, \quad
+	\mat  D = \begin{bmatrix}
+		\vec D_1^T\\
+		\vec D_2^T\\
+		\vdots\\
+		\vec D_K^T
+	\end{bmatrix} \quad \text{and} \quad
+	\mat Z = \begin{bmatrix}
+		\vec z_1^T\\
+		\vec z_2^T\\
+		\vdots\\
+		\vec z_n^T
+	\end{bmatrix}
+	=\begin{bmatrix}
+		\vec Z_1, \vec Z_2, \ldots, \vec Z_K
+	\end{bmatrix}
+\end{equation*}
+with $ \vec D_k\in\mathbb R^d$, $\vec z_i\in\mathbb R^K$ and $\vec Z_k\in\mathbb R^n$.
+
+And to summarize the goal:
+Our goal is to find a dictionary $\mat D$ such that we can 
+approximate the data samples $\vec x_i$ by a sparse linear combination of atoms in $\mat D$:
+\begin{equation}
+\label{eq:x_i}
+	\vec x_i^\top \approx \sum_{k=1}^K z_{ik}  \vec D_k^\top,
+\end{equation}
+where the coefficients of linear combination are given in $\mat Z$
+(which also needs to be determined) and
+should have at most $s$ nonzero entries for each sample.  
+
+A greedy iterative algorithm called K-SVD is proposed for the above optimization
+problem. The algorithm optimizes the objective over $\mat D$ and $\mat Z$
+in an alternating fashion. The pseudo code of the algorithm is given in
+Algorithm \ref{alg:k-svd}. It alternates between two stages: Sparse coding
+(Algorithm \ref{alg:mp}) and Update Codebook (Algorithm
+\ref{alg:uc}). The Sparse Coding procedure finds a sparse
+representation for each data sample with Algorithm \ref{alg:mps} based on a
+given dictionary. The procedure for updating the
+dictionary updates each row of the dictionary with Algorithm
+\ref{alg:ucs} in a for loop, while modifying the effected
+representation coefficients correspondingly.  
+
+
+We have two goals in this problem: (1) to establish a relationship of K-SVD to
+the K-means algorithm you already know, and (2) to show that this K-SVD
+algorithm converges to a local minimum. (For this reason in practice,
+K-SVD is run with multiple random initial conditions to make sure that
+a good minimum is found. Just like we have seen for K-means in earlier
+homeworks.)
+
+\begin{algorithm}[H] 
+	\caption{K-SVD}
+	\label{alg:k-svd}
+	\SetAlgoLined
+		\KwIn{Data matrix $\mat X\in\mathbb R^{n\times d}$; Number of atoms $K$; Sparsity constraint $s$}
+	\KwOut{A dictionary $\mat D\in\mathbb R^{K\times d}$, and the coefficient matrix $\mat Z\in\mathbb R^{n\times K}$}
+	
+	\SetKwProg{Pn}{function}{:}{}
+		\SetKwFunction{ksvd}{K-SVD}
+	\SetKwFunction{scoding}{Sparse-coding}
+	\SetKwFunction{ucode}{Update-dictionary}
+	\Pn{\ksvd{$\mat X, K, s$}}{		\noindent {\emph Initialize} $\mat D \leftarrow $ randomly chosen $K$ rows of the dataset $\mat X$ (without replacement)
+		
+		{\emph Initialize} $\mat Z \leftarrow $ \scoding{$\mat D, \mat 0, \mat X, s$}
+		
+		\While{not converged}{			
+			$\mat Z$ $\leftarrow$ \scoding{$\mat D, \mat Z, \mat X,  s$}
+			
+			\ucode{$\mat D, \mat Z, \mat X$}
+		}
+		\KwRet $\mat D, \mat Z$
+	}
+	\vspace{1mm}
+	\textbf{end function}
+	\vspace{2mm}
+	\end{algorithm}
+
+\begin{algorithm}
+	\caption{Sparse-coding}
+	\label{alg:mp}
+	\SetAlgoLined
+		\KwIn{Dictionary $\mat D$; Coefficient matrix $\mat Z\in\mathbb R^{n\times K}$;
+		Data matrix $\mat X\in\mathbb R^{n\times d}$; Sparsity constraint $s$}
+	\KwOut{The coefficient matrix $\mat Z\in\mathbb R^{n\times K}$}
+	
+	\SetKwProg{Pn}{function}{:}{}
+	\SetKwFunction{scoding}{Sparse-coding}
+	\SetKwFunction{scodeone}{Sparse-coding-single}
+	\Pn{\scoding{$\mat D, \mat Z, \mat X, \mat s$}}{		
+		\For{$i=1, \ldots, n$}{			
+			$\vec z_i'$ = \scodeone{$\mat D, \vec x_i, s$}
+			
+			\If{$\Vert \vec x_i^\top - \vec z_i^\top \mat D\Vert_2 > \Vert \vec x_i^\top - (\vec z_i')^\top \mat D\Vert_2$}{
+				$\vec z_i \leftarrow \vec z_i'$
+			}
+		}
+		\KwRet $\mat Z = \begin{bmatrix}
+		\vec z_1^\top \\
+		\vdots \\
+		\vec z_n^\top
+		\end{bmatrix}$
+	}
+	\vspace{1mm}
+	\textbf{end function}
+	\vspace{2mm}
+	\end{algorithm}
+
+
+
+\begin{algorithm}
+	\caption{Sparse-coding-single}
+	\label{alg:mps}
+	\SetAlgoLined
+		\KwIn{Dictionary $\mat D$; Data sample $\vec x\in\mathbb R^{d}$;
+		Sparsity constraint $s$}
+	\KwOut{A coefficient vector $\vec z\in\mathbb R^{K}$}
+	
+	\SetKwProg{Pn}{function}{:}{}
+			\SetKwFunction{scodeone}{Sparse-coding-single}
+	\Pn{\scodeone{$\mat D, \vec x, s $}}{		\noindent {\emph Initialize} $\vec z \leftarrow \vec 0 \in \mathbb{R}^k$
+		
+		{\emph Initialize} the basis $\mathcal{B}_0 = \{\}$
+		
+		\For{$j=1, \ldots, s$}{			
+			Find the index of the \emph{best} dictionary vector $ \vec D_{k^{(j)}} \in \mathbb{R}^d$
+			by solving:
+			\begin{align*}
+				\hat \beta^{(j)}, k^{(j)} = \arg\min_{\vec \beta\in\mathbb{R}^j}\min_{k \in [K]} \Vert \vec x - \sum_{ \vec D_\ell \in \mathcal{B}_{j-1} \cup \{ \vec D_k\}} \beta_\ell  \vec D_\ell \Vert^2_2
+			\end{align*}
+			
+			Update $\mathcal{B}_{j} \leftarrow \mathcal{B}_{j-1} \cup \{  \vec D_{k^{(j)}}\}$
+			
+		}
+		\For{$ \vec D_\ell \in \mathcal{B}_{s}$}{$\vec z_\ell \leftarrow \beta^{(s)}_\ell$}
+		
+		\KwRet $\vec z$
+	}
+	\vspace{1mm}
+	\textbf{end function}
+	\vspace{2mm}
+	\end{algorithm}
+
+
+
+\begin{algorithm}
+	\caption{Update-dictionary}
+	\label{alg:uc}
+	\SetAlgoLined
+		\KwIn{Dictionary $\mat D$; Coefficient matrix $\mat Z\in\mathbb R^{n\times K}$;
+		Data matrix $\mat X\in\mathbb R^{n\times d}$}
+	\KwOut{Dictionary $\mat D \in\mathbb R^{K \times d}$}
+	
+	\SetKwProg{Pn}{function}{:}{}
+		\SetKwFunction{ucode}{Update-dictionary}
+	\SetKwFunction{ucodeone}{Update-dictionary-single}
+	\Pn{\ucode{$\mat D, \mat Z, \mat X$}}{		
+		\For{$k=1, \ldots, K$}{			
+			Update $k$-th row $ \vec D_k^\top \leftarrow $ \ucodeone{$\mat D, \mat Z, \mat X, k$}
+			
+		}
+		\KwRet $\mat D = \begin{bmatrix}
+		\vec D_1^\top \\
+		\vdots \\
+		\vec D_K^\top
+		\end{bmatrix}$.
+	}
+	\vspace{1mm}
+	\textbf{end function}
+	\vspace{2mm}
+	\end{algorithm}
+
+
+
+\begin{algorithm}
+	\caption{Update-dictionary-single}
+	\label{alg:ucs}
+	\SetAlgoLined
+		\KwIn{Dictionary $\mat D$; Coefficient matrix $\mat Z\in\mathbb R^{n\times K}$;
+		Data matrix $\mat X\in\mathbb R^{n\times d}$; Index k}
+	\KwOut{Return a row vector $\tilde{\vec d} \in\mathbb R^{1 \times d}$}
+	
+	\SetKwProg{Pn}{function}{:}{}
+		\SetKwFunction{ucode}{Update-dictionary}
+	\SetKwFunction{ucodeone}{Update-dictionary-single}
+	\Pn{\ucodeone{$\mat D, \mat Z, \mat X, k$}}{		\For{$k=1, \ldots, K$}{			
+			
+			Compute the error matrix $\mat E_k \in \mathbb{R}^{n \times d}$ that represent how well things are represented
+			without the dictionary vector $ \vec D_k^\top$:
+			\begin{align*}
+				\mat E_k = \mat X - \sum_{j\neq k} \vec z_j  \vec D_j^\top 
+			\end{align*}\\
+			
+			Find the indices of data samples whose sparse representation uses the dictionary vector $ \vec D_k^\top$. \\
+			In other words, find the indices corresponding to non-zero entries in the coefficient vector $\vec z_k$
+			\begin{align*}
+				\omega_{k} = \{i\vert i \in [n], \vec z_{k,i} \neq 0 \}.
+			\end{align*}
+			and let us denote $\omega_{k} = \{ i_1, \ldots, i_{\vert \omega_k \vert}\}$.
+			
+			Find the matrix $\mat E_k^{\omega_k} \in \mathbb{R}^{\vert \omega_k \vert \times d}$ by choosing
+			those rows of $\mat E_k$ whose index belongs to the set $\omega_k$, i.e., matrix $\mat E_k^{\omega_k}$
+			is computed by picking the rows with indices $i_1, \ldots, i_{\vert \omega_k \vert}$.\\
+			
+			Compute the SVD of $\mat E_k^{\omega_k}$:
+			\begin{align*}
+				\mat E_k^{\omega_k} = \mat U {\bm \Lambda} \mat V^\top
+			\end{align*}
+			where $\mat U \in \mathbb{R}^{\vert \omega_k \vert \times \vert \omega_k \vert}$,
+			$\bm \Lambda \in \mathbb{R}^{\vert \omega_k \vert \times d} $
+			and $\mat V \in \mathbb{R}^{d\times d}$.
+			We assume $\bm \Lambda$ is a diagonal matrix with non-decreasing diagonal entries.
+			Let $U_1 \in \mathbb{R}^{\vert \omega_k \vert}$ and $V_1 \in \mathbb{R}^d$ denote the first column of the matrices $\mat U$ and $\mat V$
+			respectively.\\
+			
+			Update $ \vec D_k \leftarrow V_1$ \\
+			
+			Update only the non-zero entries of the vector $\vec z_k^\top$:
+			
+			\For{$j = 1, \ldots, \vert \omega_k \vert$}
+			{
+				$\vec z_{k, i_j} = U_{1, i_j} \Lambda_{11}$
+			}
+			
+		}
+		\KwRet $ \vec D_k^\top$.
+	}
+	\vspace{1mm}
+	\textbf{end function}
+	\vspace{2mm}
+	\end{algorithm}
+
+
+
+\begin{Parts}
+	\Part (Relationship to K-means) 
+	Recall the set-up of K-means: Given a data matrix $\mat X$,
+        K-means algorithm {\em partitions} the data into $K$ disjoint groups 
+	$\vec \pi=\{\pi_1,\pi_2,\dots,\pi_K\}$. 
+	Each sample $\vec x_i$ is contained in \emph{exactly one partition} $\pi_j$. 
+	Recall that the K-means algorithm tries to solve the following optimization problem: 
+	\begin{equation}
+	\label{eq:obj_kmeans}
+	\begin{aligned}
+	& \underset{\vec \pi,\mat \mu\in\mathbb R^{K\times d}}{\text{minimize}}
+	& & \sum_{k=1}^K\sum_{i\in\pi_k}\|\vec x_i- \vec \mu_k\|_2^2.
+	\end{aligned}
+	\end{equation}
+	Let us connect the K-means optimization problem~\eqref{eq:obj_kmeans} with 
+	that given by equation~\eqref{eq:obj}.
+	Let  $\mat \mu$ denote a $K\times d$ matrix and $\mat{\tilde{Z}}$ denote an $n\times K$
+	matrix which are given by
+	\begin{align*}
+		\mat{\mu} = \begin{bmatrix}
+			\vec \mu_1^\top \\
+			\vdots \\
+			\vec \mu_K^\top
+		\end{bmatrix}
+		\text{and}\quad\mat{\tilde{Z}} = \begin{bmatrix}
+			\vec{\tilde{z}}_1^\top \\
+			\vdots \\
+			\vec{\tilde{z}}_n^\top
+		\end{bmatrix}.
+	\end{align*}
+	{\bf Show that the objective function given in
+		the problem~\eqref{eq:obj_kmeans} is equivalent to }
+	\begin{equation}
+	\label{eq:obj1}
+	\begin{aligned}
+	& \underset{\mat{\tilde{Z}}\in\mathbb R^{n\times K}, \mat \mu\in\mathbb R^{K\times d},}{\text{minimize}}
+	& & \|\mat X- \mat{\tilde{Z}} \mat \mu\|_{\text{F}}^2\\
+	& \text{subject to}
+	& & \vec{\tilde{z}}_i\in\{0,1\}^K  \text{ and }\|\vec{\tilde{z}}_i \|_0= 1  \text{ for all $i = 1, \ldots, n$}.
+	\end{aligned}
+	\end{equation}
+	
+	{\bf Conclude that K-means is equivalent to K-SVD with $s=1$ with an additional
+		constraint of forcing the coefficient entries in the matrix $\mat{\tilde{Z}}$ to take values in the set $\{0, 1\}$}. 
+	
+	 
+	
+	\Part
+	{\bf Show that at each step $j=1, 2, \ldots, s$ in Algorithm \ref{alg:mps} for finding
+		a sparse solution, the min value of the objective 
+		($\min_{\vec \beta\in\mathbb{R}^j}\min_{k \in [K]} \Vert \vec x - \sum_{ \vec D_\ell \in \mathcal{B}_{j-1} \cup \{ \vec D_k\}} \beta_\ell  \vec D_\ell \Vert^2_2$)
+		is non-increasing.}
+	
+	The following hint may or may not be useful for you but is
+        worth thinking through.
+	{\em Hint: Can you identify this algorithm as OMP? }
+	
+	
+	
+	\Part (Sparse coding decreases the objective) {\bf Conclude from the above
+		part that Algorithm \ref{alg:mp} cannot increase the value of the objective
+		function (\ref{eq:obj}).} (In practice, people use straight matching
+	pursuit --- Algorithm \ref{alg:practical-mps} --- to replace Algorithm \ref{alg:mps}, which is
+	much more efficient, but gets comparable performance in most practical
+	settings where there isn't a huge dynamic range of coefficients and
+	the target sparsity $s$ is low. But showing that matching
+        pursuit usually works is omitted here.)
+	
+	
+	
+	\begin{algorithm}
+		\caption{Matching-pursuit}
+		\label{alg:practical-mps}
+		\SetAlgoLined
+				\KwIn{Dictionary $\mat D$; Data sample $\vec x\in\mathbb R^{d}$;
+			Sparsity constraint $s$}
+		\KwOut{A coefficient vector $\vec z\in\mathbb R^{K}$.}
+		
+		\SetKwProg{Pn}{function}{:}{}
+						\SetKwFunction{scodeone}{Sparse-coding-single-in-practice}
+		\Pn{\scodeone{$\mat D, \vec x, s $}}{			\noindent {\emph Initialize} $\vec z \leftarrow \vec 0 \in \mathbb{R}^k$
+			
+			{\emph Initialize} the basis $\mathcal{B}_0 = \{\}$
+			
+			{\emph Initialize} the residue $\vec r_0 = \vec x$
+			
+			\For{$j=1, \ldots, s$}{				
+				Find the \emph{best} dictionary vector $ \vec D_{k^{(j)}}^\top \in \mathbb{R}^d$
+				by solving:
+				\begin{align*}
+					k^{(j)} = \arg\max_{k \in [K]} \frac{\vert \vec r_{j-1}^\top  \vec D_k\vert }{\Vert  \vec D_k\Vert_2}
+					= \arg\min_{k \in [K]} \min_{\beta_k\in\mathbb{R}}\left\Vert \vec r_{j-1} - \beta_k  \vec D_k \right\Vert^2_2
+				\end{align*}
+				
+				Update the coefficient $\vec z_{k^{(j)}} \leftarrow \frac{\vert  r_{j-1}^\top  \vec D_k }{\Vert  \vec D_k\Vert_2^2}$
+				
+				Update the residue $\vec r_{j} \leftarrow \vec r_{j-1} - \vec z_{k^{(j)}}  \vec D_{k^{(j)}}$
+			}
+			\KwRet $\vec z$.
+		}
+		\vspace{1mm}
+		\textbf{end function}
+		\vspace{2mm}
+			\end{algorithm}
+	
+																				
+	
+	
+	
+	\Part {\bf Show that the single-atom dictionary update given by
+		Algorithm \ref{alg:ucs} does not increase the objective function while preserving the
+		sparsity constraint.} (You may or may not find the following hint useful.)
+	
+	{\em Hint: Recall the Eckart-Young theorem.}
+	
+								
+	
+	
+		
+	\Part (Updating dictionary decreases the objective) {\bf Conclude that
+		the iterations of the K-SVD algorithm put together cannot increase
+		the objective function and hence the objective function must
+		converge.}
+	
+	
+	
+
+	\Part (Implementation, BONUS) Alas! Here we have a bad news. Due to time and resource
+	constraints, we were unable to provide a good and debugged implementation part to this problem.
+	You are free to wander around and play with the starter code
+        and construct simulated datasets (or find real world data sets)
+	where K-SVD recovers the underlying dictionary and/or
+        provides a good reconstruction of the data using sparse linear
+        combinations. 
+	No submission is required but you are encouraged to share your
+        empirical findings on the piazza
+	post associated with this problem. Feel free to share the
+        datasets/results that you find. Extra credit will be given to
+        those who help put together a nice exploration part of this
+        problem. Given that the original K-SVD paper has over six
+        thousand citations, we are confident that it should be
+        possible to do this, and fun too. 
+
+        {\em HINT: For those who have taken EE16A in a semester where
+          Massive-IoT-CDMA was used to motivate OMP, can you come up with
+          an example where an eavesdropper listens in without knowledge of
+          the wireless device codes but after lurking for a while and
+          hearing small numbers of devices talk simultaneously can now
+          figure out what all the individual devices' codes were?
+          Alternatively, how about imaging lots of very sparse unknown
+          images but not knowing what the imaging masks were. Can you
+          learn the masks from lots of unknown sparse images being
+          observed using the unknown random masks? Can you replicate
+          the seminal work of Olshausen and Field from 1996 that
+          showed that dictionary learning can help explain mammalian
+          vision? See the Proceedings of the IEEE survey article on
+          dictionary learning 10.1109/JPROC.2010.2040551 for more
+          potential references.}
+
+							
+										
+				
+				
+																							
+							
+			
+		
+		
+							
+		
+	
+		
+				
+		
+		
+								
+		
+		
+\end{Parts}
+\Question{Dropout in Neural Network and Linear Regression}
+
+Dropout is an algorithm to ``prevent over-fitting'' that is used while training lot of modern neural network implementations.  This question will introduce how dropout works and why we can understand dropout as method to do regularization.  Consider the simplest neural network -- linear regression, which tries to find a vector $\w$ to minimize
+\begin{equation}
+    \ell\left(\w\right) = \lVert \y-\X\w \rVert_2^2 = \sum_{i=1}^n \left(y_i - \x_i\T\w\right)^2.
+\end{equation}
+Dropout is usually used with stochastic gradient descent.  Instead of
+doing a stochastic gradient (with mini-batch-size $1$) step using
+$\w_{t+1}=\w_t-\alpha \nabla_{\w} (y_i - \x_i\T\w)$, we instead apply the formula
+\begin{equation}
+    \w_{t+1}=\w_t - \alpha \nabla_{\w}\left[\left( y_i - \frac{1}{p}(\x_i \circ \mathfrak{m}) \T\w \right)^2\right]. 
+\end{equation}
+Here $\alpha$ is the learning rate, $p$ is a user-specified dropout
+retaintion rate from the $(0,1)$ interval,  $i \sim U(1, n)$ is an
+index drawn from the uniform distribution, $\circ$ is the element-wise
+multiplication operator, and $\mathfrak{m}$ is a random vector where
+$\mathfrak{m}_i \sim \mathrm{Bernoulli}(p)$ iid.  In other words, we
+will randomly mask each feature of a sample to be zero with a
+probability $1-p$ during SGD steps. 
+
+While this problem only deals with dropout on linear regression, SGD
+steps with dropout seen here can easily generalize to any layers of
+neural networks that contain trainable parameters.  We can randomly
+mask each element of the output vector from the previous layer to be
+zero with a probability $1-p$ to regularize the training of the
+current layer.  Dropout is commonly used with fully-connected layers
+and recurrent neural networks as they often contain a large number of
+parameters, making them prone to overfitting by nature.
+
+\begin{Parts}
+\Part For simplicity, let us say that you are only solving a linear regression problem with only two features, i.e.,
+\begin{equation*}
+    \X = [\x^{(1)} \:\:\x^{(2)}].
+\end{equation*}
+And for concreteness, suppose that we are using $p=\frac{2}{3}$ as the
+dropout retention rate. 
+ 
+\textbf{Find a dataset $\X'$ and $\y'$ so that the normal SGD steps on
+ the dataset $\X'$ and $y'$ is effectively the same as the dropout SGD
+ steps on the original $\X$ and $\y$}.  Hint: You can augment the dataset and make
+it effectively be a weighted linear regression problem by making
+multiple copies of data points.  You can define
+\begin{equation}
+    \X' = \begin{bmatrix}
+        \alpha_1\x^{(1)} & \alpha_1\x^{(2)} \\
+        \alpha_2\x^{(1)} & \mathbf{0} \\
+        \mathbf{0} & \alpha_3\x^{(2)} \\
+        \mathbf{0} & \mathbf{0}
+    \end{bmatrix}
+\end{equation}
+and 
+\begin{equation}
+    \y' = \begin{bmatrix}
+        \alpha_1\y \\
+        \alpha_2\y \\
+        \alpha_3\y \\
+        \alpha_4\y \\
+    \end{bmatrix}
+\end{equation}
+and \textbf{find the expression for $\alpha_1$, $\alpha_2$,
+  $\alpha_3$, and $\alpha_4$, along with how many copies you want to
+  include of each ``row'' above in your augmented data set. Verify
+  that the SGD steps are indeed the same by showing that the
+  probability of making each kind of update to the weights is the same.}
+
+
+
+\Part 
+Leveraging what you have learned from the previous part,
+\textbf{explain why} the SGD steps with dropout for linear regression
+is the same as doing standard SGD without dropout for the following
+modified loss function
+\begin{equation}
+    \ell'\left(\w\right) = \mathbf{E}_{\mathfrak{M}} \left[\left\lVert \y-\frac{1}{p} \left(\X \circ \mathfrak{M}\right)\w \right\rVert_2^2 \right], \label{eq:dropout}
+\end{equation}
+where $\circ$ is an element-wise matrix multiplication operator and
+random matrix $\mathfrak{M_{ij}} \sim \mathrm{Bernoulli}(p)$ iid. 
+
+{\em Hint: You can ``unroll'' the expectation here and show that objective
+  function is the same as traditional linear regression with augmented
+  data like we did in the previous part.}
+
+
+
+
+\Part To see the fact that dropout is a way of doing regularization, \textbf{prove that}
+\begin{equation}
+    \argmin_{\w} \ell'(\w) = \argmin_{\w} \left\lVert \y-\X\w \right\rVert + \frac{1-p}{p}\lVert\bm{\Gamma}\w\rVert_2^2,
+\end{equation}
+where $\bm{\Gamma}=\mathbf{diag}(\X\T \X)^{1/2}$ --- i.e.~$\bm{\Gamma}$
+is a diagonal matrix with just the Euclidean norms of the feature
+vectors along the diagonal.  This is saying that applying dropout
+\emph{on the linear regression problem} is equivalent to doing the
+ridge regression with a special diagonal Tikhonov regularization
+matrix.  For the effect of dropout on more complex models such as
+logistic regression or convolution neural networks, it is hard to
+obtain a closed-form solution.  But the idea dropout is equivalent to some kind of regularization still applies.
+
+
+
+
+\Part  If you normalize the columns of $\X$ (i.e.~scale the features)
+so that $\lVert \x^{(i)} \rVert_2^2=1$ for each column $\x^{(i)}$,
+\textbf{what is the equivalent Tikhonov regularization matrix if you
+  use dropout?  Explain why (or in what context) dropout's induced implicit Tikhonov
+  regularization might be better than the identity matrix that vanilla
+  ridge regression uses when we are working with unnormalized columns of $X$.} 
+
+
+
+\Part Run the code in Part A.  \textbf{Explain what the code is doing and the meaning of the plot.}
+
+
+
+\Part  The code in Part B compares dropout with bagged linear
+regression.  Read the code and \textbf{explain the differences and
+  similarities between bagged linear regression and linear regression
+  with dropout (implemented using ridge regression in the code).}
+
+
+
+\end{Parts}
+
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

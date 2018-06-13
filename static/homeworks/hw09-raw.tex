@@ -1,0 +1,414 @@
+\documentclass[preview]{standalone}
+\usepackage{header_problems}
+\usepackage{header_template}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Deliverables:
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the correct sections. Do not simply reference your appendix.
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadvertently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\Question{Classification Policy}
+
+Suppose we have a classification problem with classes labeled $1, \dotsc, c$ and an additional ``doubt'' category labeled $c+1$. Let $f : \mathbb{R}^d \to \{1, \dots, c+1 \}$ be a decision rule. Define the loss function
+\begin{equation}
+L(f(\vec{x}), y) =
+\begin{cases}
+0 &  						 \mathrm{if}\ f(\vec{x})=y \quad f(\vec{x}) \in\{1,\dotsc,c\}, \\
+\lambda_c       & \mathrm{if}\ f(\vec{x})\neq y \quad f(\vec{x}) \in \{1,\dotsc,c\}, \\
+\lambda_d       & \mathrm{if}\ f(\vec{x})=c+1
+\end{cases}
+\end{equation}
+where $\lambda_c \geq 0$ is the loss incurred for making a misclassification and $\lambda_d \geq 0$ is the loss incurred for choosing doubt. In words this means the following:
+\begin{itemize}
+	\item When you are correct, you should incur no loss.
+	\item When you are incorrect, you should incur some penalty $\lambda_c$ for making the wrong choice.
+	\item When you are unsure about what to choose, you might want to select a category corresponding to ``doubt'' and you should incur a penalty $\lambda_d$.
+\end{itemize}
+
+We can see that in practice we'd like to have this sort of loss
+function if we don't want to make a decision if we are unsure about
+it. This sort of loss function, however, doesn't help you in instances
+where you have high certainty about a decision, but that decision is wrong.
+
+To understand the expected amount of loss we will incur with decision rule $f(\vec{x})$, we look at the risk. The risk of classifying a new data point $\vec{x}$ as class $f(\vec{x}) \in \{1,2,\dots,c+1\}$ is
+$$R(f(\vec{x})|\vec{x}) = \sum_{i=1}^{c} L(f(\vec{x}), i) \, P(Y=i|\vec{x}).$$
+
+\begin{Parts}
+
+	\Part \textbf{Show that the following policy $f_{opt}(x)$ obtains the minimum risk:}
+	\begin{itemize}
+		\item Find class $i$ such that $P(Y=i|\vec{x}) \geq P(Y=j|\vec{x})$ for all j, meaning you pick the class with the highest probability given x.
+		\item Choose class $i$ if $P(Y=i|\vec{x}) \geq 1 - \frac{\lambda_d}{\lambda_c}$ 
+		\item Choose doubt otherwise.
+	\end{itemize}
+
+	
+
+	\Part \textbf{How would you modify your optimum decision rule if $\lambda_d=0$?  What happens if $\lambda_d>\lambda_c$? Explain why this is or is not consistent with what one would expect intuitively.}
+
+	
+
+\end{Parts}
+
+\Question{LDA and CCA}
+
+Consider the following random variable $\vec X \in \mathbb{R}^d$, generated using a \emph{mixture of two Gaussians}. Here, the vectors $\vec \mu_1, \vec \mu_2 \in \mathbb{R}^d$ are arbitrary (mean) vectors, and $\mat \Sigma \in \mathbb{R}^{d \times d}$ represents a positive definite (covariance) matrix. For now, we will assume that we know all of these parameters.
+
+Draw a label $L \in \{1, 2\}$ such that the label 1 is chosen with probability $\pi_1$ (and consequently, label 2 with probability $\pi_2 = 1 - \pi_1$), and generate $\vec X \sim \mathcal{N}(\vec \mu_{L}, \vec \Sigma)$.
+\begin{Parts}
+
+\Part Now given a particular $\vec X \in \mathbb{R}^d$ generated from the above model, we wish to find its label. {\bf Write out the decision rule corresponding to the following estimates of $L$:}
+\begin{itemize}
+\item MLE
+\item MAP
+\end{itemize}
+
+Your decision rule should take the form of a threshold: if some function $f(\vec X) > T$, then choose the label $1$, otherwise choose the label $2$.
+{\bf When are these two decision rules the same?} Hint: investigate the ratio between the two likelihood functions and the ratio between the two posterior probabilities respectively.
+
+
+
+\Part You should have noticed that the function $f$ is \emph{linear} in its argument $\vec X$, and takes the form $\vec w^\top (\vec X - \vec v)$. We will now show that CCA defined on a suitable set of random variables leads to precisely the same decision rule.
+
+Let $\vec Y \in \mathbb{R}^2$ be a one hot vector denoting the realization of the label $\ell$, i.e. $Y_\ell = 1$ if $L = \ell$, and zero otherwise.
+Let $\pi_1 = \pi_2 = 1/2$. {\bf Compute the covariance matrices $\mat \Sigma_{XX}, \mat \Sigma_{XY}$ and $\mat \Sigma_{YY}$ as a function of $\vec \mu_1, \vec \mu_2, \mat \Sigma$.} Recall that the random variables are not zero-mean. Hint: when computing the covariance matrices, the tower property of the expectation is useful.
+
+
+
+\Part Let us now perform CCA on the two random variables. Recall that in order to find the first canonical directions, we look for vectors $\vec u \in \mathbb{R}^d$ and $\vec v \in \mathbb{R}^2$ such that $\rho(\vec u^\top \vec X, \vec v^\top \vec Y)$ is maximized.
+
+{\bf Show that the maximizing $\vec u^*$ is proportional to $\mat \Sigma^{-1} (\vec \mu_1 - \vec \mu_2)$.} Recall that $\vec u^*$ is that ``direction" of $\vec X$ that contributes most to predicting $\vec Y$. {\bf What is the relationship between $\vec u^*$ and the function $f(\vec X)$ computed in part (a)?}
+
+Hint: The Sherman-Morrison formula for matrix inversion may be useful:
+
+Suppose $\mat A\in \mathbb {R} ^{d\times d}$ is an invertible square matrix and $\vec a, \vec b\in \mathbb {R}^{d}$ are column vectors. Then,
+\begin{align*}
+(\mat A+\vec a\vec b^{T})^{-1}=\mat A^{-1}- \frac{\mat A^{-1}\vec a\vec b^{T}\mat A^{-1}}{1+\vec b^{T}\mat A^{-1}\vec a}.
+\end{align*}
+
+
+\iffalse
+\Part {\bf Repeat the above part for arbitrary probabilities $\pi_1, \pi_2$.}
+
+
+\fi
+
+
+\iffalse
+\Part Now assume you don't know the parameters $\mu_1, \mu_2, \Sigma$, but are given samples of training data $(x_1, \ell_1), (x_2, \ell_2), \ldots, (x_n, \ell_n)$ drawn from the above distribution. You are then given a new $X_{\text{test}}$, which you wish to classify. Using your intuition from CCA, {\bf write down a procedure that predicts the label of $X_{\text{test}}$.}
+
+
+\fi
+
+\end{Parts}
+
+\Question{Sensors, Objects, and Localization (Part 2)}
+
+Let us say there are $n$ objects and $m$ sensors located in a $2d$ plane. The
+$n$ objects are located at the points $(x_1,y_1),\ldots,(x_n,y_n)$. The $m$
+sensors are located at the points $(a_1,b_1),\ldots,(a_m,b_m)$.  We have
+measurements for the distances between the objects and the sensors: $D_{ij}$ is
+the measured distance from object $i$ to sensor $j$. The distance measurement
+has noise in it. Specifically, we model $$D_{ij} = ||(x_i,
+y_i)-(a_j,b_j)||+Z_{ij},$$ where $Z_{ij} \sim N(0, 1)$. The noise is
+independent across different measurements.
+
+Assume we observe $D_{ij}=d_{ij}$ with $(X_i,Y_i)=(x_i,y_i)$ for $i=1,\dots, n$
+and $j=1,\dots,m$. Here, $m=7$. \textbf{Our goal is to predict
+$(X_{i'},Y_{i'})$ from newly observed $D_{{i'}1},\dots,D_{{i'}7}$.} For a data
+set with $q$ points, the error is measured by the average distance between
+the predicted object locations and the true object locations,
+$$\frac{1}{q}\sum_{i=1}^q\sqrt{(\hat x_i-x_i)^2 + (\hat y_i - y_i)^2},$$ where
+$(\hat x_i, \hat y_i)$ is the location of objects predicted by a model.
+
+We are going to consider five models in this problem and compare their performance:
+\begin{itemize}
+    \item A \emph{Generative Model}:  This is basically from the earlier
+        assignment: we first estimate sensor locations from the training data
+        by solving the nonlinear learst squares problem using Gauss-Newton
+        algorithm \footnote{This is not covered in the class but you can find
+        the related information in
+        \url{https://www.wikiwand.com/en/Gauss-Newton_algorithm}}, and
+        then use the estimated sensor locations to estimate the
+        new object locations.
+    \item A \emph{Oracle Model}:  This is the same as generative model except
+        that we will use the ground truth sensor location rather than the
+        estimated sensor location.
+    \item A \emph{Linear Model}. Using the training set, the linear model
+        attempts to fit $(X_i, Y_i)$ directly from the distance
+        measurements $(D_{i1}, \ldots, D_{i7})$. Then it
+        predicts $(X_{i'},Y_{i'})$ from $(D_{i'1},\ldots,D_{i'7})$
+        using the map that it found during training. (It never tries
+        to explicitly model the underlying sensor locations.)
+    \item A \emph{Second-Order Polynomial Regression Model}. The set-up is
+        similar to the linear model, but including second-order polynomial
+        features.
+    \item A \emph{Third-Order Polynomial Regression Model}. The set-up is
+        similar to the linear model, but including third-order polynomial
+        features.
+    \item A \emph{Neural Network Model}. The Neural Network should have two
+        hidden layers, each with $100$ neurons, and use \texttt{Relu} as the
+        non-linearity. (You are encouraged to explore on your own beyond this
+        however. These parameters were chosen to teach you a hype-deflating
+        lesson.) The neural net approach also follows the principle of
+        finding/learning a direct connection between the distance
+        measurements and the object location.
+\end{itemize}
+
+\begin{Parts}
+
+\Part \textbf{Implement the last four models listed above in
+\texttt{models.py}.} Starter code has been provided for data generation and
+visualization to aid your explorations.  We provide you a simple gradient
+descent framework for you to implement the neural network, but you are also
+free to use the TensorFlow and PyTorch code from your previous homework.
+
+The difference between the ``regular'' testing data and the ``shifted'' testing
+data is that the ``regular'' testing data is drawn from the same distribution
+as the training data, whereas the ``shifted'' testing data is farther away.
+
+\Part In the following parts, we will deal with two type of data, the
+``regular'' data set, and the ``shifted'' data set.  The ``regular'' data set
+has the same distribution as the training data set, while the ``shifted'' data
+set has a different distribution.  \textbf{Run \texttt{plot0.py} to visualize}
+the sensor location, the distribution of the ``regular'' data set, and the
+distribution of the ``shifted'' data set.  \textbf{Attach the plot}.
+
+
+
+\Part \label{pt:models} The starter code generated a set of $7$ sensors and the
+following data sets:
+\begin{itemize}
+    \item $15$ training sets where $n_\text{train}$ varies from $10$ to $290$
+        in increments of $20$.
+    \item A ``regular'' testing data set where $n_\text{test} = 1000$.
+    \item A ``shifted'' testing data set where $n_\text{test} = 1000$. You can
+        do this by setting original\_dist to \texttt{False} in the function
+        \texttt{generate\_data} in \texttt{starter.py}.
+\end{itemize}
+
+\textbf{Use \texttt{plot1.py} to train each of the five models on each of
+the fifteen training sets. Use your results to generate three figures.  Each
+figure should include \emph{all} of the models on the same plot so that you can
+compare them}:
+\begin{itemize}
+    \item A plot of \emph{training error} versus $n_\text{train}$ (the amount
+        of data used to train the model) for all of the models.
+    \item A plot of \emph{testing error} on the ``regular'' test set versus
+        $n_\text{train}$ (the amount of data used to train the model) for all
+        of the models.
+    \item A plot of \emph{testing error} on the ``shifted'' test set versus
+        $n_\text{train}$ (the amount of data used to train the model) for all
+        of the models.
+\end{itemize}
+\textbf{Briefly describe your observations. What are the strengths and
+weaknesses of each model?}
+
+
+
+\Part We are now going to do some hyper-parameter tuning on our neural network.
+Fix the number of hidden layers to be two and let $\ell$ be the number of
+neurons in each of these two layers. Try values for $\ell$ between $100$ and
+$500$ in increments of $50$. Use data sets with $n_\text{train} = 200$ and
+$n_\text{test}=1,000$. \textbf{What is the best choice for $\ell$ (the number
+of neurons in the hidden layers)? Justify your answer with plots.}  The starter
+code is in \texttt{plot2.py}.
+
+
+
+\Part We are going to do some more hyper-parameter tuning on our neural
+network. Let $k$ be the number of hidden layers and let $\ell$ be the number of
+neurons in each hidden layer. \textbf{Write a formula for the total number of
+weights in our network in terms of $\ell$ and $k$. If we want to keep the total
+number of weights in the network approximately equal to $10000$, find a formula
+for $\ell$ in terms of $k$.} Try values of $k$ between $1$ and $4$ with the
+appropriate implied choice for $\ell$. Use data sets with $n_\text{train}=200$
+and $n_\text{test}=1000$. \textbf{What is the best choice for $k$ (the number
+of layers)? Justify your answer with plots.}  The starter code is in
+\texttt{plot3.py}.
+
+
+
+
+
+\Part You might have seen that the neural network performance is disappointing
+compared to the generative model in the ``shifted'' data.  Try increasing the
+number of training data and tune the hyper-parameters.  Can you get it to
+generalize to the ``shifted'' test data?  \textbf{Attach the ``number of
+training data vs accuracy'' plot to justify your conclusion.} What is the
+intuition how neural network works on predicting the $D$? The starter kit is
+provided in \texttt{plot4.py}.
+
+
+
+\end{Parts}
+
+\newcommand{\pcmKL}{\operatorname{KL}}
+
+\Question{Entropy, KL Divergences, and Cross-Entropy}
+
+Stepping back for a bit, notice that so far we have mostly considered so called \emph{Euclidean} spaces, the
+most prominent example is the vector space $\R^d$ with
+inner product $\langle \vec x, \vec y\rangle = \vec x\T \vec y$ and norm $\lVert \vec x \rVert_2^2 = \vec x\T \vec x$.
+For example in linear regression, we had the loss function
+\begin{equation*}
+f(\vec \theta) = \lVert \mat X\T \vec \theta - \vec y\rVert_2^2 = \sum_{i=1}^n (\vec x_i\T\vec\theta - y_i)^2
+\end{equation*}
+which uses precisely the Euclidean norm squared to measure the error.
+
+In this problem we will implicitly consider a different geometric structure, which defines a
+metric on probability distributions. In more advanced courses, this
+can be developed further to show how probability distributions are
+naturally imbued with a curved non-Euclidean intrinsic geometry. Here,
+our goals are more modest --- we just want you to better understand the
+relationship between probability distributions, entropy, KL
+Divergence, and cross-entropy.
+
+Let $\vec p$ and $\vec q$ be two probability
+distributions, i.e. $p_i\geq 0$, $q_i\geq 0$, $\sum_i p_i = 1$ and $\sum_i q_i = 1$, then we define the Kullback-Leibler divergence
+\begin{equation*}
+\pcmKL(\vec p, \vec q) = \sum_{i} p_i \log \frac{p_i}{q_i}
+\end{equation*}
+which is the ``distance`` to $\vec p$ from $\vec q$.
+We have $\pcmKL(\vec p, \vec p) = 0$ and $\pcmKL(\vec p, \vec q) \geq 0$ (the latter by Jensen's inequality) as would be expected
+from a distance metric. However, $\pcmKL(\vec p, \vec q) \neq \pcmKL(\vec q, \vec p)$ since the KL divergence is not symmetric.
+
+
+\begin{Parts}
+\Part \textit{Entropy motivation:}
+Let $X_1, X_2, \ldots, X_n$ be independent identically distributed random
+variables taking values in a finite set $\{0, 1, \dots, m\}$, i.e. $p_j = \P(X_i = j)$ for $j\in \mathcal \{0, 1, \dots, m\}$.
+The \emph{empirical number of occurrences} is then a random vector
+that we can denote $\vec F^{(n)}$ where $F^{(n)}_j$ is the number of
+variables $X_i$ that happen to take a value equal to $j$.
+
+Intuitively, we can consider coin tosses with $j = 0$ corresponding to heads and
+$j=1$ corresponding to tails. Say we do an experiment with $n=100$ coin tosses, then
+$F^{(100)}_0$ is the number of heads that came up and $F^{(100)}_1$ is the number of tails.
+
+Recall that the number of configurations of $X_1, X_2, \ldots, X_n$
+that have $f^{(n)}$ as their empirical type is $\binom{n}{f^{(n)}_0,
+  f^{(n)}_1, \ldots, f^{(n)}_m}$. Further notice that dividing the
+empirical type by $n$ yeilds an empirical probability distribution.
+
+{\bf Show using the crudest form of Stirling's approximation ($\ell !
+  \approx (\frac{\ell}{e})^{\ell}$) that this is approximately equal
+  to $\exp(n H(f^{(n)}/n))$} where the entropy $H$ of a probability
+distribution is defined as $H(\vec p) = \sum_{j=0}^{m} p_j \ln
+\frac{1}{p_j}$.
+
+\Part \textit{KL divergence motivation:}
+Recall that the probability of seeing a particular empirical type is
+given by:
+$$
+\P(\vec F^{(n)} = \vec f^{(n)}) =
+\binom{n}{f^{(n)}_0, f^{(n)}_1, \dots, f^{(n)}_m} \prod_{j=1}^m p_j^{f^{(n)}_j}.
+$$
+
+Consider the limit of large $n$ and a sequence of empirical types so
+that $\frac 1 n \vec f^{(n)} \rightarrow \vec f$ for $n\rightarrow
+\infty$, where $\vec f$ is some distribution of interest.
+
+\textbf{Use Stirling's approximation to show that}
+$$
+\lim_{n\rightarrow \infty} \frac 1 n \log \P(\vec F^{(n)} = \vec f^{(n)}) = -\operatorname{KL}(\vec f, \vec p)
+$$
+
+Intuitively this means that the larger $\operatorname{KL}(\vec f, \vec p)$ is, the easier it is to
+conclude $\vec f \neq \vec p$ from empirical data since the chance
+that we would get confused in that way is decaying exponentially. Note
+also that the empirical distribution is the first argument of the KL
+divergence and the true model is the second argument of the KL
+divergence --- we are going from the true model to the empirical one.
+
+
+
+\Part \label{conditional} \textbf{Show that for probability distributions $p(\vec x, y)$ and $q_\theta(\vec x, y) = q_\theta(y\mid \vec x) q(\vec x)$ with $\vec x$ from some discrete
+set $\mathcal X$ and $y$ from some discrete set $\mathcal Y$ we have}
+\begin{equation}
+  \operatorname{KL}(p, q_\theta) = c - \sum_{\vec x \in \mathcal X}\sum_{y\in \mathcal Y} p(\vec x, y) \log q_\theta(y \mid \vec x)
+\end{equation}
+\textbf{for some constant $c$ independent of $\theta$}.
+
+
+\Part In logistic regression we predict labels $y_i = +1$ or $y_i =
+-1$ from features $\vec x_i$ using the transition probability model
+\begin{equation}
+  q_\theta(y_i \mid \vec x_i) = \frac{1}{1+e^{-y_i\vec\theta\T \vec x_i}}.
+\end{equation}
+We now show that the cross-entropy loss you have seen in lectures can be formulated
+as minimizing the KL distance to
+the empirical probabilities from the probabilities induced by the model $q_\theta$.
+
+For convenience, we assume that all the feature $\vec x_i$ are
+distinct --- no two training points are identical.
+
+\textbf{Use (\ref{conditional}) to show that with the empirical distribution}
+$$p(\vec x, y) = \begin{cases}
+ \frac 1 n & \text{if $\vec x = \vec x_i$ and $y = y_i$ for some $i = 1, 2, \dots, n$}\\
+ 0 & \text{otherwise}
+\end{cases}$$
+\textbf{we get}
+$$
+\min_{\vec\theta} \pcmKL(p, q_{\vec\theta}) = \min_{\vec\theta} -\frac 1 n \sum_{i} \log q_{\vec\theta}(y_i\mid \vec x_i),$$
+which is the cross entropy loss derived in lectures.
+
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

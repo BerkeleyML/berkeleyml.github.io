@@ -1,0 +1,494 @@
+\documentclass[preview]{standalone}
+\usepackage{header}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Delivera$
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the $
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadverdently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+
+\Question{Probabilistic Model of Linear Regression}
+Both ordinary least squares and ridge regression have interpretations
+from a probabilistic standpoint. In particular, assuming a generative
+model for our data and a particular noise distribution, we will derive
+least squares and ridge regression as the maximum likelihood and
+maximum {\em a-posteriori} parameter estimates, respectively. This problem
+will walk you through a few steps to do that. (Along with some side
+digressions to make sure you get a better intuition for ML and MAP
+estimation.)  
+
+\begin{Parts}
+\Part Assume that $X$ and $Y$ are both one-dimensional random
+variables, i.e. $X, Y \in \mathbb{R}$. Assume an affine model between
+$X$ and $Y$: $Y=Xw_1+w_0+Z$, where $w_1, w_0 \in \mathbb{R}$, and $Z \sim
+N(0,1)$ is a standard normal (Gaussian) random variable. 
+Assume $w_1, w_0$ are fixed parameters (i.e., they are not random). 
+{\bf What is the conditional distribution of $Y$ given $X$?}
+
+
+
+\Part Given $n$ points of training data $\{(X_1,Y_1),(X_2,Y_2),\ldots, (X_n,Y_n)\}$ generated in
+an iid fashion by the probabilistic setting in the previous part, {\bf
+  derive the maximum likelihood estimator for $w_1,w_0$ from this training
+  data.} 
+
+
+
+
+\Part Now, consider a different generative model.
+Let $Y=Xw+Z$, where $Z \sim U[-0.5,0.5]$ is a continuous random
+variable uniformly distributed between $-0.5$ and $0.5$. 
+Again assume that $w$ is a fixed parameter.
+{\bf What is the conditional distribution of $Y$ given $X$?} 
+
+
+
+\Part Given $n$ points of training data $\{(X_1,Y_1),(X_2,Y_2),\cdots,
+(X_n,Y_n)\}$ generated in an i.i.d. fashion in the setting of the
+part (c) {\bf derive a maximum likelihood estimator of $w$.}
+Assume that $X_i > 0$ for all $i = 1, \ldots, n$.
+(Note that MLE for this case need not be unique; 
+but you are required to report only one particular estimate.)
+
+
+
+\Part Take the model $Y=Xw +Z$, where $Z \sim U[-0.5,0.5]$. 
+{\bf Use a computer
+  to simulate $n$ training samples $\{(X_1,Y_1),(X_2,Y_2),\cdots,
+(X_n,Y_n)\}$ and illustrate what the likelihood of the data looks like
+  as a function of $w$ after $n=5, 25, 125, 625$
+  training samples. Qualitatively describe what is happening as $n$
+  gets large.}  
+
+(You may use the starter code.
+Note that you have considerable design freedom in this problem
+part. You get to choose how you draw the $X_i$ as well as what true
+value $w$ you want to illustrate. You have total freedom in
+using additional python libraries for this problem part. No restrictions.
+) 
+
+
+
+
+\Part (One-dimensional Ridge Regression) Now, let us return to the
+case of Gaussian noise. Given $n$ points of training data
+$\{(X_1,Y_1),(X_2,Y_2),\cdots, (X_n,Y_n)\}$ generated according to
+$Y_i=X_i W+Z_i$, where $Z_i \sim N(0,1)$ are iid standard normal random
+variables. Assume $W \sim N(0,\sigma^2)$ is also a standard normal and
+is independent of both the $Z_i$'s and the $X_i$'s.
+{\bf Use Bayes' Theorem to derive the posterior distribution of $W$
+  given the training data. What is the mean of the posterior distribution of $W$ given the data?}
+
+Hint: Compute the posterior up-to proportionality and try to identify the distribution
+by completing the square.
+
+
+
+
+\Part Consider $n$ training
+data points $\{(\vec{x}_1,Y_1),(\vec{x}_2,Y_2),\cdots, (\vec{x}_n,Y_n)\}$ generated
+according to $Y_i=\vec w^\top \vec{x}_i+Z_i$ where $Y_i\in\mathbb{R}, \vec{w}, \vec{x}_i
+\in\mathbb{R}^d$ with $\vec w$ fixed, and $Z_i \sim N(0,1)$ iid standard
+normal random variables.  {\bf Argue why the maximum likelihood estimator
+ for $\vec w$ is the solution to a least squares problem.} 
+
+
+
+
+
+\Part (Multi-dimensional ridge regression) Consider the setup of the
+previous part: $Y_i= \vec{W}^\top \vec{x}_i+Z_i$, where $Y_i\in\mathbb{R}, 
+\vec{W}, \vec{x}_i \in\mathbb{R}^d$, and $Z_i \sim N(0,1)$ iid standard
+normal random variables. Now we treat $\vec{W}$ as a random vector
+and assume a prior knowledge about its distribution.
+In particular, we use the prior information that the random variables $W_j$
+are i.i.d. $\sim N(0,\sigma^2)$ for $j=1,2,\ldots,d$.  
+{\bf Derive the posterior distribution of $\vec{W}$ given all the $\vec{x}_i,Y_i$ pairs. 
+What is the mean of the posterior distribution of the random vector $\vec{W}$?} 
+
+Hint: Use hints from part (f) and the following identities:
+For $\mat{X} = \begin{bmatrix}
+  \vec {x}_1^\top  \\ \vdots \\ \vec{x}_n^\top
+\end{bmatrix} $ and $\vec{Y} = \begin{bmatrix}
+  Y_1 \\ \vdots \\ Y_n
+\end{bmatrix}$
+we have $\mat{X}^\top \mat{X} = \sum_{i=1}^n \vec{x}_i\vec{x}_i^\top $ and 
+$\mat{X}^T \vec{Y} = \sum_{i=1}^n \vec{x}_i Y_i$.
+
+
+
+\Part Consider $d=2$ and the setting of the previous part. {\bf Use a
+  computer to simulate and illustrate what the {\em a-posteriori}
+  probability looks like for the $W$ model parameter space after $n=5,
+  25, 125$ training samples for different values of
+  $\sigma^2$. } 
+
+(Again, you may use the starter code. And like problem (e), there are
+no restrictions for using additional python libraries for this
+part as well.)  
+
+
+
+\end{Parts}
+
+\Question{Simple Bias-Variance Tradeoff}
+
+Consider a random variable $X$, which has unknown mean $\mu$ and
+unknown variance $\sigma^2$. Given $n$ iid realizations of training samples $X_1=x_1,
+X_2=x_2, \ldots, X_n=x_n$ from the random variable, we wish to
+estimate the mean of $X$. We will call our estimate of $X$ the random variable
+$\hat{X}$, which has mean $\hat{\mu}$. There are a few ways we can estimate
+$\mu$ given the realizations of the $n$ samples:
+\begin{enumerate}
+	\item Average the $n$ samples: $\frac{x_1+x_2+\ldots+x_n}{n}$.
+	\item Average the $n$ samples and one sample of $0$: $\frac{x_1+x_2+\ldots+x_n}{n+1}$.
+	\item Average the $n$ samples and $n_0$ samples of $0$: $\frac{x_1+x_2+\ldots+x_n}{n+n_0}$.
+	\item Ignore the samples: just return $0$.
+\end{enumerate}
+
+In the parts of this question, we will measure the \emph{bias} and \emph{variance} of each of our estimators. 
+The \emph{bias} is defined as $$E[\hat{X} - \mu]$$ and the $\emph{variance}$ is defined as $$\text{Var}[\hat{X}].$$
+
+\begin{Parts}
+\Part \textbf{What is the bias of each of the four estimators above?}
+
+
+
+\Part \textbf{What is the variance of each of the four estimators above?}
+
+
+
+\Part 
+Suppose we have constructed an estimator $\hat X$ from some samples of $X$.
+We now want to know how well $\hat X$ estimates a fresh (new) sample of $X$.
+Denote this fresh sample by $X'$.
+Note that $X'$ is an i.i.d. copy of the random variable $X$.
+\textbf{Derive a general expression for the expected squared error $E[(\hat{X} - X')^2] $ 
+in terms of $\sigma^2$ and the bias and variance of the estimator $\hat X$. 
+Similarly, derive an expression for the expected squared error $E[(\hat{X} - \mu)^2]$. Compare
+the two expressions and comment on the differences between them, if any.}
+
+
+
+\Part It is a common mistake to assume that an unbiased estimator
+is always ``best.'' Let's explore this a bit further. \textbf{Compute the expected squared error for each of the estimators above.}
+
+
+\Part \textbf{Demonstrate that the four estimators are each just
+  special cases of the third estimator, but with different
+  instantiations of the hyperparameter $n_0$}.
+
+
+
+\Part \textbf{What happens to bias as $n_0$ increases? What happens to variance as $n_0$ increases?}
+
+
+
+\Part Say that $n_0 = \alpha n$. 
+\textbf{Find the setting for $\alpha$
+  that would minimize the expected total error, assuming you secretly
+  knew $\mu$ and $\sigma$.} Your answer will depend on $\sigma$, $\mu$, and $n$.
+
+
+
+\Part For this part, let's assume that we had some reason to believe that $\mu$ \emph{should be small} (close to $0$) and $\sigma$ \emph{should be large}. In this case, \textbf{what happens to the expression in the previous part?}
+
+
+\Part In the previous part, we assumed there was reason to believe that $\mu$ \emph{should be small}. Now let's assume that we have reason to believe that $\mu$ is not necessarily small, but \emph{should be close to some fixed value} $\mu_0$. \textbf{In terms of $X$ and $\mu_0$, how can we define a new random variable $X'$ such that $X'$ is expected to have a small mean? Compute the mean and variance of this new random variable.}
+
+
+
+\Part Draw a connection between $\alpha$ in this problem and the
+regularization parameter $\lambda$ in the ridge-regression version of least-squares. \textbf{What does this problem suggest
+  about choosing a regularization coefficient and handling our
+  data-sets so that regularization is most effective}? This is an
+open-ended question, so do not get too hung up on it.
+
+
+
+\end{Parts}
+\Question{Estimation and approximation in linear regression}
+
+In typical applications, we are dealing with data generated by an \emph{unknown}
+function (with some noise), and our goal is to estimate this function.
+So far we used linear and polynomial regressions.
+In this problem we will explore the quality of polynomial regressions
+when the true function is not polynomial.
+
+Suppose we are given a full column rank feature matrix
+$\mat{X} \in \mathbb{R}^{n \times d}$ and an observation vector
+$\vec{y}\in \mathbb{R}^n$.
+Let the vector $\vec y$ represent the noisy measurement of a true signal $\vec{y}^*$:
+\begin{align}
+  \vec{y} = {\vec{y}^*} + \vec{z},
+  \label{eq:model}
+\end{align}
+with $\vec{z} \in \mathbb{R}^n$ representing the random noise in the observation $\vec{y}$,
+where $z_j \sim \mathcal{N}(0,\sigma^2)$ are i.i.d.
+We define the vectors $\vec{w}^*$ and $\hat{\vec{w}}$ as follows:
+\begin{align*}
+  \vec{w}^* = \arg\min_{\vec w} \| \vec y^* - \mat X \vec w \|_2^2\quad\quad\text{and}\quad\quad
+  \hat{\vec w} = \arg\min_{\vec w} \| \vec{y} - \mat X \vec w\|_2^2.
+\end{align*}
+Observe that for a given true signal $\vec{y}^*$ the vector $\vec{w}^*$ is fixed,
+but the vector $\hat{\vec w}$ is a random variable since it is a function of the
+random noise $\vec z$.
+Note that the vector $\mat{X}\vec{w}^*$ is the best linear fit of the true signal $\vec{y}^*$
+in the column space of $\mat X$.
+Similarly, the vector $\mat{X} \hat{\vec{w}}$ is the best
+linear fit of the observed noisy signal $\vec{y}$ in the column space of $\mat {X}$.
+
+After obtaining $\hat{\vec{w}}$, we would like to bound the error
+$\| \mat{X} \hat{\vec{w}} - \vec{y}^*\|_2^2$, which is the \emph{prediction error}
+incurred based on the specific $n$ training samples.
+In this problem we will see how to get a good estimate of this prediction error.
+When using polynomial features, we will also learn how to decide the degree of
+the polynomial when trying to fit a noisy set of observations from a smooth function.
+
+{\bf Remark}:
+You can use the closed form solution for OLS and results from Discussion 3 for
+all parts of this problem.
+For parts (a)-(c), assume that the feature matrix $\mat X$
+and the true signal vector $\vec{y}^*$ are fixed (and not random).
+Furthermore, in all parts the expectation is taken over the randomness in the noise vector 
+$\vec{z}$. 
+
+\begin{Parts}
+
+\Part {\bf Show that} $\EE[\hat{\vec{w}}] = \vec{w}^*$ and use this fact to
+{\bf show that}
+\begin{align*}
+  \EE\left[\| \vec y^* - \mat X \hat{\vec w} \|_2^2\right]
+  = \| \vec y^* - \EE[\mat X \hat{\vec w}] \|_2^2 +
+  \EE\left[\| \mat X \hat{\vec w}  - \EE[\mat X \hat{\vec w}\|_2^2\right].
+\end{align*}
+Note that the above decomposition of the squared error corresponds to the sum of
+bias-squared and the variance of our estimator $\mat X \hat{\vec w}$.
+
+
+
+\Part Recall that if $\vec{v} \sim \mathcal{N}(\vec{0}, \Sigma)$, where
+$\Sigma \in \mathbb{R}^{(d \times d)}$ is the covariance matrix,
+then for any matrix $A \in \mathbb{R}^{k \times d}$,
+we have $\mat{A}\vec{v} \sim \mathcal{N}(\vec{0}, \mat{A}\Sigma\mat{A}^T)$.
+Use this fact to
+{\bf show that} the distribution of the vector $\hat{\vec{w}}$ is given by
+$$\hat{\vec{w}} \sim \mathcal{N}(\vec{w}^*, \sigma^2(\mat X^\top \mat X)^{-1}).$$
+
+
+
+\Part
+Use part (b) to {\bf show that}
+$$\frac{1}{n} \EE \left[ \| \mat{X} \hat{\vec{w}} - \mat X \vec w^* \|_2^2 \right]
+= \sigma^2 \frac{d}{n}.$$
+
+Hint: The trace trick: ${\mathrm{trace}}(AB) = {\mathrm{trace}}(BA)$, might be useful.
+
+
+
+\Part
+Assume the underlying model is a noisy linear model with scalar samples
+$\{\alpha_i, y_i\}_{i=1}^n$, i.e. $y_i = w_1 \alpha_i + w_0 + z_i$.
+We construct matrix $\mat{X}$ by using $D+1$ polynomial features
+$\vec{P}_D(\alpha_i) = [1, \alpha_i, \ldots, \alpha_i^D]^\top$
+of the \emph{distinct} sampling points $\{\alpha_i\}_{i=1}^n$.
+For any $D \geq 1$, compare with model~\eqref{eq:model} and
+{\bf compute $\vec{w}^*$ for this case.
+Also compute the bias ($\Vert \vec{y}^* - \mat X \vec{w}^*\Vert_2$) for this case.}
+Using the previous parts of this problem, {\bf compute the number of
+  samples $n$ required to ensure that the average expected prediction squared error is
+bounded by $\epsilon$?} Your answer should be expressed as a function of $D$,
+$\sigma^2$, and $\epsilon$.
+
+{\bf Conclude that as we increase model complexity, we require a
+  proportionally larger number of samples for accurate prediction.}
+
+
+
+\Part Simulate the problem from part (d) for yourself.
+Set $w_1 = 1$, $w_0 = 1$, and sample $n$ points $\{\alpha_i\}_{i=1}^n$ uniformly from
+the interval $[-1,1]$. Generate $y_i = w_1 \alpha_i + w_0 + z_i$ with $z_i$
+representing standard Gaussian noise.
+
+{\bf Fit a $D$ degree polynomial to this data and show how the average error
+$\frac{1}{n} \| \mat{X} \hat{\vec{w}} - \vec{y}^* \|_2^2$ scales as a function of
+both $D$ and $n$.}
+
+You may show separate plots for the two scalings. It may also be helpful
+to average over multiple realizations of the noise (or to plot point
+clouds) so that you obtain smooth curves.
+
+(For this part, the libraries numpy.random and numpy.polyfit might be useful.
+You are free to use any and all python libraries.)
+
+
+
+\Part Assume that the underlying model is the noisy exponential function
+with scalar samples $\{\alpha_i, y_i\}_{i=1}^n$ where  $y_i = e^{\alpha_i} + z_i$
+with  \emph{distinct} sampling points $\{\alpha_i\}_{i=1}^n$, in the interval $[-4,3]$
+and i.i.d. Gaussian noise $z_i \sim \mathcal{N}(0, 1)$.
+We again construct matrix $\mat{X}$ by using $D+1$ polynomial features $[1, \alpha_i, \ldots, \alpha_i^D]^\top$
+and use linear regression to fit the observations.
+Recall, the definitions of the bias and variance of the OLS estimator from part (a)
+and {\bf show that for a fixed $n$, as the degree $D$ of the polynomial
+increases: (1) the bias decreases and (2) the variance increases}.
+Use the values you derived for bias and variance and {\bf show that for the
+prediction error, the optimal choice of $D$ is given by
+$\mathcal{O}(\log n/\log\log n)$}.
+
+Hint: You can directly use previous parts of this problem, Discussion 3 and Problem 4 of HW 2.
+You may assume that $n$ and $D$ are large for approximation purposes.
+
+
+
+
+\Part Simulate the problem in part (f) yourself.
+Sample $n$ points $\{\alpha_i\}_{i=1}^n$ uniformly from
+the interval $[-4, 3]$. Generate $y_i = e^{\alpha_i} + z_i$ with $z_i$
+representing standard Gaussian noise.
+{\bf Fit a $D$ degree polynomial to this data and show how the average error
+$\frac{1}{n} \| \mat{X} \hat{\vec{w}} - \vec{y}^* \|_2^2$ scales as a function of both $D$ and $n$.}
+You may show separate plots for the two scalings.
+For scaling with $D$, choose $n = 120$.
+It may also be helpful to average over multiple realizations of the noise (or to plot point
+clouds) so that you obtain smooth curves.
+(For this part, the libraries numpy.random and numpy.polyfit might be useful
+and you are free to use any and all python libraries.)
+
+
+
+\Part Comment on the differences in plots obtained in part (e) and part (g).
+
+
+\end{Parts}
+
+\Question{Robotic Learning of Controls from Demonstrations and Images}
+
+Huey, a home robot, is learning to retrieve objects from a cupboard, as shown in Fig.~\ref{fig:robot}. The goal is to push obstacle objects out of the way to expose a goal object.  Huey's robot trainer, Anne, provides demonstrations via tele-operation. When tele-operating the robot, Anne can look at the images captured by the robot and provide controls to Huey remotely.
+
+During a demonstration, Huey records the RGB images of the scene for each timestep, $x_0,x_1,...,x_{n}$, where $x_i \in \mathbb{R}^{30\times 30\times 3}$ and the controls for his body, $u_0,u_1,\ldots,u_{n}$, where $u_i \in \mathbb{R}^3$. The controls correspond to making small changes in the 3D pose (i.e. translation and rotation) of his body. Examples of the data are shown in the figure. 
+
+Under an assumption (sometimes called the Markovian assumption) that all that matters for the current control is the current image, Huey can try to learn a linear \emph{policy} $\pi$ (where $\pi \in \mathbb{R}^{2700\times 3}$) which linearly maps image states to controls (i.e. $\pi^\top x =u$). We will now explore how Huey can recover this policy using linear regression. Note please use {\bf numpy} and {\bf numpy.linalg} to complete this assignment. 
+
+\begin{figure}[h!]
+    \begin{center}
+    \includegraphics[scale=.05]{src/problems/linear_regression/robot.pdf}
+    \caption{A) Huey trying to retrieve a mustard bottle. An example RGB image of the workspace taken from his head mounted camera is shown in the orange box. The angle of the view gives Huey and eye-in-hand perspective of the cupboard he is reaching into. B) A scatter plot of the 3D control vectors, or $u$ labels. Notice that each coordinate of the label lies within the range of $[-1,1]$ for the change in position. Example images, or states $x$, are shown for some of the corresponding control points. The correspondence is indicated by the blue lines.  } \label{fig:robot}
+    \end{center}
+\end{figure}
+
+\begin{Parts}
+\Part To get familiar with the structure of the data, \textbf{please visualize the 0th, 10th and 20th images in the training dataset. Also find out what's their corresponding control vectors. }
+
+
+
+\Part Load the $n$ training examples from x\_train.p and compose the matrix $X$, where $X \in \mathbb{R}^{n\times 2700}$. Note, you will need to flatten the images to reduce them to a single vector. The flattened image vector will be denoted by $\bar{x}$ (where $\bar{x} \in \mathbb{R}^{2700\times 1}$). Next, load the $n$ examples from y\_train.p and compose the matrix $U$, where $U \in \mathbb{R}^{n\times 3}$. Try to perform ordinary least squares to solve:  
+
+$$\min_{\pi} \|X\pi-U \|^F_2$$
+
+to learn the \emph{policy} $\pi \in \mathbb{R}^{2700 \times 3}$. {\bf Report what happens as you attempt to do this and explain why.}
+
+
+
+\Part Now try to perform ridge regression:
+
+$$\underset{\pi}{\mbox{min}} \: ||X\pi-U||^2_2 + \lambda ||\pi||^2_2$$
+
+on the dataset for regularization values $\lambda = \lbrace 0.1,1.0,10,100,1000 \rbrace$. Measure the average squared Euclidean distance for the accuracy of the policy on the training data:
+
+$$\frac{1}{n}\sum_{i =0 }^{n-1} ||\bar{x}_i^T \pi - u_i||^2_2$$ 
+
+{\bf Report the training error results for each value of $\lambda$}.
+
+
+
+\Part Next, we are going to try standardizing the states. For each pixel value in each data point, $x$, perform the following operation: 
+
+	$$x \mapsto \frac{x}{255} \times 2 - 1.$$
+ Since we know the maximum pixel value is $255$, this rescales the data to be between $[-1,1]$ . {\bf Repeat the previous part and report the average squared training error for each value of $\lambda$}.
+
+
+
+\Part Evaluate both \emph{policies} (i.e. with and without standardization on the new validation data x\_test.p and y\_test.p for the different values of $\lambda$. {\bf Report the average squared Euclidean loss} and {\bf qualitatively explain how changing the values of $\lambda$ affects the performance in terms of bias and variance}. 
+
+
+
+
+\Part To better understand how standardizing improved the loss function, we are going to evaluate the \emph{condition number} $\kappa$ of the optimization, which is defined as
+
+$$\kappa = \frac{\sigma_{\mbox{max}}(X^TX+\lambda I)}{\sigma_{\mbox{min}}(X^TX+\lambda I)}$$
+or the ratio of the maximum singular value to the minimum singular value of the relevant matrix. Roughly speaking, the condition number of the optimization process measures how stable the solution will be when some error exists in the observations. More precisely, given a linear system $Ax=b$, the condition number of the matrix $A$ is the maximum ratio of the relative error in the solution $x$ to the relative error of $b$.
+
+For the regularization value of $\lambda = 100$, {\bf report the condition number with the standardization technique applied and without}. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

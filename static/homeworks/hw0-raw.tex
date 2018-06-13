@@ -1,0 +1,165 @@
+\documentclass[preview]{standalone}
+\usepackage{header}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Delivera$
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the $
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadverdently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\Question{Sample Submission}
+
+Please submit a plain text file to the Gradescope programming assignment ``Homework 0 Test Set'':
+
+\begin{enumerate}
+    \item Containing 5 rows, where each row has only one value ``1''.
+    \item No spaces or miscellaneous characters.
+    \item Name it ``submission.txt''.
+\end{enumerate}
+
+
+\newcommand{\myvec}[1]{\mathbf{#1}}
+\newcommand{\mymat}[1]{\mathbf{#1}}
+\Question{Linear Algebra Review}
+
+Consider the vectors $\myvec{u} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\myvec{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$.
+Define the matrix $\mymat{M} = \myvec{u} \ \myvec{v}^{\top}$.
+
+
+
+\begin{Parts}
+	
+\Part Compute the eigenvalues and eigenvectors of the matrix $\mymat{M}$.
+
+
+
+
+\Part Compute the rank and the determinant of the matrix $\mymat{M}$.
+What is the dimension of the nullspace of the matrix $\mymat{M}$?
+
+
+
+\Part Now consider two non-zero vectors $\myvec{p}$ and $\myvec{q}$ in $\mathbb{R}^d$ and the matrix $\mymat{N} = \myvec{p}\ \myvec{q}^{\top}$. 
+Repeat the computations for parts (a) and (b) for the matrix $\mymat{N}$.
+
+
+
+\end{Parts}
+
+Please explain your computations/arguments precisely.
+
+
+\newcommand{\slope}{w_1}
+\newcommand{\intercept}{w_2}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\w}{\mathbf{w}}
+
+\Question{Linear Regression and Adversarial Noise}
+
+In this question, we will investigate how the presence of noise in the data can adversely affect the model that we learn from it.
+
+Suppose we obtain a training dataset consisting of $n$ points $(x_i, y_i)$ where $n \geq 2$.
+In case of no noise in the system, these set of points lie on a line given by $y = w_1x + w_2$, i.e, for each $i$, $y_i = w_1x_i + w_2$.
+The variable $x$ is usually referred to as the covariate and $y$'s are referred to as the observation.
+Suppose that all $x_i$'s are distinct and non-zero. Our task is to estimate the slope $w_1$ and the $y$-intercept $w_2$ from the training data.
+We call the pair $(w_1, w_2)$ as the true model.
+
+Suppose that an adversary modifies our data by corrupting the observations and we now have the training data $(x_i, \tilde y_i)$
+where $\tilde y_i = y_i +\epsilon_i$ and the noise $\epsilon_i$ is chosen by the adversary.
+Note that the adversary has access to the covariates $x_i$'s but \emph{can not} modify them.
+Its goal is to trick us into learning a wrong model $(\hat w_1, \hat w_2)$ from the dataset $\{(x_i, \tilde y_i), i=1, \ldots, n\}$.
+We denote by $(\hat w_1, \hat w_2)$ the model that we learn from this dataset $\{(x_i, \tilde y_i), i=1, \ldots, n\}$ using the standard ordinary least-squares regression.
+\begin{Parts}
+
+\Part Suppose that the adversary wants us to learn a particular wrong model $(w_1^*, w_2^*)$. 
+If we use the standard ordinary least-squares regression, can the adversary \emph{always} (for any choice of $w_1^*$ and $w_2^*$) fool us
+by setting a particular value for exactly one $\epsilon_i$ (and leaving other observations as it is, i.e., $\tilde y_j = y_j, j \neq i$), so that we obtain
+$\hat w_1 = w_1^*$ and $\hat w_2 = w_2^*$?
+If yes, justify by providing a mathematical mechanism for the adversary to set the value of the noise term as a function of the dataset $\{(x_i, y_i), i=1, \ldots, n\}$ and $(w_1^*, w_2^*)$?
+If no, provide a counter example.
+
+
+
+\Part Repeat the part (a) for the case when the adversary can corrupt two observations, i.e., for the case when the adversary can set up at most two of the $\epsilon_i$'s to any non-zero values of its choice.
+
+
+
+
+\Part 
+In the context of machine learning and applications, what lessons do you take-away after working through this problem?
+
+
+
+\end{Parts}
+
+\Question{Background Review}
+
+Please describe the coursework that you have undertaken on the
+following topics:
+
+\begin{enumerate}[label=(\alph*)]
+	\item Linear Algebra, e.g., EE 16A/B
+	\item Optimization, e.g., EECS 127
+	\item Probability and stochastic processes, e.g., EECS 126
+	\item Vector Calculus, e.g., EECS 127, Math 53.
+\end{enumerate}
+
+Also describe your experience with programming, in particular with
+python, e.g., like in your coursework in CS 61A/B and EE 16A/B.
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}

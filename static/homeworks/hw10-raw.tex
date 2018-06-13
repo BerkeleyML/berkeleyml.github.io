@@ -1,0 +1,747 @@
+\documentclass[preview]{standalone}
+\usepackage{header_problems}
+\usepackage{header_template}
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{Getting Started}
+
+\textbf{Read through this page carefully.} You may typeset your homework in latex or submit neatly handwritten/scanned solutions. Please start each question on a new page. Deliverables:
+
+\begin{enumerate}
+  \item Submit a PDF of your writeup, \textbf{with an appendix for your code}, to assignment on Gradescope, ``<<title>> Write-Up". If there are graphs, include those graphs in the correct sections. Do not simply reference your appendix.
+  \item If there is code, submit all code needed to reproduce your results, ``<<title>> Code".
+  \item If there is a test set, submit your test set evaluation results, ``<<title>> Test Set".
+\end{enumerate}
+
+After you've submitted your homework, watch out for the self-grade form.
+
+\begin{Parts}
+
+\Part Who else did you work with on this homework? In case of course events, just describe the group. How did you work on this homework? Any comments about the homework?
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\Part Please copy the following statement and sign next to it. We just want to make it \textit{extra} clear so that no one inadvertently cheats.
+
+\textit{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+\vspace{15pt}
+\framebox(465, 75){}
+
+\end{Parts}
+
+\pagebreak
+
+
+\Question{Regularized and Kernel $k$-Means}
+
+Recall that in $k$-means clustering we are attempting to minimize an objective defined as follows:
+\begin{align*}
+&\min_{\substack{C_1,C_2,\dots,C_k}} \sum_{i=1}^k{\sum_{x_j \in C_i}{\|x_j - \mu_i\|_2^2}}, \text{ where}\\
+&\mu_i = \text{argmin}_{\mu_i\in\mathbb R^d}{\sum_{x_j \in C_i}{\|x_j - \mu_i\|_2^2}}=\frac{1}{|C_i|} \sum_{x_j \in C_i}{x_j}, \;\; i=1,2,\dots,k.
+\end{align*}
+The samples are $\{x_1, \ldots, x_n\}$, where $x_j \in \mathbb{R}^d$, and $C_i$ is the set of samples assigned to cluster $i$. Each sample is assigned to exactly one cluster, and clusters are non-empty.
+
+\begin{Parts}
+
+\Part \textbf{What is the minimum value of the objective when $k=n$ (the number
+of clusters equals the number of samples)?}
+
+
+
+\Part (Regularized k-means) Suppose we add a regularization term to the above
+objective. That is, the objective now becomes $$\sum_{i=1}^k \left( \lambda
+\|\mu_i\|_2^2 +  {\sum_{x_j \in C_i}{\|x_j - \mu_i\|_2^2}} \right).$$
+
+{\bf Show that the optimum of
+$$\min_{\mu_i\in\mathbb R^d} \lambda \|\mu_i\|_2^2 + \sum_{x_j \in C_i}{\|x_j - \mu_i\|_2^2}$$
+is obtained at $\mu_i = \frac 1 {|C_i|+ \lambda} \sum_{x_j\in C_i} x_j.$}
+
+
+
+\Part Here is an example where we would want to regularize clusters. Suppose
+there are $n$ students who live in a $\mathbb{R}^2$ Euclidean world and who
+wish to share rides efficiently to Berkeley for their final exam in CS189. The
+university permits $k$ vehicles which may be used for shuttling students to the
+exam location. The students need to figure out $k$ good locations to meet up.
+The students will then each \emph{drive} to the closest meet up point and then
+the shuttles will deliver them to the exam location. Define $x_j$ to be the
+location of student $j$, and let the exam location be at $(0,0)$. Assume that
+we can drive as the crow flies, i.e. by taking the shortest paths between two
+points. \textbf{Write down an appropriate objective function to solve this
+ridesharing problem and minimize the total distance that all vehicles need to
+travel.} Your result should be similar to the regularized $k$-means.
+
+\Part (Kernel k-means) Suppose we have a dataset $\{\x_i\}_{i=1}^n, \x_i \in
+\mathbb{R}^{\ell}$ that we want to split into $k$ clusters, i.e., finding the best
+$k$-means clustering \emph{without the regularization}.  Furthermore, suppose
+we know {\em a priori} that this data is best clustered in an impractically
+high-dimensional feature space $\mathbb{R}^m$ with an appropriate
+metric. Fortunately, instead of having to deal with the (implicit)
+feature map $\phi : \mathbb{R}^{\ell} \rightarrow \mathbb{R}^m$ and
+(implicit) distance metric\footnote{Just as how the interpretation of
+  kernels in kernelized ridge regression involves an implicit
+  prior/regularizer as well as an implicit feature space, we can think
+  of kernels as generally inducing an implicit distance metric as well. Think of
+how you would represent the squared distance between two points in terms of
+pairwise inner products and operations on them.}, we have a kernel function
+$\kappa(\x_1,\x_2) = \langle \phi(\x_1) , \phi(\x_2)\rangle$ that we
+can compute easily on the raw samples. How should we perform the
+kernelized counterpart of $k$-means clustering?
+
+\textbf{Derive the underlined portion of this algorithm.}  
+
+\begin{algorithm}[H]
+\caption{Kernel K-means}
+\label{alg:kmeans}
+\begin{algorithmic}
+   \Require Data matrix $X\in \mathbb R^{n\times \ell}$; Number of clusters $k$; kernel function $\kappa(\x_1,\x_2)$
+   \Ensure Cluster id $i(j)$ for each sample $x_j$.
+   \Function {Kernel-K-means}{$X,k$}
+      \State Randomly initialize $i(j)$ to be an integer in $1,2,\ldots,k$ for each $x_j$.
+      \While{not converged}
+        \For{$i\gets 1 \textbf{ to } k$}
+          \State Set $C_i=\{j\in\{1,2,\ldots,n\}:i(j)=i\}$.
+        \EndFor
+        \For{$j\gets 1 \textbf{ to } n$}
+          \State Set $i(j) =\text{argmin}_{i}$ \underline{\bf \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad}
+        \EndFor
+      \EndWhile
+      \State Return $C_i$ for $i = 1, 2, \ldots, k$.
+  \EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+{\em (Hint: there will be no explicit representation of the ``means''
+  $\vec{\mu_i}$, instead each cluster's membership itself will implicitly
+  define the relevant quantity, in keeping with the general spirit of
+  kernelization that we've seen elsewhere as well.)}
+
+
+
+\end{Parts}
+
+\Question{Linear Methods on Fruits and Veggies}
+In this problem, we will use the dataset of fruits and vegetables that
+was collected in HW5. The goal is to accurately classify the
+produce in the image. Instead of operating on the raw pixel values, we
+operate on extracted HSV colorspace histogram features from the image. HSV
+histogram features extract the color spectrum of an image, so we
+expect these features to serve well for distinguishing produce like
+bananas from apples. Denote the input state $x \in \mathbb{R}^{729}$,
+which is an HSV histogram generated from an RGB image with a fruit
+centered in it. Each data point will have a corresponding class label,
+which corresponds to their matching produce. Given 25 classes, we can
+denote the label as $y \in \lbrace 0,...,24 \rbrace$. 
+
+Better features would of course give better results, but we chose
+color spectra for an initial problem for ease of interpretation.
+
+
+Classification here is still a hard problem because the state space is
+much larger than the amount of data we obtained in the class -- we are
+trying to perform classification in a $729$ dimensional space with only a few hundred data points from each of the $25$ classes. In order to obtain higher accuracy, we will examine how to perform hyper-parameter optimization and dimensionality reduction. We will first build out each component and test on a smaller dataset of just 3 categories: apple, banana, eggplant. Then we will combine the components to perform a search over the entire dataset.
+
+
+Note all python packages needed for the project, will be imported already. {\bf DO NOT import new Python libraries.}
+
+
+
+\begin{Parts}
+\Part Before we classify our data, we will study how to reduce the
+dimensionality of our data. We will project some of the dataset into 2D to visualize how effective different dimensionality reduction procedures are. The first method we consider is a random projection, where a matrix is randomly created and the data is linearly projected along it. 
+
+For random projections, it produces a matrix, $A \in \mathbb{R}^{2 \times 729}$ where each element $A_{ij}$ is sampled independently from a normal distribution (i.e. $A_{ij} \sim N(0,1)$). {\bf Run the code $\mbox{projection.py}$ and report the resulting plot of the projection. You do not need to write any code. }
+
+
+
+
+
+
+
+\Part We will next examine how well PCA performs as a
+dimensionality-reduction tool. PCA projects the data into the subspace with the most variance, which is determined via the covariance matrix $\Sigma_{XX}$. We can compute the principal components via the singular value decomposition $U\Lambda V^T = \Sigma_{XX}$. Collecting the first two column vectors of $U$ in the matrix $U_2$, we can project our data as follows: 
+
+$$\bar{x} = U_2^T x$$
+
+{\bf Report the projected 2D points figure. You do not need to write any code. }
+
+
+
+\Part Finally, we will project our data into the Canonical Variates. In order to perform CCA, we must first turn our labels $y$ into a one-hot encoding vector $\bar{y} \in \lbrace 0,1 \rbrace^{J}$, where each element corresponds to the label. Note $J$ is the number of class labels, which is $J = 3$ for this part.   Next we need to compute the canonical correlation matrix $\Sigma_{XX}^{-\frac{1}{2}}\Sigma_{XY}\Sigma_{YY}^{-\frac{1}{2}}$ and compute the singular value decomposition $U\Lambda V^T = \Sigma_{XX}^{-\frac{1}{2}}\Sigma_{XY}\Sigma_{YY}^{-\frac{1}{2}}$. 
+
+We can then project to the canonical variates by using the first $k$ columns in $U$, or $U_k$. The projection can be written as follows: 
+
+$$\bar{x} = U_k^T \Sigma_{XX}^{-\frac{1}{2}} x$$
+
+{\bf Report the resulting plot for CCA. You do not need to write any
+  code. Among the dimension reduction methods we have tried,
+  i.e. random projection, PCA and CCA, which is the best for
+  separation among classes? Which is the worst? Why do you think this happens?}
+
+
+
+
+\Part We will now examine ways to perform classification using the
+smaller projected space from CCA as our features. One technique is to regress to the class labels and then greedily choose the model's best guess. In this problem, we will use ridge regression to learn a mapping from the HSV histogram features to the one-hot encoding $\bar{y}$ described in the previous problem.  Solve the following Ridge Regression problem:
+
+$$\underset{w}{\mbox{min}} \sum^{N}_{n=1} ||\bar{y} - w^Tx_n||_2^2 + \lambda ||w||^2_F$$
+
+Then we will make predictions with the following function:
+
+$$y = \underset{j\in{0,..,J-1}}{\mbox{argmax}} \: (w^Tx)_j$$
+
+where $(w^Tx)_j$ considers the $j$-th coordinate of the predicted vector. {\bf You do not need to write any code.}
+
+{\bf Run $\mbox{linear\_classification.py}$}. It will output a confusion matrix, a matrix that compares the actual label to the predicted label of the model. The higher the numerical value on the diagonal, the higher the percentage of correct predictions made by the model, thus the better model. {\bf Report the Ridge Regression confusion matrix for the training data and validation data}.
+
+
+
+\Part Instead of performing regression, we can potentially obtain
+better performance by using algorithms that are more tailored for
+classification problems. LDA (Linear Discriminant Analysis) approaches the problem by assuming each $p(x | y =j)$ is a normal distribution with mean $\mu_j$ and covariance $\Sigma$. Notice that the covariance matrix is assumed to be the same for all the class labels. 
+
+LDA works by fitting $\mu_j$ and $\Sigma$ on the dimensionality-reduced dataset. During prediction, the class with the highest likelihood is chosen. 
+
+$$y = \underset{j\in{0,...,J-1}}{\mbox{argmin}} \: (x-\mu_j)^T\Sigma^{-1}(x-\mu_j)$$
+
+{\bf Fill in the class $\mbox{LDA\_Model}$}. Then {\bf run $\mbox{linear\_classification.py}$ and report the LDA confusion matrix for the training and validation data}.
+
+
+
+
+
+ \Part LDA makes an assumption that all classes have the same
+ covariance matrix. We can relax this assumption with QDA. In QDA, we
+ will now parametrize each conditional distribution (still normal) by
+ $\mu_j$ and $\Sigma_j$. The prediction function is then
+ computed\footnote{You should verify for yourself why this is indeed
+   the maximum likelihood way to pick a class.} as 
+
+ $$y = \underset{j\in{0,..,J-1}}{\mbox{argmin}} \: (x-\mu_j)^T\Sigma_j^{-1}(x-\mu_j) + \ln(\mbox{det}|\Sigma_j|) $$
+
+
+{\bf Fill in the class $\mbox{QDA\_Model}$}. Then {\bf run $\mbox{linear\_classification.py}$ and report the QDA confusion matrix for the training data and validation data}.
+
+ 
+
+ \Part Let us try the Linear SVM, which fits a hyperplane
+ to separate the dimensionality-reduced data. {\bf Run $\mbox{linear\_classification.py}$ and report the Linear SVM confusion matrix for the training data and validation data. You do not need to write any code. }
+
+
+
+
+ \Part Let us try logistic regression. {\bf Run $\mbox{linear\_classification.py}$ and report the logistic regression confusion matrix for the training data and validation data. You do not need to write any code. }
+
+
+
+
+\Part In this part, we look at the Receiver Operating Characteristic
+(ROC), another approach to understanding a classifier's
+performance. In a two class classification problem, we can compare the
+prediction to the labels. Specifically, we count the number of True
+Positives (TP), False Positives (FP), False Negatives (FN) and True
+Negatives (TN). The true positive rate (TPR) measures how many
+positive examples out of all positive examples have been detected,
+concretely, TPR = TP/(TP+FN). The false positive rate (FPR) on the other
+hand, measures the proportion of negative examples that are mistakenly
+classified as positive, concretely, FPR = FP/(FP + TN).  
+
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{lll}
+             & label=1        & label=0        \\
+prediction=1 & True Positive  & False Positive \\
+prediction=0 & False Negative & True Negative 
+\end{tabular}
+\end{table}
+
+A perfect classifier would have TPR = 1.0 and FPR = 0.0. However, in
+the real world, we usually do not have such a classifier. Requiring a
+higher TPR usually incurs the cost of a higher FPR, since that makes
+the classifier predict more positive outcomes. An ROC plots the trade
+off between TPR and FPR in a graphical manner. One way to get an ROC
+curve is to first obtain a set of scalar prediction scores, one for
+each of the validation samples. A higher score means that the
+classifier believes the sample is more likely to be a positive
+example. For each of the possible thresholds for the classifier, we
+can compute the TPR and FPR. After getting all (TPR, FPR) pairs, we
+can plot the ROC curve. {\bf Finish the ROC function in roc.py. Run
+  roc.py and report the ROC curve for an SVM with different regularization weight C. Which C is better and why?}
+
+
+
+
+\Part If you multiply the scores output by the classifier by a factor of $10.0$, how the ROC curve would change?
+
+
+
+
+ \Part We will finally train on the full dataset and compare the different models.  We will perform a grid search over the following hyperparameters:
+ \begin{enumerate}
+\item The regularization term $\lambda$ in Ridge Regression. 
+\item The weighting on slack variables, $C$ in the linear SVM. 
+\item The number of dimensions, $k$ we project to using CCA.
+\end{enumerate} 
+
+The file $\mbox{hyper\_search.py}$ contains the parameters that will
+be swept over. If the code is correctly implemented in the previous
+steps, this code should perform a sweep over all parameters and give
+the best model. {\bf Run $\mbox{hyper\_search.py}$, report the model
+  parameters chosen, report the plot of the models's validation error, and report the best model's confusion matrix for validation data.} WARNING: This can take up to an hour to run.
+
+
+
+
+
+
+\end{Parts}
+
+\Question{Expectation Maximization (EM) Algorithm: A closer look!}
+
+Hello All! Happy Spring Break!
+We agree this problem *APPEARS* lengthy. Don't worry!
+Several parts are of demo nature and several other
+are tutorial in nature, requiring ample explanation.
+Hopefully you enjoy working on this homework and learn
+several concepts in greater detail.
+
+The discussion will also be going over EM using examples similar to
+this homework. 
+
+In this problem, we will work on different aspects of the EM algorithm to reinforce your understanding of this 
+very important algorithm.
+
+For the first few parts, we work with the following one-dimensional mixture model:
+\begin{align*}
+  Z &\sim \text{Bernoulli}(0.5) + 1\\
+  X\vert Z=1 &\sim \mathcal{N}(\mu_1, \sigma_1^2), \quad \text{and}\\
+  X\vert Z=2 &\sim \mathcal{N}(\mu_2, \sigma_2^2),
+\end{align*}
+i.e., $Z$ denotes the label of the Gaussian distribution from which $X$ is drawn.
+In other words, we have an equal weighted 2-mixture (since $Z$ takes value
+$1$ or $2$ with probability $0.5$ each) of Gaussians, where the variances and means for
+both mixtures are unknown.
+Note that the mixture weights are given to you. (So there is one less parameter to worry about!)
+For a given set of parameters, we represent the likelihood of $(X, Z)$ by $p(X, Z; \vec{\theta})$ 
+and its log-likelihood  by $\ell(X, Z; \vec{\theta})$,
+where $\vec{\theta}$ is used to denote the set of all unknown parameters 
+$\vec{\theta} = \{\mu_1, \mu_2, \sigma_1, \sigma_2\}$.
+
+Given a dataset consisting of only $(x_i, i=1, \ldots, n)$ (and no
+labels $z_i$), 
+our goal is to approximate the maximum-likelihood estimate of the parameters $\vec\theta$.
+In the first few parts, we walk you through one way of achieving this, namely the EM algorithm.
+
+\begin{Parts}
+
+\Part {\bf Write down the expression for the joint likelihood $p(X=x, Z=1; \vec\theta)$ and $p(X=x, Z=2; \vec\theta)$.
+What is the marginal likelihood $p(X=x; \vec\theta)$ and the log-likelihood $\ell(X = x; \vec\theta)$?}
+
+\Part Now we are given a dataset where the label values $Z$ are unobserved, i.e., we are given a
+set of $n$ data points $\{x_i, i=1, \ldots, n\}$.
+{\bf Derive the expression for the log-likelihood 
+$\ell(X_1= x_1, \ldots, X_n=x_n)$ of a given dataset $\{{x}_i\}_{i=1}^n$.}
+
+\Part Let $q$ denote a distribution on the (hidden) labels $\{Z_i\}_{i=1}^n$ given by
+\begin{align}
+  q(Z_1 = z_1, \ldots, Z_n = z_n) = \prod_{i=1}^n q_i(Z_i=z_i). \label{eq:q}
+\end{align}
+Note that since $Z \in\{1, 2\}$, $q$ has $n$ parameters, namely $\{q_i(Z_i=1), i=1, \ldots, n\}$.
+More generally if $Z$ took values in $\{1, \ldots, K\}$, $q$ would have $n(K-1)$ parameters.
+To simplify notation, from now on, we use the notation $\ell(x; \vec{\theta}) := \ell({X} = {x}; \vec{\theta})$
+and $ p(x, k; \vec\theta) := p(X=x, Z=k; \vec\theta)$.
+{\bf Show that for a given point $x_i$, we have }
+\begin{align}
+  \ell(x_i; \vec{\theta})
+  &\geq \mathcal{F}_i(\vec{\theta}; q_i)
+  :=\underbrace{\sum_{k=1}^2 q_i(k) \log p (x_i, k; \vec{\theta})}_{\mathcal{L}(x_i; \vec\theta, q_i)} + \underbrace{\sum_{k=1}^2 {q}_i(k) \log\left(\frac{1}{{q}_i(k)}\right)}_{H(q_i)}, 
+  \label{eq:lower_bound}
+\end{align}
+where $H({q}_i)$ denotes the Shannon-entropy of the distribution
+$q_i$. 
+Thus {\bf conclude that we obtain the following lower bound on the log-likelihood:}
+\begin{align}
+  \ell(\{x_i\}_{i=1}^n; \vec\theta)  \geq 
+  \mathcal{F}(\vec{\theta}; q) := \sum_{i=1}^n\mathcal{F}_i(\vec{\theta}; {q}_i).
+  \label{eq:F_defn}
+\end{align}
+
+{\em Hint: Jensen's inequality, the concave-$\cap$ nature of the log,
+  and reviewing lecture notes might be useful.} 
+
+Notice that the right hand side of the bound depends on $q$ while the  
+left hand side does not.
+
+\Part The EM algorithm can be considered a
+coordinate-ascent\footnote{A coordinate-ascent algorithm is just one
+  that fixes some coordinates and maximizes the function with respect
+  to the others as a way of taking iterative improvement steps. (By
+  contrast, gradient-descent algorithms tend to change all the
+  coordinates in each step, just by a little bit.) We
+  will discuss coordinate-ascent and coordinate-descent in more detail
+later. } algorithm on the
+lower bound $\mathcal{F}(\vec{\theta}; q)$ derived in the previous part,
+where we ascend with respect to $\vec\theta$ and $q$ in an alternating fashion.
+More precisely, one iteration of the EM algorithm is made up of 2-steps:
+\begin{align*}
+  q^{t+1} &= \arg\max_{q} \mathcal{F}(\vec{\theta}^t; q) \quad&\text{(E-step)}\\
+  {\vec{\theta}}^{t+1} &\in \arg\max_{\vec\theta} \mathcal{F}(\vec{\theta}; q^{t+1}).  \quad&\text{(M-step)}
+\end{align*}
+Given an estimate $\vec\theta^t$, the previous part tells us that 
+$\ell(\{x_i\}_{i=1}^n; \vec{\theta}^t)  \geq 
+  \mathcal{F}(\vec{\theta}^t; q)$. {\bf Verify that equality holds in
+    this bound if we plug in $q(Z_1=z_1, \ldots, Z_n=z_n) 
+  = \prod_{i=1}^n p(Z = z_i\vert X= x_i; \vec{\theta}^t)$
+and hence we can conclude that 
+\begin{align}
+\label{eq:estep}
+  q^{t+1}(Z_1=z_1, \ldots, Z_n=z_n) 
+  &= \prod_{i=1}^n p(Z = z_i\vert X= x_i; \vec{\theta}^t).
+\end{align}
+is a valid maximizer for the problem $\max_{q} \mathcal{F}(\vec{\theta}^t; q)$ 
+and hence a valid
+E-step update.}
+
+\Part Using equation~\eqref{eq:estep} from above and the relation~\eqref{eq:q},
+we find that the E-step updates can be re-written as
+\begin{align*}
+  q_i^{t+1}(Z_i=k)  = p(Z = k\vert X = x_i; \vec{\theta}^t).
+\end{align*}
+{\bf Using this relation, show that the E-step updates for the $2$-mixture case are given by
+\begin{align*}
+  q_i^{t+1}(Z_i=1) &= \frac{\frac{1}{\sigma_1}\exp\left(-\frac{(x_i-\mu_1)^2}{2\sigma_1^2}\right)}{\frac{1}{\sigma_1}\exp\left(-\frac{(x_i-\mu_1)^2}{2\sigma_1^2}\right)+\frac{1}{\sigma_2}\exp\left(-\frac{(x_i-\mu_2)^2}{2\sigma_2^2}\right)}, \quad\text{and}\\
+  q_i^{t+1}(Z_i=2) &=\frac{\frac{1}{\sigma_2}\exp\left(-\frac{(x_i-\mu_2)^2}{2\sigma_2^2}\right)}{\frac{1}{\sigma_1}\exp\left(-\frac{(x_i-\mu_1)^2}{2\sigma_1^2}\right)+\frac{1}{\sigma_2}\exp\left(-\frac{(x_i-\mu_2)^2}{2\sigma_2^2}\right)}=1-q_i^{t+1}(Z_i=1).
+\end{align*}
+Explain intuitively why these updates make sense.}
+
+\Part We now discuss the M-step. Using the definitions from equations~\eqref{eq:lower_bound} and \eqref{eq:F_defn}, we have that
+\begin{align*}
+  \mathcal{F}(\vec{\theta}; q^{t+1}) = 
+  \sum_{i=1}^n(\mathcal{L}(x_i; \vec\theta, q_i^{t+1})
+    + H(q_i))
+  = H(q^{t+1}) + \sum_{i=1}^n\mathcal{L}(\vec x_i; \vec\theta, q_i^{t+1}),
+\end{align*}
+where we have used the fact that entropy in this case is given by $H(q^{t+1}) = \sum_{i=1}^nH(q_i^{t+1})$.
+Notice that although (as computed in previous part), $q^{t+1}$ depends
+on $\vec\theta^t$, the M-step only involves maximizing $\mathcal{F}(\vec{\theta}; q^{t+1})$
+with respect to just the parameter $\vec\theta$ while keeping the 
+parameter $q^{t+1}$ fixed.
+Now, noting that the entropy term $H(q^{t+1})$ does not depend on 
+the parameter $\vec\theta$, we conclude that the M-step simplifies to solving for
+\begin{align*}
+  \arg\max_{\vec\theta} \underbrace{\sum_{i=1}^n\mathcal{L}(\vec x_i; \vec\theta, q_i^{t+1})}_{=:\mathcal{L}(\vec{\theta}; q^{t+1})} .
+\end{align*}
+For this and the next few parts, we use the simplified notation
+\begin{align*}
+  q^{t+1}_i:= q_i^{t+1}(Z_i=1) \quad\text{ and } \quad  1-q^{t+1}_i:= q^{t+1}(Z_i=2)
+\end{align*}
+and recall that $\vec \theta = (\mu_1, \mu_2, \sigma_1, \sigma_2)$.
+{\bf Show that the expression for $\mathcal{L}(\vec{\theta}; q^{t+1})$ for the $2$-mixture case is given by
+\begin{align*}
+  &\mathcal{L}((\mu_1, \mu_2, \sigma_1, \sigma_2); q^{t+1}) \\
+        &\quad\quad=  C- \sum_{i=1}^n\left[q^{t+1}_i  \left(\frac{(x_i-\mu_1)^2}{2\sigma_1^2}+\log \sigma_1\right) + (1-q_i^{t+1}) \left(\frac{(x_i-\mu_2)^2}{2\sigma_2^2}+\log \sigma_2\right)\right],
+\end{align*}
+where $C$ is a constant that does not depend on $\vec\theta$ or $q^{t+1}$.}
+
+\Part Using the expression from the previous part, {\bf show that the gradients of $\mathcal{L}(\vec{\theta}; q^{t+1})$ with respect to $\mu_1, \mu_2
+\sigma_1, \sigma_2$ are given by}
+\begin{align*}
+  \frac{\partial \mathcal{L}}{\partial\mu_1} &= -\frac{\sum_{i=1}^n q_i^{t+1}(\mu_1-x_i)}{\sigma_1^2},\quad\quad\quad\quad\quad\quad\quad
+  \frac{\partial \mathcal{L}}{\partial\mu_2} = -\frac{\sum_{i=1}^n (1-q_i^{t+1})(\mu_2-x_i)}{\sigma_2^2},\\
+  \frac{\partial \mathcal{L}}{\partial\sigma_1} &= \frac{\sum_{i=1}^n q_i^{t+1}(x_i-\mu_1)^2}{\sigma_1^3}-\frac{\sum_{i=1}^n q_i^{t+1}}{\sigma_1}, \quad
+  \frac{\partial \mathcal{L}}{\partial\sigma_2} = \frac{\sum_{i=1}^n (1-q_i^{t+1})(x_i-\mu_2)^2}{\sigma_2^2}-\frac{\sum_{i=1}^n (1-q_i^{t+1})}{\sigma_2}.
+\end{align*}
+
+\Part Typically, the M-step updates are computed using the stationary points for $F(\vec\theta; q^{t+1})$. Using the
+expressions from previous parts and setting the gradients to zero, {\bf conclude that the M-step updates are given by
+\begin{align*}
+  \mu_1^{t+1} &= \frac{\sum_{i=1}^n q_i^{t+1} x_i}{\sum_{i=1}^n q_i^{t+1}},\quad\quad\quad\quad\quad\quad\quad\quad
+  \mu_2^{t+1} = \frac{\sum_{i=1}^n (1-q_i^{t+1}) x_i}{\sum_{i=1}^n (1-q_i^{t+1})},\\
+  (\sigma_1^2)^{(t+1)} &= \frac{\sum_{i=1}^n q_i^{t+1} (x_i-\mu^{t+1}_1)^2}{\sum_{i=1}^n q_i^{t+1}},\quad\quad
+  (\sigma_2^2)^{(t+1)} = \frac{\sum_{i=1}^n (1-q_i^{t+1}) (x_i-\mu^{t+1}_2)^2}{\sum_{i=1}^n (1-q_i^{t+1})}
+\end{align*}
+Explain intuitively why these updates make sense.}
+
+
+
+\Part For the next few parts, we simplify the mixture model.
+We work with the following simpler one-dimensional mixture model that
+has only a single unknown parameter:
+\begin{align*}
+  Z &\sim \text{Bernoulli}(0.5) + 1\\
+  X\vert Z=1 &\sim \mathcal{N}(\mu, 1), \quad \text{and}\\
+  X\vert Z=2 &\sim \mathcal{N}(-\mu, 1),
+\end{align*}
+where $Z$ denotes the label of the Gaussian from which $X$ is drawn.
+Given a set of observations only for $X$ (i.e., the labels are unobserved), 
+our goal is to infer the maximum-likelihood parameter $\mu$.
+Using computations similar to part (a), we can conclude that
+the likelihood function in this simpler set-up is given by
+\begin{align*}
+  p(X=x; \mu) = \frac{1}{2} \frac{e^{-\frac{1}{2}(x-\mu)^2}}{\sqrt{2\pi}} + 
+                \frac{1}{2} \frac{e^{-\frac{1}{2}(x+\mu)^2}}{\sqrt{2\pi}}.
+\end{align*}
+For a given dataset $\{x_i, i=1, \ldots, n\}$, 
+{\bf what is the log-likelihood $\ell(\{x_i\}_{i=1}^n; \mu)$ as a function of $\mu$?}
+
+\Part We now discuss EM updates for the set up introduced in the previous part.
+Let $\mu_t$ denote the estimate for $\mu$ at time $t$.
+First, we derive the E-step updates.
+Using part (d) (equation~\eqref{eq:estep}), {\bf show that the E-step
+  updates simplify to}
+\begin{align*}
+  q_i^{t+1}(Z_i=1) = \frac{\exp(-(x_i-\mu_t)^2/2)}{\exp(-(x_i-\mu_t)^2/2)+\exp(-(x_i+\mu_t)^2/2)}.
+\end{align*}
+Notice that these updates can also be derived by plugging in $\mu_1 = \mu$ and $\mu_2 = -\mu$ in the
+updates given in part (e).
+
+\Part Next, we derive the M-step update. Note that we can NOT simply plug in $\mu_1 = \mu$
+in the updates obtained in part (h), because the parameters are shared between the two mixtures.
+However, we can still make use of some of our previous computations for this simpler case.
+Plugging in $\mu_1 = \mu$ and $\mu_2=-\mu$, $\sigma_1=\sigma_2=1$ in part (f),
+{\bf show that the objective for the M-step is given by
+\begin{align*}
+  \mathcal{L}(\mu; q^{t+1}) 
+  &=  C- \sum_{i=1}^n\left(q^{t+1}_i \frac{(x_i-\mu)^2}{2} + (1-q_i^{t+1}) \frac{(x_i+\mu)^2}{2}\right).
+\end{align*}
+where $C$ is a constant independent of $\mu$.
+Compute the expression for the gradient $\frac{d}{d\mu}(\mathcal{L}(\mu; q^{t+1}))$.
+And by setting the gradient to zero, conclude that the M-step update at time $t+1$ is given by
+\begin{align*}
+  \mu_{t+1} = \frac{\sum_{i=1}^n (2q_i^{t+1}-1)x_i}{\sum_{i=1}^n (2q_i^{t+1}-1)} = \frac{1}{n}\sum_{i=1}^n (2q_i^{t+1}-1)x_i.
+\end{align*}
+}
+
+\Part Let us now consider a direct optimization method to estimate the
+MLE for $\mu$: Doing a gradient ascent 
+algorithm directly on the complete log-likelihood function $\ell(\{x_i\}_{i=1}^n; \mu)/n$ (scaling with
+$n$ is a bit natural here!).
+{\bf Compute the gradient $\frac{d}{d\mu}(\ell(\{x_i\}_{i=1}^n; \mu)/n)$ and show that it is equal to
+\begin{align*}
+  \frac{d}{d\mu} \left(\frac{1}{n}\ell(\{x_i\}_{i=1}^n; \mu)\right) 
+  = \left[\frac{1}{n} \sum_{i=1}^n (2w_i-1)x_i\right] - \mu,
+  \quad\text{where}\quad
+  w_i(\mu) = \frac{e^{-\frac{(x_i-\mu)^2}{2}}}{e^{-\frac{(x_i-\mu)^2}{2})}+e^{-\frac{(x_i+\mu)^2}{2})}}.
+\end{align*}
+Finally conclude that the gradient ascent scheme with step size $\alpha$ is given by
+\begin{align*}
+  \mu_{t+1}^{\text{GA}} &= \mu_{t}^{\text{GA}} + \alpha \frac{d}{d\mu} \ell(\{x_i\}_{i=1}^n; \mu)\bigg\vert_{\mu=\mu_{t}^{\text{GA}}}\\
+  &= (1-\alpha)\mu_t^{\text{GA}} + \alpha  \left[\frac{1}{n} \sum_{i=1}^n (2w_i(\mu_t^{\text{GA}})-1)x_i\right].
+\end{align*}
+}
+
+\Part {\bf Comment on the similarity or dissimilarity between the EM and gradient ascent (GA) updates derived in the previous
+two parts.}
+You are given a code {\tt{em\_gd\_km.py}} to run the two algorithms for the simpler one-dimensional
+mixture with a single unknown parameter $\mu$.
+{\bf Set part\_m=True in the code and run it.}
+The code first generates a dataset of size $100$ for two cases $\mu_{\text{true}} = 0.5$ (i.e., when the 
+two mixtures are close) and the case $\mu_{\text{true}} = 3$ (i.e.,
+when the two mixtures are far).
+We also plot the labeled dataset to help you visualize (but note that labels are not 
+available to estimate $\mu_{\text{true}}$ and hence we use EM and GA to obtain estimates).
+Starting at $\mu_0=0.1$, the code then computes EM updates and GA updates with step size $0.05$ for the dataset.
+{\bf Comment on the convergence plots for the two algorithms. Do the observations match well with
+the similarity/dissimilarity observed in the updates derived in the previous parts?}
+
+\Part Suppose we decided to use the simplest algorithm to estimate the parameter $\mu$: K Means! 
+Because the parameter is shared, we can estimate $\mu = \frac{1}{2}\vert \hat\mu_1 - \hat\mu_2\vert$ (assuming $\mu>0$)
+where $\hat\mu_1$ and $\hat\mu_2$ denote the cluster centroids determined by the K means.
+{\bf Do you think this strategy will work well?
+Does your answer depend on whether $\mu$ is large or small?}
+To help you answer the question, we have given a numerical implementation for this part as well.
+{\bf Run the code {\tt{em\_gd\_km.py}} with part\_n=True.}
+The code then plots a few data-points where we also plot the hidden labels to help you understand the dataset.
+Also code provides the final estimates of $\mu$ by EM, Gradient Ascent (GA) and K Means.
+{\bf Use the plots and the final answers to provide an intuitive argument for the questions asked above in this part.
+Do not spend time on being mathematically rigorous.}
+
+Hopefully you are able to learn the following take away messages: For the simple one-dimensional
+mixture model, we have that
+\begin{itemize}
+  \item EM works well: It converges to a good estimate of $\mu$ pretty quickly.
+  \item Gradient ascent is a weighted version of EM: It converges to a
+    good estimate of $\mu$, but is slower than EM.
+  \item K Means: Because of the hard thresholding, it converges to a biased estimate of $\mu$ if the two distributions overlap.
+\end{itemize}
+
+\end{Parts}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\Question{Expectation Maximization (EM) Algorithm: In Action!}
+
+Suppose we have the following general mixture of Gaussians.
+We describe the model by a pair of random variables $(\vec{X}, Z)$
+where $\vec{X}$ takes values in $\R^d$ and $Z$ takes value in the set
+$[K]=\{1, \ldots, K\}$.
+The joint-distribution of the pair $(\vec{X}, Z)$ is given to us as follows:
+\begin{align*}
+  Z &\sim \text{Multinomial}(\vec{\pi}),\\
+  (\vec{X} \vert Z = k) &\sim \mathcal{N}(\vec{\mu}_k, {\bm \Sigma}_k), \quad k \in [K],
+\end{align*}
+where $\vec{\pi} = (\pi_1, \ldots, \pi_K)^\top$ and $\sum_{k=1}^K \pi_k = 1$.
+Note that we can also write
+\begin{align*}
+	\vec{X} \sim \sum_{k=1}^K \pi_k \mathcal{N}(\vec{\mu}_k, {\bm \Sigma}_k).
+\end{align*}
+Suppose we are given a dataset $\{\vec{x}_i\}_{i=1}^n$ without their labels.
+Our goal is to identify the $K$-clusters of the data. To do this, we are going to estimate the
+parameters $\vec{\mu}_k, {\bm \Sigma}_k$ using this dataset.
+We are going to use the following three algorithms for this clustering task.
+
+
+\begin{itemize}
+  \item[{\bf K-Means:}] For each data-point for iteration $t$ we find its cluster
+  by computing:
+  \begin{align*}
+  	&y_i^{(t)}= \arg\min_{j \in [K]} \Vert \vec x_i -\vec \mu_j^{(t-1)}\Vert^2\\
+    &C_j^{(t)} = \{\vec x_i :\, y_i^{(t)}==j\}_{i=1}^n
+  \end{align*}
+
+  where $\vec\mu_j^{(t-1)}$ denotes the mean of $C_j^{(t-1)}$, the $j$-th cluster
+  in iteration $t-1$.
+  The cluster means are then recomputed as:
+  \begin{align*}
+  	\vec\mu_j^{(t)} &= \frac{1}{\vert C_j^{(t)} \vert}{\sum_{\vec x_i\in C_j^{(t)}}\vec x_i}.
+  \end{align*}
+  We can run K-means till convergence (that is we stop when the
+  cluster memberships do not change anymore).
+  Let us denote the final iteration as $T$, then the estimate of the covariances
+  $\Sigma_k$ from the final clusters can be computed as:
+  \begin{align*}
+  	{\bm\Sigma}_j &= \frac{1}{\vert C_j^{(T)} \vert}
+    {\sum_{\vec x_i\in C_j^{(T)}}(\vec x_i-\vec \mu_j^{(T)})(\vec x_i-\vec \mu_j^{(T)})^\top}.
+  \end{align*}
+  Notice that this method can be viewed as a ``hard'' version of
+  EM. 
+  
+  \item[{\bf K-QDA:}] Given that we also estimate the covariance, we
+    may consider a QDA version of K-means where the covariances keep
+    getting updated at every iteration and also play a role in
+    determining cluster membership. The objective at the assignment-step
+    would be given by
+  \begin{align*}
+  		&y_i^{(t)} = \arg\min_{j \in [K]} 	(\vec x_i -\vec \mu_j^{(t-1)})^\top
+      ({\bm \Sigma}_j^{(t-1)})^{-1} (\vec x_i -\vec\mu_j^{(t-1)}).\\
+      &C_j^{(t)} = \{x_i :\, y_i^{(t)}==j\}_{i=1}^n
+  \end{align*}
+    We could then  use $C_j^{(t)}$ to recompute the parameters as follows:
+  \begin{align*}
+  	\vec\mu_j^{(t)} &= \frac{1}{\vert C_j^{(t)} \vert}{\sum_{\vec x_i\in C_j^{(t)}}\vec x_i},\quad\text{and}\\
+  	{\bm\Sigma}_j^{(t)} &= \frac{1}{\vert C_j^{(t)} \vert}{\sum_{\vec x_i\in C_j^{(t)}}(\vec x_i-\vec \mu_j^{(t)})(\vec x_i-\vec \mu_j^{(t)})^\top}.
+  \end{align*}
+  We again run K-QDA until convergence (that is we stop when the
+  cluster memberships do not change anymore). Notice that, again, this method
+  can be viewed as another variant for the ``hard'' EM method.
+
+  \item[{\bf EM:}]  The EM updates are given by
+  \begin{itemize}
+    \item E-step: For $k = 1, \ldots, K$ and $i=1 \ldots, n$, we have
+    \begin{align*}
+      q_i^{(t)}(Z_i = k) = p(Z=k \vert \vec X = \vec x_i; \vec\theta^{(t-1)}).
+    \end{align*}
+    \item M-step: For $k = 1, \ldots, K$, we have
+    \begin{align*}
+      \pi_k^{(t)} &= \frac{1}{n}\sum_{i=1}^n q_i^{(t)}(Z_i = k) =
+      \frac{1}{n}\sum_{i=1}^np(Z=k \vert \vec X = \vec x_i; \vec\theta^{(t-1)}),\\
+      \vec\mu_k^{(t)} &= \frac{\sum_{i=1}^n q_i^{(t)}(Z_i = k) \vec x_i}{\sum_{i=1}^n q_i^{(t)}(Z_i = k)},\quad\text{and}\\
+      {\bm \Sigma_k}^{(t)} &= \frac{\sum_{i=1}^n q_i^{(t)}(Z_i = k) (\vec x_i - \vec\mu_k^{(t)})
+      (\vec x_i - \vec\mu_k^{(t)})^\top}{\sum_{i=1}^n q_i^{(t)}(Z_i = k)}.
+    \end{align*}
+  \end{itemize}
+  Notice that unlike previous two methods, in the EM updates, each data point contributes
+  in determining the mean and covariance for each cluster.
+
+\end{itemize}
+
+We now see the three methods in action.
+You are provided with a code for all the above 3 algorithms ({\tt{gmm\_em\_kmean.py}}).
+You can run it by calling the following function from main:
+\begin{lstlisting}[language=Python]
+experiments(seed, factor, num_samples, num_clusters)
+\end{lstlisting}
+We assume that $\vec x\in \R^2$, and the default settings are number of samples is
+$500$ ($n=500$), and the number of clusters is $3$ ($K=3$). Notice that {\tt seed} will determine the
+randomness and {\tt factor} will determine how far apart are the clusters.
+
+\begin{Parts}
+
+\Part Run the following setting:
+\begin{lstlisting}[language=Python]
+experiments(seed=11, factor=1, num_samples=500, num_clusters=3)
+\end{lstlisting}
+Observe the initial guesses for the means and the plots for the 3 algorithms on convergence.
+{\bf Comment on your observations.}
+Note that the colors are used to indicate that the points that belong to different clusters,
+to help you visualize the data and understand the results.
+
+\Part {\bf Comment on the results obtained for the following setting:}
+\begin{lstlisting}[language=Python]
+experiments(seed=63, factor=10, num_samples=500, num_clusters=3)
+\end{lstlisting}
+
+\end{Parts}
+
+\Question{Your Own Question}
+
+{\bf Write your own question, and provide a thorough solution.}
+
+Writing your own problems is a very important way to really learn
+the material. The famous ``Bloom's Taxonomy'' that lists the levels of
+learning is: Remember, Understand, Apply, Analyze, Evaluate, and
+Create. Using what you know to create is the top-level. We rarely ask
+you any HW questions about the lowest level of straight-up
+remembering, expecting you to be able to do that yourself. (e.g. make
+yourself flashcards) But we don't want the same to be true about the
+highest level.
+
+As a practical matter, having some practice at trying to create
+problems helps you study for exams much better than simply counting on
+solving existing practice problems. This is because thinking about how
+to create an interesting problem forces you to really look at the
+material from the perspective of those who are going to create the
+exams. 
+
+Besides, this is fun. If you want to make a boring problem, go
+ahead. That is your prerogative. But it is more fun to really engage
+with the material, discover something interesting, and then come up
+with a problem that walks others down a journey that lets them share
+your discovery. You don't have to achieve this every week. But unless
+you try every week, it probably won't happen ever. 
+
+\end{document}
