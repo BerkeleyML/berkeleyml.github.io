@@ -194,7 +194,7 @@ footer.footer-links {
 div.person {
   padding: 0;
   float: left; }
-  div.person .person-info, div.person .person-text, div.person .person-thumbnail {
+  div.person .person-info, div.person .person-thumbnail, div.person .person-text {
     float: left; }
   div.person .person-thumbnail {
     width: 8em; }
