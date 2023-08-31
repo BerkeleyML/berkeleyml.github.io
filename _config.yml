@@ -35,7 +35,8 @@ url: "https://berkeleyml.github.io/" # the base hostname & protocol for your sit
 # github_username:  jekyll
 
 # Build settings
-theme: just-the-docs
+theme: minima
+# theme: just-the-docs
 # remote_theme: just-the-docs
 plugins:
   - jekyll-feed
