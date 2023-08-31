@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Staff
-permalink: /staff/
+title: Course Staff
+permalink: /coursestaff/
 nav_order: 4
 ---
 
