@@ -1,0 +1,142 @@
+{"0": {
+    "doc": "Calendar",
+    "title": "Calendar",
+    "content": "Below are the timings for lectures, office hours, homework party, and discussion sections. This page will be updated periodically as times change. ",
+    "url": "/calendar/",
+    
+    "relUrl": "/calendar/"
+  },"1": {
+    "doc": "Calendar",
+    "title": "Lectures",
+    "content": "Lectures will be held in Dwinelle 155 on Tuesdays and Thursdays from 2:00 PM to 3:30 PM. Lectures will not be recorded and will be in-person for the entirety of the semester. ",
+    "url": "/calendar/#lectures",
+    
+    "relUrl": "/calendar/#lectures"
+  },"2": {
+    "doc": "Calendar",
+    "title": "Office Hours",
+    "content": "Professor Office Hours . Professor office hours will be held after lectures on Tuesdays and Thursdays, from 3:30 PM to 4:30 PM. Location is currently TBD. GSI Office Hours . See the Syllabus for guidelines on office hours. Submit tickets at oh.eecs189.org. | Day/Time | Type | Location | Room Capacity | . | Mon 10am - 11am | OH | Soda 320 | 30 | . | Mon 11am - 12pm | OH | Soda 320 | 30 | . | Tue 6pm - 7pm | OH | Soda 380 | 35 | . | Tue 7pm - 8pm | OH | Soda 380 | 35 | . | Wed 12pm - 1pm | OH | Soda 405 | 40 | . | Thu 10am - 11am | OH | Soda 320 | 30 | . | Thu 6pm - 7pm | OH | Soda 511 | 15 | . | Thu 7pm - 8pm | OH | Soda 511 | 15 | . | Fri 1pm - 2pm | HW Party | Woz (Soda 430-438) | 100 | . | Fri 2pm - 3pm | HW Party | Woz (Soda 430-438) | 100 | . ",
+    "url": "/calendar/#office-hours",
+    
+    "relUrl": "/calendar/#office-hours"
+  },"3": {
+    "doc": "Calendar",
+    "title": "Homework Party",
+    "content": "Homework Party will be held on Fridays from 1:00 PM to 3:00 PM at the “Woz” (Wozniak Lounge/Soda 430-438). ",
+    "url": "/calendar/#homework-party",
+    
+    "relUrl": "/calendar/#homework-party"
+  },"4": {
+    "doc": "Calendar",
+    "title": "Discussion Sections",
+    "content": "Discussion sections will all be in-person and none will be recorded. We are working on adding 2-3 more discussion sections. All discussion sections are one-hour long, and we may not cover all questions within the timeframe. Some TAs will also have mini-lectures at the start of their discussion. | DIS # | Section Time | Location | GSI | . | 104 | Wed 10am - 11am | Wheeler 120 | Philip Jacobson | . | 105 | Wed 11am - 12pm | Wheeler 220 | Andrew Qin | . | 101 | Wed 12pm - 1pm | Cory 540AB | Samuel Alber | . | 108 | Wed 1pm - 2pm | Cory 540AB | Sandeep Mukherjee | . | 102 | Wed 6pm - 7pm | Hildebrand B51 | Bear Xiong | . | 103 | Thu 9am - 10am | Dwinelle 223 | Sampada Deglurkar | . ",
+    "url": "/calendar/#discussion-sections",
+    
+    "relUrl": "/calendar/#discussion-sections"
+  },"5": {
+    "doc": "Home",
+    "title": "Introduction to Machine Learning",
+    "content": "University of California, Berkeley, Fall 2023 . Welcome to CS 189/289A! This class covers theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; deep learning models including CNNs, Transformers, graph neural networks for vision and language tasks; and Markovian models for reinforcement learning and robotics. ",
+    "url": "/#introduction-to-machine-learning",
+    
+    "relUrl": "/#introduction-to-machine-learning"
+  },"6": {
+    "doc": "Home",
+    "title": "Overview",
+    "content": "Week 1 . | 8/24 | Lecture 1: Introduction and Logistics | Slides | . Week 2 . | 8/28 | Homework 1: Math Review (Due 9/8 11:59pm) | PDF | . | 8/29 | Lecture 2: Maximum Likelihood Estimation | Slides | . | 8/30 | Discussion 0: Math Pre-Requisites Review | PDF | . | 8/31 | Lecture 3: Multivariate Gaussians |   | . Week 3 . | 9/5 | Lecture 4: Linear Regression 1 |   | . | 9/6 | Discussion 1: MLE &amp; Gaussians |   | . | 9/7 | Lecture 5: Linear Regression 2 |   | . | 9/9 | Homework 2: Linear/Logistic Regression &amp; Classification (Due 9/22 11:59pm) |   | . Week 4 . | 9/12 | Lecture 6: Classification - Generative &amp; Discriminative |   | . | 9/13 | Discussion 2: Linear Regression |   | . | 9/14 | Lecture 7: Logistic Regression &amp; Neural Networks |   | . Week 5 . | 9/19 | Lecture 8: Backpropagation and Gradient Descent 1 |   | . | 9/20 | Discussion 3: Classification &amp; Logistic Regression |   | . | 9/21 | Lecture 9: Backpropagation and Gradient Descent 2 |   | . | 9/23 | Homework 3: Neural Networks (Due 10/16 11:59pm) |   | . Week 6 . | 9/26 | Lecture 10: Neural Networks - CNNs, Batch Norm, &amp; ResNets |   | . | 9/27 | Discussion 4: Neural Networks and Training |   | . | 9/28 | Lecture 11: Neural Netowkrs - Attention &amp; Transformers |   | . Week 7 . | 10/3 | Lecture 12: Dimensionality Reduction &amp; PCA |   | . | 10/4 | Discussion 5: Convolution and Attention |   | . | 10/5 | Lecture 13: t-SNE |   | . | 10/7 | Homework 4: Dimensionality Reduction &amp; Decision Theory (Due 10/20 11:59pm) |   | . Week 8 . | 10/10 | Lecture 14: Clustering |   | . | 10/11 | Discussion 6: Dimensionality Reduction Techniques |   | . | 10/12 | Lecture 15: Multiway Classification, Decision Theory, &amp; Model Evaluation |   | . | 10/13 | Midterm (7-9pm, Pimentel 1) |   | . Week 9 . | 10/17 | Lecture 16: Bias-Variance Tradeoff &amp; Over/Under-Fitting |   | . | 10/18 | Discussion 7: Clustering and Decision Theory |   | . | 10/19 | Lecture 17: Nearest Neighbors &amp; Metric Learning |   | . | 10/21 | Homework 5: Bias/Variance, Nearest Neighbors, Decision Trees (Due 11/3 11:59pm) |   | . Week 10 . | 10/24 | Lecture 18: Decision Trees &amp; Ensembling |   | . | 10/25 | Discussion 8: Bias/Variance and Nearest Neighbors |   | . | 10/26 | Lecture 19: Hidden Markov Models &amp; Graphical Models 1 |   | . Week 11 . | 10/31 | Lecture 20: Hidden Markov Models &amp; Graphical Models 2 |   | . | 11/1 | Discussion 9: Decision Trees and HMMs Intro |   | . | 11/2 | Lecture 21: Markov Decision Processes |   | . | 11/4 | Homework 6: Markovian Models &amp; Reinforcement Learning (Due 11/17 11:59pm) |   | . Week 12 . | 11/7 | Lecture 22: Reinforcement Learning |   | . | 11/8 | Discussion 10: HMMs Advanced and MDPs |   | . | 11/9 | Lecture 23: Robotics and Machine Learning |   | . Week 13 . | 11/14 | Lecture 24: Language and Vision Applications |   | . | 11/15 | Discussion 11: Robotics, Language, &amp; Vision |   | . | 11/16 | Lecture 25: Graph Neural Networks &amp; Rotational Equivariance 1 |   | . | 11/18 | Homework 7: Graph Neural Networks &amp; Applications of Deep Learning (Due 12/1 11:59pm) |   | . Week 14 . | 11/21 | Lecture 26: Graph Neural Networks &amp; Rotational Equivariance 2 |   | . | 11/22 | Discussion 12: Graph Neural Networks |   | . | 11/23 | No Lecture (Thanksgiving) |   | . Week 15 . | 11/28 | Lecture 27: Special Topics - Computational Biology |   | . | 11/30 | Lecture 28: Special Topics - Causality |   | . Week 16 (RRR Week) . | No lectures or discussions this week | . Week 17 (Finals Week) . | 12/12 | Final Exam (8-11am, Location TBD) |   | . ",
+    "url": "/#overview",
+    
+    "relUrl": "/#overview"
+  },"7": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/",
+    
+    "relUrl": "/"
+  },"8": {
+    "doc": "Staff",
+    "title": "Staff",
+    "content": "Below is the course staff for the semester. Please make an Ed post before emailing GSIs and instructors. If you have a very private matter, you may email the instructors and Head GSIs. ",
+    "url": "/staff/",
+    
+    "relUrl": "/staff/"
+  },"9": {
+    "doc": "Staff",
+    "title": "Instructors",
+    "content": "| | Jennifer Listgarten . jennl@berkeley.edu . Professor Listgarten’s group works on machine learning and applied statistics as it relates to computational biology. To see more, visit this page. | . | | Jitendra Malik . malik@berkeley.edu . Professor Malik’s group works on computer vision, computational modeling of biological vision, computer graphics and machine learning. To see more, visit this page. | . ",
+    "url": "/staff/#instructors",
+    
+    "relUrl": "/staff/#instructors"
+  },"10": {
+    "doc": "Staff",
+    "title": "Head GSIs",
+    "content": "| | Arvind Rajaraman . arvind.rajaraman@berkeley.edu . Hi everyone, I’m Arvind, a senior at Berkeley and 3rd time TA for this course! My research interests lie in foundation models, deep RL, and embodied robots. In my free time, I like to cook and go on hikes! . | . ",
+    "url": "/staff/#head-gsis",
+    
+    "relUrl": "/staff/#head-gsis"
+  },"11": {
+    "doc": "Staff",
+    "title": "GSIs",
+    "content": "| | Andrew Qin . andrewqin@berkeley.edu . Hi everyone! I’m Andrew, and I’m a 3rd year EECS major interested in ML in game theory. I enjoy reading and playing computer games. Looking forward to meeting you all this semester! . | . | | Aryan Jain . aryanjain@berkeley.edu . Hey everyone! My name is Aryan and I am a 4th year EECS major from Minnesota. My research involves robot learning and few-shot learning for computer vision, but I am also interested in generative AI. Outside of school, I like photography, random board games and I am trying to learn tennis. Feel free to reach out if you want to chat about anything :) . | . | | Bear Xiong . junhao_xiong@berkeley.edu . Hi! My name is Bear and I’m a 3rd-year grad student working at the intersection between ML and biology. I’m originally from Guangxi, China but have also lived in Indiana and Maryland. I love reading, soccer and being outdoors. This is my first time TA’ing any class and I’m excited to meet you :) . | . | | Philip Jacobson . philip_jacobson@berkeley.edu . Hi, I’m Philip, a 5th year EECS PhD student working on 3D perception for robotics/autonomous vehicles. This will be my second time teaching this course. In my free time I enjoy video games, spending time outdoors hiking, and trying new foods! Looking forward to meeting everyone! . | . | | Sampada Deglurkar . sampada_deglurkar@berkeley.edu . Hi everyone! I’m Sampada and I’m a fourth year EECS PhD student working on providing safety assurances for systems that use machine learning. Looking forward to a great semester! . | . | | Samuel Alber . salber@berkeley.edu . Hello! My name is Sam and I’m a senior studying CS and physics. I love to play tennis, juggle, and more recently surf (or at least try to). My research interests are in computational biology and biophysics. This will be my second time TA’ing this course and I’m super excited to get to know you all! . | . | | Sandeep Mukherjee . sandeep.m@berkeley.edu . Hey! I’m currently a 4th year CS master’s student, originally from New Jersey. My research involves teaching robots how garden. This is my second time on course staff and I’m really excited to meet you all this semester :) . | . | | Verona Teo . veronateo@berkeley.edu . Hi, I’m Verona, a fourth year undergrad. I like philosophy and machine learning. Looking forward to meeting everyone this semester! . | . ",
+    "url": "/staff/#gsis",
+    
+    "relUrl": "/staff/#gsis"
+  },"12": {
+    "doc": "Staff",
+    "title": "Readers",
+    "content": "| | Bak Haghighi . bakaryhihmiya@berkeley.edu . | . | | Nishant Bhakar . nishant.bhakar@berkeley.edu . Hi! I’m Nishant, and I’m a 3rd year majoring in CS and physics from Washington. I enjoy building things and finding interesting applications of ML and AI. In my free time, I do competitive programming, binge TV shows, listen to music, and go hiking. Looking forward to meeting everyone this semester! . | . | | Suchir Agarwal . suchiragarwal@berkeley.edu . Hi! I’m Suchir, a 3rd year math and CS major. It’s my first time on course staff for 189, and I’m super excited to be here. A bit about me: I hail from Pennsylvania and am an avid classical music enthusiast. I’m excited to meet you all and hope you have a great semester! . | . | | Tomson Qu . cqu2024@berkeley.edu . Hi! I’m Tomson and I’m a senior majoring in CS and math. My research interests include robotics, RL, and computer vision. In my free time, I love doing handicrafts and watching movies. Feel free to talk to me about anything! . | . | | Vikas Ummadisetty . vikasu@berkeley.edu . Hello! I’m a 3rd year EECS undergrad interested in computer vision. I enjoy eating spicy food, watching movies, and playing ultimate frisbee. Feel free to reach out anytime! . | . ",
+    "url": "/staff/#readers",
+    
+    "relUrl": "/staff/#readers"
+  },"13": {
+    "doc": "Syllabus",
+    "title": "Syllabus",
+    "content": "Below is the syllabus for the course. We’re excited to be teaching you this semester! . ",
+    "url": "/syllabus/",
+    
+    "relUrl": "/syllabus/"
+  },"14": {
+    "doc": "Syllabus",
+    "title": "Introduction",
+    "content": "Course Overview . The homepage has a week-by-week coverage on the topics covered in this course. Note, this course is focused on teaching the basics of machine learning and a light coverage of deep learning models. Here are other courses offered by the EECS department that are adjacent to machine learning: . | CS 188 (Artificial Intelligence) - covers classical approaches to learning, including search, logical planning, games, Bayesian models, and a deeper coverage of Markovian models. | CS 182 (Deep Learning) - covers more recent deep learning architectures in greater detail. | CS 280 (Computer Vision) - covers advances in the field of vision models in the past 20-30 years. | CS 281A (Statistical Learning Theory) - delves into greater detail about statistical learning than CS 189/289A. | CS 285 (Deep Reinforcement Learning) - covers recent advances in the fields of robotics, imitation learning, control theory, and reinforcement learning. | CS 288 (Natural Language Processing) - covers techniques used to understand patterns and perform tasks on text. Also covers recent advances in language models. | . In-Person Instruction . CS 189 will be taught fully in person this semester, unless conditions change and university policy mandates otherwise. We are planning to record lectures, but we won’t be releasing the recordings on an ongoing basis. Instead, we currently plan to release lecture recordings in two batches shortly before the midterm and final exams, with the intention that they be used for studying. Auditing . Auditors are welcome to attend lecture only if there are extra seats available in the lecture hall. We anticipate that lectures will be very full for the first couple weeks of the semester. Unfortunately, we cannot devote instructional resources to auditors, but you are welcome to use materials that are posted publicly on this site. We will not be adding auditors to bCourses or to Ed Discussion, and auditors may not attend discussion sections or office hours. Non-EECS Graduate Students . If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head GSI ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course, but we can send you a form to fill out to express your interest in enrolling. Concurrent Enrollment Students . Concurrent enrollment applications are processed during the first few weeks of the semester, and we cannot provide any guarantee whether these applications may be approved. If you’d like to be added to the Gradescope and Ed, please email the Head GSI. DSP Students . We will only offer accomodations to students who have letters of accomodation through the DSP (Disabled Students’ Program). Please visit dsp.berkeley.edu to get more information on getting a letter of accomodaton (LoA). If your LoA says that you would require assignment extensions, only then will late homeworks be accepted. If your LoA requests for extended time on exams, you will receive an exam reflecting this extended time, and you’ll receive an email closer to exam dates about your room location (which will likely not be the main room). ",
+    "url": "/syllabus/#introduction",
+    
+    "relUrl": "/syllabus/#introduction"
+  },"15": {
+    "doc": "Syllabus",
+    "title": "Technology",
+    "content": "Ed Discussion . We will use Ed Discussion as the “one-stop shop” throughout the semester for a Q&amp;A forum and for official announcements. Enrollment in Ed Discussion is mandatory. If you have not yet been added to the CS 189 Ed, please email the Head GSI. If you have questions about anything related to the course, please post them on Ed rather than emailing the instructor or TAs. Please do not post anything resembling a solution to a homework problem before it’s due. If in doubt, you should make your post private (visible to instructors only). We always welcome any feedback on what we could be doing better. You are required to use your actual name on Ed. Gradescope . All homework will be submitted through Gradescope, and all grades will be returned through Gradescope. If you have not been added to Gradescope, please email the Head GSI. bCourses . We will use bCourses to upload lecture recordings for this course just before exams. Only people officially enrolled into the class will be able to access bCourses (i.e. if you are auditing or awaiting concurrent enrollment, we cannot add you to bCourses). bCourses should automatically add you to the CS 189/289A bCourses, but if you cannot accessit, please email the Head GSI. Instructional Servers . This course does not make use of instructional accounts, but if you would like a computer account for this course, go to http://inst.eecs.berkeley.edu/webacct, or click ‘WebAcct’ on http://inst.eecs.berkeley.edu. ",
+    "url": "/syllabus/#technology",
+    
+    "relUrl": "/syllabus/#technology"
+  },"16": {
+    "doc": "Syllabus",
+    "title": "Class Support",
+    "content": "Professor Office Hours . Professors will host office hours after lecture everyday from 3:30 PM to 4:30 PM. Please use this time to ask more conceptual questions or talk to the Professors. If you have in-depth homework help, please visit GSI office hours instead. GSI Office Hours . GSIs will hold office hours throughout the week to answer conceptual, homework, and discussion questions. When requesting help in office hours, please make a ticket at oh.eecs189.org, and have notifications turned on for when a GSI is ready to help answer your question. Please add a note on what question you need help for, so that we can group similar tickets together and get your question answered faster! . Note: GSIs are not required to debug your code. Because office hours tend to have long wait times, course staff needs to be fair in answering as many questions as possible, and it’s thus infeasible for a GSI to spend 20 minutes debugging someone’s code. Before you make a code debugging-related ticket, please take time to thoroughly debug your code. Thank you! . Homework Party . We will be hosting a homework party every week in the Wozniak Lounge (Soda 430-438), informally called the “Woz”, on Fridays 1:00 PM to 3:00 PM. Please follow the same guidelines as GSI office hours. GSIs will setup tables for each problem, so please sit at the table assigned for the specific problem you’re working on. Not only will this help us get to answer more people’s questions at once (and reduce your wait time), but you’ll also be able to think about solutions together with other students. Please keep in mind the Academic Integrity and Collaboration policies below though. ",
+    "url": "/syllabus/#class-support",
+    
+    "relUrl": "/syllabus/#class-support"
+  },"17": {
+    "doc": "Syllabus",
+    "title": "Grading",
+    "content": "The grading breakdown for this class will be: . | Homework: 20% | Midterm: 35% | Final: 45% | . Note: CS 189 and CS 289A will be graded on separate curves. Also, CS 289A students will have extra exam question(s) for the midterm and final. There is no class project. Homeworks . Homeworks will be a combination of math problems and coding assignments, both of which will be submitted to Gradescope. Coding tasks may be autograded or graded by readers. Instructions for where to submit will be given on each homework. There will be about 7 homeworks for this class, released 2 weeks at a time. Readers will grade homeworks throughout the semester, and grades will be released on Gradescope. If you wish to request a regrade on a homework assignment, you have 5 days to do so. Any regrade requests after this time window will not be considered by course staff. Doing the homeworks and reading the solutions is vital for your learning. You are expected to show your work and justify all of your answers. We are implementing the following policy to reduce student stress: homework will be scored out of 80%. In other words, your final homework score will be computed as such: Final HW Score = min(Raw HW Score / 80%, 100%). For instance, if you scored a 50% on the homework, then your actual grade is 50/80. If you scored a 80% on the homework, then your actual grade is 80/80. If you scored 80+ on the homework, then your actual grade is capped at 80/80. Your lowest two homework scores will be dropped, but these two drops should be reserved for emergencies. We will not grant additional homework drops or homework extensions for any reason. Discussions . Discussion worksheets are released the day before the first discussions of the week. The discussion sections may cover new material and will give you additional practice solving problems. You may attend whichever, as many, and as few discussion sections as you like. Exams . The midterm is Friday, October 13 from 7:00 PM to 9:00 PM in Pimentel 1. The final is tentatively scheduled for Tuesday, December 12, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. No alternate exams will be offered. Please make a private Ed post if you have an extreme hardship related to these policies. ",
+    "url": "/syllabus/#grading",
+    
+    "relUrl": "/syllabus/#grading"
+  },"18": {
+    "doc": "Syllabus",
+    "title": "Academic Integrity",
+    "content": "Ethical behavior is an important part of being an engineer. It is a part of our responsibility to act ethically and honestly, and moreover, ethical behavior is what helps you learn best. Cheating is fundamentally dishonest and antisocial behavior. We have a zero-tolerance policy for cheating. Any offense will result in negative points for the category that the offense occurs in, with no bound on how negative it can go, and a referral to the Center for Student Conduct. You are not permitted to upload any of our problems, solutions, or your own solutions to our problems to any site that is accessible by other people. Use Ed to discuss content. The only limited exceptions to this are online communication mediums between you and the collaborating individuals explicitly listed on your homework assignment. Looking at online solutions from previous semesters or other students is forbidden, as is sharing of your solutions with others. Furthermore, students all have an affirmative duty to report possible cases of cheating or unauthorized communication to the course staff, immediately. Acknowledgement of and failure to report cheating implicates the bystander since this is academic misconduct. Cheating hurts us all and engineering ethics requires us to point out wrongdoing when we are aware of it. ",
+    "url": "/syllabus/#academic-integrity",
+    
+    "relUrl": "/syllabus/#academic-integrity"
+  },"19": {
+    "doc": "Syllabus",
+    "title": "Collaboration",
+    "content": "You are encouraged to work on homework problems in study groups of up to five people, however, you must always write up the solutions on your own. You are not permitted to look at the final written solution even for members of your own study group. Similarly, you may use books or online resources (not solutions from previous terms) to help solve homework problems, but you must always credit all such sources in your writeup and you must never copy material verbatim. We believe that most students can distinguish between helping other students and cheating. Explaining the meaning of a question, discussing a way of approaching a solution, or collaboratively exploring how to solve a problem within your group is an interaction that we strongly encourage. But you should write your homework solution strictly by yourself. You must explicitly acknowledge everyone whom you have worked with or who has given you any significant ideas about the homework. ",
+    "url": "/syllabus/#collaboration",
+    
+    "relUrl": "/syllabus/#collaboration"
+  }
+}
