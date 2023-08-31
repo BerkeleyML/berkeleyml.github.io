@@ -12,6 +12,9 @@ nav_order: 1
 
 Welcome to CS 189/289A! This class covers theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; deep learning models including CNNs, Transformers, graph neural networks for vision and language tasks; and Markovian models for reinforcement learning and robotics.
 
+{: .note }
+The topics for future lectures, discussions, and HWs are tentative and may be moved around, changed, or removed.
+
 ## Overview
 
 ### Week 1
