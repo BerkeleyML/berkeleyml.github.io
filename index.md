@@ -30,13 +30,13 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 |  8/28 | **Homework 1**: Math Review (**Due 9/8 11:59pm**)  | [PDF](docs/hw1.pdf)  |
 |  8/29 | **Lecture 2**: Maximum Likelihood Estimation  | [Slides](docs/lec2.pdf) |
-|  8/30 | **Discussion 0**: Math Pre-Requisites Review  | [PDF](docs/dis0.pdf)  |
-|  8/31 | **Lecture 3**: Multivariate Gaussians  |  |
+|  8/30 | **Discussion 0**: Math Pre-Requisites Review  | [PDF](docs/dis0.pdf), [Solutions](docs/dis0_sol.pdf)  |
+|  8/31 | **Lecture 3**: Multivariate Gaussians  | [Slides](docs/lec3.pdf) |
 
 ### Week 3
 
 |  9/5 | **Lecture 4**: Linear Regression 1  |  |
-|  9/6 | **Discussion 1**: MLE & Gaussians  |  |
+|  9/6 | **Discussion 1**: MLE & Gaussians  | [PDF](docs/dis1.pdf)  |
 |  9/7 | **Lecture 5**: Linear Regression 2  |  |
 |  9/9 | **Homework 2**: Linear/Logistic Regression & Classification (**Due 9/22 11:59pm**)  |  |
 
