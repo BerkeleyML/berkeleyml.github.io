@@ -44,9 +44,10 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 
 | DIS # |   Section Time  | Location       | GSI               |
 |------|------|------|------|
+| 111   |   Tue 4pm - 5pm      | Etcheverry 3105    | Bear Xiong   |
+| 112   |   Tue 6pm - 7pm      | Etcheverry 3119    | Aryan Jain   |
 | 104   |   Wed 10am - 11am      | Wheeler 120    | Philip Jacobson   |
 | 105   |   Wed 11am - 12pm      | Wheeler 220    | Andrew Qin        |
 | 101   |   Wed 12pm - 1pm      | Cory 540AB     | Samuel Alber      |
 | 108   |   Wed 1pm - 2pm       | Cory 540AB     | Sandeep Mukherjee |
-| 102   |   Wed 6pm - 7pm       | Hildebrand B51 | Bear Xiong        |
 | 103   |   Thu 9am - 10am       | Dwinelle 223   | Sampada Deglurkar |
