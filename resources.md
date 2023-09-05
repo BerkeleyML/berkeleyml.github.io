@@ -18,8 +18,8 @@ Below are lecture notes from Anant Sahai's iteration of the course:
 - [Note 2](docs/notes/n2.pdf) - Linear Regression
 - [Note 3](docs/notes/n3.pdf) - Feature Engineering
 - [Note 4](docs/notes/n4.pdf) - MLE and MAP for Regression
-- [Note 5](docs/notes/n5.pdf) - Multivariate Gaussians
-- [Note 6](docs/notes/n6.pdf) - Bias-Variance Tradeoff
+- [Note 5](docs/notes/n5.pdf) - Bias-Variance Tradeoff
+- [Note 6](docs/notes/n6.pdf) - Multivariate Gaussians
 - [Note 7](docs/notes/n7.pdf) - MLE and MAP Part 2
 - [Note 8](docs/notes/n8.pdf) - Kernels and Ridge Regression
 - [Note 9](docs/notes/n9.pdf) - Total Least Squares
