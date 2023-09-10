@@ -36,8 +36,8 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 3
 
 |  9/5 | **Lecture 4**: Linear Regression 1  | [Slides](docs/lec4.pdf)  |
-|  9/6 | **Discussion 1**: MLE & Gaussians  | [PDF](docs/dis1.pdf)  |
-|  9/7 | **Lecture 5**: Linear Regression 2  |  |
+|  9/6 | **Discussion 1**: MLE & Gaussians  | [PDF](docs/dis1.pdf), [Solutions](docs/dis1_sol.pdf)  |
+|  9/7 | **Lecture 5**: Linear Regression 2  | [Slides](docs/lec5.pdf) |
 |  9/9 | **Homework 2**: Linear/Logistic Regression & Classification (**Due 9/22 11:59pm**)  | [PDF](docs/hw2.pdf) |
 
 ### Week 4
