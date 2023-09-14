@@ -27,7 +27,6 @@ See the Syllabus for guidelines on office hours. Submit tickets at [oh.eecs189.o
 | Tue 6pm - 7pm    |    OH        |   Soda 380            |   35 |
 | Tue 7pm - 8pm    |    OH        |   Soda 380            |   35 |
 | Wed 12pm - 1pm |    OH        |   Soda 405            |   40 |
-| Thu 10am - 11am |    OH        |   Soda 320            |   30 |
 | Thu 6pm - 7pm   |    OH        |   Soda 511            |   15 |
 | Thu 7pm - 8pm   |    OH        |   Soda 511            |   15 |
 | Fri 1pm - 2pm     |    HW Party  |   Woz (Soda 430-438)  |   100 |
