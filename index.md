@@ -42,7 +42,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 4
 
-|  9/12 | **Lecture 6**: Classification - Generative & Discriminative  |  |
+|  9/12 | **Lecture 6**: Classification - Generative & Discriminative  | [Slides](docs/lec6.pdf) |
 |  9/13 | **Discussion 2**: Linear Regression  | [PDF](docs/dis2.pdf) |
 |  9/14 | **Lecture 7**: Logistic Regression & Neural Networks  |  |
 
