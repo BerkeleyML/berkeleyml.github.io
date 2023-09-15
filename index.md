@@ -44,11 +44,11 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 |  9/12 | **Lecture 6**: Classification - Generative & Discriminative  | [Slides](docs/lec6.pdf) |
 |  9/13 | **Discussion 2**: Linear Regression  | [PDF](docs/dis2.pdf) |
-|  9/14 | **Lecture 7**: Logistic Regression & Neural Networks  |  |
+|  9/14 | **Lecture 7**: Logistic Regression & Neural Networks  | [Slides](docs/lec7.pdf) |
 
 ### Week 5
 
-|  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  |  |
+|  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf) |
 |  9/20 | **Discussion 3**: Classification & Logistic Regression  |  |
 |  9/21 | **Lecture 9**: Backpropagation and Gradient Descent 2  |  |
 |  9/23 | **Homework 3**: Neural Networks (**Due 10/6 11:59pm**)  |  |
