@@ -50,3 +50,4 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 | 101   |   Wed 12pm - 1pm      | Cory 540AB     | Samuel Alber      |
 | 108   |   Wed 1pm - 2pm       | Cory 540AB     | Sandeep Mukherjee |
 | 103   |   Thu 9am - 10am       | Dwinelle 223   | Sampada Deglurkar |
+| 110   |   Thu 10am - 11am       | Wheeler 200   | Kevin Wang |
