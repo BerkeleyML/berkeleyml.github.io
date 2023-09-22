@@ -49,7 +49,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 5
 
 |  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf) |
-|  9/20 | **Discussion 3**: Classification & Logistic Regression  | [PDF](docs/dis3.pdf) |
+|  9/20 | **Discussion 3**: Classification & Logistic Regression  | [PDF](docs/dis3.pdf), [Solution](docs/dis3_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1HJ5wUWDDbewZFB09vSj3qkY4GmsW8zRO/view?usp=share_link) |
 |  9/21 | **Lecture 9**: Backpropagation and Gradient Descent 2  | [Handout](docs/lec9.pdf) |
 |  9/23 | **Homework 3**: Neural Networks (**Due 10/6 11:59pm**)  |  |
 
