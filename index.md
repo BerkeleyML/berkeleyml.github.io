@@ -55,7 +55,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 6
 
-|  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  |  |
+|  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf) |
 |  9/27 | **Discussion 4**: Neural Networks and Training  | [PDF](docs/dis4.pdf) |
 |  9/28 | **Lecture 11**: Neural Netowkrs - Attention & Transformers  |  |
 
