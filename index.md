@@ -49,15 +49,15 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 5
 
 |  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf) |
-|  9/20 | **Discussion 3**: Classification & Logistic Regression  | [PDF](docs/dis3.pdf), [Solution](docs/dis3_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1HJ5wUWDDbewZFB09vSj3qkY4GmsW8zRO/view?usp=share_link) |
+|  9/20 | **Discussion 3**: Classification & Logistic Regression  | [PDF](docs/dis3.pdf), [Solutions](docs/dis3_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1HJ5wUWDDbewZFB09vSj3qkY4GmsW8zRO/view?usp=share_link) |
 |  9/21 | **Lecture 9**: Backpropagation and Gradient Descent 2  | [Handout](docs/lec9.pdf) |
 |  9/23 | **Homework 3**: Neural Networks (**Due 10/6 11:59pm**)  | [PDF](docs/hw3.pdf), [Files](https://drive.google.com/file/d/1GWEzMWkNszGOG1oKJOVgWI87hMeNQCHY/view?usp=sharing) |
 
 ### Week 6
 
 |  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf) |
-|  9/27 | **Discussion 4**: Neural Networks and Training  | [PDF](docs/dis4.pdf) |
-|  9/28 | **Lecture 11**: Neural Netowkrs - Attention & Transformers  |  |
+|  9/27 | **Discussion 4**: Neural Networks and Training  | [PDF](docs/dis4.pdf), [Solutions](docs/dis4_sol.pdf), [Walkthrough](https://drive.google.com/file/d/16yz9ACJT4p373jNBOjGjvzT5fISARvij/view) |
+|  9/28 | **Lecture 11**: Neural Networks - Attention & Transformers  |  |
 
 ### Week 7
 
