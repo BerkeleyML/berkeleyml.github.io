@@ -57,12 +57,12 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 |  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf) |
 |  9/27 | **Discussion 4**: Neural Networks and Training  | [PDF](docs/dis4.pdf), [Solutions](docs/dis4_sol.pdf), [Walkthrough](https://drive.google.com/file/d/16yz9ACJT4p373jNBOjGjvzT5fISARvij/view) |
-|  9/28 | **Lecture 11**: Neural Networks - Attention & Transformers  |  |
+|  9/28 | **Lecture 11**: Neural Networks - Attention & Transformers  | [Slides](docs/lec11.pdf) |
 
 ### Week 7
 
-|  10/3 | **Lecture 12**: Dimensionality Reduction & PCA  |  |
-|  10/4 | **Discussion 5**: Convolution and Attention  |  |
+|  10/3 | **Lecture 12**: Dimensionality Reduction & PCA  | [Slides](docs/lec12.pdf) |
+|  10/4 | **Discussion 5**: Convolution and Attention  | [PDF](docs/dis5.pdf) |
 |  10/5 | **Lecture 13**: t-SNE  |  |
 |  10/7 | **Homework 4**: Dimensionality Reduction & Decision Theory (**Due 10/20 11:59pm**)  |  |
 
