@@ -24,47 +24,47 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 1
 
-|  8/24 | **Lecture 1**: Introduction and Logistics  | [Slides](docs/lec1.pdf)  |
+|  8/24 | **Lecture 1**: Introduction and Logistics  | [Slides](docs/lec1.pdf), [Recording](https://drive.google.com/file/d/17vOI3LiRlutst2MDqfVh_FArlM19yoaM/view?usp=drive_link) |
 
 ### Week 2
 
 |  8/28 | **Homework 1**: Math Review (**Due 9/8 11:59pm**)  | [PDF](docs/hw1.pdf)  |
-|  8/29 | **Lecture 2**: Maximum Likelihood Estimation  | [Slides](docs/lec2.pdf) |
+|  8/29 | **Lecture 2**: Maximum Likelihood Estimation  | [Slides](docs/lec2.pdf), [Recording](https://drive.google.com/file/d/1GYlD4z8uGlLyyMUn2H093K6PQXDDLoOE/view?usp=drive_link) |
 |  8/30 | **Discussion 0**: Math Pre-Requisites Review  | [PDF](docs/dis0.pdf), [Solutions](docs/dis0_sol.pdf)  |
-|  8/31 | **Lecture 3**: Multivariate Gaussians  | [Slides](docs/lec3.pdf) |
+|  8/31 | **Lecture 3**: Multivariate Gaussians  | [Slides](docs/lec3.pdf), [Recording](https://drive.google.com/file/d/10EbN8y9B6n0tkSMq4dkF1yy_eIA-euvL/view?usp=drive_link) |
 
 ### Week 3
 
-|  9/5 | **Lecture 4**: Linear Regression 1  | [Slides](docs/lec4.pdf)  |
+|  9/5 | **Lecture 4**: Linear Regression 1  | [Slides](docs/lec4.pdf), [Recording](https://drive.google.com/file/d/1rdCmjMm5Ebctk0wWYAbLpiwGlPmB6Bbo/view?usp=drive_link) |
 |  9/6 | **Discussion 1**: MLE & Gaussians  | [PDF](docs/dis1.pdf), [Solutions](docs/dis1_sol.pdf)  |
-|  9/7 | **Lecture 5**: Linear Regression 2  | [Slides](docs/lec5.pdf) |
+|  9/7 | **Lecture 5**: Linear Regression 2  | [Slides](docs/lec5.pdf), [Recording](https://drive.google.com/file/d/1NgMaqYB6-UgCXY-hS8eVSyCXFCRBGtMx/view?usp=drive_link) |
 |  9/9 | **Homework 2**: Linear/Logistic Regression & Classification (**Due 9/22 11:59pm**)  | [PDF](docs/hw2.pdf) |
 
 ### Week 4
 
-|  9/12 | **Lecture 6**: Classification - Generative & Discriminative  | [Slides](docs/lec6.pdf) |
+|  9/12 | **Lecture 6**: Classification - Generative & Discriminative  | [Slides](docs/lec6.pdf), [Recording](https://drive.google.com/file/d/1gQWIiTXpdy3NnJ7O4QLcHlxxFzU__tEZ/view?usp=drive_link) |
 |  9/13 | **Discussion 2**: Linear Regression  | [PDF](docs/dis2.pdf), [Solutions](docs/dis2_sol.pdf) |
-|  9/14 | **Lecture 7**: Logistic Regression & Neural Networks  | [Slides](docs/lec7.pdf) |
+|  9/14 | **Lecture 7**: Logistic Regression & Neural Networks  | [Slides](docs/lec7.pdf), [Recording](https://drive.google.com/file/d/1TL2TWg4JQRXhEAaYKwp6PrMF0hIpe3n3/view?usp=drive_link) |
 
 ### Week 5
 
-|  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf) |
+|  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf), [Recording](https://drive.google.com/file/d/1sT6bAbzoQ9srI3vuTSDXczFpsEjfGhf4/view?usp=drive_link) |
 |  9/20 | **Discussion 3**: Classification & Logistic Regression  | [PDF](docs/dis3.pdf), [Solutions](docs/dis3_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1HJ5wUWDDbewZFB09vSj3qkY4GmsW8zRO/view?usp=share_link) |
-|  9/21 | **Lecture 9**: Backpropagation and Gradient Descent 2  | [Handout](docs/lec9.pdf) |
+|  9/21 | **Lecture 9**: Backpropagation and Gradient Descent 2  | [Handout](docs/lec9.pdf), [Recording](https://drive.google.com/file/d/1omrhDd-wi2cYAvImr7lYJG0AOB9MGqTS/view?usp=drive_link) |
 |  9/23 | **Homework 3**: Neural Networks (**Due 10/6 11:59pm**)  | [PDF](docs/hw3.pdf), [Files](https://drive.google.com/file/d/1GWEzMWkNszGOG1oKJOVgWI87hMeNQCHY/view?usp=sharing) |
 
 ### Week 6
 
-|  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf) |
+|  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf), [Recording](https://drive.google.com/file/d/1FORFqiwPvRe6gfbk2WQzCLMVBsGnUZLj/view?usp=drive_link) |
 |  9/27 | **Discussion 4**: Neural Networks and Training  | [PDF](docs/dis4.pdf), [Solutions](docs/dis4_sol.pdf), [Walkthrough](https://drive.google.com/file/d/16yz9ACJT4p373jNBOjGjvzT5fISARvij/view) |
-|  9/28 | **Lecture 11**: Neural Networks - Attention & Transformers  | [Slides](docs/lec11.pdf) |
+|  9/28 | **Lecture 11**: Neural Networks - Attention & Transformers  | [Slides](docs/lec11.pdf), [Recording](https://drive.google.com/file/d/1jhCDH6i9Ve-XSQNiF5vFpnlow0ieeB4V/view?usp=drive_link) |
 
 ### Week 7
 
-|  10/3 | **Lecture 12**: Dimensionality Reduction & PCA  | [Slides](docs/lec12.pdf) |
-|  10/4 | **Discussion 5**: Convolution and Attention  | [PDF](docs/dis5.pdf) |
-|  10/5 | **Lecture 13**: t-SNE  |  |
-|  10/7 | **Homework 4**: Dimensionality Reduction & Decision Theory (**Due 10/20 11:59pm**)  |  |
+|  10/3 | **Lecture 12**: Dimensionality Reduction & PCA  | [Slides](docs/lec12.pdf), [Recording](https://drive.google.com/file/d/1p4-pCnWqqxabEEN_ViOwx5jpyiu1F26D/view?usp=drive_link) |
+|  10/4 | **Discussion 5**: Convolution and Attention  | [PDF](docs/dis5.pdf), [Solutions](docs/dis5_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1xoZjEZRNOQp_R5Yf6Dg2VJhf_RPCIWkR/view) |
+|  10/5 | **Lecture 13**: t-SNE  | [Slides](docs/lec13.pdf), [Recording](https://drive.google.com/file/d/135K6w4zY8mNRLNN70xFr2IeYmhtPneqp/view?usp=drive_link) |
+|  10/7 | **Homework 4**: Dimensionality Reduction & Decision Theory (**Due 10/20 11:59pm**)  | [PDF](docs/hw4.pdf), [Files](https://drive.google.com/file/d/1fuGXhyK8s3ewtdL-cvohxiliPDEVNbbk/view) |
 
 ### Week 8
 
