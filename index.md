@@ -68,7 +68,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 8
 
-|  10/10 | **Lecture 14**: Clustering  |  |
+|  10/10 | **Lecture 14**: Clustering  | [Slides](docs/lec14.pdf), [Recording](https://drive.google.com/file/d/1Cb4OpSgClxXIGAp0vOpAxrm3U5DgH-tR/view?usp=drive_link) |
 |  10/11 | **Discussion 6**: Dimensionality Reduction Techniques  | [PDF](docs/dis6.pdf) |
 |  10/12 | **Lecture 15**: Multiway Classification, Decision Theory, & Model Evaluation  |  |
 |  10/13 | **Midterm** (7-9pm, Pimentel 1)  |  |
