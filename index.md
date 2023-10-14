@@ -6,6 +6,18 @@ layout: home
 title: Home
 nav_order: 1
 ---
+
+<style type="text/css">
+    .label {
+        margin-left: 0!important;
+    }
+
+    td:first-child {
+        min-width: 0;
+        width: 4rem;
+    }
+</style>
+
 # Introduction to Machine Learning
 
 **University of California, Berkeley**, Fall 2023
@@ -24,98 +36,98 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 1
 
-|  8/24 | **Lecture 1**: Introduction and Logistics  | [Slides](docs/lec1.pdf), [Recording](https://drive.google.com/file/d/17vOI3LiRlutst2MDqfVh_FArlM19yoaM/view?usp=drive_link) |
+|  8/24 | <span class="label">Lecture 1</span> Introduction and Logistics  | [Slides](docs/lec1.pdf) / [Recording](https://drive.google.com/file/d/17vOI3LiRlutst2MDqfVh_FArlM19yoaM/view?usp=drive_link) |
 
 ### Week 2
 
-|  8/28 | **Homework 1**: Math Review (**Due 9/8 11:59pm**)  | [PDF](docs/hw1.pdf)  |
-|  8/29 | **Lecture 2**: Maximum Likelihood Estimation  | [Slides](docs/lec2.pdf), [Recording](https://drive.google.com/file/d/1GYlD4z8uGlLyyMUn2H093K6PQXDDLoOE/view?usp=drive_link) |
-|  8/30 | **Discussion 0**: Math Pre-Requisites Review  | [PDF](docs/dis0.pdf), [Solutions](docs/dis0_sol.pdf)  |
-|  8/31 | **Lecture 3**: Multivariate Gaussians  | [Slides](docs/lec3.pdf), [Recording](https://drive.google.com/file/d/10EbN8y9B6n0tkSMq4dkF1yy_eIA-euvL/view?usp=drive_link) |
+|  8/28 | <span class="label label-yellow">Homework 1</span> Math Review (**Due 9/8 11:59pm**)  | [PDF](docs/hw1.pdf)  |
+|  8/29 | <span class="label">Lecture 2</span> Maximum Likelihood Estimation  | [Slides](docs/lec2.pdf) / [Recording](https://drive.google.com/file/d/1GYlD4z8uGlLyyMUn2H093K6PQXDDLoOE/view?usp=drive_link) |
+|  8/30 | <span class="label label-green">Discussion 0</span> Math Pre-Requisites Review  | [PDF](docs/dis0.pdf) / [Solutions](docs/dis0_sol.pdf)  |
+|  8/31 | <span class="label">Lecture 3</span> Multivariate Gaussians  | [Slides](docs/lec3.pdf) / [Recording](https://drive.google.com/file/d/10EbN8y9B6n0tkSMq4dkF1yy_eIA-euvL/view?usp=drive_link) |
 
 ### Week 3
 
-|  9/5 | **Lecture 4**: Linear Regression 1  | [Slides](docs/lec4.pdf), [Recording](https://drive.google.com/file/d/1rdCmjMm5Ebctk0wWYAbLpiwGlPmB6Bbo/view?usp=drive_link) |
-|  9/6 | **Discussion 1**: MLE & Gaussians  | [PDF](docs/dis1.pdf), [Solutions](docs/dis1_sol.pdf)  |
-|  9/7 | **Lecture 5**: Linear Regression 2  | [Slides](docs/lec5.pdf), [Recording](https://drive.google.com/file/d/1NgMaqYB6-UgCXY-hS8eVSyCXFCRBGtMx/view?usp=drive_link) |
-|  9/9 | **Homework 2**: Linear/Logistic Regression & Classification (**Due 9/22 11:59pm**)  | [PDF](docs/hw2.pdf) |
+|  9/5 | <span class="label">Lecture 4</span> Linear Regression 1  | [Slides](docs/lec4.pdf) / [Recording](https://drive.google.com/file/d/1rdCmjMm5Ebctk0wWYAbLpiwGlPmB6Bbo/view?usp=drive_link) |
+|  9/6 | <span class="label label-green">Discussion 1</span> MLE & Gaussians  | [PDF](docs/dis1.pdf) / [Solutions](docs/dis1_sol.pdf)  |
+|  9/7 | <span class="label">Lecture 5</span> Linear Regression 2  | [Slides](docs/lec5.pdf) / [Recording](https://drive.google.com/file/d/1NgMaqYB6-UgCXY-hS8eVSyCXFCRBGtMx/view?usp=drive_link) |
+|  9/9 | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification (**Due 9/22 11:59pm**)  | [PDF](docs/hw2.pdf) |
 
 ### Week 4
 
-|  9/12 | **Lecture 6**: Classification - Generative & Discriminative  | [Slides](docs/lec6.pdf), [Recording](https://drive.google.com/file/d/1gQWIiTXpdy3NnJ7O4QLcHlxxFzU__tEZ/view?usp=drive_link) |
-|  9/13 | **Discussion 2**: Linear Regression  | [PDF](docs/dis2.pdf), [Solutions](docs/dis2_sol.pdf) |
-|  9/14 | **Lecture 7**: Logistic Regression & Neural Networks  | [Slides](docs/lec7.pdf), [Recording](https://drive.google.com/file/d/1TL2TWg4JQRXhEAaYKwp6PrMF0hIpe3n3/view?usp=drive_link) |
+|  9/12 | <span class="label">Lecture 6</span> Classification - Generative & Discriminative  | [Slides](docs/lec6.pdf) / [Recording](https://drive.google.com/file/d/1gQWIiTXpdy3NnJ7O4QLcHlxxFzU__tEZ/view?usp=drive_link) |
+|  9/13 | <span class="label label-green">Discussion 2</span> Linear Regression  | [PDF](docs/dis2.pdf) / [Solutions](docs/dis2_sol.pdf) |
+|  9/14 | <span class="label">Lecture 7</span> Logistic Regression & Neural Networks  | [Slides](docs/lec7.pdf) / [Recording](https://drive.google.com/file/d/1TL2TWg4JQRXhEAaYKwp6PrMF0hIpe3n3/view?usp=drive_link) |
 
 ### Week 5
 
-|  9/19 | **Lecture 8**: Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf), [Recording](https://drive.google.com/file/d/1sT6bAbzoQ9srI3vuTSDXczFpsEjfGhf4/view?usp=drive_link) |
-|  9/20 | **Discussion 3**: Classification & Logistic Regression  | [PDF](docs/dis3.pdf), [Solutions](docs/dis3_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1HJ5wUWDDbewZFB09vSj3qkY4GmsW8zRO/view?usp=share_link) |
-|  9/21 | **Lecture 9**: Backpropagation and Gradient Descent 2  | [Handout](docs/lec9.pdf), [Recording](https://drive.google.com/file/d/1omrhDd-wi2cYAvImr7lYJG0AOB9MGqTS/view?usp=drive_link) |
-|  9/23 | **Homework 3**: Neural Networks (**Due 10/6 11:59pm**)  | [PDF](docs/hw3.pdf), [Files](https://drive.google.com/file/d/1GWEzMWkNszGOG1oKJOVgWI87hMeNQCHY/view?usp=sharing) |
+|  9/19 | <span class="label">Lecture 8</span> Backpropagation and Gradient Descent 1  | [Slides](docs/lec8.pdf) / [Recording](https://drive.google.com/file/d/1sT6bAbzoQ9srI3vuTSDXczFpsEjfGhf4/view?usp=drive_link) |
+|  9/20 | <span class="label label-green">Discussion 3</span> Classification & Logistic Regression  | [PDF](docs/dis3.pdf) / [Solutions](docs/dis3_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1HJ5wUWDDbewZFB09vSj3qkY4GmsW8zRO/view?usp=share_link) |
+|  9/21 | <span class="label">Lecture 9</span> Backpropagation and Gradient Descent 2  | [Handout](docs/lec9.pdf) / [Recording](https://drive.google.com/file/d/1omrhDd-wi2cYAvImr7lYJG0AOB9MGqTS/view?usp=drive_link) |
+|  9/23 | <span class="label label-yellow">Homework 3</span> Neural Networks (**Due 10/6 11:59pm**)  | [PDF](docs/hw3.pdf) / [Files](https://drive.google.com/file/d/1GWEzMWkNszGOG1oKJOVgWI87hMeNQCHY/view?usp=sharing) |
 
 ### Week 6
 
-|  9/26 | **Lecture 10**: Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf), [Recording](https://drive.google.com/file/d/1FORFqiwPvRe6gfbk2WQzCLMVBsGnUZLj/view?usp=drive_link) |
-|  9/27 | **Discussion 4**: Neural Networks and Training  | [PDF](docs/dis4.pdf), [Solutions](docs/dis4_sol.pdf), [Walkthrough](https://drive.google.com/file/d/16yz9ACJT4p373jNBOjGjvzT5fISARvij/view) |
-|  9/28 | **Lecture 11**: Neural Networks - Attention & Transformers  | [Slides](docs/lec11.pdf), [Recording](https://drive.google.com/file/d/1jhCDH6i9Ve-XSQNiF5vFpnlow0ieeB4V/view?usp=drive_link) |
+|  9/26 | <span class="label">Lecture 10</span> Neural Networks - CNNs, Batch Norm, & ResNets  | [Slides](docs/lec10.pdf) / [Recording](https://drive.google.com/file/d/1FORFqiwPvRe6gfbk2WQzCLMVBsGnUZLj/view?usp=drive_link) |
+|  9/27 | <span class="label label-green">Discussion 4</span> Neural Networks and Training  | [PDF](docs/dis4.pdf) / [Solutions](docs/dis4_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/16yz9ACJT4p373jNBOjGjvzT5fISARvij/view) |
+|  9/28 | <span class="label">Lecture 11</span> Neural Networks - Attention & Transformers  | [Slides](docs/lec11.pdf) / [Recording](https://drive.google.com/file/d/1jhCDH6i9Ve-XSQNiF5vFpnlow0ieeB4V/view?usp=drive_link) |
 
 ### Week 7
 
-|  10/3 | **Lecture 12**: Dimensionality Reduction & PCA  | [Slides](docs/lec12.pdf), [Recording](https://drive.google.com/file/d/1p4-pCnWqqxabEEN_ViOwx5jpyiu1F26D/view?usp=drive_link) |
-|  10/4 | **Discussion 5**: Convolution and Attention  | [PDF](docs/dis5.pdf), [Solutions](docs/dis5_sol.pdf), [Walkthrough](https://drive.google.com/file/d/1xoZjEZRNOQp_R5Yf6Dg2VJhf_RPCIWkR/view) |
-|  10/5 | **Lecture 13**: t-SNE  | [Slides](docs/lec13.pdf), [Recording](https://drive.google.com/file/d/135K6w4zY8mNRLNN70xFr2IeYmhtPneqp/view?usp=drive_link) |
-|  10/7 | **Homework 4**: Dimensionality Reduction & Decision Theory (**Due 10/20 11:59pm**)  | [PDF](docs/hw4.pdf), [Files](https://drive.google.com/file/d/1fuGXhyK8s3ewtdL-cvohxiliPDEVNbbk/view) |
+|  10/3 | <span class="label">Lecture 12</span> Dimensionality Reduction & PCA  | [Slides](docs/lec12.pdf) / [Recording](https://drive.google.com/file/d/1p4-pCnWqqxabEEN_ViOwx5jpyiu1F26D/view?usp=drive_link) |
+|  10/4 | <span class="label label-green">Discussion 5</span> Convolution and Attention  | [PDF](docs/dis5.pdf) / [Solutions](docs/dis5_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1xoZjEZRNOQp_R5Yf6Dg2VJhf_RPCIWkR/view) |
+|  10/5 | <span class="label">Lecture 13</span> t-SNE  | [Slides](docs/lec13.pdf) / [Recording](https://drive.google.com/file/d/135K6w4zY8mNRLNN70xFr2IeYmhtPneqp/view?usp=drive_link) |
+|  10/7 | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory (**Due 10/20 11:59pm**)  | [PDF](docs/hw4.pdf) / [Files](https://drive.google.com/file/d/1fuGXhyK8s3ewtdL-cvohxiliPDEVNbbk/view) |
 
 ### Week 8
 
-|  10/10 | **Lecture 14**: Clustering  | [Slides](docs/lec14.pdf), [Recording](https://drive.google.com/file/d/1Cb4OpSgClxXIGAp0vOpAxrm3U5DgH-tR/view?usp=drive_link) |
-|  10/11 | **Discussion 6**: Dimensionality Reduction Techniques  | [PDF](docs/dis6.pdf), [Solutions](docs/dis6_sol.pdf) |
-|  10/12 | **Lecture 15**: Multiway Classification, Decision Theory, & Model Evaluation  |  |
-|  10/13 | **Midterm** (7-9pm, Pimentel 1)  |  |
+|  10/10 | <span class="label">Lecture 14</span> Clustering  | [Slides](docs/lec14.pdf) / [Recording](https://drive.google.com/file/d/1Cb4OpSgClxXIGAp0vOpAxrm3U5DgH-tR/view?usp=drive_link) |
+|  10/11 | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  | [PDF](docs/dis6.pdf) / [Solutions](docs/dis6_sol.pdf) |
+|  10/12 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  |  |
+|  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  |  |
 
 ### Week 9
 
-|  10/17 | **Lecture 16**: Bias-Variance Tradeoff & Over/Under-Fitting  |  |
-|  10/18 | **Discussion 7**: Clustering and Decision Theory  |  |
-|  10/19 | **Lecture 17**: Nearest Neighbors & Metric Learning  |  |
-|  10/21 | **Homework 5**: Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  |  |
+|  10/17 | <span class="label">Lecture 16</span> Bias-Variance Tradeoff & Over/Under-Fitting  |  |
+|  10/18 | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  |  |
+|  10/19 | <span class="label">Lecture 17</span> Nearest Neighbors & Metric Learning  |  |
+|  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  |  |
 
 ### Week 10
 
-|  10/24 | **Lecture 18**: Decision Trees & Ensembling  |  |
-|  10/25 | **Discussion 8**: Bias/Variance and Nearest Neighbors  |  |
-|  10/26 | **Lecture 19**: Hidden Markov Models & Graphical Models 1  |  |
+|  10/24 | <span class="label">Lecture 18</span> Decision Trees & Ensembling  |  |
+|  10/25 | <span class="label label-green">Discussion 8</span> Bias/Variance and Nearest Neighbors  |  |
+|  10/26 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  |  |
 
 ### Week 11
 
-|  10/31 | **Lecture 20**: Hidden Markov Models & Graphical Models 2  |  |
-|  11/1 | **Discussion 9**: Decision Trees and HMMs Intro  |  |
-|  11/2 | **Lecture 21**: Markov Decision Processes  |  |
-|  11/4 | **Homework 6**: Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  |  |
+|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  |  |
+|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  |  |
+|  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  |  |
+|  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  |  |
 
 ### Week 12
 
-|  11/7 | **Lecture 22**: Reinforcement Learning  |  |
-|  11/8 | **Discussion 10**: HMMs Advanced and MDPs  |  |
-|  11/9 | **Lecture 23**: Robotics and Machine Learning  |  |
+|  11/7 | <span class="label">Lecture 22</span> Reinforcement Learning  |  |
+|  11/8 | <span class="label label-green">Discussion 10</span> HMMs Advanced and MDPs  |  |
+|  11/9 | <span class="label">Lecture 23</span> Robotics and Machine Learning  |  |
 
 ### Week 13
 
-|  11/14 | **Lecture 24**: Language and Vision Applications  |  |
-|  11/15 | **Discussion 11**: Robotics, Language, & Vision  |  |
-|  11/16 | **Lecture 25**: Graph Neural Networks & Rotational Equivariance 1  |  |
-|  11/18 | **Homework 7**: Graph Neural Networks & Applications of Deep Learning (**Due 12/1 11:59pm**)  |  |
+|  11/14 | <span class="label">Lecture 24</span> Language and Vision Applications  |  |
+|  11/15 | <span class="label label-green">Discussion 11</span> Robotics, Language, & Vision  |  |
+|  11/16 | <span class="label">Lecture 25</span> Graph Neural Networks & Rotational Equivariance 1  |  |
+|  11/18 | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning (**Due 12/1 11:59pm**)  |  |
 
 ### Week 14
 
-|  11/21 | **Lecture 26**: Graph Neural Networks & Rotational Equivariance 2   |  |
-|  11/22 | **Discussion 12**: Graph Neural Networks  |  |
+|  11/21 | <span class="label">Lecture 26</span> Graph Neural Networks & Rotational Equivariance 2   |  |
+|  11/22 | <span class="label label-green">Discussion 12</span> Graph Neural Networks  |  |
 |  11/23 | No Lecture (Thanksgiving)  |  |
 
 ### Week 15
 
-|  11/28 | **Lecture 27**: Special Topics - Computational Biology  |  |
-|  11/30 | **Lecture 28**: Special Topics - Causality  |  |
+|  11/28 | <span class="label">Lecture 27</span> Special Topics - Computational Biology  |  |
+|  11/30 | <span class="label label-green">Discussion 13</span> Special Topics - Causality  |  |
 
 ### Week 16 (RRR Week)
 
@@ -123,4 +135,4 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 17 (Finals Week)
 
-|  12/12 | **Final Exam** (8-11am, Location TBD) |  |
+|  12/12 | <span class="label label-red">Final Exam</span> (8-11am, Location TBD) |  |
