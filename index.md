@@ -83,12 +83,12 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 |  10/10 | <span class="label">Lecture 14</span> Clustering  | [Slides](docs/lec14.pdf) / [Recording](https://drive.google.com/file/d/1Cb4OpSgClxXIGAp0vOpAxrm3U5DgH-tR/view?usp=drive_link) |
 |  10/11 | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  | [PDF](docs/dis6.pdf) / [Solutions](docs/dis6_sol.pdf) |
 |  10/12 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  |  |
-|  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  |  |
+|  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  | [Blank](docs/mt.pdf) / [Solutions](docs/mt_sol.pdf) |
 
 ### Week 9
 
 |  10/17 | <span class="label">Lecture 16</span> Bias-Variance Tradeoff & Over/Under-Fitting  |  |
-|  10/18 | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  |  |
+|  10/18 | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  | [PDF](docs/dis7.pdf) |
 |  10/19 | <span class="label">Lecture 17</span> Nearest Neighbors & Metric Learning  |  |
 |  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  |  |
 
