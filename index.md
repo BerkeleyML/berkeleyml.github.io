@@ -82,7 +82,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 |  10/10 | <span class="label">Lecture 14</span> Clustering  | [Slides](docs/lec14.pdf) / [Recording](https://drive.google.com/file/d/1Cb4OpSgClxXIGAp0vOpAxrm3U5DgH-tR/view?usp=drive_link) |
 |  10/11 | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  | [PDF](docs/dis6.pdf) / [Solutions](docs/dis6_sol.pdf) |
-|  10/12 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  |  |
+|  10/12 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  | [Slides](docs/lec15.pdf) |
 |  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  | [Blank](docs/mt.pdf) / [Solutions](docs/mt_sol.pdf) |
 
 ### Week 9
