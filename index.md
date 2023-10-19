@@ -87,9 +87,9 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 9
 
-|  10/17 | <span class="label">Lecture 16</span> Bias-Variance Tradeoff & Over/Under-Fitting  |  |
+|  10/17 | <span class="label">Lecture 16</span> Nearest Neighbors & Metric Learning | [Slides](docs/lec16.pdf) |
 |  10/18 | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  | [PDF](docs/dis7.pdf) |
-|  10/19 | <span class="label">Lecture 17</span> Nearest Neighbors & Metric Learning  |  |
+|  10/19 | <span class="label">Lecture 17</span> Bias-Variance Tradeoff & Over/Under-Fitting |  |
 |  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  |  |
 
 ### Week 10
