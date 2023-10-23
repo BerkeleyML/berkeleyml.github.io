@@ -89,7 +89,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 |  10/17 | <span class="label">Lecture 16</span> Nearest Neighbors & Metric Learning | [Slides](docs/lec16.pdf) / [Recording](https://drive.google.com/file/d/1KcAA23MObxrCogxUi8JYKmAU6zK3Obwa/view?usp=share_link) |
 |  10/18 | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  | [PDF](docs/dis7.pdf) / [Solutions](docs/dis7_sol.pdf) |
-|  10/19 | <span class="label">Lecture 17</span>  | Decision Trees & Ensembling | [Slides](docs/lec17.pdf) / [Recording](https://drive.google.com/file/d/1vsh2ZVFbl4awo1GbubQKkM0fxrLoCx6Z/view?usp=share_link) |
+|  10/19 | <span class="label">Lecture 17</span> Decision Trees & Ensembling | [Slides](docs/lec17.pdf) / [Recording](https://drive.google.com/file/d/1vsh2ZVFbl4awo1GbubQKkM0fxrLoCx6Z/view?usp=share_link) |
 |  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  | [PDF](docs/hw5.pdf) / [Files](https://static.us.edusercontent.com/files/YjV6vY4SdO4oKCPvDW5xxyCI) |
 
 ### Week 10
