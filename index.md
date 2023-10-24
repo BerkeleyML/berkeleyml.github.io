@@ -95,7 +95,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 10
 
 |  10/24 | <span class="label">Lecture 18</span> Bias-Variance Tradeoff & Over/Under-Fitting |  |
-|  10/25 | <span class="label label-green">Discussion 8</span> Bias/Variance and Nearest Neighbors  |  |
+|  10/25 | <span class="label label-green">Discussion 8</span> Bias/Variance and Nearest Neighbors  | [PDF](docs/dis8.pdf) |
 |  10/26 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  |  |
 
 ### Week 11
