@@ -90,18 +90,18 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 |  10/17 | <span class="label">Lecture 16</span> Nearest Neighbors & Metric Learning | [Slides](docs/lec16.pdf) / [Recording](https://drive.google.com/file/d/1KcAA23MObxrCogxUi8JYKmAU6zK3Obwa/view?usp=share_link) |
 |  10/18 | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  | [PDF](docs/dis7.pdf) / [Solutions](docs/dis7_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1aKq1n6ddIUYroqh0rQloyCikweLBHFnL/view?usp=sharing) |
 |  10/19 | <span class="label">Lecture 17</span> Decision Trees & Ensembling | [Slides](docs/lec17.pdf) / [Recording](https://drive.google.com/file/d/1vsh2ZVFbl4awo1GbubQKkM0fxrLoCx6Z/view?usp=share_link) |
-|  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  | [PDF](docs/hw5.pdf) / [Files](https://static.us.edusercontent.com/files/YjV6vY4SdO4oKCPvDW5xxyCI) |
+|  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/3 11:59pm**)  | [PDF](docs/hw5_v2.pdf) / [Files](https://static.us.edusercontent.com/files/dmKbDoJepmNok9cMmeCRmMnt) |
 
 ### Week 10
 
 |  10/24 | <span class="label">Lecture 18</span> Bias-Variance Tradeoff & Over/Under-Fitting | [Slides](docs/lec18.pdf) |
-|  10/25 | <span class="label label-green">Discussion 8</span> Bias/Variance and Nearest Neighbors  | [PDF](docs/dis8.pdf) |
-|  10/26 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  |  |
+|  10/25 | <span class="label label-green">Discussion 8</span> Bias/Variance and Nearest Neighbors  | [PDF](docs/dis8.pdf) / [Solutions](docs/dis8_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1j4aoYOPnfzZvryhJQBEyY5GcFUiz-hYv/view?usp=sharing) |
+|  10/26 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  | [Slides](docs/lec19-20.pptx) |
 
 ### Week 11
 
-|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  |  |
-|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  |  |
+|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  | [Slides](docs/lec19-20.pptx) |
+|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  | [PDF](docs/dis9.pdf) |
 |  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  |  |
 |  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  |  |
 
