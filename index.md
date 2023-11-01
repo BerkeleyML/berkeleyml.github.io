@@ -96,11 +96,11 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 |  10/24 | <span class="label">Lecture 18</span> Bias-Variance Tradeoff & Over/Under-Fitting | [Slides](docs/lec18.pdf) / [Recording](https://drive.google.com/file/d/1iek7SZ7ce6bykJ8GTlEE16L6XsTzu0pY/view?usp=drive_link) |
 |  10/25 | <span class="label label-green">Discussion 8</span> Bias/Variance and Nearest Neighbors  | [PDF](docs/dis8.pdf) / [Solutions](docs/dis8_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1j4aoYOPnfzZvryhJQBEyY5GcFUiz-hYv/view?usp=sharing) |
-|  10/26 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  | [Slides](docs/lec19-20.pptx) / [Recording](https://drive.google.com/file/d/16ey3T94DLNJcQ0hc8_FQO6FcnEE9gy1z/view?usp=drive_link) |
+|  10/26 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  | [Slides](docs/lec19-20.pdf) / [Handout](docs/jurafsky-HMM.pdf) / [Recording](https://drive.google.com/file/d/16ey3T94DLNJcQ0hc8_FQO6FcnEE9gy1z/view?usp=drive_link) |
 
 ### Week 11
 
-|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  | [Slides](docs/lec19-20.pptx) |
+|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  | [Slides](docs/lec19-20.pdf) / [Handout](docs/jurafsky-HMM.pdf) |
 |  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  | [PDF](docs/dis9.pdf) |
 |  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  |  |
 |  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  |  |
