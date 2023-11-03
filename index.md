@@ -101,8 +101,8 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 11
 
 |  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  | [Slides](docs/lec19-20.pdf) / [Handout](docs/jurafsky-HMM.pdf) |
-|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  | [PDF](docs/dis9.pdf) |
-|  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  |  |
+|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  | [PDF](docs/dis9.pdf) |,
+|  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  | [Slides](docs/lec21.pdf) |
 |  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  |  |
 
 ### Week 12
