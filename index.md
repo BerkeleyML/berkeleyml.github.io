@@ -100,10 +100,10 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 11
 
-|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  | [Slides](docs/lec19-20.pdf) / [Handout](docs/jurafsky-HMM.pdf) |
-|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  | [PDF](docs/dis9.pdf) |,
-|  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  | [Slides](docs/lec21.pdf) |
-|  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  |  |
+|  10/31 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  | [Slides](docs/lec19-20.pdf) / [Handout](docs/jurafsky-HMM.pdf) / [Recording](https://drive.google.com/file/d/1UhDYlgk76jJJzt8PGoqPaIicJjz4EYV3/view?usp=drive_link) |
+|  11/1 | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  | [PDF](docs/dis9.pdf) / [Solutions](docs/dis9_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/12rKwgvM11aruik8wlI2Uadtt5e_batB8/view?usp=sharing) |,
+|  11/2 | <span class="label">Lecture 21</span> Markov Decision Processes  | [Slides](docs/lec21.pdf) / [Recording](https://drive.google.com/file/d/1DlXZrso5h8EMIxfjp_tFxXVqaBCmnmAQ/view?usp=drive_link) |
+|  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/17 11:59pm**)  | [PDF](docs/hw6.pdf) / [Files](https://static.us.edusercontent.com/files/4WoGny26nr0VOVyF5HtWyA9s) |
 
 ### Week 12
 
@@ -127,7 +127,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 15
 
 |  11/28 | <span class="label">Lecture 27</span> Special Topics - Computational Biology  |  |
-|  11/30 | <span class="label label-green">Discussion 13</span> Special Topics - Causality  |  |
+|  11/30 | <span class="label">Lecture 28</span> Special Topics - Causality  |  |
 
 ### Week 16 (RRR Week)
 
