@@ -108,7 +108,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 12
 
 |  11/7 | <span class="label">Lecture 22</span> Reinforcement Learning  | [Recording](https://drive.google.com/file/d/10xPbCWTPsg7IeSp2SBxwW8D_QvQkLDom/view?usp=drive_link) |
-|  11/8 | <span class="label label-green">Discussion 10</span> HMMs Advanced and MDPs  | [PDF](docs/dis10.pdf) |
+|  11/8 | <span class="label label-green">Discussion 10</span> HMMs Advanced and MDPs  | [PDF](docs/dis10.pdf) / [Solutions](docs/dis10_sol.pdf) |
 |  11/9 | <span class="label">Lecture 23</span> Robotics and Machine Learning  | [Recording](https://drive.google.com/file/d/1vM-8LCV1heFjDbrva_6vWYq-263wroyR/view?usp=drive_link) |
 
 ### Week 13
