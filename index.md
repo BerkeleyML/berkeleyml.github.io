@@ -114,7 +114,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 13
 
 |  11/14 | <span class="label">Lecture 24</span> Language and Vision Applications  |  |
-|  11/15 | <span class="label label-green">Discussion 11</span> Robotics, Language, & Vision  |  |
+|  11/15 | <span class="label label-green">Discussion 11</span> Robotics, Language, & Vision  | [PDF](docs/dis11.pdf) |
 |  11/16 | <span class="label">Lecture 25</span> Graph Neural Networks & Rotational Equivariance 1  |  |
 |  11/18 | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning (**Due 12/1 11:59pm**)  |  |
 
