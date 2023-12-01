@@ -114,7 +114,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 ### Week 13
 
 |  11/14 | <span class="label">Lecture 24</span> Graph Neural Networks & Rotational Equivariance 1  | [Slides](docs/lec24.pdf) / [Recording](https://drive.google.com/file/d/1O_B78Fz0ZlV7VHsZc3fz4NJkLlzlT24A/view?usp=drive_link) |
-|  11/15 | <span class="label label-green">Discussion 11</span> Robotics, Language, & Vision  | [PDF](docs/dis11.pdf) / [Solutions](docs/dis11_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1Pta3dxjprLmjMKSy2-ySRPo-iPL-KIE9/view?usp=sharing) |
+|  11/15 | <span class="label label-green">Discussion 11</span> MDPs & Reinforcement Learning | [PDF](docs/dis11.pdf) / [Solutions](docs/dis11_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/1Pta3dxjprLmjMKSy2-ySRPo-iPL-KIE9/view?usp=sharing) |
 |  11/16 | <span class="label">Lecture 25</span> Graph Neural Networks & Rotational Equivariance 2 | [Slides](docs/lec25.pdf) / [Recording](https://drive.google.com/file/d/1NMgBzIhuY1j1__lzrZiWdX294KjjhJOH/view?usp=drive_link) |
 |  11/18 | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning (**Due 12/1 11:59pm**)  | [PDF](docs/hw7.pdf) / [Files](https://static.us.edusercontent.com/files/yCaX0kfCPkIqOdIkgG6OHSOL) |
 
@@ -125,9 +125,9 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 15
 
-|  11/28 | <span class="label">Lecture 27</span> Special Topics - Computational Biology  |  |
+|  11/28 | <span class="label">Lecture 27</span> Special Topics - Causality  |  |
 |  11/29 | <span class="label label-green">Discussion 12</span> Graph Neural Networks  | [PDF](docs/dis12.pdf) |
-|  11/30 | <span class="label">Lecture 28</span> Special Topics - Causality  |  |
+|  11/30 | <span class="label">Lecture 28</span> Special Topics - Computational Biology |  |
 
 ### Week 16 (RRR Week)
 
