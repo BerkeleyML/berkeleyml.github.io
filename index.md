@@ -125,9 +125,9 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 15
 
-|  11/28 | <span class="label">Lecture 27</span> Special Topics - Causality  |  |
-|  11/29 | <span class="label label-green">Discussion 12</span> Graph Neural Networks  | [PDF](docs/dis12.pdf) |
-|  11/30 | <span class="label">Lecture 28</span> Special Topics - Computational Biology |  |
+|  11/28 | <span class="label">Lecture 27</span> Special Topics - Causality  | [Slides](docs/lec27.pdf) / [Recording](https://drive.google.com/file/d/1sA036B6bRhd8LNa99dCgXJln-X9izOrm/view?usp=drive_link) |
+|  11/29 | <span class="label label-green">Discussion 12</span> Graph Neural Networks  | [PDF](docs/dis12.pdf) / [Solutions](docs/dis12_sol.pdf) / [Walkthrough](https://drive.google.com/file/d/10fqTTBO-a2Z27Djiamq3TuXy4ja9qY8f/view?usp=sharing) |
+|  11/30 | <span class="label">Lecture 28</span> Special Topics - Computational Biology | [Slides](docs/lec28.pdf) |
 
 ### Week 16 (RRR Week)
 
