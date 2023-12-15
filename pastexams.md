@@ -12,7 +12,7 @@ Below are past exams from different iterations of the course. Note that the fall
 
 | Semester | Professors | Midterm | Final |
 |----------|------------|---------|-------|
-| Fall 2023 | Malik, Listgarten | [Blank](docs/exams/midf23blank.pdf), [Solutions](docs/exams/midf23.pdf) |  |
+| Fall 2023 | Malik, Listgarten | [Blank](docs/exams/midf23blank.pdf), [Solutions](docs/exams/midf23.pdf) | [Blank](docs/exams/finalf23blank.pdf), [Solutions](docs/exams/finalf23.pdf) |
 | Spring 2023 | Shewchuk | [Blank](docs/exams/mids23blank.pdf), [Solutions](docs/exams/mids23.pdf) | [Blank](docs/exams/finals23blank.pdf), [Solutions](docs/exams/finals23.pdf) |
 | Fall 2022 | Malik, Listgarten | [Blank](docs/exams/midf22blank.pdf), [Solutions](docs/exams/midf22.pdf) | [Blank](docs/exams/finalf22blank.pdf), [Solutions](docs/exams/finalf22.pdf) |
 | Spring 2022 | Shewchuk | [Blank](docs/exams/mids22blank.pdf), [Solutions](docs/exams/mids22.pdf) | [Blank](docs/exams/finals22blank.pdf), [Solutions](docs/exams/finals22.pdf) |

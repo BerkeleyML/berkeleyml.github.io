@@ -83,7 +83,7 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 |  10/10 | <span class="label">Lecture 14</span> Clustering  | [Slides](docs/lec14.pdf) / [Recording](https://drive.google.com/file/d/1Cb4OpSgClxXIGAp0vOpAxrm3U5DgH-tR/view?usp=drive_link) |
 |  10/11 | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  | [PDF](docs/dis6.pdf) / [Solutions](docs/dis6_sol.pdf) |
 |  10/12 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  | [Slides](docs/lec15.pdf) / [Recording](https://drive.google.com/file/d/1YCW8JVfnng8B81jbslDCbPKI71UfjxUm/view?usp=share_link) |
-|  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  | [Blank](docs/mt.pdf) / [Solutions](docs/mt_sol.pdf) |
+|  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  | [Blank](docs/exams/midf23blank.pdf) / [Solutions](docs/exams/midf23.pdf) |
 
 ### Week 9
 
@@ -135,4 +135,4 @@ Also, the Professors will post slides prior to lecture at this Google Drive [fol
 
 ### Week 17 (Finals Week)
 
-|  12/12 | <span class="label label-red">Final Exam</span> (8-11am, Location TBD) |  |
+|  12/12 | <span class="label label-red">Final Exam</span> (8-11am, Location TBD) | [Blank](docs/exams/finalf23blank.pdf) / [Solutions](docs/exams/finalf23.pdf) |
