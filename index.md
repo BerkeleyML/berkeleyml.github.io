@@ -23,12 +23,13 @@ nav_order: 1
 **University of California, Berkeley**, Fall 2023
 
 Welcome to CS 189/289A! This class covers theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; deep learning models including CNNs, Transformers, graph neural networks for vision and language tasks; and Markovian models for reinforcement learning and robotics.
-
+<!---
 Here are the Gradescope/Ed codes (you should self-enroll in these). We won't post any materials on bCourses.
 - Gradescope: E73744
 - Ed: [https://edstem.org/us/join/fCBF32](https://edstem.org/us/join/fCBF32)
+-->
 
-Also, the Professors will post slides prior to lecture at this Google Drive [folder](https://drive.google.com/drive/u/0/folders/1eZplfXbQytcvNTK2ssLYinYSF4rJ1eWI) (for faster access). The material here is redundant with the website, but it may take up to a day or two for the website to get updated with the slides after lecture. The "Post-Lecture" subfolder contains updates to slides that the Professors may make right after lecture.
+Professors will post slides prior to lecture at this Google Drive [folder](https://drive.google.com/drive/u/0/folders/1eZplfXbQytcvNTK2ssLYinYSF4rJ1eWI) (for faster access). The material here is redundant with the website, but it may take up to a day or two for the website to get updated with the slides after lecture. The "Post-Lecture" subfolder contains updates to slides that the Professors may make right after lecture.
 
 **Note:** The topics for future lectures, discussions, and HWs are tentative and may be moved around, changed, or removed.
 
