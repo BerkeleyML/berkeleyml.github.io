@@ -22,9 +22,11 @@ nav_order: 1
 
 **University of California, Berkeley**, Fall 2024
 
-Welcome to CS 189/289A! This class covers theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; deep learning models including CNNs, Transformers, graph neural networks for vision and language tasks; and Markovian models for reinforcement learning and robotics.
+Welcome to CS 189/289A! This class covers theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; deep learning models including CNNs, transformers, graph neural networks for vision and language tasks; and Markovian models for reinforcement learning and robotics.
 
-Professors will post slides prior to lecture at this Google Drive [folder](https://drive.google.com/drive/u/0/folders/1eZplfXbQytcvNTK2ssLYinYSF4rJ1eWI) (for faster access). The material here is redundant with the website, but it may take up to a day or two for the website to get updated with the slides after lecture. The "Post-Lecture" subfolder contains updates to slides that the Professors may make right after lecture.
+**Textbook:** [_Deep Learning_](https://www.bishopbook.com/) by Bishop and Bishop.
+
+Professors will post slides prior to lecture at this Google Drive [folder](https://drive.google.com/drive/folders/1hM6_gb8-cel4-hQ9_sMcm9krwfzmppkU?usp=drive_link) (for faster access). The material here is redundant with the website, but it may take up to a day or two for the website to get updated with the slides after lecture. The "Post-Lecture" subfolder contains updates to slides that the professors may make right after lecture.
 
 **Note:** The topics for future lectures, discussions, and HWs are **tentative** and may be moved around, changed, or removed.
 
@@ -33,21 +35,21 @@ Professors will post slides prior to lecture at this Google Drive [folder](https
 ### Week 1
 
 |  8/29 | <span class="label">Lecture 1</span> Introduction and Logistics  |  |
-|  | <span class="label label-yellow">Homework 1</span> Math Review (**Due 9/11 11:59pm**)  |   |
+|  | <span class="label label-yellow">Homework 1</span> Math Review <nobr>(<strong>Due 9/11 11:59pm</strong>)</nobr>  |   |
 
 
 ### Week 2
 
-|  9/5 | <span class="label">Lecture 2</span> Maximum Likelihood Estimation  |  |
+|  9/3 | <span class="label">Lecture 2</span> Maximum Likelihood Estimation  |  |
 |  | <span class="label label-green">Discussion 0</span> Math Pre-Requisites Review  |   |
-|  8/31 | <span class="label">Lecture 3</span> Multivariate Gaussians  |  |
+|  9/5 | <span class="label">Lecture 3</span> Multivariate Gaussians  |  |
 
 ### Week 3
 
 |  9/10 | <span class="label">Lecture 4</span> Linear Regression 1  |  |
 |  | <span class="label label-green">Discussion 1</span> MLE & Gaussians  |   |
 |  9/12 | <span class="label">Lecture 5</span> Linear Regression 2  |  |
-|  9/9 | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification (**Due 9/25 11:59pm**)  |  |
+|  | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification <nobr>(<strong>Due 9/25 11:59pm</strong>)</nobr>  |  |
 
 ### Week 4
 
@@ -60,7 +62,7 @@ Professors will post slides prior to lecture at this Google Drive [folder](https
 |  9/24 | <span class="label">Lecture 8</span> Backpropagation and Gradient Descent 1  |  |
 |  | <span class="label label-green">Discussion 3</span> Classification & Logistic Regression  |  |
 |  9/26 | <span class="label">Lecture 9</span> Backpropagation and Gradient Descent 2  |  |
-|  9/23 | <span class="label label-yellow">Homework 3</span> Neural Networks (**Due 10/9 11:59pm**)  |  |
+|  | <span class="label label-yellow">Homework 3</span> Neural Networks <nobr>(<strong>Due 10/9 11:59pm</strong>)</nobr>  |  |
 
 ### Week 6
 
@@ -73,21 +75,21 @@ Professors will post slides prior to lecture at this Google Drive [folder](https
 |  10/8 | <span class="label">Lecture 12</span> Dimensionality Reduction & PCA  |  |
 |  | <span class="label label-green">Discussion 5</span> Convolution and Attention  |  |
 |  10/10 | <span class="label">Lecture 13</span> t-SNE  |  |
-|  10/7 | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory (**Due 10/23 11:59pm**)  |  |
+|  | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory <nobr>(<strong>Due 10/23 11:59pm</strong>)</nobr>  |  |
 
 ### Week 8
 
 |  10/15 | <span class="label">Lecture 14</span> Clustering  |  |
 |  | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  |  |
+|  10/16 | <span class="label label-red">Midterm</span> (7-9pm, Dwinelle 155)  |  |
 |  10/17 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  |  |
-|  10/13 | <span class="label label-red">Midterm</span> (7-9pm, Pimentel 1)  |  |
 
 ### Week 9
 
 |  10/22 | <span class="label">Lecture 16</span> Nearest Neighbors & Metric Learning |  |
 |  | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  |  |
 |  10/24 | <span class="label">Lecture 17</span> Decision Trees & Ensembling |  |
-|  10/21 | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees (**Due 11/6 11:59pm**)  |  |
+|  | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees <nobr>(<strong>Due 11/6 11:59pm</strong>)</nobr>  |  |
 
 ### Week 10
 
@@ -100,7 +102,7 @@ Professors will post slides prior to lecture at this Google Drive [folder](https
 |  11/5 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  |  |
 |  | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  |  |
 |  11/7 | <span class="label">Lecture 21</span> Markov Decision Processes  |  |
-|  11/4 | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning (**Due 11/20 11:59pm**)  |  |
+|  | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning <nobr>(<strong>Due 11/20 11:59pm</strong>)</nobr>  |  |
 
 ### Week 12
 
@@ -113,7 +115,7 @@ Professors will post slides prior to lecture at this Google Drive [folder](https
 |  11/19 | <span class="label">Lecture 24</span> Graph Neural Networks & Rotational Equivariance 1  |  |
 |  | <span class="label label-green">Discussion 11</span> MDPs & Reinforcement Learning |  |
 |  11/21 | <span class="label">Lecture 25</span> Graph Neural Networks & Rotational Equivariance 2 |  |
-|  11/18 | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning (**Due 12/6 11:59pm**)  |  |
+|  | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning <nobr>(<strong>Due 12/4 11:59pm</strong>)</nobr>  |  |
 
 ### Week 14
 
@@ -132,4 +134,4 @@ Professors will post slides prior to lecture at this Google Drive [folder](https
 
 ### Week 17 (Finals Week)
 
-|  12/12 | <span class="label label-red">Final Exam</span> (8-11am, Location TBD) |  |
+|  12/17 | <span class="label label-red">Final Exam</span> (8-11am, location TBD) |  |

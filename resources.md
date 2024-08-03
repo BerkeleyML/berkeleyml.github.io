@@ -11,7 +11,7 @@ nav_order: 5
 This page contains some resources that may be useful to you, and they can serve as supplements to the lectures, discussions, and homeworks for this semester.
 
 ## Textbook
-The textbook [Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) by Trevor Hastie, Robert Tibshirani, and Jerome Friedman is a useful supplemental resource. It's also free!
+[_Deep Learning: Foundations and Concepts_](https://www.bishopbook.com/) by Christopher M. Bishop and Hugh Bishop.
 
 ## Notes
 Below are lecture notes from Anant Sahai's iteration of the course:

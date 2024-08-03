@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 # Staff
-Below is the course staff for the semester. Please make an Ed post before emailing GSIs and instructors. If you have a very private matter, you may email the instructors and Head GSIs.
+Below is the course staff for the semester. Please make an Ed post before emailing TAs and instructors. If you have a very private matter, you may email the instructors and Head TA.
 
 ## Instructors
 
