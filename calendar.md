@@ -11,6 +11,20 @@ Below are the timings for lectures, office hours, homework party, and discussion
 ## Lectures
 Lectures will be held in **Haas Faculty Wing F295** on **Tuesdays and Thursdays from 2:00 PM to 3:30 PM**. Lectures will not be recorded and will be in-person for the entirety of the semester.
 
+## Discussion Sections
+
+Discussion sections will all be in-person and none will be recorded.
+
+All discussion sections are one-hour long, and we may not cover all questions within the timeframe. Some TAs will also have mini-lectures at the start of their discussion.
+
+| GSI |   Section Time  | Location       |
+|------|------|------|------|
+| Suchir Agarwal | TBD | TBD |
+| Pierre Boyeau | TBD | TBD |
+| Grace Luo | TBD | TBD |
+| James Ni | TBD | TBD |
+| Ruchir Rastogi | TBD | TBD |
+
 ## Office Hours
 
 ### Professor Office Hours
@@ -27,17 +41,3 @@ See the Syllabus for guidelines on office hours. Submit tickets at [oh.eecs189.o
 
 ## Homework Party
 Homework Party will be held on **Wednesdays from 9:00 AM to 11:00 AM** in the "Woz" (Wozniak Lounge/Soda 430-438).
-
-## Discussion Sections
-
-Discussion sections will all be in-person and none will be recorded.
-
-All discussion sections are one-hour long, and we may not cover all questions within the timeframe. Some TAs will also have mini-lectures at the start of their discussion.
-
-| GSI |   Section Time  | Location       |
-|------|------|------|------|
-| Suchir Agarwal | TBD | TBD |
-| Pierre Boyeau | TBD | TBD |
-| Grace Luo | TBD | TBD |
-| James Ni | TBD | TBD |
-| Ruchir Rastogi | TBD | TBD |
