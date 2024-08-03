@@ -32,11 +32,11 @@ Auditors are welcome to attend lecture only if there are extra seats available i
 
 ### Non-EECS Graduate Students
 
-If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head GSI ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course, but we can send you a form to fill out to express your interest in enrolling.
+If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head TA ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course, but we can send you a form to fill out to express your interest in enrolling.
 
 ### Concurrent Enrollment Students
 
-Concurrent enrollment applications are processed during the first few weeks of the semester, and we cannot provide any guarantee whether these applications may be approved. If you'd like to be added to the Gradescope and Ed, please email the Head GSI.
+Concurrent enrollment applications are processed during the first few weeks of the semester, and we cannot provide any guarantee whether these applications may be approved. If you'd like to be added to the Gradescope and Ed, please email the Head TA.
 
 ### DSP Students
 
@@ -50,15 +50,15 @@ If your LoA requests for extended time on exams, you will receive an exam reflec
 
 ### Ed Discussion
 
-We will use Ed Discussion as the "one-stop shop" throughout the semester for a Q&A forum and for official announcements. Enrollment in Ed Discussion is mandatory. If you have not yet been added to the CS 189 Ed, please email the Head GSI. If you have questions about anything related to the course, please post them on Ed rather than emailing the instructor or TAs. Please do not post anything resembling a solution to a homework problem before it's due. If in doubt, you should make your post private (visible to instructors only). We always welcome any feedback on what we could be doing better. You are required to use your actual name on Ed.
+We will use Ed Discussion as the "one-stop shop" throughout the semester for a Q&A forum and for official announcements. Enrollment in Ed Discussion is mandatory. If you have not yet been added to the CS 189 Ed, please email the Head TA. If you have questions about anything related to the course, please post them on Ed rather than emailing the instructor or TAs. Please do not post anything resembling a solution to a homework problem before it's due. If in doubt, you should make your post private (visible to instructors only). We always welcome any feedback on what we could be doing better. You are required to use your actual name on Ed.
 
 ### Gradescope
 
-All homework will be submitted through Gradescope, and all grades will be returned through Gradescope. If you have not been added to Gradescope, please email the Head GSI.
+All homework will be submitted through Gradescope, and all grades will be returned through Gradescope. If you have not been added to Gradescope, please email the Head TA.
 
 ### bCourses
 
-We will use bCourses to upload lecture recordings for this course just before exams. Only people officially enrolled into the class will be able to access bCourses (i.e. if you are auditing or awaiting concurrent enrollment, we cannot add you to bCourses). bCourses should automatically add you to the CS 189/289A bCourses, but if you cannot accessit, please email the Head GSI.
+We will use bCourses to upload lecture recordings for this course just before exams. Only people officially enrolled into the class will be able to access bCourses (i.e. if you are auditing or awaiting concurrent enrollment, we cannot add you to bCourses). bCourses should automatically add you to the CS 189/289A bCourses, but if you cannot access it, please email the Head TA.
 
 ### Instructional Servers
 
@@ -68,21 +68,21 @@ This course does not make use of instructional accounts, but if you would like a
 
 ### Professor Office Hours
 
-Professors will host office hours after lecture everyday from 3:30 PM to 4:30 PM. Please use this time to ask more conceptual questions or talk to the Professors. If you have in-depth homework help, please visit GSI office hours instead.
+Professors will host office hours after lecture everyday from 3:30 PM to 4:30 PM. Please use this time to ask more conceptual questions or talk to the Professors. If you require in-depth homework help, please visit TA office hours instead.
 
-### GSI Office Hours
+### TA Office Hours
 
-GSIs will hold office hours throughout the week to answer conceptual, homework, and discussion questions.
+TAs will hold office hours throughout the week to answer conceptual, homework, and discussion questions.
 
-When requesting help in office hours, please make a ticket at [oh.eecs189.org](https://oh.eecs189.org), and have notifications turned on for when a GSI is ready to help answer your question. Please add a note on what question you need help for, so that we can group similar tickets together and get your question answered faster!
+When requesting help in office hours, please make a ticket at [oh.eecs189.org](https://oh.eecs189.org), and have notifications turned on for when a TA is ready to help answer your question. Please add a note on what question you need help for, so that we can group similar tickets together and get your question answered faster!
 
-**Note**: **GSIs are not required to debug your code.** Because office hours tend to have long wait times, course staff needs to be fair in answering as many questions as possible, and it's thus infeasible for a GSI to spend 20 minutes debugging someone's code. Before you make a code debugging-related ticket, please take time to thoroughly debug your code. Thank you!
+**Note**: **TAs are not required to debug your code.** Because office hours tend to have long wait times, course staff needs to be fair in answering as many questions as possible, and it's thus infeasible for a TA to spend 20 minutes debugging someone's code. Before you make a code debugging-related ticket, please take time to thoroughly debug your code. Thank you!
 
 ### Homework Party
 
-We will be hosting a homework party every week in the Wozniak Lounge (Soda 430-438), informally called the "Woz", on Fridays 1:00 PM to 3:00 PM. Please follow the same guidelines as GSI office hours.
+We will be hosting a homework party every week in the Wozniak Lounge (Soda 430-438), informally called the "Woz", on Wednesdays 9:00 AM to 11:00 AM. Please follow the same guidelines as TA office hours.
 
-GSIs will setup tables for each problem, so please sit at the table assigned for the specific problem you're working on. Not only will this help us get to answer more people's questions at once (and reduce your wait time), but you'll also be able to think about solutions together with other students. Please keep in mind the Academic Integrity and Collaboration policies below though.
+TAs will setup tables for each problem, so please sit at the table assigned for the specific problem you're working on. Not only will this help us get to answer more people's questions at once (and reduce your wait time), but you'll also be able to think about solutions together with other students. Please keep in mind the Academic Integrity and Collaboration policies below though.
 
 ## Grading
 
@@ -95,13 +95,15 @@ Note: CS 189 and CS 289A will be graded on separate curves. Also, CS 289A studen
 
 ### Homeworks
 
-Homeworks will be a combination of math problems and coding assignments, both of which will be submitted to Gradescope. Coding tasks may be autograded or graded by readers. Instructions for where to submit will be given on each homework.
+Homeworks will be a combination of math problems and coding assignments, both of which will be submitted to Gradescope. Coding tasks may be autograded or graded by tutors. Instructions for where to submit will be given on each homework.
 
-There will be about 7 homeworks for this class, released 2 weeks at a time. Readers will grade homeworks throughout the semester, and grades will be released on Gradescope. If you wish to request a regrade on a homework assignment, you have 5 days to do so. Any regrade requests after this time window will not be considered by course staff. Doing the homeworks and reading the solutions is vital for your learning. You are expected to show your work and justify all of your answers.
+We will be grading a subset of each homework&mdash;you can expect this to be approximately 25-40% of the problems. These subsets will not be known to you until after grades are released. 
+
+There will be 7 homeworks for this class, released 2 weeks at a time. Tutors will grade homeworks throughout the semester, and grades will be released on Gradescope. If you wish to request a regrade on a homework assignment, you have 5 days to do so. Any regrade requests after this time window will not be considered by course staff. Doing the homeworks and reading the solutions is vital for your learning. You are expected to show your work and justify all of your answers.
 
 We are implementing the following policy to reduce student stress: homework will be scored out of 80%. In other words, your final homework score will be computed as such: Final HW Score = min(Raw HW Score / 80%, 100%). For instance, if you scored a 50% on the homework, then your actual grade is 50/80. If you scored a 80% on the homework, then your actual grade is 80/80. If you scored 80+ on the homework, then your actual grade is capped at 80/80.
 
-Your lowest two homework scores will be dropped, but these two drops should be reserved for emergencies. We will not grant additional homework drops or homework extensions for any reason.
+Your lowest two homework scores will be dropped, but these two drops should be reserved for emergencies. **We will not grant additional homework drops or homework extensions for any reason.**
 
 ### Discussions
 
@@ -109,7 +111,7 @@ Discussion worksheets are released the day before the first discussions of the w
 
 ### Exams
 
-The midterm is Friday, October 13 from 7:00 PM to 9:00 PM in Pimentel 1. The final is tentatively scheduled for Tuesday, December 12, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. **No alternate exams will be offered.** Please make a private Ed post if you have an extreme hardship related to these policies.
+The midterm is Wednesday, October 16 from 7:00 PM to 9:00 PM in Dwinelle 155. The final is tentatively scheduled for Tuesday, December 17, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. **No alternate exams will be offered.** Please make a private Ed post if you have an extreme hardship related to these policies.
 
 ## Academic Integrity
 

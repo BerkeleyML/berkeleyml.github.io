@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 # Staff
-Below is the course staff for the semester. Please make an Ed post before emailing GSIs and instructors. If you have a very private matter, you may email the instructors and Head GSIs.
+Below is the course staff for the semester. Please make an Ed post before emailing TAs and instructors. If you have a very private matter, you may email the instructors and Head TA.
 
 ## Instructors
 
@@ -15,21 +15,21 @@ Below is the course staff for the semester. Please make an Ed post before emaili
 {{ staffer }}
 {% endfor %}
 
-## Head GSIs
+## Head TA
 
-{% assign headgsis = site.staffers | where: 'role', 'Head GSI' %}
-{% for staffer in headgsis %}
+{% assign headta = site.staffers | where: 'role', 'Head TA' %}
+{% for staffer in headta %}
 {{ staffer }}
 {% endfor %}
 
-## GSIs
+<!-- ## GSIs -->
 
-{% assign gsis = site.staffers | where: 'role', 'GSI' %}
-{% for staffer in gsis %}
+{% assign tas = site.staffers | where: 'role', 'TA' %}
+{% for staffer in tas %}
 {{ staffer }}
 {% endfor %}
 
-## Readers
+<!-- ## Readers -->
 
 {% assign readers = site.staffers | where: 'role', 'Reader' %}
 {% for staffer in readers %}

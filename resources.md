@@ -11,7 +11,7 @@ nav_order: 5
 This page contains some resources that may be useful to you, and they can serve as supplements to the lectures, discussions, and homeworks for this semester.
 
 ## Textbook
-The textbook [Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) by Trevor Hastie, Robert Tibshirani, and Jerome Friedman is a useful supplemental resource. It's also free!
+[_Deep Learning: Foundations and Concepts_](https://www.bishopbook.com/) by Christopher M. Bishop and Hugh Bishop.
 
 ## Notes
 Below are lecture notes from Anant Sahai's iteration of the course:
@@ -54,7 +54,7 @@ These tips have been collected through the years from professors, past and prese
 In a conceptual class such as this, it is particularly important to maintain a steady effort throughout the semester, rather than hope to cram just before homework deadlines or exams. This is because it takes time and practice for the ideas to sink in. Make sure you allocate a sufficient number of hours every week to the class, including enough time for understanding the material as well as for doing assignments.
 
 ### Take the homeworks seriously
-The homeworks are explicitly designed to help you to learn the material as you go along. Read the solutions carefully, since doing so is critical for self-grading. You may well learn a different way of looking at the problem, and you may also benefit from emulating the style of the solutions.
+The homeworks are explicitly designed to help you to learn the material as you go along. Read the solutions carefully. You may well learn a different way of looking at the problem, and you may also benefit from emulating the style of the solutions.
 
 ### Don't procrastinate on homework
 Our best advice is to read through the homework problems as soon as they are available. Do not wait until the night before it is due to start working on the homework.
