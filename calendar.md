@@ -9,7 +9,7 @@ nav_order: 2
 Below are the timings for lectures, office hours, homework party, and discussion sections. This page will be updated periodically as times change.
 
 ## Lectures
-Lectures will be held in **Haas Faculty Wing F295** on **Tuesdays and Thursdays from 2:00 PM to 3:30 PM**. Lectures will not be recorded and will be in-person for the entirety of the semester.
+Lectures will be held in **Haas Faculty Wing F295** on **Tuesdays and Thursdays from 2:00 PM to 3:30 PM**.
 
 ## Discussion Sections
 
