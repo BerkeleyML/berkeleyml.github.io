@@ -40,8 +40,4 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 | Pierre Boyeau | TBD | TBD |
 | Grace Luo | TBD | TBD |
 | James Ni | TBD | TBD |
-<<<<<<< HEAD
 | Ruchir Rastogi | TBD | TBD |
-=======
-| Ruchir Rastogi | TBD | TBD |
->>>>>>> fa24-release
