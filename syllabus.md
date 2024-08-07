@@ -32,7 +32,7 @@ Auditors are welcome to attend lecture only if there are extra seats available i
 
 ### Non-EECS Graduate Students
 
-If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head TA ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course, but we can send you a form to fill out to express your interest in enrolling.
+If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head TA ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course.
 
 ### Concurrent Enrollment Students
 
