@@ -30,9 +30,9 @@ CS 189 will be taught fully in person this semester, unless conditions change an
 
 Auditors are welcome to attend lecture only if there are extra seats available in the lecture hall. We anticipate that lectures will be very full for the first couple weeks of the semester. Unfortunately, we cannot devote instructional resources to auditors, but you are welcome to use materials that are posted publicly on this site. We will not be adding auditors to bCourses or to Ed Discussion, and auditors may not attend discussion sections or office hours.
 
-### Non-EECS Graduate Students
+[//]: #  ### Non-EECS Graduate Students
 
-If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head TA ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course.
+[//]: #  If you are a graduate student from a department other than EECS who is blocked from joining the CS289A waitlist, please email the Head TA ASAP with your department and degree program. We unfortunately cannot guarantee that any non-EECS students will be admitted into the course.
 
 ### Concurrent Enrollment Students
 
