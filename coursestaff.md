@@ -22,16 +22,16 @@ Below is the course staff for the semester. Please make an Ed post before emaili
 {{ staffer }}
 {% endfor %}
 
-<!-- ## GSIs -->
+## Teaching Assistants
 
 {% assign tas = site.staffers | where: 'role', 'TA' %}
 {% for staffer in tas %}
 {{ staffer }}
 {% endfor %}
 
-<!-- ## Readers -->
+## Tutors
 
-{% assign readers = site.staffers | where: 'role', 'Reader' %}
-{% for staffer in readers %}
+{% assign tutors = site.staffers | where: 'role', 'Tutor' %}
+{% for staffer in tutors %}
 {{ staffer }}
 {% endfor %}

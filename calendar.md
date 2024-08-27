@@ -19,11 +19,11 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 
 | GSI |   Section Time  | Location       |
 |------|------|------|------|
-| Suchir Agarwal | TBD | TBD |
+| Grace Luo | Wed 10AM - 11AM | Wheeler 220 |
+| Suchir Agarwal| Wed 1PM - 2PM | Wheeler 20 |
+| Ruchir Rastogi | Wed 6PM - 7PM | Wheeler 202 |
+| James Ni | Thu 10AM - 11AM | Wheeler 202 |
 | Pierre Boyeau | TBD | TBD |
-| Grace Luo | TBD | TBD |
-| James Ni | TBD | TBD |
-| Ruchir Rastogi | TBD | TBD |
 
 ## Office Hours
 
@@ -37,7 +37,10 @@ See the Syllabus for guidelines on office hours. Submit tickets at [oh.eecs189.o
 | Day/Time             |    Type      |   Location            |
 |----|----|----|----|
 | Wed 9AM - 11AM     |    HW Party  |   Woz (Soda 430-438)  |
-| More to come     |    Office Hours  |   TBD  |
+| Mon 12PM - 2PM     |    Office Hours  |   Cory 400  |
+| Tue 2PM - 5PM      |    Office Hours  |   Cory 400  |
+| Tue 5PM - 7PM      |    Office Hours  |   Soda 380  |
+| Thu 4PM - 6PM      |    Office Hours  |   Soda 347  |
 
 ## Homework Party
-Homework Party will be held on **Wednesdays from 9:00 AM to 11:00 AM** in the "Woz" (Wozniak Lounge/Soda 430-438).
+Homework Party will be held on **Wednesdays from 9:00 AM to 11:00 AM** in the "Woz" (Wozniak Lounge / Soda 430-438).
