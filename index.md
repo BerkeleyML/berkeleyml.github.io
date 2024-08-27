@@ -28,7 +28,7 @@ Welcome to CS 189/289A! This class covers theoretical foundations, algorithms, m
 
 Professors will post slides prior to lecture at this Google Drive [folder](https://drive.google.com/drive/folders/1hM6_gb8-cel4-hQ9_sMcm9krwfzmppkU?usp=drive_link) (for faster access). The material here is redundant with the website, but it may take up to a day or two for the website to get updated with the slides after lecture. The "Post-Lecture" subfolder contains updates to slides that the professors may make right after lecture.
 
-If you have not been added to EdStem, you may join through this [link](https://edstem.org/us/join/RUHntB).
+If you have not been added to **EdStem**, you may join through this [link](https://edstem.org/us/join/RUHntB).
 
 **Note:** The topics for future lectures, discussions, and HWs are **tentative** and may be moved around, changed, or removed.
 
