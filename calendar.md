@@ -22,6 +22,7 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 | Grace Luo | Wed 10AM - 11AM | Wheeler 220 |
 | Suchir Agarwal| Wed 1PM - 2PM | Wheeler 20 |
 | Ruchir Rastogi | Wed 6PM - 7PM | Wheeler 202 |
+| Aryan Jain |  Wed 7PM - 8PM | Cory 540AB |
 | James Ni | Thu 10AM - 11AM | Wheeler 202 |
 | Pierre Boyeau | TBD | TBD |
 
