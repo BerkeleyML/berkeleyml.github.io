@@ -22,9 +22,9 @@ Here are other courses offered by the EECS department that are adjacent to machi
 - CS 285 (Deep Reinforcement Learning) - covers recent advances in the fields of robotics, imitation learning, control theory, and reinforcement learning.
 - CS 288 (Natural Language Processing) - covers techniques used to understand patterns and perform tasks on text. Also covers recent advances in language models.
 
-### In-Person Instruction
+### Instruction Mode
 
-CS 189 will be taught fully in person this semester, unless conditions change and university policy mandates otherwise. We are planning to record lectures, but we won't be releasing the recordings on an ongoing basis. Instead, we currently plan to release lecture recordings in two batches shortly before the midterm and final exams, with the intention that they be used for studying.
+Instruction is in-person, and we heavily recommend attending lectures live. Having said this, we are planning to record lectures and release them on a regular basis. Recordings will be linked on the website. 
 
 ### Auditing
 
@@ -58,7 +58,7 @@ All homework will be submitted through Gradescope, and all grades will be return
 
 ### bCourses
 
-We will use bCourses to upload lecture recordings for this course just before exams. Only people officially enrolled into the class will be able to access bCourses (i.e. if you are auditing or awaiting concurrent enrollment, we cannot add you to bCourses). bCourses should automatically add you to the CS 189/289A bCourses, but if you cannot access it, please email the Head TA.
+Only people officially enrolled into the class will be able to access bCourses (i.e. if you are auditing or awaiting concurrent enrollment, we cannot add you to bCourses). bCourses should automatically add you to the CS 189/289A bCourses, but if you cannot access it, please email the Head TA.
 
 ### Instructional Servers
 
@@ -111,7 +111,7 @@ Discussion worksheets are released the day before the first discussions of the w
 
 ### Exams
 
-The midterm is Wednesday, October 16 from 7:00 PM to 9:00 PM in Dwinelle 155. The final is tentatively scheduled for Tuesday, December 17, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. **No alternate exams will be offered.** Please make a private Ed post if you have an extreme hardship related to these policies.
+The midterm is Wednesday, October 16 from 7:00 PM to 9:00 PM with location TBD. The final is tentatively scheduled for Tuesday, December 17, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. **No alternate exams will be offered.** Please make a private Ed post if you have an extreme hardship related to these policies.
 
 ## Academic Integrity
 

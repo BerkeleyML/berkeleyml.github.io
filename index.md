@@ -83,7 +83,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 |  10/15 | <span class="label">Lecture 14</span> Clustering  |  |
 |  | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  |  |
-|  10/16 | <span class="label label-red">Midterm</span> (7-9pm, Dwinelle 155)  |  |
+|  10/16 | <span class="label label-red">Midterm</span> (7-9pm, Location TBD)  |  |
 |  10/17 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  |  |
 
 ### Week 9
