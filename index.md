@@ -36,7 +36,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 1
 
-|  8/29 | <span class="label">Lecture 1</span> Introduction and Logistics  | Reading assignment: 1.1-1.2.4 |
+|  8/29 | <span class="label">Lecture 1</span> Introduction and Logistics  | <span class="label label-purple">Reading</span>  1.1-1.2.4 |
 |  | <span class="label label-yellow">Homework 1</span> Math Review <nobr>(<strong>Due 9/11 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw1.pdf) / [Files](docs/hw_fa24/hw1.zip) |
 
 
