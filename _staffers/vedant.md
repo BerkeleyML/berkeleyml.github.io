@@ -1,6 +1,6 @@
 ---
 name: Vedant Kumud
-role: Tutor
+role: TA
 email: vkumud@berkeley.edu
 photo: vedant.png
 ---
