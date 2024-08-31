@@ -35,3 +35,10 @@ Below is the course staff for the semester. Please make an Ed post before emaili
 {% for staffer in tutors %}
 {{ staffer }}
 {% endfor %}
+
+## Readers
+
+{% assign readers = site.staffers | where: 'role', 'Reader' %}
+{% for staffer in readers %}
+{{ staffer }}
+{% endfor %}
