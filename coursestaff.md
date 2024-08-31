@@ -15,7 +15,7 @@ Below is the course staff for the semester. Please make an Ed post before emaili
 {{ staffer }}
 {% endfor %}
 
-## Head TA
+## Head Teaching Assistant
 
 {% assign headta = site.staffers | where: 'role', 'Head TA' %}
 {% for staffer in headta %}
