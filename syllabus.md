@@ -97,7 +97,7 @@ Note: CS 189 and CS 289A will be graded on separate curves. Also, CS 289A studen
 
 Homeworks will be a combination of math problems and coding assignments, both of which will be submitted to Gradescope. Coding tasks may be autograded or graded by tutors. Instructions for where to submit will be given on each homework.
 
-We will be grading a subset of each homework&mdash;you can expect this to be approximately 25-40% of the problems. These subsets will not be known to you until after grades are released. 
+We will grade a subset of each homework. These subsets will not be known to you until after grades are released. 
 
 There will be 7 homeworks for this class, released 2 weeks at a time. Tutors will grade homeworks throughout the semester, and grades will be released on Gradescope. If you wish to request a regrade on a homework assignment, you have 5 days to do so. Any regrade requests after this time window will not be considered by course staff. Doing the homeworks and reading the solutions is vital for your learning. You are expected to show your work and justify all of your answers.
 
