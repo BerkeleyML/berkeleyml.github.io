@@ -99,7 +99,7 @@ Homeworks will be a combination of math problems and coding assignments, both of
 
 We will grade a subset of each homework. These subsets will not be known to you until after grades are released. 
 
-There will be 7 homeworks for this class, released 2 weeks at a time. Tutors will grade homeworks throughout the semester, and grades will be released on Gradescope. If you wish to request a regrade on a homework assignment, you have 5 days to do so. Any regrade requests after this time window will not be considered by course staff. Doing the homeworks and reading the solutions is vital for your learning. You are expected to show your work and justify all of your answers.
+There will be 7 homeworks for this class, released 2 weeks at a time. Staff will grade homeworks throughout the semester, and grades will be released on Gradescope. If you wish to request a regrade on a homework assignment, there will be a regrade period to do so. Any regrade requests after this time window will not be considered by course staff. Doing the homeworks and reading the solutions is vital for your learning. You are expected to show your work and justify all of your answers.
 
 We are implementing the following policy to reduce student stress: homework will be scored out of 80%. In other words, your final homework score will be computed as such: Final HW Score = min(Raw HW Score / 80%, 100%). For instance, if you scored a 50% on the homework, then your actual grade is 50/80. If you scored a 80% on the homework, then your actual grade is 80/80. If you scored 80+ on the homework, then your actual grade is capped at 80/80.
 
