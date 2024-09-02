@@ -17,14 +17,15 @@ Discussion sections will all be in-person and none will be recorded.
 
 All discussion sections are one-hour long, and we may not cover all questions within the timeframe. Some TAs will also have mini-lectures at the start of their discussion.
 
-| GSI |   Section Time  | Location       |
+| GSI |   Section Time  | Location (Capacity)      |
 |------|------|------|------|
-| Grace Luo | Wed 10AM - 11AM | Wheeler 220 |
-| Suchir Agarwal| Wed 1PM - 2PM | Wheeler 20 |
-| Ruchir Rastogi | Wed 6PM - 7PM | Wheeler 202 |
-| Aryan Jain |  Wed 7PM - 8PM | Cory 540AB |
-| James Ni | Thu 10AM - 11AM | Wheeler 202 |
-| Pierre Boyeau | TBD | TBD |
+| Grace Luo | Wed 10AM - 11AM | Wheeler 220 (40) |
+| Ruchir Rastogi | Wed 11AM - 12PM | Cory 540AB (46) |
+| Vedant Kumud | Wed 12PM - 1PM | Cory 540AB (46) |
+| Suchir Agarwal| Wed 1PM - 2PM | Wheeler 20 (48) |
+| Aryan Jain |  Wed 7PM - 8PM | Cory 540AB (46) |
+| Pierre Boyeau | Thu 9AM - 10AM | Wheeler 202 (42)|
+| James Ni | Thu 10AM - 11AM | Wheeler 202 (42) |
 
 ## Office Hours
 
@@ -37,10 +38,11 @@ See the Syllabus for guidelines on office hours. Submit tickets at [oh.eecs189.o
 
 | Day/Time             |    Type      |   Location            |
 |----|----|----|----|
-| Wed 9AM - 11AM     |    HW Party  |   Woz (Soda 430-438)  |
-| Mon 12PM - 2PM     |    Office Hours  |   Cory 400  |
-| Tue 2PM - 5PM      |    Office Hours  |   Cory 400  |
+| Mon 12PM - 4PM     |    Office Hours  |   Cory 400  |
+| Mon 5PM - 6PM     |    Office Hours  |   Soda 347  |
+| Tue 1PM - 2PM      |    Office Hours  |   Cory 529  |
 | Tue 5PM - 7PM      |    Office Hours  |   Soda 380  |
+| Wed 9AM - 11AM     |    HW Party  |   Woz (Soda 430-438)  |
 | Thu 4PM - 6PM      |    Office Hours  |   Soda 347  |
 
 ## Homework Party
