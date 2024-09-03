@@ -42,7 +42,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 2
 
-|  9/3 | <span class="label">Lecture 2</span> Maximum Likelihood Estimation  | <span class="label label-purple">Reading</span> <br> 2-2.1.2 (rules of probability: sum, product) <br> 2.1.6 (independent RVs) <br> 2.2-2.2.1 (probability densities in continuous spaces) <br> 2.3-2.3.2 (univariate Gaussian, likelihood) <br> 3-3.1.3 (Bernoulli, binomial, multinomial, MLE) |
+|  9/3 | <span class="label">Lecture 2</span> Maximum Likelihood Estimation ([Slides](https://drive.google.com/file/d/1BsohO4nidHSdP3eZtWmcAN9mAMvID4B2/view?usp=sharing)) | <span class="label label-purple">Reading</span> <br> 2-2.1.2 (rules of probability: sum, product) <br> 2.1.6 (independent RVs) <br> 2.2-2.2.1 (probability densities in continuous spaces) <br> 2.3-2.3.2 (univariate Gaussian, likelihood) <br> 3-3.1.3 (Bernoulli, binomial, multinomial, MLE) |
 |  | <span class="label label-green">Discussion 0</span> Math Pre-Requisites Review  |   |
 |  9/5 | <span class="label">Lecture 3</span> Multivariate Gaussians  |  |
 
