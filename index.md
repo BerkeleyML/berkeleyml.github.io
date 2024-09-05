@@ -44,7 +44,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 |  9/3 | <span class="label">Lecture 2</span> [Maximum Likelihood Estimation](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=78393f71-f7d8-4877-8ae4-b1d4013efedc) ([Slides](https://drive.google.com/file/d/1BsohO4nidHSdP3eZtWmcAN9mAMvID4B2/view?usp=sharing)) | <span class="label label-purple">Reading</span> <br> 2-2.1.2 (rules of probability: sum, product) <br> 2.1.6 (independent RVs) <br> 2.2-2.2.1 (probability densities in continuous spaces) <br> 2.3-2.3.2 (univariate Gaussian, likelihood) <br> 3-3.1.3 (Bernoulli, binomial, multinomial, MLE) |
 |  | <span class="label label-green">Discussion 0</span> Math Pre-Requisites Review  | [Worksheet](docs/dis_fa24/dis0.pdf) |
-|  9/5 | <span class="label">Lecture 3</span> Multivariate Gaussians  |  |
+|  9/5 | <span class="label">Lecture 3</span> Multivariate Gaussians  | <span class="label label-purple">Reading</span> 3-3.2.3 (multivariate Gaussians: geometry, moments, covariance forms) |
 
 ### Week 3
 
