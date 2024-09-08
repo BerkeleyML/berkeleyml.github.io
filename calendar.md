@@ -41,7 +41,8 @@ See the Syllabus for guidelines on office hours. Submit tickets at [oh.eecs189.o
 | Mon 12PM - 4PM     |    Office Hours  |   Cory 400  |
 | Mon 5PM - 6PM     |    Office Hours  |   Soda 347  |
 | Tue 1PM - 2PM      |    Office Hours  |   Cory 529  |
-| Tue 5PM - 7PM      |    Office Hours  |   Soda 380  |
+| Tue 5PM - 6PM      |    Office Hours  |   Soda 380  |
+| Tue 6PM - 7PM      |    Office Hours  |   Soda 380 / Online  |
 | Wed 9AM - 11AM     |    HW Party  |   Woz (Soda 430-438)  |
 | Thu 4PM - 6PM      |    Office Hours  |   Soda 347  |
 
