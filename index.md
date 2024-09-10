@@ -48,7 +48,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 3
 
-|  9/10 | <span class="label">Lecture 4</span> Linear Regression 1  |  |
+|  9/10 | <span class="label">Lecture 4</span> Linear Regression 1  | <span class="label label-purple">Reading</span> 4-4.1.4 |
 |  | <span class="label label-green">Discussion 1</span> MLE & Gaussians  |   |
 |  9/12 | <span class="label">Lecture 5</span> Linear Regression 2  |  |
 |  | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification <nobr>(<strong>Due 9/25 11:59pm</strong>)</nobr>  |  |
