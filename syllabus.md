@@ -111,7 +111,7 @@ Discussion worksheets are released the day before the first discussions of the w
 
 ### Exams
 
-The midterm is Wednesday, October 16 from 7:00 PM to 9:00 PM with location TBD. The final is tentatively scheduled for Tuesday, December 17, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. **No alternate exams will be offered.** Please make a private Ed post if you have an extreme hardship related to these policies.
+The midterm is Wednesday, October 16 from 7:00 PM to 9:00 PM with location TBD. The final is scheduled for Tuesday, December 17, from 8:00 AM to 11:00 AM, with location TBD. All students are required to take exams in person. **No alternate exams will be offered.** Please make a private Ed post if you have an extreme hardship related to these policies.
 
 ## Academic Integrity
 
