@@ -51,7 +51,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 |  9/10 | <span class="label">Lecture 4</span> Linear Regression 1  | <span class="label label-purple">Reading</span> <nobr>4-4.1.4</nobr> |
 |  | <span class="label label-green">Discussion 1</span> MLE & Gaussians  | [Worksheet](docs/dis_fa24/dis1.pdf) |
 |  9/12 | <span class="label">Lecture 5</span> Linear Regression 2  |  |
-|  | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification <nobr>(<strong>Due 9/25 11:59pm</strong>)</nobr>  |  |
+|  | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification <nobr>(<strong>Due 9/25 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw2.pdf) / [Files](docs/hw_fa24/hw2.zip) / [LaTeX Template](docs/hw_fa24/hw2template.tex) |
 
 ### Week 4
 
