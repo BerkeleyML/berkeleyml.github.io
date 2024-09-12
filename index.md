@@ -49,7 +49,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 ### Week 3
 
 |  9/10 | <span class="label">Lecture 4</span> [Linear Regression 1](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0b684900-3ef3-411e-bb68-b1d4013eff13) ([Slides](https://drive.google.com/file/d/14vblwqegBN7BC8-l1sAsRmiEVIu0TFmR/view?usp=drive_link)) | <span class="label label-purple">Reading</span> <nobr>4-4.1.4</nobr> |
-|  | <span class="label label-green">Discussion 1</span> MLE & Gaussians  | [Worksheet](docs/dis_fa24/dis1.pdf) |
+|  | <span class="label label-green">Discussion 1</span> MLE & Gaussians  | [Worksheet](docs/dis_fa24/dis1.pdf) / [Solutions](docs/dis_fa24/dis1sol.pdf) |
 |  9/12 | <span class="label">Lecture 5</span> Linear Regression 2  | <span class="label label-purple">Reading</span> <br> 1.25-1.26 (regularization, model selection) <br> 2.1.3 (Bayes theorem) <br> 2.6 (Bayesian modeling) <br> 4.1.6 (regularization for linear regression) |
 |  | <span class="label label-yellow">Homework 2</span> Linear/Logistic Regression & Classification <nobr>(<strong>Due 9/25 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw2.pdf) / [Files](docs/hw_fa24/hw2.zip) / [LaTeX Template](docs/hw_fa24/hw2template.tex) |
 
