@@ -30,7 +30,7 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 ## Office Hours
 
 ### Professor Office Hours
-Professor office hours will be held directly after lectures on Tuesdays and Thursdays, from 3:00 PM to 4:00 PM. Location is outside Haas at the outdoor tables.
+Professor office hours will be held directly after lectures on Tuesdays and Thursdays, from 3:30 PM to 4:30 PM. Location is outside Haas at the outdoor tables.
 
 ### TA Office Hours
 
