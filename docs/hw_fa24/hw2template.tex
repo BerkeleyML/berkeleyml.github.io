@@ -206,7 +206,7 @@ It can also be shown using these two facts that $P_W$ is linear. For more inform
 
     \newpage
     \item
-    Show that $w^{*} = X(X^{T}X)^{-1}X^{T}y$ is the solution to the optimization problem
+    Show that $w^{*} = (X^{T}X)^{-1}X^{T}y$ is the solution to the optimization problem
     \begin{align*}
         \argmin_{w} \|y - Xw\|_{2}^{2}
     \end{align*}
@@ -408,7 +408,7 @@ The solution to ridge regression is given by
 \newpage
 \Question{Robotic Learning of Controls from Demonstrations and Images}
 
-Huey, a home robot, is learning to retrieve objects from a cupboard, as shown in Fig.~\ref{fig:robot}. The goal is to push obstacle objects out of the way to expose a goal object.  Huey's robot trainer, Anne, provides demonstrations via tele-operation. When tele-operating the robot, Anne can look at the images captured by the robot and provide controls to Huey remotely.
+Huey, a home robot, is learning to retrieve objects from a cupboard. The goal is to push obstacle objects out of the way to expose a goal object.  Huey's robot trainer, Anne, provides demonstrations via tele-operation. When tele-operating the robot, Anne can look at the images captured by the robot and provide controls to Huey remotely.
 
 During a demonstration, Huey records the RGB images of the scene for each of the $n$ timesteps, $x_1,...,x_{n}$, where $x_i \in \mathbb{R}^{30\times 30\times 3}$ and the controls for his body for each of the $n$ timesteps, $u_1,\ldots,u_{n}$, where $u_i \in \mathbb{R}^3$. The controls correspond to making small changes in the 3D pose (i.e. translation and rotation) of his body. Examples of the data are shown in the figure. 
 
