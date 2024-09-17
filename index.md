@@ -56,7 +56,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 ### Week 4
 
 |  9/17 | <span class="label">Lecture 6</span> Classification - Generative & Discriminative  |  |
-| | <span class="label label-green">Discussion 2</span> Linear Regression  |  |
+| | <span class="label label-green">Discussion 2</span> Regularization & MAP  |  |
 |  9/19 | <span class="label">Lecture 7</span> Logistic Regression & Neural Networks  |  |
 
 ### Week 5
