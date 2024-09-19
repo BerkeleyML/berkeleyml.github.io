@@ -55,9 +55,9 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 4
 
-|  9/17 | <span class="label">Lecture 6</span> Classification - Generative & Discriminative ([Slides](https://drive.google.com/file/d/1siJqdgxIgBD6T8l8cOE5jba2Gao0wwDu/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 5.1, 5.2.1, 5.2.2, 5.2.4, 5.3 |
-| | <span class="label label-green">Discussion 2</span> Regularization & MAP  |  |
-|  9/19 | <span class="label">Lecture 7</span> Logistic Regression & Neural Networks  |  |
+|  9/17 | <span class="label">Lecture 6</span> [Classification - Generative & Discriminative](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e0e7d595-678f-4064-a105-b1d4013eff4f) ([Slides](https://drive.google.com/file/d/1siJqdgxIgBD6T8l8cOE5jba2Gao0wwDu/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 5.1, 5.2.1, 5.2.2, 5.2.4, 5.3 |
+| | <span class="label label-green">Discussion 2</span> Regularization & MAP  | [Worksheet](docs/dis_fa24/dis2.pdf) / [Solutions](docs/dis_fa24/dis2sol.pdf) |
+|  9/19 | <span class="label">Lecture 7</span> Logistic Regression & Neural Networks  | <span class="label label-purple">Reading</span> 5.3.1, 5.4.1-5.4.4, 6.1-6.2 |
 
 ### Week 5
 
