@@ -62,7 +62,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 ### Week 5
 
 |  9/24 | <span class="label">Lecture 8</span> Backpropagation and Gradient Descent 1  |  |
-|  | <span class="label label-green">Discussion 3</span> Classification & Logistic Regression  |  |
+|  | <span class="label label-green">Discussion 3</span> Classification & Logistic Regression  | [Worksheet](docs/dis_fa24/dis3.pdf) |
 |  9/26 | <span class="label">Lecture 9</span> Backpropagation and Gradient Descent 2  |  |
 |  | <span class="label label-yellow">Homework 3</span> Neural Networks <nobr>(<strong>Due 10/9 11:59pm</strong>)</nobr>  |  |
 
