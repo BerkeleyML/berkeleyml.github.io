@@ -69,7 +69,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 ### Week 6
 
 |  10/1 | <span class="label">Lecture 10</span> Neural Networks - CNNs, Batch Norm, & ResNets  |  |
-|  | <span class="label label-green">Discussion 4</span> Neural Networks and Training  |  |
+|  | <span class="label label-green">Discussion 4</span> Neural Networks and Backpropagation  | [Worksheet](docs/dis_fa24/dis4.pdf) |
 |  10/3 | <span class="label">Lecture 11</span> Neural Networks - Attention & Transformers  |  |
 
 ### Week 7
