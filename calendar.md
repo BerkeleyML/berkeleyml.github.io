@@ -19,8 +19,8 @@ All discussion sections are one-hour long, and we may not cover all questions wi
 
 | GSI |   Section Time  | Location (Capacity)      |
 |------|------|------|------|
-| Grace Luo | Wed 10AM - 11AM | Wheeler 220 (40) |
-| Vedant Kumud | Wed 12PM - 1PM | Cory 540AB (46) |
+| Grace Luo | Wed 10AM - 11AM **(Cancelled 10/2)** | Wheeler 220 (40) |
+| Vedant Kumud | Wed 12PM - 1PM **(Cancelled 10/2)** | Cory 540AB (46) |
 | Suchir Agarwal| Wed 1PM - 2PM | Wheeler 20 (48) |
 | Ruchir Rastogi | Wed 6PM - 7PM | Wheeler 202 (42) |
 | Aryan Jain |  Wed 7PM - 8PM | Cory 540AB (46) |
