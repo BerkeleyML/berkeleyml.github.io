@@ -62,16 +62,15 @@ If you have not been added to **EdStem**, you may join through this [link](https
 ### Week 5
 
 |  9/24 | <span class="label">Lecture 8</span> [Backpropagation and Gradient Descent 1](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=27000014-6252-4b89-a499-b1d4013eff92) ([Slides](https://drive.google.com/file/d/1vfk8jqrsUay0J9IB-IPMnHwOp3IOZSnd/view?usp=drive_link))  | <span class="label label-purple">Reading</span> 6.2, 6.4, 7.1, 7.2, 5.4.4 |
-|  | <span class="label label-green">Discussion 3</span> Classification & Logistic Regression  | [Worksheet](docs/dis_fa24/dis3.pdf) |
+|  | <span class="label label-green">Discussion 3</span> Classification & Logistic Regression  | [Worksheet](docs/dis_fa24/dis3.pdf) / [Solutions](docs/dis_fa24/dis3sol.pdf) |
 |  9/26 | <span class="label">Lecture 9</span> [Backpropagation and Gradient Descent 2](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9ac17588-cef2-45f7-acd5-b1d4013effaf) ([Slides](https://drive.google.com/file/d/17tf2EgsyLHTAus6azWdTRSZH4cNkd2-4/view?usp=sharing))  | <span class="label label-purple">Reading</span> 5.4.4, 8 |
 |  | <span class="label label-yellow">Homework 3</span> Neural Networks <nobr>(<strong>Due 10/9 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw3.pdf) / [Files](docs/hw_fa24/hw3.zip) / [LaTeX Template](docs/hw_fa24/hw3template.tex) |
 
 ### Week 6
 
 |  10/1 | <span class="label">Lecture 10</span> [Neural Networks - CNNs, Batch Norm, & ResNets](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=90e02259-b095-494f-a363-b1d4013effc7) ([Slides](https://drive.google.com/file/d/1KVk_pfkzSkofNzwDo3kTLQosWOD9Y1gg/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 7.4, 9.5, 10 |
-|  | <span class="label label-green">Discussion 4</span> Neural Networks and Backpropagation  | [Worksheet](docs/dis_fa24/dis4.pdf) |
-|  10/3 | <span class="label">Lecture 11</span> Neural Networks - Attention & Transformers  |  |
-
+|  | <span class="label label-green">Discussion 4</span> Neural Networks and Backpropagation  | [Worksheet](docs/dis_fa24/dis4.pdf) / [Solutions](docs/dis_fa24/dis4sol.pdf) |
+|  10/3 | <span class="label">Lecture 11</span> [Neural Networks - Attention & Transformers](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=42f09b54-f2f8-48ea-9e10-b1d4013effe9) ([Slides](https://drive.google.com/file/d/1qDoDPo11iamxmc4VHLvPKfnyOro5_dVq/view?usp=sharing))  | <span class="label label-purple">Reading</span> 5.3, 12.1 |
 ### Week 7
 
 |  10/8 | <span class="label">Lecture 12</span> Dimensionality Reduction & PCA  |  |
