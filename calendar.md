@@ -45,6 +45,7 @@ See the Syllabus for guidelines on office hours. Submit tickets at [oh.eecs189.o
 | Tue 6PM - 7PM      |    Office Hours  |   Soda 380 / Online  |
 | Wed 9AM - 11AM     |    HW Party  |   Woz (Soda 430-438)  |
 | Thu 4PM - 6PM      |    Office Hours  |   Soda 347  |
+| Fri 12PM - 1PM      |    Office Hours  |  Cory 400  |
 
 ## Homework Party
 Homework Party will be held on **Wednesdays from 9:00 AM to 11:00 AM** in the "Woz" (Wozniak Lounge / Soda 430-438).
