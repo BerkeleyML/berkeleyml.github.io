@@ -68,7 +68,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 6
 
-|  10/1 | <span class="label">Lecture 10</span> Neural Networks - CNNs, Batch Norm, & ResNets  | <span class="label label-purple">Reading</span> 7.4, 9.5, 10 |
+|  10/1 | <span class="label">Lecture 10</span> [Neural Networks - CNNs, Batch Norm, & ResNets](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=90e02259-b095-494f-a363-b1d4013effc7) ([Slides](https://drive.google.com/file/d/1KVk_pfkzSkofNzwDo3kTLQosWOD9Y1gg/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 7.4, 9.5, 10 |
 |  | <span class="label label-green">Discussion 4</span> Neural Networks and Backpropagation  | [Worksheet](docs/dis_fa24/dis4.pdf) |
 |  10/3 | <span class="label">Lecture 11</span> Neural Networks - Attention & Transformers  |  |
 
