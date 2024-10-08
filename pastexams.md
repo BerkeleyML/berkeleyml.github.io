@@ -8,7 +8,7 @@ nav_order: 6
 ---
 
 # Past Exams
-Below are past exams from different iterations of the course. Note that the fall iterations tend to be similar to each other, and the spring iterations tend to be similar to each other. The more recent exams are more likely to match the format of the midterm and final this semester. Note though that the topics and their order for this semester have changed from last fall though.
+Below are past exams from different iterations of the course. Note that the fall iterations tend to be similar to each other, and the spring iterations tend to be similar to each other. The more recent exams are more likely to match the format of the midterm and final this semester.
 
 | Semester | Professors | Midterm | Final |
 |----------|------------|---------|-------|
