@@ -77,7 +77,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 |  10/8 | <span class="label">Lecture 12</span> Dimensionality Reduction & PCA  | <span class="label label-purple">Reading</span> 16.1 |
 |  | <span class="label label-green">Discussion 5</span> Convolution and Attention  | [Worksheet](docs/dis_fa24/dis5.pdf) |
 |  10/10 | <span class="label">Lecture 13</span> t-SNE  |  |
-|  | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory <nobr>(<strong>Due 10/23 11:59pm</strong>)</nobr>  |  |
+|  | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory <nobr>(<strong>Due 10/23 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw4.pdf) |
 
 ### Week 8
 
