@@ -77,7 +77,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 |  10/8 | <span class="label">Lecture 12</span> [Dimensionality Reduction & PCA](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5af23bc9-902e-4a00-8fda-b1d4013f0009) ([Slides](https://drive.google.com/file/d/1LJUJsVbpbwUWS9veFofSuzkOkIYjhNIw/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 16.1 |
 |  | <span class="label label-green">Discussion 5</span> Convolution and Attention  | [Worksheet](docs/dis_fa24/dis5.pdf) / [Solutions](docs/dis_fa24/dis5sol.pdf) |
 |  10/10 | <span class="label">Lecture 13</span> [t-SNE](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e60ff9dc-7403-4a84-b53d-b1d4013f0028) ([Slides](https://drive.google.com/file/d/1nWYPS98wNO2jVLvBMB32szsDOXu7edbQ/view?usp=drive_link)) |  |
-|  | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory <nobr>(<strong>Due 10/23 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw4.pdf) / [Files](docs/hw_fa24/hw4.zip) |
+|  | <span class="label label-yellow">Homework 4</span> Dimensionality Reduction & Decision Theory <nobr>(<strong>Due 10/25 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw4.pdf) / [Files](docs/hw_fa24/hw4.zip) |
 
 ### Week 8
 
