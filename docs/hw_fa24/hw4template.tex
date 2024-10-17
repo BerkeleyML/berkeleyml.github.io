@@ -1,0 +1,488 @@
+\documentclass{article}
+
+%% Import any packages here
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{physics}
+
+
+%% Define any custom commands/operators/environments/etc here
+\newcommand{\Question}[1]{\Large \section{ #1 } \normalsize}
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\tran}{{}^{\!\top\!}}
+\newcommand{\T}{\tran}
+
+\newenvironment{solution}{\color{blue} \smallskip \textbf{Solution:}}{}
+
+\paperwidth=8.5in
+\paperheight=11in
+\textheight=9in
+\textwidth=7in
+\hoffset=-0.25in
+\voffset=-1in
+\oddsidemargin=0in
+\evensidemargin=0in
+\parindent=0pt
+\parskip=5pt
+\itemsep=-1pt
+\floatsep=9pt plus 2pt minus 3pt
+\intextsep=9pt plus 2pt minus 3pt
+\textfloatsep=9pt plus 2pt minus 3pt
+\renewcommand{\baselinestretch}{1.1}
+
+%% Page heading
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\lhead{\coursenumber, \semester}
+\chead{\title}
+\rhead{\name}
+\lfoot{\class}
+\rfoot{\thepage}
+
+\def\coursenumber{CS 189/289A}
+\def\class{Introduction to Machine Learning}
+\def\semester{Fall 2024}
+\def\name{Your Name} % Replace with your name
+\def\title{HW 4}
+
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question {Derivation of PCA} 
+
+Assume we are given $n$ training data points $(\vec{x}_i, y_i)$. We
+collect the target values into $\vec{y} \in \R^n$, and the inputs into
+the matrix $\mat{X} \in \R^{n\times d}$ where the rows are the
+$d-$dimensional feature vectors $\vec x_i^\top$ corresponding to each
+training point. Furthermore, assume that the data has been centered such that $\frac{1}{n}\sum_{i=1}^n
+\vec{x_i} = \vec{0}$, $n > d$ and $\mat{X}$ has rank $d$. The covariance matrix is given by
+\begin{equation*}
+\Sigma = \frac{1}{n} \sum_{i=1}^n (\vec{x}_i - \bar{\vec{x}})(\vec{x}_i - \bar{\vec{x}})^\top
+\end{equation*}
+When $\bar{\vec{x}} = 0$ (i.e., we have subtracted the mean in our
+samples), we obtain $\Sigma = \frac{1}{n}\mat{X}^\top\mat{X}$. We will assume this to be the case for this problem.
+
+
+\begin{enumerate}
+\item Maximum Projected Variance: We would like the vector $\vec{w}$ such that projecting your data onto $\vec{w}$ will retain the maximum amount of
+information, i.e., variance. We can formulate the optimization problem as
+  \begin{equation}
+  \label{eq:main}
+    \max_{\vec{w} : \|\vec{w}\|_2 = 1} \frac{1}{n} \sum_{i=1}^n \left(\vec{x}_i\T \vec{w}\right)^2 = \max_{\vec{w} : \|\vec{w}\|_2 = 1}\frac{1}{n} \vec{w}\T \mat{X}\T \mat{X}\vec{w}\,.
+  \end{equation}
+
+Show that the maximizer for this problem is equal to the eigenvector $\vec{v}_1$ that corresponds to the
+largest eigenvalue $\lambda_1$ of $\Sigma$. Also show that the optimal value of this problem is
+equal to $\lambda_1$.
+
+\textit{Hint:} Use the spectral decomposition of $\Sigma$ and consider reformulating the optimization problem using a new variable. 
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Let us call the solution of the above part $\vec{w}^{(1)}$.  Next, we will use a \emph{greedy
+procedure} to find the $i$th component of PCA by doing the following optimization
+\begin{equation}
+  \begin{array}{ll}
+    \text{maximize}   & \frac{1}{n}(\vec{w}^{(i)})\T \mat{X}\T \mat{X} \vec{w}^{(i)} \\
+    \text{subject to}
+        & \|\vec{w}^{(i)}\|_{2} = 1 \\
+        & (\vec{w}^{(i)})\T \vec{w}^{(j)} = 0 \quad \forall j < i,
+  \end{array}
+\end{equation}
+where the $\mat{w}^{(j)}$ vectors for all $j < i$ are defined recursively using the same maximization procedure above.
+Show, using your work in the previous part, that the maximizer for this problem is equal to the eigenvector $\vec{v}_i$ that corresponds to the
+$i$th eigenvalue $\lambda_i$ of $\Sigma$. Also show that optimal value of this problem is
+equal to $\lambda_i$.
+
+\begin{solution}
+    TODO
+\end{solution}
+\end{enumerate}
+
+\newpage
+
+
+\Question {PCA and Least Squares}
+
+
+\newcommand{\hatwPCA}{\hat{ {w}}_\text{{PCA}}}
+\newcommand{\rhoPCA}{\rho_k}
+\newcommand{\hatwridge}{ \hat{{w}}_{\text{ridge}}}
+\newcommand{\hatwOLS}{ \hat{{w}}_{\text{OLS}}}
+\newcommand{\Sigk}{ {\Sigma}_k}
+\newcommand{\wrp}{\widehat{  w}_{\mathrm{RP}}}
+
+Consider the ridge regression estimator, 
+\begin{align*}
+\widehat{  w}_{\mathrm{ridge}} := \arg \min_{  w \in \R^d} \|  X   w -   y\|_2^2 + \lambda \|  w\|_2^2,
+\end{align*}
+where $X \in \R^{n \times d}$ and $y \in \R^n$. Suppose that $X$ has already been centered and has singular value decomposition $X = U \Sigma V^\top = \sum_{i=1}^d \sigma_i u_i v_i^\top$, where $U \in \R^{n \times d}$, $\Sigma \in \R^{d \times d}$, and $V \in \R^{d \times d}$, and $\sigma_1 \ge \sigma_2 \ge \dots \ge \sigma_d \ge 0$ are the diagonal components of $\Sigma$.
+
+\begin{enumerate}
+
+\item Show that 
+\begin{align*}
+\widehat{w}_{\mathrm{ridge}} = \sum_{i=1}^d \rho_{\lambda}(\sigma_i) v_i  u_i^\top y
+\end{align*}
+for some function $\rho_{\lambda}(\sigma)$ that you will determine.
+What is $\rho_{\lambda}(\sigma)$ for 
+$\widehat{w}_{\mathrm{ridge}}$?
+What is $\rho_{\lambda}(\sigma)$ for 
+$\widehat{w}_{\mathrm{OLS}} = \arg \min_{w} \| X w - y\|_2^2$?
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item The ordinary least squares regression problem on the reduced $k$-dimensional PCA feature space (PCA-OLS) can be written
+\begin{equation*} \hatwPCA = \arg \min_{ {w}\in\R^k} \| X V_k {w}
+- {y}\|^2, \end{equation*} where $V_k \in \mathbb{R}^{d \times k}$
+is a matrix whose columns are the first $k$ right singular vectors of $X$.
+This expression embeds the raw feature vectors onto the top $k$ principal components by the transformation $V_k^\top x_i$. Assume the PCA dimension is less than the rank of the data matrix, $k\leq r$, which implies that the matrix of PCA embedded data matrix $X V_k$ has full rank. 
+
+\begin{enumerate}[(i)]
+\item Write down the expression for the optimizer $\hatwPCA \in \R^k$ in terms of $U$, $y$ and the singular values of $\mat X$. 
+\textit{Hint}: Just as $V_k$ is a ``shortened'' version of $V$, you may want to use shortened versions of $U$ and $\Sigma$. Knowing that $V^\top V = I$, what is the value of $V_k^\top V$?
+
+\begin{solution}
+  TODO
+\end{solution}
+
+\item Note that the $\hatwPCA \in \mathbb{R}^{k}$ you computed above is the vector of features applied to matrix $XV_{k}$. The actual features applied to $X$ is the vector $V_{k}\hatwPCA \in \mathbb{R}^{d}$. Rewrite $V_{k}\hatwPCA$ in summation form similar to that in part (a). 
+
+\begin{solution}
+    TODO
+\end{solution}
+\end{enumerate}
+
+\newpage
+\item 
+Compare the functions of $\sigma$ you derived and what value of $\lambda$ leads to $\hatwOLS$ vs. $\hatwridge$ vs. $\hatwPCA$. How do ridge regression and PCA-OLS deal with overfitting?\\
+\textit{Hint}: Penalizing certain types of singular values $\sigma_i$ is a way to deal with overfitting.
+
+\begin{solution}
+    TODO
+\end{solution}
+\end{enumerate}
+
+
+\newpage
+\Question {Random Feature Embeddings}
+
+\newcommand{\num}{n}
+\newcommand{\dims}{d}
+
+In this question, we revisit the task of dimensionality reduction.
+Dimensionality reduction is useful for several purposes, including visualization, storage, faster computation, etc. We can formalize dimensionality reduction as an embedding function, or \emph{embedding}, $\psi: \R^d \to \R^k$, which maps data points $\vec x_1,\dots,\vec x_n$ with $d$-dimensional features to reduced data points $\psi(\vec x_1),\dots,\psi(\vec x_n)$ with $k$-dimensional features. 
+
+
+For the reduced data to remain useful, it may be necessary for the reductions to preserve some properties of the original data.
+Often, geometric properties like distance and inner products
+are important for machine learning tasks.
+And as a result, we may want to perform dimensionality reduction
+while ensuring that we approximately maintain the pairwise distances
+and inner products.
+
+While you have already seen many properties of PCA so far, in this question
+we investigate whether random feature embeddings are a good alternative for dimensionality
+reduction.
+A few advantages of random feature embeddings over PCA can be:
+(1) PCA is expensive when the underlying dimension is high
+and the number of principal components is also large (however note that
+there are several very fast algorithms dedicated to doing PCA), 
+(2) PCA requires you to have access to the feature matrix for performing
+computations. The second requirement of PCA is a bottleneck
+when you want to take only a low dimensional measurement of a very
+high dimensional data, e.g., in FMRI and in compressed sensing.
+In such cases, one needs to design an embedding scheme before seeing the data.
+We now turn to a concrete setting to study a few properties of PCA
+and random feature embeddings.
+
+
+Suppose you are given $\num$ points $\vec x_1, \ldots, \vec x_\num$ in $\R^\dims$.
+
+{\bf Notation}: The symbol $[\num]$ stands for the set $\{1, \ldots, \num\}$.
+
+
+\begin{enumerate}
+
+\item Now consider an arbitrary  embedding $\psi:\R^\dims \mapsto \R^k$ 
+which preserves all pairwise distances and norms up-to a multiplicative factor for all points $\vec x_1,\dots,\vec x_n$ in the data set, 
+that is,
+\begin{align}
+	(1-\epsilon) \Vert \vec x_i \Vert^2 &\leq \Vert \psi(\vec x_i) \Vert^2 \leq (1+\epsilon) \Vert \vec x_i \Vert^2 \quad &\text{ for all } i \in [\num], \quad\text{and} \label{eq:norm}\\
+	(1-\epsilon) \Vert\vec x_i - \vec x_j \Vert^2 &\leq  \Vert \psi(\vec x_i) - \psi(\vec x_j) \Vert^2 
+	\leq (1+\epsilon) \Vert\vec x_i - \vec x_j \Vert^2 \quad &\text{ for all } i, j \in [\num], \quad \quad \label{eq:dist}
+\end{align}
+where $0<\epsilon \ll 1$ is a small scalar.
+Further assume that $\norm{\vec{x}_i} \leq 1$ for all $i \in [\num]$.
+{\bf Show that the embedding $\psi$ satisfying equations~\eqref{eq:dist} and \eqref{eq:norm} 
+preserves \emph{each pairwise inner product}:}
+\begin{align}
+\label{eq:psi_iprod}
+	\vert \psi(\vec x_i)^\top\psi(\vec x_j) - (\vec x_i^\top \vec x_j) \vert  \leq C\epsilon, \quad \text{ for all } i, j \in [\num],
+\end{align}
+{\bf for some constant $C$}.
+Thus, we find that if an embedding  approximately preserves distances and norms up to a small multiplicative factor, 
+and the points have bounded norms, then 
+inner products are also approximately preserved upto an additive factor.
+
+
+Hint: Break up the problem into showing that $\psi(\vec x_i)^\top\psi(\vec x_j) - (\vec x_i^\top \vec x_j) \ge -C\epsilon $, and $\psi(\vec x_i)^\top\psi(\vec x_j) - (\vec x_i^\top \vec x_j) \le C\epsilon$. The constant $C = 3$ should work, though you can use a larger constant if you need. You may also want to use the Cauchy-Schwarz inequality.
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Now we consider the \emph{random feature embedding} using a Gaussian matrix.
+In next few parts, we work towards proving that if the dimension of embedding
+is moderately big, then with high probability, the random embedding preserves norms and pairwise 
+distances approximately as described in equations~\eqref{eq:dist} and \eqref{eq:norm}.
+
+Consider the random matrix $ \mat J \in \R^{k \times d}$ with each of its entries being i.i.d. $\mathcal{N}(0, 1)$
+and consider the map $\psi_{\mat J}: \R^\dims \mapsto \R^k$ such that $\psi_{\mat J}(\vec{x})= \frac{1}{\sqrt{k}}\mat J \vec x$.
+{\bf Show that for any \emph{fixed non-zero vector $\vec u$}, 
+the random variable $\displaystyle\frac{\Vert \psi_{\mat J}(\vec u)\Vert^2}{\Vert \vec u\Vert^2}$ 
+can be written as 
+\begin{align*}
+	\frac{1}{k}\sum_{i=1}^k Z_i^2
+\end{align*}
+where $Z_i$'s are i.i.d. $\mathcal{N}(0, 1)$ random variables.}
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item For any fixed pair of indices $i \ne j$, define the events
+\[A_{ij} := \left\{\displaystyle\frac{\norm{\psi_{\mat J}(\vec x_i) - \psi_{\mat J}(\vec x_j)}^2}{\norm{\vec x_i - \vec x_j}^2} \in (1-\epsilon, 1+\epsilon) \right\}\:.\]
+which corresponds to the event that the embedding $\psi_{\mat J}$ approximately preserves the angles between $\vec x_i$ and $\vec x_j$. In this part, we show that $A_{ij}$ occurs with high probability. 
+
+To do this, you will use the fact that for independent random variables $Z_i \sim \mathcal{N}(0, 1)$, we
+have the following probability bound
+\begin{align*}
+	\mathbb{P}\left[ \frac{1}{k}\sum_{i=1}^k Z_i^2 \notin (1-t, 1+t) \right] \leq 2e^{-kt^2/8}, 
+	\quad \text{ for all } t \in (0, 1).
+\end{align*}
+Note that this bound suggests that $\sum_{i=1}^k Z_i^2 \approx k = \sum_{i=1}^k\mathbb{E}[Z_i^2]$ with high probability.
+In other words, sum of squares of Gaussian random variables concentrates around its mean with high probability. {\bf Using this bound and the previous subproblem, show that }
+\begin{align*}
+		\mathbb{P}\left[ A_{ij}^c \right]\leq 2 e^{-k\epsilon^2/8},
+	\end{align*}
+	where $A_{ij}^c$ denotes the complement of the event $A_{ij}$.
+ 
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Using the previous problem, now {\bf show that if 
+$k \geq \frac{16}{\epsilon^2} \log\left(\frac{n}{\delta}\right)$, then }
+\begin{align*}
+	\mathbb{P}\left[ \text{ for all } i, j \in [\num], i\neq j, 
+	\frac{\norm{\psi_{\mat J}(\vec x_i) - \psi_{\mat J}(\vec x_j)}^2}{\norm{\vec x_i - \vec x_j}^2} \in (1-\epsilon, 1+\epsilon) \right] 
+	\geq 1-\delta.
+\end{align*}
+That is show that for $k$ large enough, with high probability the random feature embedding
+$\psi_{\mat J}$ approximately preserves the pairwise distances.
+Using this result, we can conclude that random feature embedding serves as a good tool for dimensionality reduction 
+if we project to enough number of dimensions.
+This result is popularly known as the \emph{Johnson-Lindenstrauss Lemma}.
+
+Hint 1: Let 
+\begin{align*}
+		\mathcal{A} := \left\{\text{ for all } i, j \in [\num], i\neq j, 
+	\frac{\norm{\psi_{\mat J}(\vec x_i) - \psi_{\mat J}(\vec x_j)}^2}{\norm{\vec x_i - \vec x_j}^2} \in (1-\epsilon, 1+\epsilon) \right\}
+\end{align*}
+denote the event whose probability we would like to lower bound. Express the complement $\mathcal{A}^c$ in terms of the events $A_{ij}^c$, and try to apply a union bound to these events.
+
+\begin{solution}
+    TODO
+\end{solution}
+\end{enumerate}
+
+\newpage
+\Question{Interpreting Neural Nets Using T-SNE}
+For this question, please go through the Google Colab Notebook \href{https://colab.research.google.com/drive/1yiRHfxSMqqzzE-3z7Omqhk_-YV37Bily?usp=sharing}{\textbf{\emph{here}}} to complete the code. 
+
+In lecture, you have learned about how t-SNE is a method for nonlinear dimensionality reduction. This is particularly useful for analyzing many real-world datasets in which the data can be categorized according to underlying labels. In this question, you will examine the effect that a neural network has on the t-SNE of such a dataset.
+
+\begin{enumerate}
+\item We will work with the CIFAR-10 dataset for this problem, in which the image data is categorized into 10 classes. Flatten the images and take the t-SNE of the training dataset. Plot the t-SNE embeddings and color-code each data point according to its class. Explain what you observe.
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Now, we have provided a trained neural network for you to analyze. Save it to your Google Drive so that you can access it from the Colab notebook. The model consists of several convolutional layers and a few linear layers. Calculate its accuracy on the test data. 
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Instead of taking the t-SNE of the training dataset directly, we will take the t-SNE of the \textit{features} of the neural network when the training dataset is given as input. Using the ``hook" functions provided in the notebook, save the outputs of the third convolutional layer of the network for each input data point. Take the t-SNE of these outputs and color-code each point according to its class. Explain what you observe.
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Do the same as the above except for both the first and second linear layers of the network. Overall, what does it look like the network is doing to the data? How might this change depending on the network's accuracy?
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\end{enumerate}
+
+\newpage
+\Question{Astronomer's conundrum}
+
+As machine learning invades everything in the world, you find that you can use machine learning to classify celestial bodies. Conveniently, you lose all your precious data and only have the rates at which these celestial bodies lose their mass via stellar wind.
+
+There are three types of celestial bodies that you want to classify: dwarfs, giants, and black holes. Dwarfs slowly lose their mass; giants rapidly lose their mass; black holes, on the other hand, gain mass by absorbing stuff (i.e., they lose mass at negative rates). 
+
+Before we continue, let's familiarize ourselves with a kind of probability distribution called the \textit{exponential distribution}. The probability density function of an exponential distribution with parameter $\lambda$ has the following form:
+
+\[
+f(x; \lambda) =
+  \begin{cases}
+  \lambda e^{-\lambda x} & x \ge 0, \\
+  0                      & x < 0.
+\end{cases}
+\]
+
+Note the pdf decreases monotonically on $[0, +\infty)$.
+
+The rate at which a dwarf or a giant \textit{loses} its mass is exponentially distributed with parameters $\lambda_d$ and $\lambda_g$, respectively. The rate at which a black hole \textit{gains} mass is also exponentially distributed, with parameter $\lambda_b$.
+
+\begin{enumerate}
+\item Suppose that we estimate the rate of \textit{loss} for dwarfs and giants as $\lambda_{d} = 4$ and $\lambda_{g} = 3$ respectively. Moreover, we estimate the rate of \textit{gain} for black holes as $\lambda_{b} = 5$ (i.e. the rate of loss for black holes is $-5$). We also know that 60\% of all the celestial bodies are dwarfs, 30\% are giants, and 10\% are black holes. Determine the optimal Bayes classifier that assigns a new data point to one of these three classes based on its rate of loss $x$. Assume we use a 0-1 loss.
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item Following the previous question, find the risk of your Bayes classifier. Feel free to use WolframAlpha or some other software for the integration.
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\end{enumerate}
+
+\newpage
+\Question{Risk Minimization with Doubt}
+
+Suppose we have a classification problem with classes labeled $1, \dotsc, c$ and an additional ``doubt'' category labeled $c+1$. Let $f : \mathbb{R}^d \to \{1, \dots, c+1 \}$ be a decision rule. Define the loss function
+\begin{equation}
+L(f(\vec{x}), y) =
+\begin{cases}
+0 &  						 \mathrm{if}\ f(\vec{x})=y \quad f(\vec{x}) \in\{1,\dotsc,c\}, \\
+\lambda_c       & \mathrm{if}\ f(\vec{x})\neq y \quad f(\vec{x}) \in \{1,\dotsc,c\}, \\
+\lambda_d       & \mathrm{if}\ f(\vec{x})=c+1
+\end{cases}
+\end{equation}
+where $\lambda_c \geq 0$ is the loss incurred for making a misclassification and $\lambda_d \geq 0$ is the loss incurred for choosing doubt. In words this means the following:
+\begin{itemize}
+	\item When you are correct, you should incur no loss.
+	\item When you are incorrect, you should incur some penalty $\lambda_c$ for making the wrong choice.
+	\item When you are unsure about what to choose, you might want to select a category corresponding to ``doubt'' and you should incur a penalty $\lambda_d$.
+\end{itemize}
+
+In lecture, you saw a definition of risk over the expectation of data points. We can also define the risk of
+classifying a new individual data point $\vec{x}$ as class $f(\vec{x}) \in
+\{1,2,\dots,c+1\}$:
+$$R(f(\vec{x}) \mid \vec{x}) = \sum_{i=1}^{c}
+L(f(\vec{x}), i) \, P(Y=i \mid \vec{x}).$$ 
+
+\begin{enumerate}
+
+\item First, we will simplify the risk function using our specific loss function separately for when $f(\vec{x})$ is or is not the doubt category.
+\begin{enumerate}[i.]
+
+\item Prove that $R(f(\vec{x}) = i \mid \vec{x}) = \lambda_c \left(1 - P(Y = i \mid \vec{x}) \right)$ when $i$ is not the doubt category (i.e. $i \neq c + 1)$. 
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\item Prove that $R(f(\vec{x}) = c+1 \mid \vec{x}) = \lambda_{d}$.
+
+\begin{solution}
+    TODO
+\end{solution}
+\end{enumerate}
+
+\newpage
+\item Show that the following policy $f_{opt}(x)$ obtains the minimum risk:
+\begin{itemize}
+    \item (\textbf{R1}) Find the non-doubt class $i$ such that $P(Y=i \mid \vec{x}) \geq P(Y=j \mid \vec{x})$ for all $j$, meaning you pick the class with the highest probability given x.
+    \item (\textbf{R2}) Choose class $i$ if $P(Y=i \mid \vec{x}) \geq 1 - \frac{\lambda_d}{\lambda_c}$
+    \item (\textbf{R3}) Choose doubt otherwise.
+\end{itemize}
+	
+\textit{Hint:} In order to prove that $f_{opt}(x)$ minimizes risk, consider proof techniques that show that $f_{opt}(x)$ ``stays ahead'' of all other policies that \textit{don't} follow these rules. For example, you could take a proof-by-contradiction approach: assume there exists some other policy, say $f'(x)$, that minimizes risk more than $f_{opt}(x)$. What are the scenarios where the predictions made by $f_{opt}(x)$ and $f'(x)$ might differ? In these scenarios, and based on the rules above that $f_{opt}(x)$ follows, why would $f'(x)$ not be able to beat $f_{opt}(x)$ in risk minimization?
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\item How would you modify your optimum decision rule if $\lambda_d=0$?  What happens if $\lambda_d>\lambda_c$? Explain why this is or is not consistent with what one would expect intuitively.
+
+\begin{solution}
+    TODO
+\end{solution}
+\end{enumerate}
+
+\newpage
+\Question{Honor Code}
+
+\begin{enumerate}
+    \item 
+    \textbf{List all collaborators. If you worked alone, then you must explicitly state so.}
+
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \item
+    \textbf{Declare and sign the following statement}: 
+    
+    \textit{``I certify that all solutions in this document are entirely my own and that I have not looked at anyone else's solution. I have given credit to all external sources I consulted."}
+    
+    \textit{Signature} : \hrulefill
+    
+    While discussions are encouraged, \emph{everything} in your solution must be your (and only your) creation. 
+    Furthermore, all external material  (i.e., \emph{anything} outside lectures and assigned
+    readings, including figures and pictures) should be cited properly.
+    We wish to remind you that the consequences of academic misconduct are \emph{particularly severe}!
+
+    \begin{solution}
+        TODO
+    \end{solution}
+
+\end{enumerate}
+
+\end{document}
