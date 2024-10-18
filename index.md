@@ -84,11 +84,11 @@ If you have not been added to **EdStem**, you may join through this [link](https
 |  10/15 | <span class="label">Lecture 14</span> Clustering  | <span class="label label-purple">Reading</span> 15.1 (not including 15.1.1), 15.2 |
 |  | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  |  |
 |  10/16 | <span class="label label-red">Midterm</span> (7-9pm, Dwinelle 155)  |  |
-|  10/17 | <span class="label">Lecture 15</span> Multiway Classification, Decision Theory, & Model Evaluation  |  |
+|  10/17 | <span class="label">Lecture 15</span> Nearest Neighbors & Metric Learning  |  |
 
 ### Week 9
 
-|  10/22 | <span class="label">Lecture 16</span> Nearest Neighbors & Metric Learning |  |
+|  10/22 | <span class="label">Lecture 16</span>  | Multiway Classification, Decision Theory, & Model Evaluation |
 |  | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  |  |
 |  10/24 | <span class="label">Lecture 17</span> Decision Trees & Ensembling |  |
 |  | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees <nobr>(<strong>Due 11/6 11:59pm</strong>)</nobr>  |  |
@@ -103,14 +103,14 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 |  11/5 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  |  |
 |  | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  |  |
-|  11/7 | <span class="label">Lecture 21</span> Markov Decision Processes  |  |
+|  11/7 | <span class="label">Lecture 21</span> Generative Models 1  |  |
 |  | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning <nobr>(<strong>Due 11/20 11:59pm</strong>)</nobr>  |  |
 
 ### Week 12
 
-|  11/12 | <span class="label">Lecture 22</span> Reinforcement Learning  |  |
+|  11/12 | <span class="label">Lecture 22</span> Generative Models 2  |  |
 |  | <span class="label label-green">Discussion 10</span> HMMs Advanced and MDPs  |  |
-|  11/14 | <span class="label">Lecture 23</span> Robotics and Machine Learning  |  |
+|  11/14 | <span class="label">Lecture 23</span> Markov Decision Processes & Reinforcement Learning  |  |
 
 ### Week 13
 
@@ -121,7 +121,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 14
 
-|  11/26 | <span class="label">Lecture 26</span> Language and Vision Applications |  |
+|  11/26 | <span class="label">Lecture 26</span> Kernel Methods |  |
 |  11/28 | No Lecture (Thanksgiving)  |  |
 
 ### Week 15
