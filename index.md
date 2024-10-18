@@ -88,7 +88,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 9
 
-|  10/22 | <span class="label">Lecture 16</span>  | Multiway Classification, Decision Theory, & Model Evaluation |
+|  10/22 | <span class="label">Lecture 16</span>  Multiway Classification, Decision Theory, & Model Evaluation |  |
 |  | <span class="label label-green">Discussion 7</span> Clustering and Decision Theory  |  |
 |  10/24 | <span class="label">Lecture 17</span> Decision Trees & Ensembling |  |
 |  | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees <nobr>(<strong>Due 11/6 11:59pm</strong>)</nobr>  |  |
