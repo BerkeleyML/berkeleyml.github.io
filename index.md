@@ -81,10 +81,10 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 8
 
-|  10/15 | <span class="label">Lecture 14</span> Clustering  | <span class="label label-purple">Reading</span> 15.1 (not including 15.1.1), 15.2 |
-|  | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  |  |
+|  10/15 | <span class="label">Lecture 14</span> [Clustering](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6b06ad21-49af-4254-9500-b1d4013f004c) ([Slides](https://drive.google.com/file/d/1I4sni1y5iXR7LjdBQ1TMn5ZtDl7Umrp3/view?usp=drive_link))  | <span class="label label-purple">Reading</span> 15.1 (not including 15.1.1), 15.2 |
+|  | <span class="label label-green">Discussion 6</span> Dimensionality Reduction Techniques  | [Worksheet](docs/dis_fa24/dis6.pdf) / [Solutions](docs/dis_fa24/dis6sol.pdf) |
 |  10/16 | <span class="label label-red">Midterm</span> (7-9pm, Dwinelle 155)  |  |
-|  10/17 | <span class="label">Lecture 15</span> Nearest Neighbors & Metric Learning  |  |
+|  10/17 | <span class="label">Lecture 15</span> [Nearest Neighbors & Metric Learning](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e28b1ff9-717c-4217-b592-b1d4013f0085) ([Slides](https://drive.google.com/file/d/1p6uiI2y1ZCKCouFpxoJ72yC1JmPS2Df1/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 3.5, 6.3.5 |
 
 ### Week 9
 
