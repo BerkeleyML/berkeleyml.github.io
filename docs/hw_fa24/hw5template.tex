@@ -1,0 +1,479 @@
+\documentclass{article}
+
+%% Import any packages here
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{physics}
+
+
+%% Define any custom commands/operators/environments/etc here
+\newcommand{\Question}[1]{\Large \section{ #1 } \normalsize}
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+\newenvironment{solution}{\color{blue} \smallskip \textbf{Solution:}}{}
+
+\paperwidth=8.5in
+\paperheight=11in
+\textheight=9in
+\textwidth=7in
+\hoffset=-0.25in
+\voffset=-1in
+\oddsidemargin=0in
+\evensidemargin=0in
+\parindent=0pt
+\parskip=5pt
+\itemsep=-1pt
+\floatsep=9pt plus 2pt minus 3pt
+\intextsep=9pt plus 2pt minus 3pt
+\textfloatsep=9pt plus 2pt minus 3pt
+\renewcommand{\baselinestretch}{1.1}
+
+%% Page heading
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\lhead{\coursenumber, \semester}
+\chead{\title}
+\rhead{\name}
+\lfoot{\class}
+\rfoot{\thepage}
+
+\def\coursenumber{CS 189/289A}
+\def\class{Introduction to Machine Learning}
+\def\semester{Fall 2024}
+\def\name{Your Name} % Replace with your name
+\def\title{HW 5}
+
+\begin{document}
+\fontsize{12}{15}\selectfont
+
+\Question{k-Means Demo}
+
+Work through the entire
+\href{https://drive.google.com/file/d/1RvCBdIIZUk-Z9E3dRXBHsixfSNhdPfWC/view?usp=drive_link}{\textbf{\emph{Colab notebook}}}.
+
+\textbf{Deliverables:} Include a PDF export of the completed notebook in your write-up. In addition, submit the .ipynb file to the code assignment.
+
+\begin{solution}
+    TODO
+\end{solution}
+
+
+\newpage
+\Question{Exploring Bias \& Variance with Ridge and OLS}
+
+Recall the statistical model for ridge regression from lecture. We have a design matrix $\mat{X}$, where the rows of $\mat{X}\in\mathbb{R}^{n\times d}$ are our data points $\vec{x}_i\in\mathbb{R}^d$. We assume a linear regression model
+\[Y = \mat{X}\vec{w}^* + \vec{z}\]
+where $\vec{w}^*\in\mathbb{R}^d$ is the true parameter we are trying to estimate, $\vec{z}=[z_1, \ldots, z_n]^\top \sim\mathcal{N}(0,\sigma^2\mat{I}_n)$, and $Y = [y_1, \ldots, y_n]^\top$ is the random variable representing our labels.
+
+Throughout this problem, you may assume that $\mat{X}$ is full column rank. Given a realization of the labels $Y=\vec{y}$, recall these two estimators that we have studied so far:
+\begin{align*}
+    \vec{w}_{\text{ols}} &= \min_{\vec{w} \in \mathbb{R}^d} \|\mat{X}\vec{w} - \vec{y}\|_2^2\\
+    \vec{w}_{\text{ridge}} &= \min_{\vec{w} \in \mathbb{R}^d} \|\mat{X}\vec{w} - \vec{y}\|_2^2 + \lambda \|\vec{w}\|_2^2
+\end{align*}
+
+Also recall that the solutions for $\vec{w}_{\text{ols}}$ and $\vec{w}_{\text{ridge}}$ are
+\begin{align*}
+    \vec{w}_{\text{ols}} &= (\mat{X}^\top\mat{X})^{-1}\mat{X}^\top\vec{y} \\
+    \vec{w}_{\text{ridge}} &= (\mat{X}^\top\mat{X} + \lambda \mat{I})^{-1}\mat{X}^\top\vec{y}
+\end{align*}
+
+\begin{enumerate}[(a)]
+    \item 
+    Let $\hat{\vec{w}} \in \mathbb{R}^{d}$ denote any estimator of $\vec{w}^*$.  In the context of this problem, an estimator $\hat{\vec{w}} = \hat{\vec{w}}(Y)$ is any function which takes the data $\mat{X}$ and a realization of $Y$, and computes a guess for $\vec{w}^*$.
+    
+    Define the MSE (mean squared error) of the estimator $\hat{\vec{w}}$ as
+    \begin{align*}
+        \mathrm{MSE}(\hat{\vec{w}}) := \E\left[\norm*{ \hat{\vec{w}} - \vec{w}^* }^2_2\right] \:.
+    \end{align*}
+    Above, the expectation is taken w.r.t. the randomness inherent in $\vec{z}$. Note that this is a multivariate generalization of the mean squared error we have seen previously.
+    
+    Define $\hat{\vec{\mu}} := \E[\hat{\vec{w}}]$. Show that the MSE decomposes as such:
+    \begin{align*}
+        \mathrm{MSE}(\hat{\vec{w}}) &= \underbrace{\norm*{\hat{\vec{\mu}} - \vec{w}^*}^2_2}_{\text{Bias}(\hat{\vec{w}})^2} +  \underbrace{\text{Tr}(\mathrm{Cov}(\hat{\vec{w}}))}_{\text{Var}(\hat{\vec{w}})}
+    \end{align*}
+    Note that this is a multivariate generalization of the bias-variance decomposition we have seen previously. \\
+    \textit{Hint:} The inner product of two vectors is the trace of their outer product. Also, expectation and trace commute so $\E[\text{Tr}(A)] = \text{Tr}( \E[A] )$ for any square matrix $A$.
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item
+    Show that
+    \begin{align*}
+        \E[\vec{w}_{\text{ols}}] &= \vec{w}^* \\ 
+        \E [\vec{w}_{\text{ridge}}] &= (\mat{X}^\top\mat{X} + \lambda\mat{I}_d)^{-1} \mat{X}^\top\mat{X} \vec{w}^*
+    \end{align*}
+    That is, $\text{Bias}(\vec{w}_{\text{ols}})=0$, and hence $\vec{w}_{\text{ols}}$ is an \emph{unbiased} estimator of $\vec{w}^*$, whereas
+    $\vec{w}_{\text{ridge}}$ is a \emph{biased} estimator of $\vec{w}^*$.
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item 
+    Let $\{\gamma_i\}_{i=1}^d$ denote the $d$ eigenvalues of the matrix $\mat{X}^\top\mat{X}$. Show that
+    \begin{align*}
+        \text{Tr}(\mathrm{Cov}(\vec{w}_{\text{ols}})) = \sigma^2 \sum_{i=1}^{d} \frac{1}{\gamma_i}, \qquad \text{Tr}(\mathrm{Cov}(\vec{w}_{\text{ridge}})) = \sigma^2 \sum_{i=1}^{d} \frac{\gamma_i}{(\gamma_i + \lambda)^2} \:.
+    \end{align*}
+    Finally, use these formulas to conclude that
+    \begin{align*}
+        \text{Var}(\vec{w}_{\text{ridge}}) < \text{Var}(\vec{w}_{\text{ols}}) \:.
+    \end{align*}
+    Note that this is opposite of the relationship between the bias terms. \\
+    \textit{Hint:} Remember the relationship between the trace and the eigenvalues of a matrix. Also, for the ridge variance, consider writing $\mat{X}^\top\mat{X}$ in terms of its eigendecomposition $\mat{U} \mat{\Sigma} \mat{U}^\top$. Note that $\mat{X}^\top \mat{X} + \lambda \mat{I}_d$ has the eigendecomposition $\mat{U}(\mat{\Sigma} + \lambda \mat{I}_d)\mat{U}^\top$.
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+\end{enumerate}
+
+
+\newpage
+\Question{Running Time of k-Nearest neighbor Search Methods}
+
+The method of $k$-nearest neighbors is a fundamental conceptual building block of machine learning. 
+A classic example is the $k$-nearest neighbor classifier, which is a non-parametric classifier that finds the $k$ closest examples in the training set to the test example, and then outputs the most common label among them as its prediction. 
+Generating predictions using this classifier requires an algorithm to find the $k$ closest examples in a possibly large and high-dimensional dataset, which is known as the $k$-nearest neighbor search problem. 
+More precisely, given a set of $n$ points, $\mathcal{D} = \{\vec{x}_{1}, \ldots, \vec{x}_{n}\} \subseteq \mathbb{R}^{d}$ and a query point $\vec{z} \in \mathbb{R}^{d}$, the problem requires finding the $k$ points in $\mathcal{D}$ that are the closest to $\vec{z}$ in Euclidean distance.
+
+This problem explores the computational complexity of nearest-neighbor methods to show how na\"{i}ve implementations perform very poorly as the dimensionality of the problem grows, but more sophisticated use of randomized techniques can do better. 
+
+{\em Overall Hint: In this problem, reading later parts will help you know what you need to do in earlier parts in case you can't figure it out. So, read ahead before asking a question.}
+
+\begin{enumerate}[(a)]
+    \item 
+    Let's analyze the computational complexity of this algorithm. 
+    First, we consider the na\"{i}ve exhaustive search algorithm, which computes the distance between $\vec{z}$ and all points in $\mathcal{D}$ and then returns the $k$ points with the shortest distance. 
+    This algorithm first computes distances between the query and all points, then finds the $k$ shortest distances using quickselect\footnote{Quickselect is a counterpart of quicksort that just picks the top $k$ in an unordered list. Instead of taking $O(n \log n)$ like quicksort on average, it takes $O(n)$. Just realize that there is no point in recursively sorting things that for sure aren't going to be in the top $k$.}.
+    {\bf What is the (average case) time complexity of running the overall algorithm for a single query?} 
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item 
+    Decades of research have focused on devising a way of preprocessing the data so that the $k$-nearest neighbors for each query can be found efficiently. 
+    ``Efficient'' means the time complexity of finding the $k$-nearest neighbors is lower than that of the na\"{i}ve exhaustive search algorithm---meaning that the complexity must be \emph{sublinear} in $n$.
+    
+    Many efficient algorithms for $k$-nearest neighbor search rely on a divide-and-conquer strategy known as space partitioning. 
+    The idea is to divide the feature space into cells and maintain a data structure that keeps track of the points that lie in each. 
+    Then, to find the $k$-nearest neighbors of a query, these algorithms look up the cell that contains the query and obtain the subset of points in $\mathcal{D}$ that lie in the cell and adjacent cells. 
+    Adjacent cells must be included in case the query point is in the corner of its cell. 
+    Then, exhaustive search is performed on this subset to find the $k$ points that are the closest to the query.
+    
+    For simplicity, we'll consider the special case of $k = 1$ in the following questions, but note that the various algorithms we'll consider can be easily extended to the setting with arbitrary $k$. 
+    We first consider a simple partitioning scheme, where we place a Cartesian grid (a rectangular grid consisting of hypercubes) over the feature space.
+    
+    {\bf How many cells need to be searched in total if the data points are one-dimensional? Two-dimensional? $d$-dimensional? 
+    If each cell contains one data point, what is the time complexity for finding the 1-nearest neighbor in terms of $d$, assuming accessing any cell takes constant time?}
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item 
+    In low dimensions, the divide-and-conquer method provides a significant speedup over na\"{i}ve exhaustive search. 
+    However, in moderately high dimensions, its time complexity can grow quickly. 
+    In the high dimensional case, we modify our divide-and-conquer algorithm to use the na\"{i}ve exhaustive search instead. 
+    This behavior arises in many settings, and is known as \emph{the curse of dimensionality}.
+    How do we overcome the curse of dimensionality? Since it arises from the need to search adjacent cells, what if we don't have cells at all?
+    
+    Consider a new approach that simply projects all data points along a uniformly randomly chosen direction and keeps all projections of data points in a sorted list. 
+    To find the 1-nearest neighbor, the algorithm projects the query along the same direction used to project the data points and uses binary search to find the data point whose projection is closest to that of the query. 
+    Then it marches along the list to obtain $c$ candidate points whose projections are the closest to the projection of the query. 
+    Finally, it performs exhaustive search over these points and returns the point that is the closest to the query. 
+    This is a simplified version of an algorithm known as Dynamic Continuous Indexing (DCI).
+    
+    Because this algorithm is randomized (since it uses a randomly chosen direction), there is a non-zero probability that it returns the incorrect results. 
+    We are therefore interested in how many points we need to exhaustively search over to ensure the algorithm succeeds with high probability.
+    
+    We first consider the probability that a data point that is originally far away appears closer to the query under projection than a data point that is originally close. 
+    Without loss of generality, we assume that the query is at the origin. 
+    Let $\vec{v}^{l} \in \mathbb{R}^{d}$ and $\vec{v}^{s} \in \mathbb{R}^{d}$ denote the far (long) and close (short) vectors respectively, and $\vec{u}\in S^{d-1}\subset\mathbb{R}^{d}$ is a vector drawn uniformly randomly on the unit sphere which serves as the random direction.
+    Then the event of interest is when $\qty{\abs*{\langle\vec{v}^{l}, \vec{u}\rangle} \leq \abs*{\langle\vec{v}^{s}, \vec{u}\rangle}}$.
+    
+    Assuming that $\vec{0}$, $\vec{v}^{l}$ and $\vec{v}^{s}$ are not collinear\footnote{If $\vec{v}^{l}$ and $\vec{v}^{s}$ are collinear, random projection will essentially always be able to tell which is which so we don't bother to analyze that case. Understanding why will help you do this problem.}, consider the plane spanned by $\vec{v}^{l}$ and $\vec{v}^{s}$, which we will denote as $P$.
+    For any vector $\vec{w}$, we use $\vec{w}^{\parallel}$ and $\vec{w}^{\perp}$ to denote the components of $\vec{w}$ in $P$ and $P^{\perp}$ such that $\vec{w}=\vec{w}^{\parallel}+\vec{w}^{\perp}$. 
+    
+    {\bf If we use $\theta$ denote the angle of $\vec{u}^{\parallel}$ relative to $\vec{v}^{l}$, show that 
+    \[
+        \mathrm{Pr}\qty(\abs*{\langle\vec{v}^{l}, \vec{u}\rangle} \leq \abs*{\langle\vec{v}^{s}, \vec{u}\rangle}) \leq \mathrm{Pr}\qty(\abs*{\cos(\theta)} \leq \frac{\norm*{\vec{v}^{s}}_{2}}{\norm*{\vec{v}^{l}}_{2}}).
+    \]
+    }
+    \emph{Hint: For $\vec{w} \in \{\vec{v}^{s}, \vec{v}^{l}\}$, because $\vec{w}^{\perp} = 0$, $\langle \vec{w}, \vec{u} \rangle = \langle \vec{w}, \vec{u}^{\parallel} \rangle$.}
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item
+    The algorithm would fail to return the correct $1$-nearest neighbor if more than $c-1$ points appear closer to the query than the $1$-nearest neighbor under projection. 
+    
+    The following two statements will be useful:
+    \begin{itemize}
+        \item 
+        For any set of events $\{E_{i}\} _{i=1}^{N}$, the probability that at least $m$ of them occur is at most $\frac{1}{m}\sum_{i=1}^{N}\mathrm{Pr}(E_{i})$.\footnote{This is a generalization of the union bound; the statement reduces to the union bound when $k'=1$. (See this paper Ke Li and Jitendra Malik. Fast $k$-Nearest neighbor Search via Prioritized DCI. In \emph{Proceedings of the 34th International Conference on Machine Learning}, pages 2081--2090, 2017.)}
+        \item
+        $\mathrm{Pr}(\abs{\cos\theta} \leq \norm*{\vec{v}^{s}}_{2} / \norm*{\vec{v}^{l}}_{2}) = 1 -\frac{2}{\pi}\cos^{-1}(\norm*{\vec{v}^{s}}_{2}/\norm*{\vec{v}^{l}}_{2}) \leq \norm*{\vec{v}^{s}}_{2}/\norm*{\vec{v}^{l}}_{2}$. 
+    \end{itemize}
+    {\bf Using the first statement, derive an upper bound on the probability that the algorithm fails. Use $\vec{x}^{(i)}$ to denote the $i$th closest point to the query $\vec{z}$. Then use the second statement to simplify the expression.}
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item
+    The following plots (see the homework PDF) show the query time complexities of na\"{i}ve exhaustive search, space partitioning, and DCI as functions of $n$ and $d$. 
+    Curves of the same color correspond to the same algorithm. (Assume that the failure probability of DCI is small) {\bf Which algorithm does each color correspond to?}
+
+    % Feel free to screenshot the plots if you want to attach them in your writeup. This is optional.
+    % \begin{center}
+    % \includegraphics[width=0.4\textwidth]{dependence_on_n}
+    % \includegraphics[width=0.4\textwidth]{dependence_on_d}
+    % \end{center}
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+\end{enumerate}
+
+
+\newpage
+\Question{Random Forest Motivation}
+Ensemble learning is a general technique to combat overfitting, by combining the predictions of many varied models into a single prediction based on their average or majority vote.
+\begin{enumerate}[(a)]
+    \item
+    \textbf{The motivation of averaging.} 
+    Consider a set of uncorrelated random variables $\{Y_i\}_{i=1}^n$ with mean $\mu$ and variance $\sigma^2$. 
+    Calculate the expectation and variance of their average. 
+    (In the context of ensemble methods, these $Y_i$'s are analogous to the prediction made by classifier $i$.)
+
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item
+    In part (a), we see that averaging reduces variance for uncorrelated classifiers. 
+    Real-world prediction will of course not be completely uncorrelated, but reducing correlation among decision trees will generally reduce the final variance. 
+    Reconsider a set of correlated random variables $\{Z_i\}_{i=1}^n$ with mean $\mu$ and variance $\sigma^2$, where each $Z_i \in \mathbb{R}$ is a scalar. 
+    Suppose $\forall i \neq j$, $\operatorname{Corr}(Z_i, Z_j) = \rho$. 
+    (If you don't remember the relationship between correlation and covariance from your prerequisite classes, please look it up.) 
+    Calculate the variance of the average of the random variables $Z_i$, written in terms of $\sigma$, $\rho$, and $n$.
+
+    What happens when $n$ gets very large, and what does that tell us about the potential effectiveness of averaging?  (\ldots if $\rho$ is large ($| \rho | \approx 1$)?  \ldots if $\rho$ is very very small ($|\rho| \approx 0$)?  \ldots if $\rho$ is middling ($|\rho| \approx 0.5$)?) 
+    We're not looking for anything too rigorous--qualitative reasoning using your derived variance is sufficient.
+    
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \newpage
+    \item
+    \textbf{Ensemble Learning – Bagging.} 
+    In lecture, we covered bagging (Bootstrap AGGregatING). 
+    Bagging is a randomized method for creating many different learners from the same data set.
+    
+    Given a training set of size $n$, generate $T$ random subsamples, each of size $n'$, by sampling with replacement. 
+    Some points may be chosen multiple times, while some may not be chosen at all. 
+    If $n' = n$, around $63\%$ are chosen, and the remaining $37\%$ are called out-of-bag (OOB) sample points.
+    \begin{enumerate}[(i)]
+    	\item Why $63\%$? \\
+    	\textit{Hint: when $n$ is very large, what is the probability that a sample point won't be selected? Please only consider the probability of a point not being selected in any \textbf{one} of the subsamples (not all of the $T$ subsamples).}
+    	
+    	\begin{solution}
+    	   TODO
+    	\end{solution}
+     
+    	\item 
+        The number of decision trees $T$ in the ensemble is usually chosen to trade off running time against reduced variance. 
+        (Typically, a dozen to several thousand trees are used.) 
+        The sample size $n'$ has a smaller effect on running time, so our choice of $n'$ is mainly governed by getting the best predictions. 
+        Although it's common practice to set $n' = n$, that isn't necessarily the best choice. 
+        How do you recommend we choose the hyperparameter $n'$?
+    	
+    	\begin{solution}
+            TODO
+    	\end{solution}
+    \end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\Question{Decision Trees for Classification}
+In this problem, you will implement decision trees and random forests for classification on two datasets: 1)~the spam dataset and 2)~a Titanic dataset to predict survivors of the infamous disaster. 
+The data is with the assignment. 
+See the Appendix (in the homework PDF) for more information on its contents and some suggestions on data structure design.
+
+In lectures, you were given a basic introduction to decision trees and how such trees are trained. 
+You were also introduced to random forests. 
+Feel free to research additional decision tree techniques online (AdaBoost and XGBoost are particularly interesting!)
+
+For your convenience, we provide starter code which includes preprocessing and some decision tree functionality already implemented. 
+Feel free to use (or not to use) this code in your implementation. 
+
+\subsection{Implement Decision Trees}
+We expect you to implement the tree data structure yourself; you are not allowed to use a pre-existing decision tree implementation. 
+The Titanic dataset is not ``cleaned''---that is, there are missing values---so you can use external libraries for data preprocessing and tree visualization (in fact, we recommend it). 
+Removing examples with missing features is not a good option; there is not enough data to justify throwing some of it away. 
+Be aware that some of the later questions might require special functionality that you need to implement (e.g., maximum depth stopping criterion, visualizing the tree, tracing the path of a sample point through the tree). 
+You can use any programming language you wish as long as we can read and run your code with minimal effort. 
+If you choose to use our starter code, a skeleton structure of the decision tree implementation is provided, and you will decide how to fill it in. 
+After you are done, \textbf{attach your code in the appendix and select the appropriate pages when submitting to Gradescope.}
+
+\newpage
+\subsection{Implement a Random Forest}
+You are not allowed to use any off-the-shelf random forest implementation. 
+However, you are allowed to now use library implementations for individual decision trees (we use sklearn in the starter code). 
+If you use the starter code, you will mainly need to implement the superclass the random forest implementation inherits from, an implementation of bagged trees, which creates decision trees trained on different samples of the data. 
+After you are done, \textbf{attach your code in the appendix and select the appropriate pages when submitting to Gradescope.}
+
+\newpage
+\subsection{Describe implementation details}
+We aren't looking for an essay; 1--2 sentences per question is enough.
+\begin{enumerate}
+	\item How did you deal with categorical features and missing values?
+	\item What was your stopping criterion?
+	\item How did you implement random forests?
+	\item Did you do anything special to speed up training? (``No" is an acceptable response.)
+	\item Anything else cool you implemented? (``No" is an acceptable response.)
+\end{enumerate}
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\subsection{\bf Performance Evaluation}
+For each of the 2 datasets, train both a decision tree and random forest and report your training and validation accuracies. 
+You should be reporting 8 numbers (2 datasets $\times$ 2 classifiers $\times$ training/validation).
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\subsection{Writeup Requirements for the Spam Dataset}
+
+\begin{enumerate}
+	\item For your decision tree, and for a data point of your choosing from each class (spam and ham), state the splits (i.e., which feature and which value of that feature to split on) your decision tree made to classify it. 
+ An example of what this might look like:
+	\begin{enumerate}
+		\item (``hot") $\geq$ 2
+		\item (``thanks") $<$ 1
+		\item (``nigeria") $\geq$ 3
+		\item Therefore this email was spam.
+	\end{enumerate}
+
+	\begin{enumerate}
+		\item (``budget") $\geq$ 2
+		\item (``spreadsheet") $\geq$ 1
+		\item Therefore this email was ham.
+	\end{enumerate}
+	
+    \begin{solution}
+        TODO
+    \end{solution}
+    
+    \item 
+    For random forests, find and state the most common splits made at the root node of the trees. For example:
+	\begin{enumerate}
+		\item (``viagra") $\geq$ 3 (20 trees)
+		\item (``thanks") $<$ 4 (15 trees)
+		\item (``nigeria") $\geq$ 1 (5 trees)
+	\end{enumerate}
+
+	\begin{solution}
+	    TODO
+	\end{solution}
+	
+	\item 
+    Generate a random 80/20 training/validation split. 
+    Train decision trees with varying maximum depths (try going from depth = 1 to depth = 40) with all other hyperparameters fixed. 
+    Plot your validation accuracies as a function of the depth. 
+    Which depth had the highest validation accuracy? 
+    Write 1--2 sentences explaining the behavior you observe in your plot. 
+    If you find that you need to plot more depths, feel free to do so.
+
+    \begin{solution}
+        TODO
+    \end{solution}
+\end{enumerate}
+
+\newpage
+\subsection{Writeup Requirements for the Titanic Dataset}
+Train a shallow decision tree (minimum depth $3$), and visualize your tree. 
+Include for each non-leaf node the feature name and the split rule, and include for leaf nodes the class your decision tree would assign. 
+You can use any visualization method you want--we also provide some starter code for this. 
+If you're having too many package/environment issues, then you can also use the provided \verb|__repr__| method to print the tree.
+	
+\begin{solution}
+    TODO
+\end{solution}
+
+\newpage
+\subsection{Test Set Predictions}
+Using your own classifiers, generate predictions on the test sets provided for both Spam and Titanic. 
+You should use the \verb|generate_submission| function provided in the starter code to ensure that your predictions are in the right format for Gradescope. 
+
+You may use any decision tree-based method that you implemented. 
+Feel free to explore boosting methods if you wish, but these should not be required to meet the accuracy thresholds in Gradescope.
+
+Grading for this part is as follows.
+\begin{itemize}
+    \item \textbf{Titanic.} You will receive 100\% if you meet 77\% test set accuracy and 50\% if you only meet 75\% test set accuracy (no credit otherwise).
+    \item \textbf{Spam.} You will receive 100\% if you meet 80\% test set accuracy and 50\% if you only meet 78\% test set accuracy (no credit otherwise).
+\end{itemize}
+You can submit to the Gradescope autograder as frequently as you wish.
+
+
+\newpage
+\Question{Honor Code}
+
+\begin{enumerate}
+    \item 
+    \textbf{List all collaborators. If you worked alone, then you must explicitly state so.}
+
+    \begin{solution}
+        TODO
+    \end{solution}
+
+    \item
+    \textbf{Declare and sign the following statement}: 
+    
+    \textit{``I certify that all solutions in this document are entirely my own and that I have not looked at anyone else's solution. I have given credit to all external sources I consulted."}
+    
+    \textit{Signature} : \hrulefill
+    
+    While discussions are encouraged, \emph{everything} in your solution must be your (and only your) creation. 
+    Furthermore, all external material  (i.e., \emph{anything} outside lectures and assigned
+    readings, including figures and pictures) should be cited properly.
+    We wish to remind you that the consequences of academic misconduct are \emph{particularly severe}!
+
+    \begin{solution}
+        TODO
+    \end{solution}
+
+\end{enumerate}
+
+\end{document}
