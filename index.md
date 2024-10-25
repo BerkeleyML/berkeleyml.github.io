@@ -90,7 +90,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 |  10/22 | <span class="label">Lecture 16</span>  [Model Evaluation](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=194fc155-3acd-4009-a3c3-b1d4013f00a7) ([Slides](https://drive.google.com/file/d/16xXuolUV9K14jYSI4_xggsLgt6xPn9CY/view?usp=sharing)) | <span class="label label-purple">Reading</span> 5.25, 5.26 |
 |  | <span class="label label-green">Discussion 7</span> Gaussian Mixture Models  | [Worksheet](docs/dis_fa24/dis7.pdf) |
-|  10/24 | <span class="label">Lecture 17</span> Decision Trees & Ensembling |  |
+|  10/24 | <span class="label">Lecture 17</span> [Decision Trees & Ensembling](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5a92474e-2705-41f1-bfe7-b1d4013f00ce) ([Slides](https://drive.google.com/file/d/1U5EFGq1NkYKdy4xSMB-CI7FP-2_4pgxM/view?usp=drive_link)) |  |
 |  | <span class="label label-yellow">Homework 5</span> Bias/Variance, Nearest Neighbors, Decision Trees <nobr>(<strong>Due 11/8 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw5.pdf) / [Files](docs/hw_fa24/hw5.zip) / [LaTeX Template](docs/hw_fa24/hw5template.tex) |
 
 ### Week 10
