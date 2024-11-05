@@ -95,9 +95,9 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 10
 
-|  10/29 | <span class="label">Lecture 18</span> [Bias-Variance Tradeoff & Over/Under-Fitting](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a00177aa-d77e-4098-b867-b1d4013f00f1) ([Slides](https://drive.google.com/file/d/1Hhjk7UJFwHDSo6ZIHbtbuDqxZDydDChy/view?usp=drive_link)) |  <span class="label label-purple">Reading</span> 4.2, 4.3, 9.3.2 |
-|  | <span class="label label-green">Discussion 8</span> Bias/Variance, Decision Trees, & Nearest Neighbors  | [Worksheet](docs/dis_fa24/dis8.pdf) |
-|  10/31 | <span class="label">Lecture 19</span> Hidden Markov Models & Graphical Models 1  |  |
+|  10/29 | <span class="label">Lecture 18</span> [Bias-Variance Tradeoff & Over/Under-Fitting](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a00177aa-d77e-4098-b867-b1d4013f00f1) ([Slides](https://drive.google.com/file/d/1bWeLeK3xaIQrUr-oUQVjOVGOnxQhg3Vo/view?usp=drive_link)) |  <span class="label label-purple">Reading</span> 4.2, 4.3, 9.3.2 |
+|  | <span class="label label-green">Discussion 8</span> Bias/Variance, Decision Trees, & Nearest Neighbors  | [Worksheet](docs/dis_fa24/dis8.pdf) / [Solutions](docs/dis_fa24/dis8sol.pdf) |
+|  10/31 | <span class="label">Lecture 19</span> [Hidden Markov Models & Graphical Models 1](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1cb78411-61e2-43d7-9c93-b1d4013f0112) ([Slides](https://drive.google.com/file/d/1lpj2Ax6fU1ei--5GJqw35YT-5gg45zjD/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 11 |
 
 ### Week 11
 
