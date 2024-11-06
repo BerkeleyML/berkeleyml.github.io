@@ -101,8 +101,8 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 11
 
-|  11/5 | <span class="label">Lecture 20</span> Hidden Markov Models & Graphical Models 2  |  |
-|  | <span class="label label-green">Discussion 9</span> Decision Trees and HMMs Intro  |  |
+|  11/5 | <span class="label">Lecture 20</span> [Hidden Markov Models & Graphical Models 2](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9ecbbdee-d01b-4f10-810c-b1d4013f0132) ([Slides](https://drive.google.com/file/d/1exfKjzttLdHM1-57BDq0GXrH5fR4vVXU/view?usp=sharing))  |  |
+|  | <span class="label label-green">Discussion 9</span> Random Forests and HMMs Intro  | [Worksheet](docs/dis_fa24/dis9.pdf) |
 |  11/7 | <span class="label">Lecture 21</span> Generative Models 1  |  |
 |  | <span class="label label-yellow">Homework 6</span> Markovian Models & Reinforcement Learning <nobr>(<strong>Due 11/20 11:59pm</strong>)</nobr>  |  |
 
