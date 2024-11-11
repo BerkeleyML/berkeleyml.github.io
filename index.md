@@ -104,7 +104,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 |  11/5 | <span class="label">Lecture 20</span> [Hidden Markov Models & Graphical Models 2](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9ecbbdee-d01b-4f10-810c-b1d4013f0132) ([Slides](https://drive.google.com/file/d/1i9UX9FwgKjfpYgKlnFIJuPXjmj9gwxXw/view?usp=sharing))  |  <span class="label label-purple">Reading</span> Bishop 11; [Barber](http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf) 23.2.2, 23.2.5 |
 |  | <span class="label label-green">Discussion 9</span> Random Forests and HMMs Intro  | [Worksheet](docs/dis_fa24/dis9.pdf) / [Solutions](docs/dis_fa24/dis9sol.pdf) |
 |  11/7 | <span class="label">Lecture 21</span> [Generative Models 1](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=01b09f69-c06d-4faf-9dc7-b1d4013f0152) ([Slides](https://drive.google.com/file/d/1NL-JzwKWoF8OfODRVzt2mmFhcsaCKzIp/view?usp=sharing))  |  <span class="label label-purple">Reading</span> 14.3 |
-|  | <span class="label label-yellow">Homework 6</span> Graphical Models & Langevin MCMC <nobr>(<strong>Due 11/20 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw6.pdf) / [Files](docs/hw_fa24/hw6.zip) |
+|  | <span class="label label-yellow">Homework 6</span> Graphical Models & Langevin MCMC <nobr>(<strong>Due 11/20 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw6.pdf) / [Files](docs/hw_fa24/hw6.zip) / [LaTeX Template](docs/hw_fa24/hw6template.tex) |
 
 ### Week 12
 
