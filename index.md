@@ -108,8 +108,8 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 12
 
-|  11/12 | <span class="label">Lecture 22</span> Generative Models 2  |  |
-|  | <span class="label label-green">Discussion 10</span> HMMs Advanced and MDPs  |  |
+|  11/12 | <span class="label">Lecture 22</span> [Generative Models 2](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6b1316da-dbfa-41ba-b546-b1d4013f0178) ([Slides](https://drive.google.com/file/d/1LY_43MV4uLmWF9IYHDt818k44mTkTWcU/view?usp=drive_link)) | <span class="label label-purple">Reading</span> 20.3 |
+|  | <span class="label label-green">Discussion 10</span> Langevin Sampling | [Worksheet](docs/dis_fa24/dis10.pdf) |
 |  11/14 | <span class="label">Lecture 23</span> Markov Decision Processes & Reinforcement Learning  |  |
 
 ### Week 13
