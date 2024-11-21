@@ -117,7 +117,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 |  11/19 | <span class="label">Lecture 24</span> [Graph Neural Networks & Rotational Equivariance 1](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7a341980-ce54-4ae4-aba6-b1d4013f01d7) ([Slides](https://drive.google.com/drive/folders/1FqQmhLf9UPIkN8qJKrY_QayFKN6OhZyL))  | <span class="label label-purple">Reading</span> 13 |
 |  | <span class="label label-green">Discussion 11</span> Score Matching; MDPs & Reinforcement Learning | [Worksheet](docs/dis_fa24/dis11.pdf) |
 |  11/21 | <span class="label">Lecture 25</span> Graph Neural Networks & Rotational Equivariance 2 |  |
-|  | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning <nobr>(<strong>Due 12/4 11:59pm</strong>)</nobr>  |  |
+|  | <span class="label label-yellow">Homework 7</span> Graph Neural Networks & Applications of Deep Learning <nobr>(<strong>Due 12/6 11:59pm</strong>)</nobr>  | [PDF](docs/hw_fa24/hw7.pdf) / [Files](docs/hw_fa24/hw7code.zip) |
 
 ### Week 14
 
