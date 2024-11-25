@@ -126,7 +126,7 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 15
 
-|  12/3 | <span class="label">Lecture 27</span> Special Topics - Causality  |  |
+|  12/3 | <span class="label">Lecture 27</span> Causality  |  |
 |   | <span class="label label-green">Discussion 12</span> Graph Neural Networks  |  |
 |  12/5 | <span class="label">Lecture 28</span> Special Topics - Computational Biology |  |
 
