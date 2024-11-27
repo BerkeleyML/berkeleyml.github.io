@@ -121,13 +121,13 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 14
 
-|  11/26 | <span class="label">Lecture 26</span> Kernel Methods |  |
+|  11/26 | <span class="label">Lecture 26</span> [Kernel Methods](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0193d400-0332-4b45-a3cc-b1d4013f0217) ([Slides](https://drive.google.com/file/d/14cDmyVgTB5H3o_sknJaMdlsb0qmBb79H/view?usp=sharing)) |  |
 |  11/28 | No Lecture (Thanksgiving)  |  |
 
 ### Week 15
 
 |  12/3 | <span class="label">Lecture 27</span> Causality  |  |
-|   | <span class="label label-green">Discussion 12</span> Graph Neural Networks  |  |
+|   | <span class="label label-green">Discussion 12</span> Graph Neural Networks, Kernel Methods & Causality  |  |
 |  12/5 | <span class="label">Lecture 28</span> Special Topics - Computational Biology |  |
 
 ### Week 16 (RRR Week)
