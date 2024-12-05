@@ -127,8 +127,8 @@ If you have not been added to **EdStem**, you may join through this [link](https
 ### Week 15
 
 |  12/3 | <span class="label">Lecture 27</span> [Causality](https://berkeley-haas.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3582f4e3-35fa-4798-83cb-b1d4013f025d) ([Slides](https://drive.google.com/file/d/1Uu_zILze3vKJxsX-iKqT0IWRu29tfzkq/view?usp=sharing))  | <span class="label label-purple">Optional Reading</span> [Hardt](https://mlstory.org/) Chapters 9 & 10 |
-|   | <span class="label label-green">Discussion 12</span> Graph Neural Networks, Kernel Methods & Causality  | [Worksheet](docs/dis_fa24/dis12.pdf) |
-|  12/5 | <span class="label">Lecture 28</span> Special Topics - Computational Biology |  |
+|   | <span class="label label-green">Discussion 12</span> Graph Neural Networks, Kernel Methods & Causality | [Worksheet](docs/dis_fa24/dis12.pdf) / [Solutions](docs/dis_fa24/dis12sol.pdf)  |
+|  12/5 | <span class="label">Lecture 28</span> Special Topics - Computational Biology ([Slides](https://drive.google.com/file/d/1B0gILCXnSYSu8Uipc-PiBzMC7mzu5Z1y/view?usp=sharing))  |  |
 
 ### Week 16 (RRR Week)
 
