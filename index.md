@@ -132,8 +132,8 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 16 (RRR Week)
 
-|  12/10, 1-3 PM, Soda 306  | <span class="label label-green">TA Review Session</span> Pre-Midterm Material |
-|  12/11, 9-11 AM, Soda Wozniak Lounge  | <span class="label label-green">TA Review Session</span> Post-Midterm Material |
+|  12/10  | <span class="label label-green">TA Review Session</span> Pre-Midterm Material (1-3 PM, Soda 306) |
+|  12/11  | <span class="label label-green">TA Review Session</span> Post-Midterm Material (9-11 AM, Soda Wozniak Lounge) |
 
 ### Week 17 (Finals Week)
 
