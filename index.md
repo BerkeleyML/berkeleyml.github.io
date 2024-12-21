@@ -137,4 +137,4 @@ If you have not been added to **EdStem**, you may join through this [link](https
 
 ### Week 17 (Finals Week)
 
-|  12/17 | <span class="label label-red">Final Exam</span> (8-11am, location TBD) |  |
+|  12/17 | <span class="label label-red">Final Exam</span> (8-11am) | [Blank](docs/exams/finalf24blank.pdf) / [Solutions](docs/exams/finalf24.pdf) |
