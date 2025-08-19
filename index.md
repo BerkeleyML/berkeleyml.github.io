@@ -8,9 +8,6 @@ nav_exclude: true
 
 ## [Fall 2025 Frequently Asked Questions](faqs/fa25)
 
-<!-- TODO: Add the FAQs for this semester. -->
-
-
 ## Course Description
 
 This class covers theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; deep learning models including CNNs, Transformers, graph neural networks for vision and language tasks; and Markovian models for reinforcement learning and robotics.
@@ -19,26 +16,28 @@ This class covers theoretical foundations, algorithms, methodologies, and applic
 <!-- TODO: Add previous course offerings. (We can't do this the way Data100 has been. I know how to link all the Spring versions, but I'd have to hunt down Fall versions.) -->
 
 ## Offerings
+1. [Fall 2025](https://eecs189.org/cs189-fa25-website/)
 1. [Spring 2025](https://people.eecs.berkeley.edu/~jrs/189s25/)
-1. [Fall 2024](fa24)
 1. [Spring 2024](https://people.eecs.berkeley.edu/~jrs/189s24/)
-1. [Fall 2023](https://eecs189.org/)
 1. [Spring 2023](https://people.eecs.berkeley.edu/~jrs/189s23/)
-1. [Fall 2022](fa22)
 1. [Spring 2022](https://people.eecs.berkeley.edu/~jrs/189s22/)
-1. [Fall 2021](fa21)
 1. [Spring 2021](https://people.eecs.berkeley.edu/~jrs/189s21/)
-1. [Fall 2020](fa20)
 1. [Spring 2020](https://people.eecs.berkeley.edu/~jrs/189s20/)
 1. [Fall 2019](fa19)
 1. [Spring 2019](https://people.eecs.berkeley.edu/~jrs/189s19/)
-1. [Fall 2018](fa18)
 1. [Spring 2018](https://eecs189.org/sp18/)
 1. [Fall 2017](fa17)
 1. [Spring 2017](https://people.eecs.berkeley.edu/~jrs/189s17/)
-1. [Fall 2016](fa17)
 1. [Spring 2016](https://people.eecs.berkeley.edu/~jrs/189s16/)
-1. [Fall 2015](fa17)
+
+<!-- 1. [Fall 2024](fa24) -->
+<!-- 1. [Fall 2023](https://eecs189.org/) -->
+<!-- 1. [Fall 2022](fa22) -->
+<!-- 1. [Fall 2021](fa21) -->
+<!-- 1. [Fall 2020](fa20) -->
+<!-- 1. [Fall 2018](fa18) -->
+<!-- 1. [Fall 2016](fa16) -->
+<!-- 1. [Fall 2015](fa15) -->
 
 
 ### Goals
