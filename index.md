@@ -16,7 +16,7 @@ This class covers theoretical foundations, algorithms, methodologies, and applic
 <!-- TODO: Add previous course offerings. (We can't do this the way Data100 has been. I know how to link all the Spring versions, but I'd have to hunt down Fall versions.) -->
 
 ## Offerings
-1. [Fall 2025](https://eecs189.org/cs189-fa25-website/)
+1. [Fall 2025](https://eecs189.org/fa25/)
 1. [Spring 2025](https://people.eecs.berkeley.edu/~jrs/189s25/)
 1. [Spring 2024](https://people.eecs.berkeley.edu/~jrs/189s24/)
 1. [Spring 2023](https://people.eecs.berkeley.edu/~jrs/189s23/)
