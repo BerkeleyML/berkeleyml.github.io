@@ -1,14 +1,180 @@
-title: CS 189/289A
-description: Introduction to Machine Learning
-author: UC Berkeley
-baseurl: ~ # the subpath of your site, e.g. /blog
-url: 'https://eecs189.org' # the base hostname & protocol for your site, e.g. http://example.com
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Theme settings
-remote_theme: "just-the-docs/just-the-docs@v0.10.1"
-plugins:
-  - jekyll-remote-theme
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: CS 189 - Introduction to Machine Learning
+description: Introduction to Machine Learning
+author: Jennifer Listgarten, Alex Dimakis
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://eecs189.org' # the base hostname & protocol for your site, e.g. http://example.com
+logo: 'resources/assets/favicon/189_logo.png'
+
+# # External navigation links
+# nav_external_links:
+#   - title: Course Notes
+#     url: https://example.com/course-notes-placeholder
+#     hide_icon: true
+#     aria_label: "CS 189 Course Notes"
+
+footer: >-
+  Powered by <a href="https://github.com/kevinlin1/just-the-class">Just the Class</a>
+heading_anchors: false
+
 color_scheme: light
+
+# Collections for website data
+collections:
+  - modules
+  - announcements
+  - staffers
+# Default layouts for each collection type
+defaults:
+  - scope:
+      path: ''
+      type: modules
+    values:
+      layout: module
+  - scope:
+      path: ''
+      type: announcements
+    values:
+      layout: announcement
+  - scope:
+      path: '_staffers'
+      type: staffers
+    values:
+      layout: staffer
+      height: 300
+      width: 300
+      subpath: '/resources/assets/staff_pics/'
+
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+# Course variables
+# Course variables can appear in various places around the website, if something isn't used leave it blank.
+# TODO(setup): Set all of these course variables
+# course: DATA 100
+# course_email: data100.instructors
+# gradescope_course_id: 123456 # you can find this in the Gradescope URL after /courses
+# bcourses_course_id: 123456 # Same as above, but for bCourses. Leave blank if not in use...
+# ed_course_id: 123456 # Again, same as above.
+# sememster: spYY | suYY | faYY # set for the current seemester
+# This should be one of eecs, dsus, stat
+# (Future) This will control some footer text, and later custom styling.
+course_department: dsus
+# This should be the page of all class archives
+# Typically just / for DS courses (with a visible index page), or /archives if you're hosting your own, or a link to the inst.eecs page
+# If you have no archive page, comment this line out or leave blank.
+class_archive_path: /
+
+# # TODO(setup): Set these auxiliary links as you wish - they show up on the top right
+# aux_links:
+#   # TODO(template): Move this to be built-in.
+#   Ed:
+#     - 'https://edstem.org'
+#   OH Queue:
+#     - 'https://oh.c88c.org'
+#   Berkeley Class Site on GitHub:
+#     - 'https://github.com/berkeley-eecs/berkeley-class-site'
+
+######################################################################
+# Just the Docs / Berkeley Class Site Common Config
+# Options below here will likely not need to be configured..
+######################################################################
+# TODO(template): CSS compilations. Handle warnings...
+# sass:
+#   style: compressed
+#   sass_dir: _sass
+#   sourcemap: always
+#   quiet_deps: true
+#   verbose: false
+
+# The sitemap **must** be enabled. It's published as /baseurl/sitemap.xml
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-include-cache
+
+# # Theme settings
+theme: just-the-docs
 search_enabled: true
+heading_anchors: true
 permalink: pretty
-favicon_ico: "/favicon.ico"
+
+## Footer Content.
+# You should probably not change these, but may add to footer_content if necessary.
+# Replace `true` with any additional HTML that you would like to add.
+# Footer *must* included the accessibility text defined in footer_custom.html
+footer_content: true
+back_to_top: true
+back_to_top_text: "Back to Top"
+last_edit_timestamp: true
+last_edit_time_format: '%m %d, %Y at %H:%M'
+
+# Compilation settings used by compress-html plugin:
+# https://github.com/penibelst/jekyll-compress-html/tree/v3.2.0?tab=readme-ov-file
+# compress_html:
+#   clippings: all
+#   comments: all
+#   endings: all
+#   startings: []
+#   blanklines: false
+#   profile: false
+
+# Native Jeykll build options
+# You likely shouldn't need to touch these, but they are documented here just in case.
+# https://jekyllrb.com/docs/configuration/options/
+
+# This makes it easier when pushing to a static directory.
+# The default false removes files in that directory, which is useful for when you unpublish pages.
+# keep_files: false
+
+# Likely not necessary, but a google default for Berkeley
+timezone: America/Los_Angeles
+
+# Note: dotfiles are excluded by default. .htaccess is included as a common case.
+include:
+  - LICENSE
+  - .htaccess
+  - robots.txt
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - README.md
+  - CONTRIBUTING.md
+  - tmp/
+  - spec/
+  - docs/
+  - node_modules/

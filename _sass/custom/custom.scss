@@ -1,0 +1,78 @@
+// You may want to add CSS in additional files.
+// It's best to not edit this file too much.
+// "course_overrides.scss" is designed for each course's customizations.
+// You can make additional files as necessary.
+// You would then add `@import "file"; to this file.
+
+// Just the Class customizations are all loaded in one file.
+@import '../just-the-class/just-the-class';
+@import '../berkeley/berkeley';
+
+@import '../color_schemes/dark_overrides';
+
+@import 'module';
+
+@if $color-scheme == dark {
+  @include dark-mode-overrides;
+}
+
+div.highlighter-rouge {
+  overflow-x: auto;
+}
+
+div.highlighter-rouge div.highlight {
+  overflow-x: unset;
+}
+
+// Place all of your course-specific CSS here.
+@import './course_overrides';
+
+.site-logo {
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 150px; /* Adjust this value as needed */
+  height: 150px; /* Adjust this value as needed */
+  background-size: contain; /* This is crucial for non-repeating, scaled logos */
+}
+.site-header {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  min-height: 150px !important;
+  max-height: 250px !important;
+}
+
+.side-bar {
+  max-width: 200px;
+}
+
+.btn-datahub {
+  @include btn-color($white, #FF8C00);
+}
+
+.btn-ed {
+  @include btn-color($white, #9400D3);
+}
+
+.btn-gradescope {
+  @include btn-color($white, #228B22);
+}
+
+.btn-youtube {
+  @include btn-color($white, #FF0000);
+}
+
+.btn-oh {
+  @include btn-color($white, #ff1493);
+}
+
+.btn-repo {
+  @include btn-color($white, #FF6B35);
+}
+
+.btn-drive {
+  @include btn-color($white, #1e3a8a);
+}
+

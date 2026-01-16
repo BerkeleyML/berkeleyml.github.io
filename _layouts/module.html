@@ -1,0 +1,17 @@
+{% assign week_number = page.title | replace: 'Week ', '' | replace: ' - RRR
+Week', '' | plus: 0 %} {% assign current_week = site.pages | where: "title",
+"Home / Schedule" | first %} {% assign is_current = false %} {% if
+current_week.currWeekNumber == week_number %} {% assign is_current = true %} {%
+endif %}
+
+<h2 class="fs-4" id="{{ page.title | slugify }}">
+  {{ page.title }}{% if is_current %}
+  <span style="color: #b8860b; font-size: 0.8em">(Current Week)</span>{% endif
+  %}
+</h2>
+<div
+  class="module{% if is_current %} current-week{% endif %}"
+  id="week-{{ week_number }}"
+>
+  {{ content }}
+</div>

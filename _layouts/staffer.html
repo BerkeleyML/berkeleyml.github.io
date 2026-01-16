@@ -1,0 +1,60 @@
+<div class="staffer">
+  {%- if page.photo -%}
+  <img class="staffer-image" src="{{ site.baseurl }}{{ page.subpath }}{{ page.photo }}" alt="{{ page.name }} profile photo" width="{{ page.width }}" height="{{ page.height }}">
+  {%- else -%}
+  <img class="staffer-image" src="{{ site.baseurl }}{{ page.subpath }}default_photo.jpg" alt="{{ page.name }} profile photo" width="{{ page.width }}" height="{{ page.height }}">
+  {%- endif -%}
+  <div>
+    <h3 class="staffer-name" id="{{ page.name | slugify }}">
+      {%- if page.website -%}
+      <a href="{{ page.website }}">{{ page.name }}</a>
+      {%- else -%}
+      {{ page.name }}
+      {%- endif -%}
+      {%- if page.pronouns -%}
+      <span class="staffer-badge">{{ page.pronouns }}</span>
+      {%- endif -%}
+      {%- if page.access_email -%}
+      <span class="staffer-badge">{{ site.course_email }}</span>
+      {%- endif -%}
+      {%- if page.access_dsp -%}
+      <span class="staffer-badge">DSP</span>
+      {%- endif -%}
+    </h3>
+    
+    {%- if page.team -%}
+      {%- assign team_name = page.team -%}
+      {%- if team_name contains "TA" -%}
+          {%- assign stripped_name = team_name | replace: "TA", "" -%}
+          <span class="team label-{{ team_name }}">{{ team_name }}</span>
+      {%- else -%}
+          <span class="team label-{{ team_name }}">{{ team_name }}</span>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if page.team and page.team2 -%}
+    &nbsp;
+    {%- endif -%}
+
+    {%- if page.team2 -%}
+      {%- assign team2_name = page.team2 -%}
+      {%- if team2_name contains "TA" -%}
+          {%- assign stripped_name2 = team2_name | replace: "TA", "" -%}
+          <span class="team label-{{ team2_name }}">{{ stripped_name2 | strip }}</span>
+      {%- else -%}
+          <span class="team label-{{ team2_name }}">{{ team2_name }}</span>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if page.email -%}
+    <p><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+    {%- endif -%}
+    {%- if page.section -%}
+    <p class="staffer-meta">Section: {{ page.section | markdownify | strip_html }}</p>
+    {%- endif -%}
+    {%- if page.office_hours -%}
+    <p class="staffer-meta">Office Hours: {{ page.office_hours | markdownify | strip_html }}</p>
+    {%- endif -%}
+    {{ content }}
+  </div>
+</div>

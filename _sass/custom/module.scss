@@ -1,0 +1,178 @@
+.main-content .module,
+.module {
+  @extend %card;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: $sp-4;
+    }
+  }
+
+  .a {
+    font-weight: normal !important;
+  }
+
+  dt .label + * {
+    font-weight: normal;
+  }
+
+  >dl {
+    border-bottom: $border $border-color;
+    border-top: $border $border-color;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    margin: $sp-2 (-$sp-4);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(lg) {
+      grid-template-columns: 1.25fr 8fr;
+    }
+
+    %module-item {
+      margin: 0;
+      padding: $sp-2;
+
+      @include mq(sm) {
+        padding: $sp-2 $sp-4;
+      }
+    }
+
+    >dt {
+      @extend %module-item;
+      border-top: $border $border-color;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: right;
+
+      +dd {
+        border-top: $border $border-color;
+      }
+
+      &:first-child {
+        border-top: none;
+
+        +dd {
+          border-top: none;
+        }
+      }
+
+      &::after {
+        content: ":";
+      }
+    }
+
+    >dd {
+      @extend %module-item;
+      line-height: 1.6;
+
+      +dd {
+        padding-top: 0;
+      }
+
+      /* Add spacing between elements in the same cell */
+      > * + * {
+        margin-top: 0.25rem;
+      }
+
+      ol, ul, dl {
+        margin: 0;
+      }
+
+      dl {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(sm) {
+          flex-direction: row;
+        }
+
+        dt {
+          flex: 0 0 80%;
+          margin: 0;
+          /* Bold lecture topics only when this row contains a lecture label */
+          /* Safari/Chromium support :has; if unsupported, all topics will remain normal */
+          .module > dl > dd:has(.label-lecture) & {
+            font-weight: 700;
+          }
+        }
+
+        dd {
+          margin: 0;
+        }
+      }
+    }
+
+    .label-lecture { background-color: #E8EFFF; border-radius: 9px; }
+  
+    .label-lab { background-color: #F5E8F5; border-radius: 9px; }
+    
+    .label-review { background-color: #F0E8F5; border-radius: 9px; }
+
+    .label-hw { background-color: #FFE8E0; border-radius: 9px; }
+
+    .label-deadline { background-color: #E0E8FF; border-radius: 9px; }
+
+    .label-due {
+      background-color: #B91C1C; /* dark red */
+      color: #ffffff;
+      border-radius: 9px;
+    }
+
+    .label-exam { background-color: #ff9100; border-radius: 9px; }
+
+    .label-examprep { background-color: #E0F0FF; border-radius: 9px; }
+
+    .label-disc { background-color: #E8F5E0; border-radius: 9px; }
+
+    .label-survey { background-color: #F0F0F0; border-radius: 9px; }
+
+    .label-proj { background-color: #FFF0E0; border-radius: 9px; }
+
+    .label-gradproj { background-color: #F5E0F0; border-radius: 9px; }
+
+    /* Improved label styling for better readability */
+    .label {
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.025em;
+      padding: 0.25rem 0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+      display: inline-block;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ensure due labels keep white text overriding generic .label color */
+    .label.label-due {
+      color: #ffffff;
+    }
+
+  }
+}
+
+/* Current week highlighting */
+.module.current-week {
+  border-left: 4px solid #ffd700;
+  background-color: rgba(255, 215, 0, 0.01);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08);
+  
+  h2 {
+    color: #b8860b;
+    font-weight: 600;
+  }
+}
