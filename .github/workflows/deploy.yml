@@ -1,4 +1,4 @@
-name: Deploy to eecs189.org/fall2025
+name: Deploy to eecs189.org
 
 on:
   push:
