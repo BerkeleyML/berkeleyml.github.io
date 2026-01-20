@@ -13,14 +13,7 @@ currWeekNumber: 1
 
 ## UC Berkeley, Spring 2026
 
-{: .mb-2 .fs-6 .text-grey-dk-000 style="margin-top: 0;" }
-
-{: .highlight }
-
-> **Warning:** This webpage for Spring 2026 is under construction. There may be misleading information from past semesters on other parts of this website that are no longer true.
-
-
-[Lecture Zoom Link (Tuesdays and Thursdays 2pm-3:30pm)](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 }
+<!-- {: .mb-2 .fs-6 .text-grey-dk-000 style="margin-top: 0;" } -->
 
 <!-- 
 [Ed](TBD){:target="\_blank" .btn .btn-ed .mr-1 }
@@ -47,11 +40,21 @@ currWeekNumber: 1
   </div>
 </div>
 
-- Our course staff email is [cs189-instructors@berkeley.edu](mailto:{{cs189-instructors@berkeley.edu}}). This email is monitored by the instructors, the head TAs, and a few lead TAs.
+- Course staff email: [cs189-instructors@berkeley.edu](mailto:{{cs189-instructors@berkeley.edu}}). This email is monitored by the instructors, the head TAs, and a few lead TAs.
+
+
+[Lecture Zoom Link (Tuesdays and Thursdays 2pm-3:30pm)](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 }
+
 
 {: .highlight }
 
 > Welcome to [Week {{page.currWeekNumber}}](#week-{{page.currWeekNumber}}) of CS 189/289A!
+
+
+{: .highlight }
+
+> **Warning:** This webpage for Spring 2026 is under construction. There may be misleading information from past semesters on other parts of this website that are no longer true.
+
 
 <!-- > Lectures will be broadcast at this [link](https://berkeley.zoom.us/j/92596950563). -->
 
