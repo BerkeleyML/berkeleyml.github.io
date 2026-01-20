@@ -17,15 +17,20 @@ currWeekNumber: 1
 
 {: .highlight }
 
-> **Warning:** This webpage for Spring 2026 is under construction. There may be misleading information from past semesters on this webpage that is no longer true.
+> **Warning:** This webpage for Spring 2026 is under construction. There may be misleading information from past semesters on other parts of this website that are no longer true.
 
+
+[Lecture Link](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 }
+
+<!-- 
 [Ed](TBD){:target="\_blank" .btn .btn-ed .mr-1 }
 [Gradescope](https://www.gradescope.com/courses/1229310){:target="\_blank" .btn .btn-gradescope .mr-1 }
 [Lectures Playlist](TBD){:target="\_blank" .btn .btn-youtube .mr-1}
 [Additional Accommodations](TBD){:target="\_blank" .btn .btn-blue .mr-1 }
 [Office Hours Queue](TBD){:target="\_blank" .btn .btn-oh .mr-1}
 [Content Repository](TBD){:target="\_blank" .btn .btn-repo .mr-1}
-[Class Drive](TBD){:target="\_blank" .btn .btn-drive .mr-1}
+[Class Drive](TBD){:target="\_blank" .btn .btn-drive .mr-1} -->
+<!-- TBD this section -->
 
 <!-- <span class="btn btn-ed mr-1">Ed</span>
 <span class="btn btn-gradescope mr-1">Gradescope</span> -->
