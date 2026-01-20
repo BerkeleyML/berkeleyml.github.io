@@ -20,7 +20,7 @@ currWeekNumber: 1
 > **Warning:** This webpage for Spring 2026 is under construction. There may be misleading information from past semesters on other parts of this website that are no longer true.
 
 
-[Lecture Link](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 }
+[Lecture Zoom Link (Tuesdays and Thursdays 2pm-3:30pm)](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 }
 
 <!-- 
 [Ed](TBD){:target="\_blank" .btn .btn-ed .mr-1 }
