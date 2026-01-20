@@ -1,7 +1,7 @@
 ---
 name: Alex Dimakis
 role: Instructor
-email: alexdimakis@berkeley.edu
+email:
 photo: Alex_Dimakis.png
 pronouns:
 website: https://people.eecs.berkeley.edu/~alexdimakis/

@@ -1,7 +1,7 @@
 ---
 name: Jennifer Listgarten
 role: Instructor
-email: jennl@berkeley.edu
+email: 
 photo: Jennifer_Listgarten.jpg
 pronouns:
 website:
