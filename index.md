@@ -13,6 +13,11 @@ currWeekNumber: 1
 
 ## UC Berkeley, Spring 2026
 
+<!-- small margin below -->
+### Wheeler 150, Tuesdays and Thursdays 2pm-3:30pm
+- Zoom Livestream: [https://berkeley.zoom.us/j/6324076985](https://berkeley.zoom.us/j/6324076985){:target="_blank"  .mr-1 }
+
+
 <!-- {: .mb-2 .fs-6 .text-grey-dk-000 style="margin-top: 0;" } -->
 
 <!-- 
@@ -30,20 +35,21 @@ currWeekNumber: 1
 <!-- <span class="btn btn-youtube mr-1">Lectures Playlist</span> -->
 <!-- <span class="btn btn-blue mr-1">Additional Accommodations</span> -->
 <!-- <span class="btn btn-oh mr-1">Office Hours Queue</span> -->
-<div>
+<!-- show in row order --> 
+<div class="row" style="display: flex; flex-direction: row; justify-content: space-around;">
 {% assign instructors = site.staffers | where: 'role', 'Instructor' | sort: 'order' %}
-  <div class="role">
     {% for staffer in instructors %}
     <!-- {% assign staffer.photo = staffer.photo | replace: '../', '' %} -->
-    {{ staffer }}
+    <div class="column">
+      {{ staffer }}
+    </div>
     {% endfor %}
-  </div>
 </div>
 
-- Course staff email: [cs189-instructors@berkeley.edu](mailto:{{cs189-instructors@berkeley.edu}}). This email is monitored by the instructors, the head TAs, and a few lead TAs.
+Course staff email: [cs189-instructors@berkeley.edu](mailto:{{cs189-instructors@berkeley.edu}}). This email is monitored by the instructors, the head TAs, and a few lead TAs.
 
 
-[Lecture Zoom Link (Tuesdays and Thursdays 2pm-3:30pm)](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 }
+<!-- [Lecture Zoom Link (Tuesdays and Thursdays 2pm-3:30pm)](https://berkeley.zoom.us/j/6324076985){:target="_blank" .btn .btn-blue .mr-1 } -->
 
 
 {: .highlight }

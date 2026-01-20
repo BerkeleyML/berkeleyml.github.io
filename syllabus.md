@@ -71,7 +71,7 @@ Below is a high-level “typical week in the course” for {{page.course.semeste
 
 ### Lecture
 <!-- TBD location -->
-There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM**. Attendance is in person and live-streamed on Zoom, and we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone. Lecture attendance counts toward your grade.
+There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150. Attendance is in person and live-streamed on Zoom, and we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone. 
 
 Recordings, slides, and any in-class materials will be posted on the course website within 24 hours whenever possible.
 
