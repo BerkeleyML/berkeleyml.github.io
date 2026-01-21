@@ -115,11 +115,23 @@
   color: #fff;
   line-height: 1.2;
   text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .aux-nav .site-button:hover,
 .aux-nav .site-button:focus {
-  background-color: #1a3f8f;
-  color: #e6efff;
+  background-color: #193b85;
+  color: #f2f5ff;
   text-decoration: none;
+}
+
+.aux-nav .site-button[href*="edstem.org"] {
+  background-color: #6d28d9;
+  color: #fff;
+}
+
+.aux-nav .site-button[href*="edstem.org"]:hover,
+.aux-nav .site-button[href*="edstem.org"]:focus {
+  background-color: #5b21b6;
+  color: #f5e9ff;
 }
