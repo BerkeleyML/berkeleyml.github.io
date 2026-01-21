@@ -97,3 +97,29 @@
     background-color: #5e1c82;
     color: white;
   }
+
+.aux-nav .aux-nav-list-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.aux-nav .aux-nav-list-item + .aux-nav-list-item {
+  margin-left: 0.5rem;
+}
+
+.aux-nav .site-button {
+  height: auto;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  background-color: #1f4ba5;
+  color: #fff;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.aux-nav .site-button:hover,
+.aux-nav .site-button:focus {
+  background-color: #1a3f8f;
+  color: #e6efff;
+  text-decoration: none;
+}
