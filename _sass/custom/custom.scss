@@ -54,10 +54,12 @@ div.highlighter-rouge div.highlight {
 
 .btn-ed {
   @include btn-color($white, #9400D3);
+  font-size: 1.05rem;
 }
 
 .btn-gradescope {
   @include btn-color($white, #228B22);
+  font-size: 1.05rem;
 }
 
 .btn-youtube {
@@ -75,4 +77,3 @@ div.highlighter-rouge div.highlight {
 .btn-drive {
   @include btn-color($white, #1e3a8a);
 }
-

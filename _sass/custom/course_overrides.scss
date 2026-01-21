@@ -115,6 +115,7 @@
   background-color: #1f4ba5 !important;
   color: #fff !important;
   line-height: 1.2;
+  font-size: 1.05rem;
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
   background-image: none;
@@ -145,4 +146,13 @@
   background-image: none;
   box-shadow: none;
   filter: none;
+}
+
+// Keep the top bar visible while scrolling.
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $white;
+  box-shadow: 0 1px 0 rgba(31, 75, 165, 0.2);
 }
