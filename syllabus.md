@@ -112,7 +112,7 @@ There will be two exams in this course:
 
 {: .important}
 
-> - **Midterm** on **TBD** during TBD
+> - **Midterm** on **Tuesday, March 17** from **7:00 PM – 9:00 PM**
 
 - **Final** on **TBD** during TBD
 
