@@ -97,6 +97,8 @@ class_archive_path: /
 aux_links:
   Gradescope:
     - 'https://www.gradescope.com/courses/1229310'
+  BCourses:
+    - 'https://bcourses.berkeley.edu/courses/1553292'
   Edstem:
     - 'https://edstem.org/us/courses/94609'
 aux_links_new_tab: true

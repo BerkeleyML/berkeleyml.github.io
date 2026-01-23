@@ -132,6 +132,38 @@
   filter: none;
 }
 
+.aux-nav .site-button[href*="bcourses.berkeley.edu"],
+.aux-nav .site-button[href*="bcourses.berkeley.edu"]:visited {
+  background-color: #1f4ba5 !important;
+  color: #fff !important;
+}
+
+.aux-nav .site-button[href*="bcourses.berkeley.edu"]:hover,
+.aux-nav .site-button[href*="bcourses.berkeley.edu"]:focus,
+.aux-nav .site-button[href*="bcourses.berkeley.edu"]:active {
+  background-color: #193b85 !important;
+  color: #f2f5ff !important;
+  background-image: none;
+  box-shadow: none;
+  filter: none;
+}
+
+.aux-nav .site-button[href*="gradescope.com"],
+.aux-nav .site-button[href*="gradescope.com"]:visited {
+  background-color: #0ea5e9 !important;
+  color: #fff !important;
+}
+
+.aux-nav .site-button[href*="gradescope.com"]:hover,
+.aux-nav .site-button[href*="gradescope.com"]:focus,
+.aux-nav .site-button[href*="gradescope.com"]:active {
+  background-color: #0284c7 !important;
+  color: #e6f6ff !important;
+  background-image: none;
+  box-shadow: none;
+  filter: none;
+}
+
 .aux-nav .site-button[href*="edstem.org"],
 .aux-nav .site-button[href*="edstem.org"]:visited {
   background-color: #6d28d9 !important;
