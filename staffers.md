@@ -22,7 +22,7 @@ Jump to: [Instructors](#inst), [Lead Teaching Assistants](#leads), [UCS2s](#ucs2
 ## Instructors
 
 <div class="role">
-  {% assign instructors = site.staffers | where: 'role', 'Instructor' | sort: 'order' %}
+  {% assign instructors = site.staffers | where: 'role', 'Instructor' | sort: 'name' %}
   {% for staffer in instructors %}
   {{ staffer }}
   {% endfor %}
@@ -33,17 +33,17 @@ Jump to: [Instructors](#inst), [Lead Teaching Assistants](#leads), [UCS2s](#ucs2
 ## Head TA
 
 <div class="role">
-  {% assign head_teaching_assistants = site.staffers | where: 'team', 'Head TA' %}
+  {% assign head_teaching_assistants = site.staffers | where: 'team', 'Head TA' | sort: 'name' %}
   {% for staffer in head_teaching_assistants %}
     {{ staffer }}
   {% endfor %}
-  {% assign lead_teaching_assistants = site.staffers | where: 'role', 'Lead TA' %}
+  {% assign lead_teaching_assistants = site.staffers | where: 'role', 'Lead TA' | sort: 'name' %}
   {% for staffer in lead_teaching_assistants %}
     {% if staffer.team != 'Head TA' %}
       {{ staffer }}
     {% endif %}
   {% endfor %}
-     {% assign lead_teaching_assistants = site.staffers | where: 'role', 'Lead TA (no form)' %}
+     {% assign lead_teaching_assistants = site.staffers | where: 'role', 'Lead TA (no form)' | sort: 'name' %}
   {% for staffer in lead_teaching_assistants %}
     {{ staffer }}
   {% endfor %}
@@ -54,11 +54,11 @@ Jump to: [Instructors](#inst), [Lead Teaching Assistants](#leads), [UCS2s](#ucs2
 ## UCS2s
 
 <div class="role">
-  {% assign ucs2s = site.staffers | where: 'role', 'UCS2' | sort: 'order' %}
+  {% assign ucs2s = site.staffers | where: 'role', 'UCS2' | sort: 'name' %}
   {% for staffer in ucs2s %}
     {{ staffer }}
   {% endfor %}
-     {% assign ucs2s = site.staffers | where: 'role', 'UCS2 (no form)' | sort: 'order' %}
+     {% assign ucs2s = site.staffers | where: 'role', 'UCS2 (no form)' | sort: 'name' %}
   {% for staffer in ucs2s %}
     {{ staffer }}
   {% endfor %}
@@ -69,11 +69,11 @@ Jump to: [Instructors](#inst), [Lead Teaching Assistants](#leads), [UCS2s](#ucs2
 ## UCS1s
 
 <div class="role">
-  {% assign ucs1s = site.staffers | where: 'role', 'UCS1'  | sort: 'order'  %}
+  {% assign ucs1s = site.staffers | where: 'role', 'UCS1'  | sort: 'name'  %}
   {% for staffer in ucs1s %}
     {{ staffer }}
   {% endfor %}
-    {% assign ucs1s = site.staffers | where: 'role', 'UCS1 (no form)' | sort: 'order' %}
+    {% assign ucs1s = site.staffers | where: 'role', 'UCS1 (no form)' | sort: 'name' %}
   {% for staffer in ucs1s %}
     {{ staffer }}
   {% endfor %}
