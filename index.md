@@ -56,10 +56,16 @@ Course staff email: [cs189-instructors@berkeley.edu](mailto:{{cs189-instructors@
 
 > Welcome to [Week {{page.currWeekNumber}}](#week-{{page.currWeekNumber}}) of CS 189/289A!
 
-
 {: .highlight }
 
 > **Warning:** This webpage for Spring 2026 is under construction. There may be misleading information from past semesters on other parts of this website that are no longer true.
+
+
+{: .note }
+
+> If you need access to Ed, BCourses, or Gradescope, please fill out [this form](https://forms.gle/7nVn6W9D26xMd2Vk7){:target="_blank"}.
+
+
 
 
 <!-- > Lectures will be broadcast at this [link](https://berkeley.zoom.us/j/92596950563). -->
