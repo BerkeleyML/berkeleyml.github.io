@@ -51,7 +51,7 @@ Jump to: [Instructors](#inst), [Lead Teaching Assistants](#leads), [UCS2s](#ucs2
 
 <a name = 'ucs2s'></a>
 
-## UCS2s
+## TAs
 
 <div class="role">
   {% assign ucs2s = site.staffers | where: 'role', 'UCS2' | sort: 'name' %}
