@@ -114,7 +114,7 @@ There will be two exams in this course:
 
 > - **Midterm** on **Tuesday, March 17** from **7:00 PM – 9:00 PM**
 
-- **Final** on **TBD** during TBD
+> - **Final** on **Monday, May 11** from **11:30 AM – 2:30 PM**
 
 **All exams must be taken in-person.** There will be no alternate exams offered.
 
@@ -149,13 +149,10 @@ Course Communication:
 
 | Category               | CS 189 | CS 289A | Details                                                                  |
 | ---------------------- | ------ | ------- | ------------------------------------------------------------------------ |
-| Homework               | TBD    | TBD     |                                                                          |
-| Midterm Exam           | TBD    | TBD     |                                                                          |
-| Final Exam             | TBD    | TBD     |                                                                          |
-| Lecture Attendance     | TBD    | TBD     | Based on in-class polls or sign-ins. One attendance drop is allowed. TBD |
-| Graduate Final Project | —      | TBD     | CS 289 only.                                                             |
-
-**To pass this course, students must achieve a total weighted average percentage of at least 50% across the midterm and final exams.** This means that even if a student excels in other components of the course, a total weighted average below 50% on these exams will result in a failing grade for the course.
+| Homework               | 30%    | 20%     |                                                                          |
+| Midterm Exam           | 30%    | 25%     |                                                                          |
+| Final Exam             | 40%    | 35%     |                                                                          |
+| Graduate Final Project | —      | 20%     | CS 289 only.                                                             |
 
 While we do not have homework drops this semester, we will offer slip days for homeworks, as well as an [Additional Accommodations Form](https://TBD){:target="\_blank"}. See the next sections for more details.
 
