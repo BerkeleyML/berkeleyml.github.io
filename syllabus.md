@@ -62,8 +62,8 @@ Below is a high-level “typical week in the course” for {{page.course.semeste
 |              | <span style="color:Green">Live Lecture</span>      |                                                    | <span style="color:Green">Live Lecture</span> |                                                          |
 |              | <span style="color:Blue">Discussion Section</span> | <span style="color:Blue">Discussion Section</span> |                                               |                                                          |
 | Office Hours |                                                    |                                                    | Office Hours                                  | Office Hours                                             |
-|              |                                                    |                                                    |                                               | <span style="color: #c91d1d">**Homework N-1 due**</span> |
-|              |                                                    |                                                    |                                               | <span style="color:#c91d1d">Homework N released</span>   |
+|              |                                                    |                                                    |                                               | <span style="color: #c91d1d"> Homework _N-1_ due </span> |
+|              |                                                    |                                                    |                                               | <span style="color:#c91d1d"> Homework _N_ released </span>   |
 
 - **All deadlines are subject to change.**
 - A more detailed schedule of Lectures, Discussions, Exams, and Office Hours is available on the [Calendar page](../calendar).
@@ -113,7 +113,7 @@ There will be two exams in this course:
 {: .important}
 
 > - **Midterm** on **Tuesday, March 17** from **7:00 PM – 9:00 PM**
-
+>
 > - **Final** on **Monday, May 11** from **11:30 AM – 2:30 PM**
 
 **All exams must be taken in-person.** There will be no alternate exams offered.
