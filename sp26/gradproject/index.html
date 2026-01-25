@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/sp26/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/sp26/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    
+    .site-nav > ul.nav-list:first-child > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(3) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/sp26/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/sp26/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/sp26/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Graduate Project | CS 189 - Introduction to Machine Learning</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Graduate Project" />
+<meta name="author" content="Jennifer Listgarten, Alex Dimakis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Specifications for the grad project for CS289A." />
+<meta property="og:description" content="Specifications for the grad project for CS289A." />
+<link rel="canonical" href="https://eecs189.org/sp26/gradproject/" />
+<meta property="og:url" content="https://eecs189.org/sp26/gradproject/" />
+<meta property="og:site_name" content="CS 189 - Introduction to Machine Learning" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Graduate Project" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jennifer Listgarten, Alex Dimakis"},"description":"Specifications for the grad project for CS289A.","headline":"Graduate Project","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://eecs189.org/sp26/resources/assets/favicon/189_logo.png"},"name":"Jennifer Listgarten, Alex Dimakis"},"url":"https://eecs189.org/sp26/gradproject/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/sp26/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="CS 189 - Introduction to Machine Learning"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/sp26/" class="nav-list-link">Home / Schedule</a></li><li class="nav-list-item"><a href="/sp26/syllabus/" class="nav-list-link">Syllabus</a></li><li class="nav-list-item"><a href="/sp26/gradproject/" class="nav-list-link">Graduate Project</a></li><li class="nav-list-item"><a href="/sp26/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="/sp26/resources/" class="nav-list-link">Resources</a></li><li class="nav-list-item"><a href="/sp26/staffers/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="/sp26/past-offerings/" class="nav-list-link">Past Offerings</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <!-- Past offerings link moved into the sidebar nav under Staff. -->
+
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS 189 - Introduction to Machine Learning" aria-label="Search CS 189 - Introduction to Machine Learning" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.gradescope.com/courses/1229310" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Gradescope
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://bcourses.berkeley.edu/courses/1553292" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          BCourses
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://edstem.org/us/courses/94609" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Edstem
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 id="graduate-project">
+  
+  
+    <a href="#graduate-project" class="anchor-heading" aria-labelledby="graduate-project"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Graduate Project
+  
+  
+</h1>
+    
+<h2 id="introduction">
+  
+  
+    <a href="#introduction" class="anchor-heading" aria-labelledby="introduction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Introduction
+  
+  
+</h2>
+    
+
+<p>The graduate project is offered <strong>only to students enrolled in CS289A</strong>. Other students are welcome to work on a final project, but their work will not be graded or counted towards their final grades.</p>
+<h3 id="teammates">
+  
+  
+    <a href="#teammates" class="anchor-heading" aria-labelledby="teammates"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Teammates
+  
+  
+</h3>
+    
+
+<p><strong>You must work in groups of two or three students.</strong> To give everyone experience collaborating on a machine learning project, individual projects are not allowed.</p>
+<h3 id="project-topic">
+  
+  
+    <a href="#project-topic" class="anchor-heading" aria-labelledby="project-topic"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Project Topic
+  
+  
+</h3>
+    
+
+<p>The purpose of the project is to explore topics in machine learning that build upon course concepts. The project theme may be anything related to machine learning techniques discussed in this class. We will use Ed Discussion to share ideas, brainstorm project topics, and provide feedback. You’re encouraged to propose ideas that align with your own interests, but <strong>do not propose a project you have already completed as part of your research or another course</strong>. Otherwise, the project is fairly open-ended, and we are eager to help you identify a reasonable project that is engaging and useful for your learning.</p>
+<h2 id="milestones-and-grading-breakdown">
+  
+  
+    <a href="#milestones-and-grading-breakdown" class="anchor-heading" aria-labelledby="milestones-and-grading-breakdown"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Milestones and Grading Breakdown
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Deliverable</th>
+      <th>Due Date (11:59 PM PT)</th>
+      <th>Grading Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Project Proposal</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Progress Report</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>First Draft of Paper</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Peer Review</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Final Report</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>Final Video</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="project-proposal">
+  
+  
+    <a href="#project-proposal" class="anchor-heading" aria-labelledby="project-proposal"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Project Proposal
+  
+  
+</h3>
+    
+
+<p>Each group will submit a two-page project proposal, detailing the scope of their project and a rough timeline of what they plan to accomplish. To receive full credit, your proposal should contain the following:</p>
+
+<ul>
+  <li>
+    <p><strong>Background:</strong></p>
+
+    <ul>
+      <li>What is the application domain or field of research?</li>
+      <li>What is the overarching goal of your project?</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Data/Resources:</strong></p>
+
+    <ul>
+      <li>What data do you intend to work with?</li>
+      <li>Describe the features, labels, number of samples, etc.</li>
+      <li>Is this data publicly available? How will you access it?</li>
+      <li>Are there any other resources needed for your project (e.g., compute)? Do you have access to these?</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Timeline:</strong></p>
+    <ul>
+      <li>How will each team member contribute to the project?</li>
+      <li>What do you plan to accomplish each week? Include internal milestones in addition to our required ones.</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="progress-report">
+  
+  
+    <a href="#progress-report" class="anchor-heading" aria-labelledby="progress-report"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Progress Report
+  
+  
+</h3>
+    
+
+<p>Each group will submit a 1-2 page report of what they have accomplished and their plans for the remainder of the project. To receive full credit, your progress report should include the following:</p>
+
+<ul>
+  <li><strong>Outline:</strong>
+    <ul>
+      <li>Before submitting the progress report, each group should create a shared document to be used for their final report. You are encouraged to use <a href="https://nl.overleaf.com/edu/berkeley">Overleaf Professional</a>, but Google Docs or any other method for collaborative writing is fine.</li>
+      <li>Within this document, create an outline for your report. Please see the section below on the “First Draft of Paper” for expectations regarding what is to be included in your report.</li>
+      <li>Provide a shareable link to this document in your progress report.</li>
+    </ul>
+  </li>
+  <li><strong>Progress:</strong>
+    <ul>
+      <li>Students should demonstrate substantial progress towards the goals outlined in their original project proposal.</li>
+      <li>Significant deviations from the original proposal should be discussed with course staff before submitting the progress report.</li>
+      <li>Describe where you are in your proposed timeline. Include a summary of what each team member has contributed and any preliminary results.</li>
+      <li>You are encouraged to share your code (preferably with a link to a GitHub repo) to demonstrate your progress.</li>
+    </ul>
+  </li>
+  <li><strong>Goals:</strong>
+    <ul>
+      <li>Include an updated timeline for the remainder of your project, following the guidelines for the project proposal.</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="first-draft-of-paper">
+  
+  
+    <a href="#first-draft-of-paper" class="anchor-heading" aria-labelledby="first-draft-of-paper"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> First Draft of Paper
+  
+  
+</h3>
+    
+
+<p>Each group will submit the first draft of their paper to be reviewed by other teams. This should be a refined paper that has already gone through internal review within the group. You <strong>must</strong> follow the <a href="https://icml.cc/Conferences/2025/AuthorInstructions">ICML paper guidelines</a> for your submission (except we don’t require double-blind reviewing). You are expected to adhere to the style guidelines and page requirements. <strong>Please note that we will not grade submissions that are longer than the maximum 8 pages.</strong> To receive full credit, your paper should contain the following:</p>
+
+<ul>
+  <li><strong>Abstract</strong> – A complete summary of your paper.</li>
+  <li><strong>Related Work</strong> – Discussion of other papers related to your own.</li>
+  <li><strong>[Optional] Background</strong> – Additional information needed to understand your work.</li>
+  <li><strong>Methods/Approach</strong> – A thorough description of what you did.</li>
+  <li><strong>Evaluation/Analysis</strong> – Discussion of your experiments and visualizations of your results.</li>
+  <li><strong>Conclusions</strong> – Summary of the key takeaways, as well as a discussion of limitations and areas for future work.</li>
+</ul>
+
+<p>You do not need to follow this structure exactly and can use section headings/subheadings that make the most sense for your work, but all of this information should be captured in your paper to receive full credit.</p>
+<h3 id="peer-review">
+  
+  
+    <a href="#peer-review" class="anchor-heading" aria-labelledby="peer-review"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Peer Review
+  
+  
+</h3>
+    
+
+<p>Each student will review the paper of one other group and submit a one-page review, following the <a href="https://icml.cc/Conferences/2025/ReviewerInstructions">ICML reviewer guidelines</a>, specifically the Main Track Reviewer Form Instructions. To receive full credit, you should answer the questions under:</p>
+
+<ul>
+  <li><strong>Summary</strong></li>
+  <li><strong>Claims and Evidence</strong></li>
+  <li><strong>Relation to Prior Works</strong></li>
+  <li><strong>Other Aspects</strong></li>
+  <li><strong>Questions for Authors</strong></li>
+</ul>
+
+<p>You can ignore the sections on Ethical Issues, Code of Conduct Acknowledgement, and Overall Recommendation.</p>
+<h3 id="final-report">
+  
+  
+    <a href="#final-report" class="anchor-heading" aria-labelledby="final-report"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Final Report
+  
+  
+</h3>
+    
+
+<p>Each group will revise their paper based on all the reviews they received and submit a polished version of their final report. This report should follow the same guidelines discussed for the First Draft of Paper.</p>
+
+<p>In addition to your final report, you must submit a brief response to your reviewers, addressing reviewers’ comments and questions. To receive full credit on your final report, you should clearly indicate how you responded to reviewer feedback, including changes you made and those you chose not to make.</p>
+<h3 id="final-video">
+  
+  
+    <a href="#final-video" class="anchor-heading" aria-labelledby="final-video"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Final Video
+  
+  
+</h3>
+    
+
+<p>Along with the final report, each group will submit a 2-3 minute video summarizing their project. To receive full credit:</p>
+
+<ul>
+  <li>The video should be <strong>clear and understandable</strong>, describing everything you think is important about your project (motivation, background, techniques, results, etc.).</li>
+  <li>The video needs to be <strong>self-contained</strong>: any CS 289A student should be able to understand what you did (at least at a high level) without consulting any other materials.</li>
+  <li>The video can be <strong>at most 3 minutes</strong> long. Note that this is a strict requirement; we will not grade a video that is more than 3 minutes long.</li>
+  <li>There is no requirement on the <strong>format</strong> of your video. You can make the video as simple as slides with a voice overlay or as fancy as you want.</li>
+</ul>
+<h2 id="project-policies">
+  
+  
+    <a href="#project-policies" class="anchor-heading" aria-labelledby="project-policies"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Project Policies
+  
+  
+</h2>
+    
+<h3 id="ai-usage-policy">
+  
+  
+    <a href="#ai-usage-policy" class="anchor-heading" aria-labelledby="ai-usage-policy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> AI Usage Policy
+  
+  
+</h3>
+    
+
+<p>You may use AI tools to brainstorm ideas, write code, debug, find related work, summarize existing work, etc. However, <strong>you are fully responsible for your own work</strong>, and <strong>all of the written work must be entirely written by you</strong>, <em>including the peer review</em>. Please note that GenAI tools, like ChatGPT, tend to hallucinate when finding and citing related work. You must ensure that your paper is not in violation of UC Berkeley’s <a href="https://conduct.berkeley.edu/integrity/">Academic Integrity</a> policy.</p>
+<h3 id="late-policy">
+  
+  
+    <a href="#late-policy" class="anchor-heading" aria-labelledby="late-policy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Late Policy
+  
+  
+</h3>
+    
+
+<p>The project proposal <strong>must</strong> be submitted on time to ensure that you receive timely feedback and have an appropriate project for this course. To enable a smooth peer review process, the first draft and peer review feedback must also be submitted on time. We are unlikely to grant extensions on any of these milestones, so please contact us only for exceptional circumstances.</p>
+
+<p>All other milestones (the progress report, final report, and final video) will incur a 10% daily penalty after the due date, up to a maximum of two days. Submissions are rounded to the nearest day (e.g., 2 minutes late counts as 1 day late).</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+      <p><a href="#top" id="back-to-top">Back to Top</a></p>
+    
+
+    <!-- This file comes from Just The Docs.
+ This footer should be included on all EECS/DS sites.
+--><p class="text-small text-grey-dk-100 my-1">
+  <a rel="nofollow noopener" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue" target="_blank" class="pr-2">Accessibility</a>
+  <a rel="nofollow noopener" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement" target="_blank" class="px-2">Nondiscrimination</a>
+</p>
+
+<!-- Use this to add additional content. -->
+<p class="text-small text-lighter m-0">
+  Copyright ©2026, Regents of the University of California and respective authors.
+</p>
+
+<p class="fs-1 text-lighter my-1">
+  This site is built following the <a href="https://github.com/just-the-docs/just-the-docs" target="_blank" rel="noopener">Berkeley Class Site</a> template, which is generously based on the <a href="https://github.com/kevinlin1/just-the-class" target="_blank" rel="noopener">Just the Class</a>, and <a href="https://github.com/just-the-docs/just-the-docs" target="_blank" rel="noopener">Just the Docs</a> templates.
+</p>
+
+
+    
+      <div class="d-flex mt-2">
+        
+        
+      </div>
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
