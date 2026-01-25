@@ -1,0 +1,634 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    
+    .site-nav > ul.nav-list:first-child > li:not(:nth-child(5)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg {
+      transform: rotate(-90deg);
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Resources | CS 189 - Introduction to Machine Learning</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Resources" />
+<meta name="author" content="Jennifer Listgarten, Alex Dimakis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Relevant material to aid you in the course." />
+<meta property="og:description" content="Relevant material to aid you in the course." />
+<link rel="canonical" href="https://eecs189.org/resources/" />
+<meta property="og:url" content="https://eecs189.org/resources/" />
+<meta property="og:site_name" content="CS 189 - Introduction to Machine Learning" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Resources" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jennifer Listgarten, Alex Dimakis"},"description":"Relevant material to aid you in the course.","headline":"Resources","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://eecs189.org/resources/assets/favicon/189_logo.png"},"name":"Jennifer Listgarten, Alex Dimakis"},"url":"https://eecs189.org/resources/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/" class="site-title lh-tight">
+  <div class="site-logo" role="img" aria-label="CS 189 - Introduction to Machine Learning"></div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Home / Schedule</a></li><li class="nav-list-item"><a href="/syllabus/" class="nav-list-link">Syllabus</a></li><li class="nav-list-item"><a href="/gradproject/" class="nav-list-link">Graduate Project</a></li><li class="nav-list-item"><a href="/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="/resources/" class="nav-list-link">Resources</a></li><li class="nav-list-item"><a href="/staffers/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="/past-offerings/" class="nav-list-link">Past Offerings</a></li></ul>
+  
+</nav>
+
+
+
+
+  
+  
+    <!-- Past offerings link moved into the sidebar nav under Staff. -->
+
+  
+</div>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS 189 - Introduction to Machine Learning" aria-label="Search CS 189 - Introduction to Machine Learning" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.gradescope.com/courses/1229310" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Gradescope
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://bcourses.berkeley.edu/courses/1553292" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          BCourses
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://edstem.org/us/courses/94609" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Edstem
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 id="resources">
+  
+  
+    <a href="#resources" class="anchor-heading" aria-labelledby="resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Resources
+  
+  
+</h1>
+    
+
+<p class="no_toc">Here is a collection of resources to help you deepen your machine learning knowledge and support your well-being. We encourage everyone to browse these resources and share anything helpful on EdStem or contribute it to the course site.</p>
+
+<p>Jump to:</p>
+
+<ul>
+  <li>TOC</li>
+</ul>
+
+<!--
+## Reference Sheet
+Here is the Spring 2025 Final [Reference Sheet](/resources/assets/other/final_ref_sheet.pdf){:target="_blank"}.
+
+## Supplementary Course Notes
+Alongside each lecture are supplementary [Course Notes](https://ds100.org/course-notes/).
+
+Lecture notes will be updated on a weekly basis, prior to the lecture. If you spot any errors or would like to suggest any changes, please email us at data100.instructors@berkeley.edu.
+
+## Optional Supplementary Textbook
+Here are optional textbook readings, [Learning Data Science](https://learningds.org/intro.html), supplementary to the Data 100 lecture material.
+Textbook readings are purely optional, and may contain material that is not in scope (and may also not be comprehensive). If you encounter issues with the textbook, please post on Ed.
+-->
+<!--
+## Exam Resources
+
+{: .important }
+> Please refer to **[Data 100: Past Exam Common Questions](https://docs.google.com/document/d/e/2PACX-1vQm6iUDd-S2reyCNVHNgHKQTr7AqBQTbTEVew2POSvSAQLdpSPJb1OlYWsQ5wuFkVf1yHSVGXcta4Tv/pub)**, curating common exam-related questions we've seen on Ed over the past couple of semesters, and corresponding staff responses. Feel free to make use of this resource when reviewing past exam questions.
+
+You can also review [Exam Questions by Topic here.](https://docs.google.com/document/d/1RMdewH0H0cJHfFykzf4_NsdnfEEo5qNxJBqFNc4UbLQ/edit?tab=t.0){:target="_blank}
+
+| Semester | Midterm 1 | Midterm 2  | Final | Reference Sheet |
+| -- | -- | -- | -- | -- |
+|Spring 2025| [Exam](assets/exams/sp25/sp25_mt.pdf) [(Solutions)](assets/exams/sp25/sp25_mt_sols.pdf)| | [Exam](assets/exams/sp25/sp25_final.pdf) [(Solutions)](assets/exams/sp25/sp25_final_sols.pdf) | [Midterm](assets\exams\sp25\sp25_mt_reference_sheet.pdf), [Final](assets\exams\sp25\sp25_final_reference_sheet.pdf) |
+|Fall 2024| [Exam](assets/exams/fa24/fa24_mt.pdf) [(Solutions)](assets/exams/fa24/fa24_midterm_sol.pdf)| | [Exam](assets/exams/fa24/fa24_finals_qs.pdf) [(Solutions)](assets/exams/fa24/fa24_finals_sols.pdf)| [Midterm](assets\exams\fa24\fa24_mt_reference_sheet.pdf), [Final](assets\exams\fa24\fa24_final_reference_sheet.pdf) |
+|Summer 2024| [Exam](assets/exams/su24/su24_mt.pdf) [(Solutions)](assets/exams/su24/su24_mt_sol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfq-uOcGFHW25xUgXeK9b8Ow) | | [Exam](assets/exams/su24/su24_final.pdf) [(Solutions)](assets/exams/su24/su24_final_sol.pdf) | [Midterm](assets\exams\su24\su24_mt_reference_sheet.pdf), [Final](assets\exams\su24\su24_final_reference_sheet.pdf) |
+|Spring 2024| [Exam](assets/exams/sp24/ds100-sp24-midterm.pdf) [(Solutions)](assets/exams/sp24/ds100-sp24-midterm-sol.pdf) | | [Exam](assets/exams/sp24/ds100-sp24-final.pdf) [(Solutions)](https://ds100.org/sp24/resources/assets/exams/sp24/ds100-sp24-final-sol.pdf)| [Midterm](assets/exams/sp24/ds100-sp24-midterm-ref.pdf), [Final](assets/exams/sp24/ds100-sp24-final-ref.pdf) |
+|Fall 2023| [Exam](assets/exams/fa23/fa23-midterm-ds100.pdf) [(Solutions)](assets/exams/fa23/fa23-midterm-ds100-sol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfpu7tvfnsip5caEOcO50r8U) | | [Exam](assets/exams/fa23/fa23-final.pdf) [(Solutions)](assets/exams/fa23/fa23-final-solutions.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfqmK_hC9eQwJtTtcsKsxUdW) | [Midterm](assets/exams/fa23/fa23_mt_reference_sheet.pdf), [Final](assets/exams/fa23/fa23_final_reference_sheet.pdf) |
+|Summer 2023| [Exam](assets/exams/su23/su23_mt.pdf) [(Solutions)](assets/exams/su23/su23_mt_sol.pdf) [[Walkthrough]](https://youtube.com/playlist?list=PLQCcNQgUcDfr-6Ekq9EldsWn0iF4vE-q4&si=osRk_jjmaXoVlWYN) | | [Exam](assets/exams/su23/su23_final.pdf) [(Solutions)](assets/exams/su23/su23_final_sol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfqr0zzY8n17SmUWc64vYg_i)| [Midterm](assets/exams/su23/su23_mt_reference_sheet.pdf), [Final](assets/exams/su23/su23_final_reference_sheet.pdf)|
+|Spring 2023| [Exam](assets/exams/sp23/sp23_mt.pdf) [(Solutions)](assets/exams/sp23/sp23mtsol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfpuiDBXsimLa2DZgrarmNWu)  | | [Exam](assets/exams/sp23/sp23_final.pdf) [(Solutions)](assets/exams/sp23/sp23_final_sol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfqmjLDSxRFm6lH4w6ufupjI)|  [Midterm](assets/exams/sp23/sp23_mt_reference_sheet.pdf), [Final](assets/exams/sp23/sp23_final_reference_sheet.pdf)|
+|Fall 2022| [Exam](assets/exams/fa22/fa22_mt.pdf) [(Solutions)](assets/exams/fa22/fa22_midterm_sol.pdf) [[Walkthrough]](https://www.youtube.com/watch?v=0UbtO_VJsVU&list=PLQCcNQgUcDfrri_9cMKWfXVFbSY07KpFB)|||[Midterm](assets/exams/fa22/fa22_mt_reference_sheet.pdf)|
+| Summer 2022 | [Exam](assets/exams/su22/su22_mt.pdf) [(Solutions)](assets/exams/su22/su22_mt_sol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfoillq-hUcN__MIM4MaH-R2)| | [Exam](assets/exams/su22/su22_final.pdf) [(Solutions)](assets/exams/su22/su22finalsol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfr2MPkk0Wp1cNquWOH_0xja)| [Midterm](assets/exams/su22/su22_mt_reference_sheet.pdf), [Final](assets/exams/su22/su22_final_reference_sheet.pdf)
+| Spring 2022 | [Exam](assets/exams/sp22/sp22_mt1.pdf) [(Solutions)](assets/exams/sp22/sp22_midterm1_sol.pdf) [[Walkthrough]](https://www.youtube.com/watch?v=5Vi8GK3jjl8&list=PLQCcNQgUcDfpPobq0x2o1mdlxTIV1dN-t)|  [Exam](assets/exams/sp22/sp22_mt2.pdf) [(Solutions)](assets/exams/sp22/sp22_mt2_sol.pdf) | [Exam](assets/exams/sp22/sp22_final.pdf) [(Solutions)](assets/exams/sp22/sp22_final_sol.pdf) [[Walkthrough]](https://youtube.com/playlist?list=PLQCcNQgUcDfrA6R8oSYrxiGUdtBEzWTVz&si=OGtnoD6bA46DH8fP) | [Midterm 1](assets/exams/sp22/mt1_reference_sheet.pdf), [Midterm 2](assets/exams/sp22/mt2_reference_sheet.pdf), [Final](assets/exams/sp22/final_reference_sheet.pdf)
+| Fall 2021 | [Exam](assets/exams/fa21/fa21mt.pdf) [(Solutions)](assets/exams/fa21/fa21_midterm_sol.pdf) |  |  |
+| Summer 2021 | [Exam](assets/exams/su21/su21mt.pdf) [(Solutions)](assets/exams/su21/su21mt_sol.pdf) [[Walkthrough]](https://www.youtube.com/playlist?list=PLQCcNQgUcDfoYEIK8ZhIDCEE2Td6Ih_2V) |  | [Exam](assets/exams/su21/su21final.pdf) [(Solutions)](assets/exams/su21/su21final_sol.pdf) |
+| Spring 2021 | [Exam](assets/exams/sp21/sp21mt.pdf) [(Solutions)](assets/exams/sp21/sp21_mt_sol.pdf) |  | [Exam](assets/exams/sp21/sp21final.pdf) [(Solutions)](assets/exams/sp21/sp21_final_sol.pdf) [[Walkthrough]](https://youtube.com/playlist?list=PLQCcNQgUcDfo13wAr1PQ1mBIx_bEyzMHJ&si=76g9Vd-5F9CglR6L)|
+| Fall 2020 | [Exam](assets/exams/fa20/fa20mt.pdf) [(Solutions)](assets/exams/fa20/fa20mtsol.pdf) |  | [Exam](assets/exams/fa20/fa20final.pdf) [(Solutions)](assets/exams/fa20/fa20finalsol.pdf)  |
+| Summer 2020 | [Exam](assets/exams/su20/su20mt1.pdf) [(Solutions)](assets/exams/su20/su20mt1sol.pdf) | [Exam](assets/exams/su20/su20mt2.pdf) [(Solutions)](assets/exams/su20/su20mt2sol.pdf) | [Exam](assets/exams/su20/su20final.pdf) [(Solutions)](assets/exams/su20/su20finalsol.pdf) |
+| Spring 2020 | [Checkpoint](assets/exams/sp20/sp20checkpoint.pdf) [(Solutions)](assets/exams/sp20/sp20checkpointsol.pdf) | | N/A | [Checkpoint](assets/exams/sp20/sp20_checkpoint_reference_sheet.pdf) |
+| Fall 2019| [Exam](assets/exams/fa19/fa19midterm1.pdf) [(Solutions)](assets/exams/fa19/fa19midterm1sol.pdf) | [Exam](assets/exams/fa19/fa19midterm2.pdf) [(Solutions)](assets/exams/fa19/fa19midterm2sol.pdf) | [Exam](assets/exams/fa19/fa19final.pdf) [(Solutions)](assets/exams/fa19/fa19finalsol.pdf) | [Midterm 1](assets/exams/fa19/fa19midterm1refsheet.pdf)|
+| Summer 2019| [Exam](assets/exams/su19/su19mt_blank.pdf) [(Solutions)](assets/exams/su19/su19mt_sol.pdf) [[Walkthrough]](https://www.youtube.com/watch?v=7UVjFuRTHMc)    |  | [Exam](assets/exams/su19/su19final_blank.pdf) [(Solutions)](assets/exams/su19/su19final_sol.pdf) |
+| Spring 2019| [Exam](assets/exams/sp19/data100_sp19_mt1.pdf) [(Solutions)](assets/exams/sp19/data100_sp19_mt1_sol.pdf) [[Walkthrough](https://youtu.be/F3tu9PZHhyU)]     | [Exam](assets/exams/sp19/data100_sp19_mt2.pdf) [(Solutions)](assets/exams/sp19/data100_sp19_mt2_sol.pdf) [[Walkthrough](https://youtu.be/-XCRQ6CKNb0)] | [Exam](assets/exams/sp19/data100_sp19_final.pdf) [(Solutions)](assets/exams/sp19/data100_sp19_final_sol.pdf)     | [Midterm 1](assets/exams/sp19/sp19_mt1_reference_sheet.pdf)
+| Fall 2018  | [Exam](assets/exams/fa18/fa18midterm.pdf) [(Solutions)](assets/exams/fa18/fa18midtermsol.pdf)|  | [Exam](assets/exams/fa18/fa18final.pdf) [(Solutions)](assets/exams/fa18/fa18finalsol.pdf)|
+| Spring 2018| [Exam](assets/exams/sp18/sp18midterm.pdf) [(Solutions)](assets/exams/sp18/sp18midtermsol.pdf)|  | [Exam](assets/exams/sp18/sp18final.pdf) [(Solutions)](assets/exams/sp18/sp18finalsol.pdf) [[Walkthrough]](https://www.youtube.com/watch?v=5JU0Xe46DnA&list=PLQCcNQgUcDfrBO7dpL-Pv6e0LYGeqsHKr) |
+| Fall 2017  | [Exam](assets/exams/fa17/fa17midterm.pdf) [(Solutions)](assets/exams/fa17/fa17midtermsol.pdf) [[Walkthrough]](https://www.youtube.com/watch?v=uYS4ZBB0aZU&list=PLQCcNQgUcDfqAD1D9g9P9SUYo0tdXQpSY) |  | [Exam](assets/exams/fa17/fa17final.pdf) [(Solutions)](assets/exams/fa17/fa17finalsol.pdf)|
+| Spring 2017|  [Exam](assets/exams/sp17/sp17midterm.pdf) [(Solutions)](assets/exams/sp17/sp17midtermsol.pdf)    |  | [Exam](assets/exams/sp17/sp17final.pdf) [(Solutions)](assets/exams/sp17/sp17finalsol.pdf)|
+-->
+
+<p><a name="course_website"></a></p>
+<h2 id="course-website">
+  
+  
+    <a href="#course-website" class="anchor-heading" aria-labelledby="course-website"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Course Website
+  
+  
+</h2>
+    
+
+<p>We will be posting all lecture materials on the following publicly visible [GitHub repository].</p>
+<h2 id="textbooks--core-reading">
+  
+  
+    <a href="#textbooks--core-reading" class="anchor-heading" aria-labelledby="textbooks--core-reading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Textbooks &amp; Core Reading
+  
+  
+</h2>
+    
+
+<p>The required textbook for this semester is <strong>Deep Learning Foundations and Concepts</strong>, Christopher M. Bishop and Hugh Bishop, 2024 edition (Springer). You can get a PDF by going to <a href="https://link-springer-com.libproxy.berkeley.edu/book/10.1007/978-3-031-45468-4">this page</a>, log in with your CalNet ID.</p>
+
+<p>You may also find the following supplemental resources helpful:</p>
+
+<ul>
+  <li>
+    <p>Kevin Patrick Murphy- <em>Probabilistic Machine Learning: An Introduction</em> <a href="https://probml.github.io/pml-book/book1.html">available here</a>.</p>
+  </li>
+  <li>
+    <p>Ian Goodfellow, Yoshua Bengio, Aaron Courville — <em>Deep Learning</em> (freely accessible at <a href="https://www.deeplearningbook.org/">https://www.deeplearningbook.org/</a>).</p>
+  </li>
+  <li>
+    <p>Simon J.D. Prince - <em>Understanding Deep Learning</em> (accessible at <a href="https://udlbook.github.io/udlbook/">https://udlbook.github.io/udlbook/</a>).</p>
+  </li>
+</ul>
+<h2 id="exam-resources">
+  
+  
+    <a href="#exam-resources" class="anchor-heading" aria-labelledby="exam-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exam Resources
+  
+  
+</h2>
+    
+
+<ul>
+  <li>
+    <p><a href="https://drive.google.com/file/d/1UT5Pk0EZ1iI35D3GnlGZ1HH5Fhfcsb9n/view?usp=drive_link">Midterm Fall 2025 Exam</a></p>
+  </li>
+  <li>
+    <p><a href="https://drive.google.com/file/d/18PAOdio-AGMVxF7OQY09OErFnE4ocEVM/view?usp=drive_link">Midterm Fall 2025 Exam Solutions</a></p>
+  </li>
+  <li>
+    <p><a href="https://drive.google.com/file/d/1P7nqZwEh3bdigk3e5Zlq4cUxEiqgPEsj/view?usp=drive_link">Midterm Fall 2025 Reference Sheet</a></p>
+  </li>
+  <li>
+    <p><a href="https://drive.google.com/file/d/1ZN4rfjQgjK3bo-zP0v-nU-rfMgwPLKQR/view?usp=drive_link">Midterm Practice Problem Set</a></p>
+  </li>
+  <li>
+    <p><a href="https://drive.google.com/file/d/1KQgo8clefUJGrWFnNnhAdh9lZ6OYhke7/view?usp=drive_link">Midterm Practice Problem Solution</a></p>
+  </li>
+</ul>
+<h2 id="notes">
+  
+  
+    <a href="#notes" class="anchor-heading" aria-labelledby="notes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Notes
+  
+  
+</h2>
+    
+
+<ul>
+  <li><a href="docs/notes/lecture-notes-from-sahai/webpage/lecture-notes-from-sahai/">Lecture notes</a> from Prof. Anant Sahai’s offering.</li>
+  <li><a href="https://people.eecs.berkeley.edu/~jrs/papers/machlearn.pdf">Notes</a> from Prof. Jonathan Shewchuk’s iteration of the course.</li>
+  <li><a href="http://gwthomas.github.io/docs/math4ml.pdf">Mathematics for Machine Learning</a> by Garrett Thomas.</li>
+  <li><a href="https://github.com/josh-tobin/cs189-su18">Lecture slides and code</a> from Josh Tobin.</li>
+  <li><a href="http://alvinwan.com/cs189/">Notes and Practice</a> from Alvin Wan.</li>
+  <li><a href="https://drive.google.com/drive/u/0/folders/1BM-6LCi15RfjTSAjJ2A8G16w5DqB0UDv">Discussion Slides</a> from Arvind Rajaraman.</li>
+</ul>
+<h2 id="coding-and-mathematics-resources">
+  
+  
+    <a href="#coding-and-mathematics-resources" class="anchor-heading" aria-labelledby="coding-and-mathematics-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Coding and Mathematics Resources
+  
+  
+</h2>
+    
+<h3 id="pandas">
+  
+  
+    <a href="#pandas" class="anchor-heading" aria-labelledby="pandas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pandas
+  
+  
+</h3>
+    
+
+<ul>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">Pandas API documentation</a></li>
+  <li><a href="http://nbviewer.jupyter.org/github/jvns/pandas-cookbook/tree/master/cookbook/">The Pandas Cookbook</a>: This provides a nice overview of some of the basic Pandas functions. However, it is slightly out of date.</li>
+  <li><a href="https://bitbucket.org/hrojas/learn-pandas">Learn Pandas</a> A set of lessons providing an overview of the Pandas library.</li>
+  <li><a href="http://wavedatalab.github.io/datawithpython/index.html">Python for Data Science</a> Another set of notebook demonstrating Pandas functionality.</li>
+</ul>
+<h3 id="latex">
+  
+  
+    <a href="#latex" class="anchor-heading" aria-labelledby="latex"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> LaTeX
+  
+  
+</h3>
+    
+
+<ul>
+  <li><a href="https://www.overleaf.com/learn">Quick Guide to Overleaf and LaTeX</a></li>
+</ul>
+<h3 id="data-visualization">
+  
+  
+    <a href="#data-visualization" class="anchor-heading" aria-labelledby="data-visualization"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Data Visualization:
+  
+  
+</h3>
+    
+
+<ul>
+  <li><a href="https://plotly.com/python/plotly-fundamentals/">Plotly fundamentals</a>.</li>
+  <li><a href="https://seaborn.pydata.org/">Seaborn API documentation</a>.</li>
+  <li><a href="http://matplotlib.org/users/pyplot_tutorial.html#pyplot-tutorial">matplotlib.pyplot tutorial</a>: This short tutorial provides an overview of the basic plotting utilities we will be using.</li>
+  <li><a href="https://pandastutor.com">Pandas Tutor</a>.</li>
+</ul>
+<h3 id="calculus-and-linear-algebra">
+  
+  
+    <a href="#calculus-and-linear-algebra" class="anchor-heading" aria-labelledby="calculus-and-linear-algebra"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Calculus and Linear Algebra
+  
+  
+</h3>
+    
+
+<ul>
+  <li>
+    <p>Khan Academy:
+<a href="https://www.khanacademy.org/math/calculus-1/cs1-derivatives-definition-and-basic-rules">Derivatives, Definitions, and Basic Rules</a>;
+<a href="https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives">Multivariable Derivatives</a></p>
+  </li>
+  <li>
+    <p>Math 53: <a href="https://www.youtube.com/watch?v=GUrHFmPn-W4&amp;ab_channel=PeterKoroteev">Derivatives of Vector Functions</a></p>
+  </li>
+  <li>EECS 16A notes/assignments:
+Vector and Matrix Operations
+(<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note2A.pdf">Note 2A</a>,
+<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note2B.pdf">Note 2B</a>);
+Span, Linear Dependence/Independence (<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note3.pdf">Note 3</a>);
+Linear Transformations (<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note5.pdf">Note 5</a>);
+Matrix Inversion (<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note6.pdf">Note 6</a>);
+Vector Subspaces (<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note7.pdf">Note 6</a>);
+Inner Products (<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note21.pdf">Note 21</a>);
+Least Squares (<a href="https://inst.eecs.berkeley.edu/~ee16a/fa19/lecture/Note23.pdf">Note 23</a>);</li>
+  <li>Math 54: Prof. Alex Paulin <a href="https://math.berkeley.edu/~apaulin/54_002(Spring2018).html">Video Lectures</a></li>
+  <li>Data 100 textbook: Geometric Perspective of Linear Projection (<a href="https://www.textbook.ds100.org/ch/15/linear_multi_fit.html">Chapter 15</a>); Vector Spaces (<a href="https://www.textbook.ds100.org/ch/a02/vector_space_review.html">Appendix 2</a>)</li>
+  <li>3Blue1Brown: <a href="https://www.3blue1brown.com/essence-of-linear-algebra-page">Essence of Linear Algebra</a></li>
+  <li>Khan Academy: <a href="https://www.khanacademy.org/math/linear-algebra">Linear Algebra</a></li>
+  <li>MIT OpenCourseware: <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/">Linear Algebra Video Lectures</a></li>
+</ul>
+<h3 id="probability">
+  
+  
+    <a href="#probability" class="anchor-heading" aria-labelledby="probability"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Probability
+  
+  
+</h3>
+    
+
+<ul>
+  <li>We’d also like to point you to the <a href="https://www.eecs70.org/">CS70 website</a> or <a href="http://stat88.org/textbook/content/intro.html">textbook for Data C88S</a>.</li>
+</ul>
+<h2 id="wellness-resources">
+  
+  
+    <a href="#wellness-resources" class="anchor-heading" aria-labelledby="wellness-resources"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Wellness Resources
+  
+  
+</h2>
+    
+
+<p>Your well-being matters, and we hope that CS 189 is <em>never</em> a barrier to taking care of your mental and physical health. Below are some campus resources that may be helpful.</p>
+<h3 id="for-academic-performance-support-and-technology">
+  
+  
+    <a href="#for-academic-performance-support-and-technology" class="anchor-heading" aria-labelledby="for-academic-performance-support-and-technology"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For academic performance, support, and technology
+  
+  
+</h3>
+    
+
+<p class="no_toc">The <a href="https://engineering.berkeley.edu/student-services/academic-support">Center for Access to Engineering Excellence</a> (325 Davis Hall) is an inclusive center that offers study spaces, nutritious snacks, and tutoring in &gt;50 courses for Berkeley engineers and other majors across campus. The Center also offers a wide range of professional development, leadership, and wellness programs, and loans iClickers, laptops, and professional attire for interviews.</p>
+
+<p>As the primary academic support service for undergraduates at UC Berkeley, the <a href="http://slc.berkeley.edu/">Student Learning Center</a> (510-642-7332) assists students in transitioning to Cal, navigating the academic terrain, creating networks of resources, and achieving academic, personal, and professional goals. Through various services, including tutoring, study groups, workshops, and courses, SLC supports undergraduate students in the following areas: Biological and Physical Sciences, Business Administration, Computer Science, Economics, Mathematics, Social Sciences, Statistics, Study Strategies, and Writing.</p>
+
+<p>The <a href="http://eop.berkeley.edu/">Educational Opportunity Program</a> (EOP, Cesar Chavez Student Center 119; 510-642-7224) at Cal has provided first-generation and low-income college students with the guidance and resources necessary to succeed at the best public university in the world. EOP’s individualized academic counseling, support services, and extensive campus referral network help students develop the unique gifts and talents they each bring to the university, while empowering them to achieve their goals.</p>
+
+<p>Students can access device lending options through the Student Technology Equity Program <a href="https://studenttech.berkeley.edu/devicelending">STEP</a> program.</p>
+<h3 id="for-mental-well-being">
+  
+  
+    <a href="#for-mental-well-being" class="anchor-heading" aria-labelledby="for-mental-well-being"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For mental well-being
+  
+  
+</h3>
+    
+
+<p class="no_toc">The staff of the <a href="https://uhs.berkeley.edu/caps">UHS Counseling and Psychological Services</a> (located at the Tang Center, 2222 Bancroft Way; 510-642-9494; for after-hours support, please call the 24/7 line at 855-817-5667) provides confidential, brief counseling and crisis intervention to students experiencing personal, academic, and career-related stress. Services are provided by a multicultural group of professional counselors, including psychologists, social workers, and advanced-level trainees. All undergraduate and graduate students are eligible for CAPS services, regardless of insurance coverage.</p>
+
+<p>To improve access for engineering students, a licensed psychologist from the Tang Center also holds walk-in appointments for confidential counseling in Bechtel Engineering Center 241 (check <a href="https://engineering.berkeley.edu/student-services/advising-counseling">here</a> for schedule).</p>
+<h3 id="for-disability-accommodations">
+  
+  
+    <a href="#for-disability-accommodations" class="anchor-heading" aria-labelledby="for-disability-accommodations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For disability accommodations
+  
+  
+</h3>
+    
+
+<p class="no_toc">The <a href="https://dsp.berkeley.edu/">Disabled Students’ Program</a> (DSP, 260 César Chávez Student Center #4250; 510-642-0518) serves students with disabilities of all kinds, including mobility impairments, blind or low vision, deaf or hard of hearing; chronic illnesses (chronic pain, repetitive strain injuries, brain injuries, AIDS/HIV, cancer, etc.) psychological disabilities (bipolar disorder, severe anxiety or depression, etc.), Attention Deficit Disorder/Attention Deficit Hyperactivity Disorder, and Learning Disabilities. Services are individually designed and based on the specific needs of each student, as identified by the DSP’s specialists. The Program’s official website includes information on DSP staff, UCB’s disabilities policy, application procedures, campus access guides for most university buildings, and portals for students and faculty.</p>
+<h3 id="for-solving-a-dispute">
+  
+  
+    <a href="#for-solving-a-dispute" class="anchor-heading" aria-labelledby="for-solving-a-dispute"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For solving a dispute
+  
+  
+</h3>
+    
+
+<p class="no_toc">The <a href="https://sa.berkeley.edu/Ombuds">Ombudsperson for Students</a> (Sproul Hall 250; 510-642-5754) offers a confidential service for students involved in a University-related issue (academic or administrative), serving as a neutral complaint resolver and not as an advocate for any of the parties involved in a dispute. The Ombudsperson can provide information on policies and procedures affecting students, facilitate students’ contact with services that can assist in resolving problems, and assist students with complaints concerning the improper application of University policies or procedures. All matters referred to this office are held in strict confidence. The only exceptions, at the sole discretion of the Ombudsperson, are cases where there appears to be an imminent threat of serious harm.</p>
+
+<p>The <a href="https://advocate.berkeley.edu/">Student Advocate’s Office</a> (SAO) is an executive, non-partisan office of the ASUC. We offer free, confidential casework services and resources to any student(s) navigating issues with the University, including academic, conduct, financial aid, and grievance concerns. All support is centered around students and aims for an equity-based approach.</p>
+<h3 id="for-recovery-from-sexual-harassment-or-sexual-assault">
+  
+  
+    <a href="#for-recovery-from-sexual-harassment-or-sexual-assault" class="anchor-heading" aria-labelledby="for-recovery-from-sexual-harassment-or-sexual-assault"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For recovery from sexual harassment or sexual assault
+  
+  
+</h3>
+    
+
+<p class="no_toc">The <a href="https://care.berkeley.edu/care-line/">Care Line</a> (510-643-2005) is a 24/7, confidential, free, campus-based resource for urgent support around sexual assault, sexual harassment, interpersonal violence, stalking, and invasion of sexual privacy. The Care Line will connect you with a confidential advocate for trauma-informed crisis support, including time-sensitive information, securing urgent safety resources, and accompaniment to medical care or reporting.</p>
+<h3 id="for-social-services">
+  
+  
+    <a href="#for-social-services" class="anchor-heading" aria-labelledby="for-social-services"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For social services
+  
+  
+</h3>
+    
+
+<p class="no_toc"><a href="http://uhs.berkeley.edu/students/counseling/socialservices.shtml">Social Services</a> offers confidential services and counseling to assist students in managing problems that may arise from illness, including financial, academic, legal, and family concerns, among others. They specialize in helping students with pregnancy resources and referrals; alcohol/drug problems related to one’s own or a family member’s use; sexual assault/rape; relationship or other violence; and support for health concerns, new diagnoses or ongoing conditions. Social Services staff will assess a student’s immediate needs, work with the student to develop a plan to meet those needs, and facilitate arrangements with academic departments. They will also advocate for the student with other campus offices and community agencies, as well as coordinate services within UHS.</p>
+<h3 id="for-finding-community-on-campus">
+  
+  
+    <a href="#for-finding-community-on-campus" class="anchor-heading" aria-labelledby="for-finding-community-on-campus"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For finding community on campus
+  
+  
+</h3>
+    
+
+<p class="no_toc">The mission of the <a href="https://internationaloffice.berkeley.edu">Berkeley International Office</a> is to provide support with all the essential resources needed to not only survive, but thrive here at UC Berkeley. Their mission is to support you and work together towards justice and belonging for all. They define Basic Needs as the essential resources that impact your health, belonging, persistence, and overall well-being. It is an ecosystem that includes: nutritious food, stable housing, hygiene, transportation, healthcare, mental wellness, financial sustainability, sleep, and emergency dependent services. They refuse to accept hunger, homelessness, and all other basic needs injustices as part of our university.</p>
+
+<p>The <a href="https://cejce.berkeley.edu/geneq">Gender Equity Resource Center</a>, also known as GenEq, is a UC Berkeley campus community center dedicated to promoting an inclusive Cal experience for all. GenEq is the campus location where students, faculty, staff, and Alumni connect for resources, services, education, and leadership programs related to gender and sexuality. The programs and services of the Gender Equity Resource Center are focused on four key areas: women; lesbian, gay, bisexual, and transgender (LGBT); sexual and dating violence; and hate crimes and bias-driven incidents. GenEq strives to provide a space for respectful dialogue about sexuality and gender; illuminate the interrelationship of sexism, homophobia and gender bias and violence; create a campus free of violence and hate; provide leadership opportunities; advocate on behalf of survivors of sexual, hate, dating and gender violence; foster a community of women and LGBT leaders; and be a portal to campus and community resources on LGBT, Women, and the many intersections of identity (e.g., race, class, ability, etc.).</p>
+
+<p>The <a href="https://undocu.berkeley.edu/">Undocumented Students Program</a> (119 Cesar Chavez Center; 642-7224) practices a holistic, multicultural, and solution-focused approach that delivers individualized service for each student. The academic counseling, legal support, financial aid resources, and extensive campus referral network provided by USP help students develop the unique gifts and talents they each bring to the university while empowering a sense of belonging. The program’s mission is to support the advancement of undocumented students within higher education and promote pathways for engaged scholarship.</p>
+
+<p>The <a href="http://mep.berkeley.edu/">Multicultural Education Program</a> (MEP) is one of six initiatives funded by the Evelyn and Walter Haas, Jr. Fund to work towards institutional change and to create a positive campus climate for diversity. The MEP is a five-year initiative to establish a sustainable infrastructure for activities such as educational consultations and diversity workshops on campus, addressing both specific topics and catering to group needs across the campus.</p>
+<h3 id="for-basic-needs-food-shelter-etc">
+  
+  
+    <a href="#for-basic-needs-food-shelter-etc" class="anchor-heading" aria-labelledby="for-basic-needs-food-shelter-etc"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For basic needs (food, shelter, etc.)
+  
+  
+</h3>
+    
+
+<p class="no_toc">The <a href="https://basicneeds.berkeley.edu/home">Basic Needs Center</a> (lower level of MLK Student Union, Suite 72) provides support with all the essential resources needed to not only survive, but thrive here at UC Berkeley. Their mission is to support you and work together towards justice and belonging for all. They define Basic Needs as the essential resources that impact your health, belonging, persistence, and overall well-being. It is an ecosystem that includes: nutritious food, stable housing, hygiene, transportation, healthcare, mental wellness, financial sustainability, sleep, and emergency dependent services. They refuse to accept hunger, homelessness, and all other basic needs injustices as part of our university.</p>
+
+<p>The <a href="https://pantry.berkeley.edu/">UC Berkeley Food Pantry</a> (#68 Martin Luther King Student Union) aims to reduce food insecurity among students and staff at UC Berkeley, especially the lack of nutritious food. Students and staff are welcome to visit the pantry as often as needed and take as much as they require, while being mindful that it is a shared resource. The pantry operates on a self-assessed need basis, with no eligibility requirements. The pantry is not for students and staff who need supplemental snacking food, but rather, core food support.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+      <p><a href="#top" id="back-to-top">Back to Top</a></p>
+    
+
+    <!-- This file comes from Just The Docs.
+ This footer should be included on all EECS/DS sites.
+--><p class="text-small text-grey-dk-100 my-1">
+  <a rel="nofollow noopener" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue" target="_blank" class="pr-2">Accessibility</a>
+  <a rel="nofollow noopener" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement" target="_blank" class="px-2">Nondiscrimination</a>
+</p>
+
+<!-- Use this to add additional content. -->
+<p class="text-small text-lighter m-0">
+  Copyright ©2026, Regents of the University of California and respective authors.
+</p>
+
+<p class="fs-1 text-lighter my-1">
+  This site is built following the <a href="https://github.com/just-the-docs/just-the-docs" target="_blank" rel="noopener">Berkeley Class Site</a> template, which is generously based on the <a href="https://github.com/kevinlin1/just-the-class" target="_blank" rel="noopener">Just the Class</a>, and <a href="https://github.com/just-the-docs/just-the-docs" target="_blank" rel="noopener">Just the Docs</a> templates.
+</p>
+
+
+    
+      <div class="d-flex mt-2">
+        
+        
+      </div>
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
