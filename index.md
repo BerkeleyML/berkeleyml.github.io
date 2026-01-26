@@ -4,9 +4,9 @@ title: Home / Schedule
 nav_order: 1
 description: A week-to-week description of the content covered in the course.
 course:
-  edstem: https://edstem.org/us/courses/81430
-  faq: https://ds100.org/faqs/sp25
-currWeekNumber: 1
+  edstem: 
+  faq: 
+currWeekNumber: 2
 ---
 
 # CS 189/289A: Intro to Machine Learning

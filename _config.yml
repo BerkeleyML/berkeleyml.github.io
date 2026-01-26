@@ -101,6 +101,8 @@ aux_links:
   #   - 'https://bcourses.berkeley.edu/courses/1553292'
   Edstem:
     - 'https://edstem.org/us/courses/94609'
+  Office Hours Queue:
+    - 'https://cs189-oh.eecs.berkeley.edu/'
 aux_links_new_tab: true
 
 ######################################################################
