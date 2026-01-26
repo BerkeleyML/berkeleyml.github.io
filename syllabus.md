@@ -71,17 +71,9 @@ Below is a high-level “typical week in the course” for {{page.course.semeste
 
 ### Lecture
 <!-- TBD location -->
-There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150. Attendance is in person and live-streamed on Zoom, and we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone. 
+There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/6324076985). Attendance is not required; however, in-class participation using Slido polls will be monitored for potential homework extra credit (see [Participation Extra Credit](#participation-extra-credit)).
 
-Recordings, slides, and any in-class materials will be posted on the course website within 24 hours whenever possible.
-
-**Lecture participation**: While synchronous lecture attendance (in-person or through Zoom) is not mandatory, we expect you to "participate" in lecture by answering lecture poll questions in one of two ways: (1) synchronously during the lecture as poll questions are launched; or (2) asynchronously using a link provided after lecture.
-
-- Lecture participation is graded using poll responses on a 0/1 basis.
-  - Synchronous Participation: complete at least one participation poll question during the live lecture timeslot (2:00pm-3:30pm, Tuesdays and Thursdays). As long as you submit a response to at least one poll question in this timeframe, you will receive synchronous attendance credit.
-  - Asynchronous Participation: complete all participation poll questions from the link provided on the course website within one week of the corresponding lecture.
-  - In both cases, participation is graded on completion, not correctness.
-- See the [Policies](#policies) section for lecture participation drops.
+Recordings, slides, and any in-class materials will be posted on the course website. However, we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone.
 
 ### Discussion
 
@@ -140,7 +132,7 @@ Course Communication:
   - Ed is your primary platform for asking questions about the class. It is monitored daily by course staff, so questions posted to Ed will likely receive the fastest response. If you need to discuss a more sensitive matter, the following emails are monitored by a smaller subset of the teaching team:
 
 - For sensitive questions: our course staff email is [cs189-instructors@berkeley.edu](mailto:{{page.course.email}}). This email is monitored by the instructors, the head TAs, and a few lead TAs.
-- For course accomodations/DSP: student accommodation requests will be handled via the [Additional Accommodations Form](https://TBD){:target="\_blank"}. Our staff email for student support and DSP accommodations is [cs189-instructors@berkeley.edu](<(mailto:{{page.course.comms_email}})>).
+- For course accomodations/DSP: student accommodation requests will be handled via the [Additional Accommodations Form](https://TBD){:target="\_blank"}. Our staff email for student support and DSP accommodations is [cs189-instructors@berkeley.edu](mailto:{{page.course.comms_email}}).
   - Please only contact the course instructors directly for matters that require strict privacy and their personal attention.
 
 ## Policies
@@ -154,7 +146,13 @@ Course Communication:
 | Final Exam             | 40%    | 35%     |                                                                          |
 | Graduate Final Project | —      | 20%     | CS 289 only.                                                             |
 
-While we do not have homework drops this semester, we will offer slip days for homeworks, as well as an [Additional Accommodations Form](https://TBD){:target="\_blank"}. See the next sections for more details.
+### Participation Extra Credit
+
+You can earn up to **5% extra credit on homeworks** through course participation via Ed and in-class Slido polls. Slido polls will only be shown during live lecture and do not have an asynchronous participation option.
+
+Extra credit will be awarded entirely based on staff discretion, considering the frequency of quality participation—for example, thorough and helpful responses to a peer’s question about a lecture topic or homework concept, or a great synthesis of lecture notes or content in a lecture thread. Staff will be tracking participation internally throughout the semester.
+
+The two homework assignments with the lowest percent scores will be dropped when calculating your final homework grade. We will also offer slip days for homeworks, as well as an [Additional Accommodations Form](https://TBD){:target="\_blank"}. See the next sections for more details.
 
 ### On-Time Submission
 
