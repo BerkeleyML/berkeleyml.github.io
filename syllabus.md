@@ -71,7 +71,7 @@ Below is a high-level “typical week in the course” for {{page.course.semeste
 
 ### Lecture
 <!-- TBD location -->
-There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/6324076985). Attendance is not required; however, in-class participation using Slido polls will be monitored for potential homework extra credit (see [Participation Extra Credit](#participation-extra-credit)).
+There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/6324076985). Attendance is not required; Slido participation is encouraged, and homework extra credit is earned through Ed (see [Participation Extra Credit](#participation-extra-credit)).
 
 Recordings, slides, and any in-class materials will be posted on the course website. However, we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone.
 
@@ -93,6 +93,8 @@ Homework assignments might include both **mathematical derivations** and **codin
 
 While collaboration is encouraged for discussing approaches, all solutions must be written up individually in your own words and code, in accordance with the [Collaboration Policy](#collaboration-policy-and-academic-honesty).
 
+- All homeworks are weighted equally, and we automatically drop the homework with the lowest percent score.
+- Homeworks are self-graded. Staff will spot-check certain problems and adjust grades if needed.
 - All homeworks must be submitted to Gradescope by their posted deadlines. There may be separate coding and written Gradescope portals for the same assignment; please check that you are submitting the right part.
 - Homeworks and projects have both public (visible) and hidden autograder tests. The public tests are mainly sanity checks. For example, a sanity check might verify that the answer you entered is a number as expected, and not a word. The hidden tests generally check for correctness, and are invisible to students while they are completing the assignment.
 - The primary form of support students will have for homeworks and projects are **office hours** and **Ed**.
@@ -148,16 +150,17 @@ Course Communication:
 
 ### Participation Extra Credit
 
-You can earn up to **5% extra credit on homeworks** through course participation via Ed and in-class Slido polls. Slido polls will only be shown during live lecture and do not have an asynchronous participation option.
+Homework extra credit comes only from Ed participation. Each staff-endorsed Ed post earns **+0.1% homework extra credit**, capped at **5%** total.
 
-Extra credit will be awarded entirely based on staff discretion, considering the frequency of quality participation—for example, thorough and helpful responses to a peer’s question about a lecture topic or homework concept, or a great synthesis of lecture notes or content in a lecture thread. Staff will be tracking participation internally throughout the semester.
+Staff endorsements reflect quality participation (for example, thorough and helpful responses to a peer’s question about a lecture topic or homework concept, or a great synthesis of lecture notes in a lecture thread). Staff will be tracking participation internally throughout the semester.
 
-The two homework assignments with the lowest percent scores will be dropped when calculating your final homework grade. We will also offer slip days for homeworks, as well as an [Additional Accommodations Form](https://TBD){:target="\_blank"}. See the next sections for more details.
+Slido participation is encouraged but does not count toward extra credit.
 
 ### On-Time Submission
 
 All assignments are due at **_11:59 PM Pacific Time_** on the due date specified on the [Home / Schedule](..) page. The date and time of this deadline are firm. Submitting even a minute past is considered late.
 
+<!--
 ### Slip Days
 
 Each student gets an extension budget of **10** total slip days for the 10 homework deadlines (so use them wisely). You can apply these slip days to homework during the semester.
@@ -169,6 +172,7 @@ Slip days are automatically applied based on the additional hours you take to su
 > If all 10 slip days are used for the first two homework assignments (for example), you are out of slip days and cannot ask us to not consider one of the slip days previously used.
 
 Each homework can have a maximum of **4** slip days applied. After 4 days of the assignment due date, we will be not able to accept your submission unless you have additional accommodations. Slip days should be reserved for unforeseen circumstances. You should not plan to use your slip days regularly.
+-->
 
 ### Additional Accommodations
 
@@ -179,7 +183,7 @@ The **[Additional Accommodations Form](https://TBD){:target="\_blank"}** is for 
 We recognize that at times, it can be difficult to manage your course performance - particularly at Berkeley’s high standards. Sometimes emergencies just come up (personal health emergency, family emergency, etc.). The [Additional Accommodations Form](https://TBD){:target="\_blank"} is meant to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. So please do not hesitate to reach out.
 
 Note that you **cannot** use the Additional Accommodations Form if you encounter a logistical oversight, such as Gradescope tests not passing, submitting only one portion of the homework, submitting to the wrong assignment portal, or not properly tagging pages on Gradescope. It is the students’ responsibility to identify and resolve these issues well in advance of the on-time deadline.
-We will not grant accommodations for these cases; instead, please use slip days to cushion these submission errors.
+We will not grant accommodations for these cases.<!-- ; instead, please use slip days to cushion these submission errors. -->
 
 Finally, simply submitting a request does not guarantee you will receive an extension. You must submit your requests before running out of slip days. **Even if your work is incomplete, please submit before the deadline so you can receive credit for the work you did complete.**
 
