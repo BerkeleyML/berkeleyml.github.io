@@ -160,38 +160,24 @@ Slido participation is encouraged but does not count toward extra credit.
 
 All assignments are due at **_11:59 PM Pacific Time_** on the due date specified on the [Home / Schedule](..) page. The date and time of this deadline are firm. Submitting even a minute past is considered late.
 
-<!--
-### Slip Days
-
-Each student gets an extension budget of **10** total slip days for the 10 homework deadlines (so use them wisely). You can apply these slip days to homework during the semester.
-
-Slip days are automatically applied based on the additional hours you take to submit any assignment after its given deadline. Slip days are rounded up to the next day. For instance, 1 minute late counts as 1 day late. We will use the submission time as displayed on Gradescope.
-
-{: .note }
-
-> If all 10 slip days are used for the first two homework assignments (for example), you are out of slip days and cannot ask us to not consider one of the slip days previously used.
-
-Each homework can have a maximum of **4** slip days applied. After 4 days of the assignment due date, we will be not able to accept your submission unless you have additional accommodations. Slip days should be reserved for unforeseen circumstances. You should not plan to use your slip days regularly.
--->
-
 ### Additional Accommodations
 
 We recognize that our students come from varied backgrounds and have widely-varying experiences. If you require any additional accommodations any time in the semester, please do not hesitate to let us know. The sooner we are made aware, the more options we have available for us to help you.
 
-The **[Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}** is for any circumstances that cannot be resolved via slip days and drops. Within two business days of filling out the form, a member of course staff will reach out to you and provide a space for conversation, as well as to arrange course/grading accommodations as necessary. For more information, please email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu).
+The **[Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}** is for any circumstances that cannot be resolved via the built-in homework drop policy. Within two business days of filling out the form, a member of course staff will reach out to you and provide a space for conversation, as well as to arrange course/grading accommodations as necessary. For more information, please email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu).
 
 We recognize that at times, it can be difficult to manage your course performance - particularly at Berkeley’s high standards. Sometimes emergencies just come up (personal health emergency, family emergency, etc.). The [Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"} is meant to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. So please do not hesitate to reach out.
 
 Note that you **cannot** use the Additional Accommodations Form if you encounter a logistical oversight, such as Gradescope tests not passing, submitting only one portion of the homework, submitting to the wrong assignment portal, or not properly tagging pages on Gradescope. It is the students’ responsibility to identify and resolve these issues well in advance of the on-time deadline.
-We will not grant accommodations for these cases.<!-- ; instead, please use slip days to cushion these submission errors. -->
+We will not grant accommodations for these cases.
 
-Finally, simply submitting a request does not guarantee you will receive an extension. You must submit your requests before running out of slip days. **Even if your work is incomplete, please submit before the deadline so you can receive credit for the work you did complete.**
+Finally, simply submitting a request does not guarantee you will receive an extension. You must submit your requests before the assignment deadline. **Even if your work is incomplete, please submit before the deadline so you can receive credit for the work you did complete.**
 
 ### DSP Accommodations
 
 {: .important }
 
-If you are registered with the Disabled Students’ Program (DSP), you will receive an email from us during the first week of classes. Otherwise, email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu). Students may request extensions through the **[Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}**. For DSP students, extension requests of up to **2 days** are automatically approved (though all students must still submit the request). Please note: for any single assignment, the total of all extensions plus slip days cannot exceed **7 days**. Beyond **7 days**, you are required to meet with a staff member for additional support.
+If you are registered with the Disabled Students’ Program (DSP), you will receive an email from us during the first week of classes. Otherwise, email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu). Students may request extensions through the **[Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}**. For DSP students, extension requests of up to **2 days** are automatically approved (though all students must still submit the request). Please note: for any single assignment, the total extension cannot exceed **7 days**. Beyond **7 days**, you are required to meet with a staff member for additional support.
 
 You are responsible for reasonable communication with course staff. If you make a request close to the deadline, we can not guarantee that you will receive a response before the deadline. Additionally, simply submitting a request does not guarantee you will receive an extension. **Even if your work is incomplete, please submit before the deadline so you can receive work for the work you did complete.**
 

@@ -22,9 +22,6 @@ Below are quick answers to common questions. For full details, see the [Syllabus
 - **How are homeworks structured and when are they due?**
   There are 5 homeworks. Each has two parts: Part 1 (Warmup) and Part 2 (Main). Both parts are released together. Deadlines are 11:59 PM Pacific on posted dates. Submit on Gradescope (written and/or coding portals as applicable).
 
-- **How do slip days work?**
-  You have 10 total slip days across all homeworks, with a maximum of 4 per homework. Slip days apply automatically by submission timestamp; any amount late up to 24 hours counts as 1 slip day. After 4 days late, submissions aren’t accepted without approved accommodations.
-
 - **Are there alternate exams?**
   No. There are two in-person exams (Midterm and Final). See the [Syllabus → Exams](../syllabus#exams) for dates and policies.
 
@@ -44,6 +41,6 @@ Below are quick answers to common questions. For full details, see the [Syllabus
   Office hours are on the [Calendar](../calendar). Use Ed for course Q&A and announcements. For sensitive matters, email the staff at {{ page.course.email | default: 'cs189-instructors@berkeley.edu' }}.
 
 - **How do additional accommodations and DSP work?**
-  Use the [Additional Accommodations Form](https://forms.gle/spBZoWV4XZcxqZjh8){:target="_blank"} for situations not covered by slip days. DSP students receive approved extensions (2-day automatic extension on homeworks). Extension + slip days must be ≤ 7 days without a required meeting. See [Syllabus → DSP Accommodations](../syllabus#dsp-accommodations).
+  Use the [Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="_blank"} for situations not covered by the homework drop policy. DSP students receive approved extensions (2-day automatic extension on homeworks). Extensions beyond 7 days require a required meeting. See [Syllabus → DSP Accommodations](../syllabus#dsp-accommodations).
 
  -->
