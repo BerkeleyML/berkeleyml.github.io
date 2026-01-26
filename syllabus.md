@@ -71,7 +71,7 @@ Below is a high-level “typical week in the course” for {{page.course.semeste
 
 ### Lecture
 <!-- TBD location -->
-There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/6324076985). Attendance is not required; Slido participation is encouraged, and homework extra credit is earned through Ed (see [Participation Extra Credit](#participation-extra-credit)).
+There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/6324076985). Attendance is not required.
 
 Recordings, slides, and any in-class materials will be posted on the course website. However, we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone.
 
@@ -84,10 +84,10 @@ We will hold three one hour-long discussion sections this semester on Tuesdays a
 
 There will be **5 homework assignments** over the semester. Each homework spans **three weeks** and consists of two parts:
 
-- **Part 1: Warmup** — shorter, designed to introduce the concepts and techniques needed for the main assignment. Typically due within **1–2 weeks** of release.
+- **Part 1: Warmup** — shorter, designed to introduce the concepts and techniques needed for the main assignment. Due **three weeks** after the homework is first released.
 - **Part 2: Main Homework** — more in-depth, building on the warmup and requiring a deeper application of the material. Due **three weeks** after the homework is first released.
 
-Both the warmup and the main homework will be **released at the same time**, so you can plan your work across the full three-week period.
+Both the warmup and the main homework will be **released at the same time** and share the **same deadline**, so you can plan your work across the full three-week period.
 
 Homework assignments might include both **mathematical derivations** and **coding tasks**, submitted on Gradescope. Some components will be autograded, while others will be graded manually for correctness and clarity.
 
@@ -110,7 +110,7 @@ There will be two exams in this course:
 >
 > - **Final** on **Monday, May 11** from **11:30 AM – 2:30 PM**
 
-**All exams must be taken in-person.** There will be no alternate exams offered.
+**All exams must be taken in-person.** There will be no alternate exams offered. For truly exceptional circumstances, we will allow the final to clobber the midterm via a Z-score-based replacement.
 
 ### Graduate Final Project
 
@@ -134,7 +134,7 @@ Course Communication:
   - Ed is your primary platform for asking questions about the class. It is monitored daily by course staff, so questions posted to Ed will likely receive the fastest response. If you need to discuss a more sensitive matter, the following emails are monitored by a smaller subset of the teaching team:
 
 - For sensitive questions: our course staff email is [cs189-instructors@berkeley.edu](mailto:{{page.course.email}}). This email is monitored by the instructors, the head TAs, and a few lead TAs.
-- For course accomodations/DSP: student accommodation requests will be handled via the [Additional Accommodations Form](https://TBD){:target="\_blank"}. Our staff email for student support and DSP accommodations is [cs189-instructors@berkeley.edu](mailto:{{page.course.comms_email}}).
+- For course accomodations/DSP: student accommodation requests will be handled via the [Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}. Our staff email for student support and DSP accommodations is [cs189-instructors@berkeley.edu](mailto:{{page.course.comms_email}}).
   - Please only contact the course instructors directly for matters that require strict privacy and their personal attention.
 
 ## Policies
@@ -178,9 +178,9 @@ Each homework can have a maximum of **4** slip days applied. After 4 days of the
 
 We recognize that our students come from varied backgrounds and have widely-varying experiences. If you require any additional accommodations any time in the semester, please do not hesitate to let us know. The sooner we are made aware, the more options we have available for us to help you.
 
-The **[Additional Accommodations Form](https://TBD){:target="\_blank"}** is for any circumstances that cannot be resolved via slip days and drops. Within two business days of filling out the form, a member of course staff will reach out to you and provide a space for conversation, as well as to arrange course/grading accommodations as necessary. For more information, please email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu).
+The **[Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}** is for any circumstances that cannot be resolved via slip days and drops. Within two business days of filling out the form, a member of course staff will reach out to you and provide a space for conversation, as well as to arrange course/grading accommodations as necessary. For more information, please email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu).
 
-We recognize that at times, it can be difficult to manage your course performance - particularly at Berkeley’s high standards. Sometimes emergencies just come up (personal health emergency, family emergency, etc.). The [Additional Accommodations Form](https://TBD){:target="\_blank"} is meant to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. So please do not hesitate to reach out.
+We recognize that at times, it can be difficult to manage your course performance - particularly at Berkeley’s high standards. Sometimes emergencies just come up (personal health emergency, family emergency, etc.). The [Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"} is meant to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. So please do not hesitate to reach out.
 
 Note that you **cannot** use the Additional Accommodations Form if you encounter a logistical oversight, such as Gradescope tests not passing, submitting only one portion of the homework, submitting to the wrong assignment portal, or not properly tagging pages on Gradescope. It is the students’ responsibility to identify and resolve these issues well in advance of the on-time deadline.
 We will not grant accommodations for these cases.<!-- ; instead, please use slip days to cushion these submission errors. -->
@@ -191,7 +191,7 @@ Finally, simply submitting a request does not guarantee you will receive an exte
 
 {: .important }
 
-If you are registered with the Disabled Students’ Program (DSP), you will receive an email from us during the first week of classes. Otherwise, email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu). Students may request extensions through the **[Additional Accommodations Form](https://TBD){:target="\_blank"}**. For DSP students, extension requests of up to **2 days** are automatically approved (though all students must still submit the request). Please note: for any single assignment, the total of all extensions plus slip days cannot exceed **7 days**. Beyond **7 days**, you are required to meet with a staff member for additional support.
+If you are registered with the Disabled Students’ Program (DSP), you will receive an email from us during the first week of classes. Otherwise, email [cs189-instructors@berkeley.edu](mailto:cs189-instructors@berkeley.edu). Students may request extensions through the **[Additional Accommodations Form](https://bit.ly/4qOcZVU){:target="\_blank"}**. For DSP students, extension requests of up to **2 days** are automatically approved (though all students must still submit the request). Please note: for any single assignment, the total of all extensions plus slip days cannot exceed **7 days**. Beyond **7 days**, you are required to meet with a staff member for additional support.
 
 You are responsible for reasonable communication with course staff. If you make a request close to the deadline, we can not guarantee that you will receive a response before the deadline. Additionally, simply submitting a request does not guarantee you will receive an extension. **Even if your work is incomplete, please submit before the deadline so you can receive work for the work you did complete.**
 
