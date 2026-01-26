@@ -78,7 +78,8 @@ Recordings, slides, and any in-class materials will be posted on the course webs
 ### Discussion
 
 Discussion sections provide an opportunity to work through problems, clarify concepts, and gain hands-on experience with the material. Discussion sections are ungraded, but attendance is strongly encouraged. The goal of these TA-led sessions is to reinforce course concepts, develop your problem solving skills, and provide an additional space to ask questions and dive deeper into the course material. The problems that you solve as part of discussion are important in understanding course material.
-We will hold three one hour-long discussion sections this semester on Tuesdays and Wednesdays. Times and locations are available on the [Calendar](../calendar) page. If you would like to attend a discussion section, please indicate your interest and availability in the [Pre-Semester](TBD) Survey by TBD. We will assign you to a section based on your response to this form during the second week of classes. Due to limited room capacities, you should only attend discussion at your assigned time.
+
+This semester, we will offer multiple 1-hour discussion sections on Tuesdays and Wednesdays, as well as a single 2-hour slower-paced section on Wednesdays. Times and locations are listed on the [Calendar](../calendar) page, and may be adjusted based on attendance.
 
 ### Homework and Projects
 
@@ -94,10 +95,10 @@ Homework assignments might include both **mathematical derivations** and **codin
 While collaboration is encouraged for discussing approaches, all solutions must be written up individually in your own words and code, in accordance with the [Collaboration Policy](#collaboration-policy-and-academic-honesty).
 
 - All homeworks are weighted equally, and we automatically drop the homework with the lowest percent score.
-- Homeworks are self-graded. Staff will spot-check certain problems and adjust grades if needed.
+- Homeworks are self-graded. Staff will spot-check certain problems and reserves the right to adjust homework grades if needed.
 - All homeworks must be submitted to Gradescope by their posted deadlines. There may be separate coding and written Gradescope portals for the same assignment; please check that you are submitting the right part.
 - Homeworks and projects have both public (visible) and hidden autograder tests. The public tests are mainly sanity checks. For example, a sanity check might verify that the answer you entered is a number as expected, and not a word. The hidden tests generally check for correctness, and are invisible to students while they are completing the assignment.
-- The primary form of support students will have for homeworks and projects are **office hours** and **Ed**.
+- The primary form of support students will have for homeworks and projects are **homework parties**, **office hours**, and **Ed**.
 - Homeworks must be completed individually, without the usage of any unauthorized resources (CourseHero, etc). See the [Collaboration Policy](#collaboration-policy-and-academic-honesty) for more details.
 
 ### Exams
