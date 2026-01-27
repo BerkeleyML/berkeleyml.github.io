@@ -1,0 +1,108 @@
+# Calendar configuration for the SiteCalendar component.
+# Fill in the values below with your own Google Calendar settings.
+#
+# - google_api_key:
+#   Follow the steps on https://fullcalendar.io/docs/v4/google-calendar
+#   until "Getting Set Up" to obtain the google_api_key.
+# - For the other 3 fields, open the calendar settings:
+#   - Go to https://calendar.google.com
+#   - Click the 3 dots next to the calendar name in the left side-bar
+#   - Click "Settings and sharing"
+# - google_calendar_id:
+#   - Scroll to "Integrate calendar"
+#   - Copy "Calendar ID"
+#   - Looks like: c_c12345@group.calendar.google.com
+# - google_calendar_embed_link:
+#   - Scroll to "Integrate calendar"
+#   - Copy "Public URL to this calendar"
+# - google_calendar_add_link:
+#   - Scroll to "Access permissions for events"
+#   - Click "Get shareable link"
+#   - Copy the URL with calendar/u/0?cid= in it
+
+google_api_key: "AIzaSyC6Fwac9uCMigu-mw-fV_LBszNtr8oviN4"
+google_calendar_id: ""
+google_calendar_embed_link: "https://calendar.google.com/calendar/embed?mode=WEEK&src=c_eeb5d06403421c5d1d8e1e484b594f734cc9e72997e5721f646e94277461f0b5@group.calendar.google.com&color=%230b8043&src=c_66a830be30ac0268f904f99250107b2fefc9b43d2545970942710b8b0024c111@group.calendar.google.com&color=%238e24aa&src=c_8e8d6006467fcf5cf80afeea70fc068b4057b0f30abb1a7a1498ec5b7aeaccfa@group.calendar.google.com&color=%231565c0&src=c_b7b05fd9aa96715177431cb68a277dab513131dfc949a61a09f156cb18554695@group.calendar.google.com&color=%23039be5&src=c_885bff102a030a09271eeef610f7b396899c384d223b43d989ed3a88d770cc13@group.calendar.google.com&color=%23d50000&src=c_3bd29413f3b0b22247139e1c51759eb5270a9e479ec651b11c2f3a52b1211cd6@group.calendar.google.com&color=%23f4511e&src=c_f5e70fbbf48d66c58b0be549181799f5619563c1c256bd0ee33410bc688d0e67@group.calendar.google.com&color=%23d81b60&ctz=America/Los_Angeles"
+google_calendar_add_link: ""
+
+# Optional: use multiple calendars instead of google_calendar_id.
+# If set, the calendar will load all IDs listed below.
+calendars:
+  - name: "Lecture"
+    id: "c_eeb5d06403421c5d1d8e1e484b594f734cc9e72997e5721f646e94277461f0b5@group.calendar.google.com"
+  - name: "Exam"
+    id: "c_66a830be30ac0268f904f99250107b2fefc9b43d2545970942710b8b0024c111@group.calendar.google.com"
+  - name: "Discussion"
+    id: "c_8e8d6006467fcf5cf80afeea70fc068b4057b0f30abb1a7a1498ec5b7aeaccfa@group.calendar.google.com"
+  - name: "Online Discussion"
+    id: "c_b7b05fd9aa96715177431cb68a277dab513131dfc949a61a09f156cb18554695@group.calendar.google.com"
+  - name: "Office Hours"
+    id: "c_885bff102a030a09271eeef610f7b396899c384d223b43d989ed3a88d770cc13@group.calendar.google.com"
+  - name: "Online Office Hours"
+    id: "c_3bd29413f3b0b22247139e1c51759eb5270a9e479ec651b11c2f3a52b1211cd6@group.calendar.google.com"
+  - name: "Homework Party"
+    id: "c_f5e70fbbf48d66c58b0be549181799f5619563c1c256bd0ee33410bc688d0e67@group.calendar.google.com"
+
+# If your event titles all share a prefix (e.g., "[CS189 SP26] "),
+# you can remove it here so the site shows clean titles.
+remove_prefix: ""
+
+# Categories control filtering and event colors.
+# Events are matched in order; the first matching category wins.
+categories:
+  - name: "Lecture"
+    match: "lecture"
+    lightTheme:
+      --event-background: "#D6F2E3"
+      --event-border-color: "#0B8043"
+    darkTheme:
+      --event-background: "#0E4A2B"
+      --event-border-color: "#9AD9B6"
+  - name: "Exam"
+    match: "exam|midterm|final|quiz"
+    lightTheme:
+      --event-background: "#E8D8F2"
+      --event-border-color: "#8E24AA"
+    darkTheme:
+      --event-background: "#4A1E5C"
+      --event-border-color: "#D0A9E6"
+  - name: "Discussion"
+    match: "online discussion|remote discussion|zoom discussion"
+    lightTheme:
+      --event-background: "#D9EEFB"
+      --event-border-color: "#039BE5"
+    darkTheme:
+      --event-background: "#0D3B54"
+      --event-border-color: "#8DD0F3"
+  - name: "Discussion"
+    match: "discussion"
+    lightTheme:
+      --event-background: "#D6E6F7"
+      --event-border-color: "#1565C0"
+    darkTheme:
+      --event-background: "#133A66"
+      --event-border-color: "#9EC2EA"
+  - name: "Office Hours"
+    match: "online office hours|remote office hours|zoom office hours"
+    lightTheme:
+      --event-background: "#FADFD6"
+      --event-border-color: "#F4511E"
+    darkTheme:
+      --event-background: "#5A2B1A"
+      --event-border-color: "#F6B59A"
+  - name: "Office Hours"
+    match: "office hours"
+    lightTheme:
+      --event-background: "#F6D4D4"
+      --event-border-color: "#D50000"
+    darkTheme:
+      --event-background: "#4D1A1A"
+      --event-border-color: "#F3A0A0"
+  - name: "Homework Party"
+    match: "(?=.*homework)(?=.*party)|hw party"
+    lightTheme:
+      --event-background: "#F4D6E6"
+      --event-border-color: "#D81B60"
+    darkTheme:
+      --event-background: "#4F1A33"
+      --event-border-color: "#F0A6C4"

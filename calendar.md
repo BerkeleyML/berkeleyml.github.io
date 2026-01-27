@@ -11,25 +11,36 @@ description: Calendars with times for all course events.
 
 > If you are having trouble viewing the calendars below and are using Safari, we suggest switching to an alternate browser (like Chrome). Alternatively, you can go to Safari settings and switch “Prevent cross-site tracking” off, or you can see the _Course Calendar_ [here](https://calendar.google.com/calendar/embed?src=cs189-instructors%40berkeley.edu&ctz=America%2FLos_Angeles).
 
-<!-- {: .note }
-> Almost all non-instructor office hours will be held in-person in Soda-430-438 Woz Lounge. A small, limited portion of office hours are listed as online, primarily to accommodate online/remote students. From our experience in previous semesters, **the office hour experience in-person is much better (and much, much faster) than online**. -->
+{% assign button_groups = site.data.calendar.categories | map: "name" | uniq %}
 
-<a name='ldlc'></a>
+If you would like to view this calendar outside of the course website, click "Open in Google Calendar" below.
 
-## Lecture, Discussion, Office Hours, and Exams Calendar
+[Open in Google Calendar]({{ site.data.calendar.google_calendar_embed_link }}){: .btn .btn-outline .fs-3 }
 
-This calendar contains times for
+{% include calendar.html %}
 
-- Lectures (in <span style="color:#0b8043">**green**</span>)
-- Exams (in <span style="color:#6a1b9a">**purple**</span>)
-- Discussions (in <span style="color:#1565c0">**blue**</span>)
-- Online discussions (in <span style="color:#0277bd">**light blue**</span>)
-- Office hours (in <span style="color:#c62828">**red**</span>)
-- Online office hours (in <span style="color:#c43e00">**orange**</span>)
-- Homework parties (in <span style="color:#ad1457">**pink**</span>)
+<div id="calendarContainer">
+  Alongside tab navigation, the following keyboard shortcuts are available for use on this page:
+  <div id="calendarShortcuts" class="justify-content-between">
+    <span class="shortcut"><kbd aria-label="Left Arrow" title="Left Arrow" style="margin-right: 0.2em;">￩</kbd> Jump to Previous Period</span>
+    <span class="shortcut"><kbd aria-label="Right Arrow" title="Right Arrow" style="margin-right: 0.2em;">￫</kbd> Jump to Next Period</span>
+    <span class="shortcut"><kbd style="margin-right: 0.2em;">t</kbd> Jump to Today</span>
+    <span class="shortcut"><kbd style="margin-right: 0.2em;">d</kbd> Switch to Day View</span>
+    <span class="shortcut"><kbd style="margin-right: 0.2em;">w</kbd> Switch to Week View</span>
+  </div>
+  <div id="calendarControls" class="btn-toolbar justify-content-between" role="toolbar" aria-label="Calendar control toolbar">
+    Use the following toggles to customize your calendar view. If you'd like to hide a category of events, click on the respective button to do so. The calendar will immediately update to reflect your selection. To re-enable that category, click again.
+    <span style="display: block; height: 1rem;"></span>
+    <div class="input-group mb-3" role="group" aria-label="Calendar category toggles" style="text-align: center;">
+      {% for group in button_groups %}
+        <button class="btn btn-outline-primary" data-action="toggle-category-{{ group | downcase | replace: " ", "-" }}" aria-label="Toggle {{ group }}" >{{ group }}</button>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
-<iframe data-a11y-errors="true" title="Google Calendar of CS 189/289A Lecture, Discussion, and Exams Calendar"
-src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;src=c_eeb5d06403421c5d1d8e1e484b594f734cc9e72997e5721f646e94277461f0b5%40group.calendar.google.com&amp;color=%230b8043&amp;src=c_66a830be30ac0268f904f99250107b2fefc9b43d2545970942710b8b0024c111%40group.calendar.google.com&amp;color=%238e24aa&amp;src=c_8e8d6006467fcf5cf80afeea70fc068b4057b0f30abb1a7a1498ec5b7aeaccfa%40group.calendar.google.com&amp;color=%231565c0&amp;src=c_b7b05fd9aa96715177431cb68a277dab513131dfc949a61a09f156cb18554695%40group.calendar.google.com&amp;color=%23039be5&amp;src=c_885bff102a030a09271eeef610f7b396899c384d223b43d989ed3a88d770cc13%40group.calendar.google.com&amp;color=%23d50000&amp;src=c_3bd29413f3b0b22247139e1c51759eb5270a9e479ec651b11c2f3a52b1211cd6%40group.calendar.google.com&amp;color=%23f4511e&amp;src=c_f5e70fbbf48d66c58b0be549181799f5619563c1c256bd0ee33410bc688d0e67%40group.calendar.google.com&amp;color=%23d81b60&amp;ctz=America%2FLos_Angeles" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-<br>
-
-<a name='ohc'></a>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    initCalendar();
+  });
+</script>
