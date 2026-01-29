@@ -71,7 +71,7 @@ Below is a high-level “typical week in the course” for {{page.course.semeste
 
 ### Lecture
 <!-- TBD location -->
-There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/93941714010?pwd=ckB6MrBDaqmK2vVGFuCOHGnV7yS0JY.16985). Attendance is not required.
+There are two live lectures per week, held on **Tuesdays and Thursdays from 2:00–3:30 PM** in Wheeler 150 and over [**Zoom**](https://berkeley.zoom.us/j/93941714010?pwd=ckB6MrBDaqmK2vVGFuCOHGnV7yS0JY.1). Attendance is not required.
 
 Recordings, slides, and any in-class materials will be posted on the course website. However, we strongly recommend coming to class, as lectures include worked examples, interactive questions, and discussions that are difficult to replicate from the slides alone.
 

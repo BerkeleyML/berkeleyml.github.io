@@ -15,7 +15,7 @@ currWeekNumber: 2
 
 <!-- small margin below -->
 ### Wheeler 150, Tuesdays and Thursdays 2pm-3:30pm
-- [Zoom Livestream](https://berkeley.zoom.us/j/93941714010?pwd=ckB6MrBDaqmK2vVGFuCOHGnV7yS0JY.16985){:target="_blank"  .mr-1 }
+- [Zoom Livestream](https://berkeley.zoom.us/j/93941714010?pwd=ckB6MrBDaqmK2vVGFuCOHGnV7yS0JY.1){:target="_blank"  .mr-1 }
 
 
 <!-- {: .mb-2 .fs-6 .text-grey-dk-000 style="margin-top: 0;" } -->
