@@ -1,0 +1,14 @@
+title: CS 189/289A
+description: Introduction to Machine Learning
+author: UC Berkeley
+baseurl: ~
+url: 'https://eecs189.org'
+
+# Theme settings
+remote_theme: "just-the-docs/just-the-docs@v0.10.1"
+plugins:
+  - jekyll-remote-theme
+color_scheme: light
+search_enabled: true
+permalink: pretty
+favicon_ico: "/favicon.ico"
