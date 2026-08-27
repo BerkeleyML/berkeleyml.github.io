@@ -1,13 +1,12 @@
 ---
 layout: no-sidebar
-title: CS 189/289A Testing
+title: Home
 nav_exclude: true
-permalink: /testing/
 ---
 
 # CS 189/289A: Introduction to Machine Learning
 
-<img src="{{ '/189_logo.png' | relative_url }}" alt="CS 189 logo" class="centered-icon" />
+<img src="189_logo.png" alt="CS 189 logo" class="centered-icon" />
 
 ## Course Description
 
@@ -18,6 +17,27 @@ Machine learning is at the core of modern artificial intelligence, transforming 
 ## Offerings
 
 1. [Fall 2026](/fa26/)
+1. [Spring 2026](/sp26/)
+1. [Fall 2025](/fa25/)
+<!--
+1. [Fall 2024](/fa24/)
+1. [Spring 2024](/sp24/)
+1. [Fall 2023](/fa23/)
+1. [Spring 2023](/sp23/)
+1. [Fall 2022](/fa22/)
+1. [Spring 2022](/sp22/)
+1. [Fall 2021](/fa21/)
+1. [Spring 2021](/sp21/)
+1. [Fall 2020](/fa20/)
+1. [Spring 2020](/sp20/)
+-->
+1. [Fall 2019](/fa19/)
+<!--
+1. [Spring 2019](/sp19/)
+1. [Fall 2018](/fa18/)
+-->
+1. [Spring 2018](/sp18/)
+1. [Fall 2017](/fa17/)
 
 ## Goals
 
