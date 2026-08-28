@@ -19,7 +19,7 @@ Machine learning is at the core of modern artificial intelligence, transforming 
 1. [Fall 2026](/fa26/)
 1. [Spring 2026](/sp26/)
 1. [Fall 2025](/fa25/)
-{% comment %}
+{%- comment %}
 1. [Fall 2024](/fa24/)
 1. [Spring 2024](/sp24/)
 1. [Fall 2023](/fa23/)
@@ -32,7 +32,7 @@ Machine learning is at the core of modern artificial intelligence, transforming 
 1. [Spring 2020](/sp20/)
 {% endcomment %}
 1. [Fall 2019](/fa19/)
-{% comment %}
+{%- comment %}
 1. [Spring 2019](/sp19/)
 1. [Fall 2018](/fa18/)
 {% endcomment %}
