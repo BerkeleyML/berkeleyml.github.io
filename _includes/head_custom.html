@@ -1,0 +1,34 @@
+{%- comment -%}
+  Dark mode. Just the Docs builds just-the-docs-dark.css from _sass/color_schemes/dark.scss.
+  It is loaded after the default (light) stylesheet and is active when the system prefers dark,
+  unless the visitor picked a theme with the header toggle (saved in localStorage as "theme").
+  The script runs before the body renders, so there is no flash of the wrong theme.
+  siteTheme.set('light' | 'dark') switches the theme and fires a "site-theme-change" event,
+  which widgets that style themselves in JavaScript (the calendar) listen for.
+{%- endcomment -%}
+<link rel="stylesheet" href="{{ '/assets/css/just-the-docs-dark.css' | relative_url }}" id="dark-mode-stylesheet" media="(prefers-color-scheme: dark)">
+<script>
+  (function () {
+    var sheet = document.getElementById('dark-mode-stylesheet');
+    var query = window.matchMedia('(prefers-color-scheme: dark)');
+    function notify() {
+      document.dispatchEvent(new CustomEvent('site-theme-change', { detail: { theme: window.siteTheme.get() } }));
+    }
+    window.siteTheme = {
+      get: function () {
+        var dark = sheet.media === 'all' || (sheet.media !== 'not all' && query.matches);
+        return dark ? 'dark' : 'light';
+      },
+      set: function (theme) {
+        sheet.media = theme === 'dark' ? 'all' : 'not all';
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        notify();
+      }
+    };
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved === 'dark') sheet.media = 'all';
+    if (saved === 'light') sheet.media = 'not all';
+    query.addEventListener('change', notify);
+  })();
+</script>

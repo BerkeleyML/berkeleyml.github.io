@@ -24,3 +24,51 @@ div.highlighter-rouge div.highlight {
 
 // Place all of your course-specific CSS here.
 @import './course_overrides';
+
+// Light/dark toggle (_includes/theme_toggle.html), fixed in the top-right corner.
+// Shows a moon in light mode and a sun in dark mode.
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  color: $body-text-color;
+  background: $body-background-color;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: $link-color;
+    border-color: $link-color;
+  }
+}
+
+.theme-toggle-sun,
+.centered-icon.logo-dark {   // two classes, to beat .centered-icon { display: block } in css/main.css
+  display: none;
+}
+
+@if $color-scheme == dark {
+  .theme-toggle-moon,
+  .centered-icon.logo-light {
+    display: none;
+  }
+
+  .theme-toggle-sun,
+  .centered-icon.logo-dark {
+    display: block;
+  }
+}
+
+// Keep the page title clear of the fixed toggle.
+.main-content-body > h1:first-child {
+  padding-right: 3rem;
+}

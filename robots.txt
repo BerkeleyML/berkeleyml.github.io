@@ -1,0 +1,9 @@
+# eecs189.org: the course home page and each semester's site (separate GitHub Pages repos).
+# Crawlers only read robots.txt at the domain root, so every semester's sitemap is listed here.
+User-agent: *
+Allow: /
+
+Sitemap: https://eecs189.org/sitemap.xml
+Sitemap: https://eecs189.org/fa26/sitemap.xml
+Sitemap: https://eecs189.org/sp26/sitemap.xml
+Sitemap: https://eecs189.org/fa25/sitemap.xml

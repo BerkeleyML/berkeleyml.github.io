@@ -6,7 +6,8 @@ nav_exclude: true
 
 # CS 189/289A: Introduction to Machine Learning
 
-<img src="189_logo.png" alt="CS 189 logo" class="centered-icon" />
+<img src="189_logo.png" alt="CS 189 logo" class="centered-icon logo-light" />
+<img src="189_logo_dark.png" alt="CS 189 logo" class="centered-icon logo-dark" />
 
 ## Course Description
 
